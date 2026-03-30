@@ -1,7 +1,8 @@
-export default function Title() {
+export default function TestText({heading, text}) {
     return (
-        
-        <h1>This is my test heading!</h1>
-        
+        <section>
+            <h1>{heading}</h1>
+            <p>{text}</p>
+        </section>
     )
 }
