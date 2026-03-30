@@ -1,12 +1,11 @@
-import content from "./test-content.json";
-import TestText from "src/Components/TextComponents";
+import content from "./test-content.json"
+import TestText from "/src/Components/TextComponents.jsx"
 
-function Test() {
+export default function Test() {
     return (
         <>
-            <Test {...content.Test.heading, content.Test.text}/>
+            <TestText {...content.Test}/>
         </>
     )
 }
 
-export default Test;
