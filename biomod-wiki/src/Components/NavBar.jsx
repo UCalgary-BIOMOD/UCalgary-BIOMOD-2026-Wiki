@@ -8,7 +8,7 @@ export default function NavBar() {
             <h2 className = {styles.h2}>UCalgary BIOMOD 2026</h2>
             <ul className = {styles.ul}>
                 <li>
-                    <NavLink to="/home">Home</NavLink>
+                    <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
                     <NavLink to="/test">Test</NavLink>
