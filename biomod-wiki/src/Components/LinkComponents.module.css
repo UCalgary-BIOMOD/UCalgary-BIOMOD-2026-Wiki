@@ -1,0 +1,12 @@
+.ClickWrapper {
+    display: block; /* https://www.w3schools.com/cssref/pr_class_display.php */
+    text-decoration: none; /* remove the underline */
+}
+
+.ClickWrapper > * { /* "> *" means apply this style to all direct children of ClickWrapper */
+    transition: transform 0.2s ease, box-shadow 0.2s ease
+}
+
+.ClickWrapper:hover > * {
+    transform: scale(1.02)
+}
