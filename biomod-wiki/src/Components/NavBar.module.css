@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
+    
 }
 
 .ul{
@@ -16,13 +17,15 @@
 .h2{
     margin: 0;
     padding: 0;
+    
 }
 
 .ul a{
     text-decoration: none;
     position: relative;
     transition: color 0.2s ease;
-    
+    font-weight: bold;
+    color:#E9ECEF;
 
     &:global.active {
         transform: scaleX(1)
@@ -41,7 +44,7 @@
     bottom: -0.1rem;
     width:100%;
     height: 0.1rem;
-    background-color: #6b6375;
+    background-color: #EABE73;
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.2s ease-in-out;

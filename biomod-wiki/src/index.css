@@ -1,12 +1,12 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
+  --text: #E9ECEF; /* This is for <p> */
+  --text-h: #EABE73; /* This is for <h1>, <h2>, etc. */
+  --bg: #0C0922;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  --accent: #0077b6;
+  --accent-bg: #0077b6;
+  --accent-border: #0077b6;
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -17,7 +17,7 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light;
+  /*color-scheme: light;*/
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -30,14 +30,12 @@
   }
 }
 
-
-
 body {
   margin: 0;
 }
 
 #root {
-  width: 1126px;
+  /*width: 1126px;*/
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
