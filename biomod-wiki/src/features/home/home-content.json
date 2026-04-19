@@ -1,6 +1,11 @@
 {
     "Home": {
         "heading": "Home", 
+        "size": "h1",
         "text": "This will be the part where the home page is or something. Blah, blah, blah, blah, whatever whatever, hahahahahaha."
+    },
+    "Random": {
+        "heading": null,
+        "text": "This is my favorite part of the song where it goes:\nWe will rock you!\nWe will rock you!"
     }
 }

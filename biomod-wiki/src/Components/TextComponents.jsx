@@ -1,8 +1,14 @@
-export default function TestText({heading, text}) {
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
+
+export default function TextBlock({heading, size: Tag = "h1", text}) {
     return (
         <section>
-            <h1>{heading}</h1>
-            <p>{text}</p>
+            {heading && <Tag>{heading}</Tag>}
+            <p style = {{whiteSpace: "pre-line"}}>{text}</p>
         </section>
     )
-}
+}   
