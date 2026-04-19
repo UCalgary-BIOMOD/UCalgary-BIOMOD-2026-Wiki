@@ -1,9 +1,9 @@
 :root {
   --text: #E9ECEF; /* This is for <p> */
   --text-h: #EABE73; /* This is for <h1>, <h2>, etc. */
-  --bg: #0C0922;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  --bg: #0C0922; /* General website background color */
+  --border: #E9ECEF; /*Changes color of left/right border of #root container; change to #FF0000 to observe bounds.*/
+  --code-bg: #f4f3ec; /*Most likely change this to match --bg IF we host code on our website*/
   --accent: #0077b6;
   --accent-bg: #0077b6;
   --accent-border: #0077b6;
@@ -35,9 +35,9 @@ body {
 }
 
 #root {
-  /*width: 1126px;*/
-  max-width: 100%;
-  margin: 0 auto;
+  width: clamp(320px, 80vw, 1126px); /*Never smaller than 320, prefers 80vw (80% of viewport), and never larger than 1126 for #root in the viewport*/
+  
+  margin: 0 auto; /*Centers the #root container in the middle.*/
   text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
@@ -71,10 +71,11 @@ h2 {
     font-size: 20px;
   }
 }
+/*No margin for <p> elements; most likely allow <ul> or <l> to control it.*/
 p {
   margin: 0;
 }
-
+/*If we intend to host code on our website, we will use these styles, but very likely unused. */
 code,
 .counter {
   font-family: var(--mono);
