@@ -1,69 +1,49 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --text: #E9ECEF; /* This is for <p> */
+  --text-h: #EABE73; /* This is for <h1>, <h2>, etc. */
+  --bg: #0C0922; /* General website background color */
+  --border: #E9ECEF; /*Changes color of left/right border of #root container; change to #FF0000 to observe bounds.*/
+  --code-bg: #f4f3ec; /*Most likely change this to match --bg IF we host code on our website*/
+  --accent: #0077b6; /*The next three affect the accent color; use later for maybe <a> or <button>*/
+  --accent-bg: #0077b6;
+  --accent-border: #0077b6;
+  --social-bg: rgba(244, 243, 236, 0.5); /*Use this color to define backgrounds for social media or footer UI; ex. IG logo. Tweak 4th variable for opacity*/
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(255, 255, 255, 0.5) 0 12px 24px -6px, rgba(255, 255, 255, 0.05) 0 2px 8px -2px; /*Fun to add a box-shadow to components like cards*/
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change default font of <p>, <a> etc.*/
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change heading font*/
+  --mono: ui-monospace, Consolas, monospace; /*font for code*/
 
-  font: 18px/145% var(--sans);
+  font: 18px/145% var(--sans); /*adjust font size and vertical line height (for gaps between text)*/
   letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
+  /*color-scheme: light;*/
+  color: var(--text); /*text color of root, see --text*/
   background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none; /*Leave at none because it prevents making up fake font approximations for different weights*/
+  text-rendering: optimizeLegibility; /*Just tells browser to prioritize legibility, but fine to keep in*/
+  -webkit-font-smoothing: antialiased; /*antialiasing for chrome*/
+  -moz-osx-font-smoothing: grayscale; /*antialiasing for firefox*/
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px) { /*sets the font-size smaller if max-width is 1024 or lower*/
     font-size: 16px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
 body {
-  margin: 0;
+  margin: 0; /*disables default 8px border around whole <body>*/
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  width: clamp(320px, 80vw, 1126px); /*Never smaller than 320, prefers 80vw (80% of viewport), and never larger than 1126 for #root in the viewport*/
+  
+  margin: 0 auto; /*Centers the #root container in the middle.*/
+  text-align: center; 
+  border-inline: 1px solid var(--border); /*sets the border width, style, and color of the root container*/
+  min-height: 100svh; /*Mobile minimum height; makes so that URL topbar shrinks viewport area correctly*/
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  box-sizing: border-box; /*makes elements consider border and padding in size calculations*/
 }
 
 h1,
@@ -73,14 +53,16 @@ h2 {
   color: var(--text-h);
 }
 
-h1 {
+h1 { 
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  @media (max-width: 1024px) {
+  /*line-height:0%; Consider editing this to remove excessive line spacing*/
+  @media (max-width: 1024px) { /*if viewport less than 1024 px, change margin and font-size*/
     font-size: 36px;
     margin: 20px 0;
   }
+  
 }
 h2 {
   font-size: 24px;
@@ -91,10 +73,15 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
-  margin: 0;
+  margin: 0; /*No margin for <p> elements; most likely allow <ul> or <l> to control it.*/
 }
 
+a{
+  color: var(--text);
+}
+/*If we intend to host code on our website, we will use these styles, but very likely unused. */
 code,
 .counter {
   font-family: var(--mono);
