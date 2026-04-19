@@ -15,17 +15,17 @@
 }
 
 .h2{
-    margin: 0;
+    margin: 0; /*remove the default margin and padding from index.css*/
     padding: 0;
     
 }
 
 .ul a{
-    text-decoration: none;
-    position: relative;
+    text-decoration: none; /*remove default underline*/
+    position: relative; /* for the pseudo element that makes the underline, this sets the parent to be the link NOT the page*/
     transition: color 0.2s ease;
     font-weight: bold;
-    color:#E9ECEF;
+    
 
     &:global.active {
         transform: scaleX(1)

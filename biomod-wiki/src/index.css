@@ -77,6 +77,10 @@ h2 {
 p {
   margin: 0; /*No margin for <p> elements; most likely allow <ul> or <l> to control it.*/
 }
+
+a{
+  color: var(--text);
+}
 /*If we intend to host code on our website, we will use these styles, but very likely unused. */
 code,
 .counter {
