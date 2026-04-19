@@ -1,4 +1,4 @@
-.ClickWrapper {
+.LinkWrapper {
     display: block; /* https://www.w3schools.com/cssref/pr_class_display.php */
     text-decoration: none; /* remove the underline */
     /* These two lines help fix the bug of full width hoverable/clickable region of elements. */
@@ -6,15 +6,15 @@
     width: fit-content;
 }
 
-.ClickWrapper > * { /* "> *" means apply this style to all direct children of ClickWrapper */
+.LinkWrapper > * { /* "> *" means apply this style to all direct children of LinkWrapper */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     
 }
 
-.ClickWrapper:hover > * {
+.LinkWrapper:hover > * {
     transform: scale(1.02)
 }
 
-.ClickWrapper:active > * {
+.LinkWrapper:active > * {
     transform: scale(0.98)
 }
