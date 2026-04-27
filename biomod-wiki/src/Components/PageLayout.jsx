@@ -1,7 +1,7 @@
-
+import styles from "./PageLayout.module.css"
 function SideNav({sections}) {
     return (
-        <nav className = "side-nav">
+        <nav className = {styles.sideNav}>
             <ul>
                 {sections.map((section) => ( //https://sentry.io/answers/react-for-loops/
                     <li key={section.id}>
@@ -18,7 +18,7 @@ export default function PageLayout({sections}) {
     return (
         <div>
             <SideNav sections = {sections}></SideNav>
-            <main className = "page">
+            <main className = {styles.page}>
                 {sections.map(section => (
                     <section key={section.id} id = {section.id}>
                         {section.render()}
