@@ -5,7 +5,7 @@ function SideNav({sections}) {
             <ul>
                 {sections.map((section) => ( //https://sentry.io/answers/react-for-loops/
                     <li key={section.id}>
-                        <a href={`#${section.id}`}>{section.title}<a> //https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used
+                        <a href={`#${section.id}`}>{section.title}</a> 
                         
                     </li>
                 ))}
@@ -18,7 +18,7 @@ export default function PageLayout({sections}) {
     return (
         <div>
             <SideNav sections = {sections}></SideNav>
-            <main>
+            <main className = "page">
                 {sections.map(section => (
                     <section key={section.id} id = {section.id}>
                         {section.render()}
