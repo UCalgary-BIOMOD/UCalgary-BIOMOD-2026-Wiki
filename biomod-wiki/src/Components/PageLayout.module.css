@@ -13,14 +13,14 @@
 
 .sideNav{
     position: sticky;
-    width:15%;
+    width: 15%;
     border: 2px solid pink;
     display:flex;
     flex-direction:column;
     align-items:center;
     top:0;
-    left:0;
-    height: 100%;
+    
+    height: 100px;
 }
 
 .sideNav ul{
@@ -29,3 +29,16 @@
     padding-left: 0;
 }
 
+.sideNav ul a{
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sideNav ul a:hover{
+    color:aquamarine;
+}
+
+.sideNav ul a.active{
+    color:aquamarine;
+}
