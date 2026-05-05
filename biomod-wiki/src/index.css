@@ -35,7 +35,7 @@ body {
 }
 
 #root {
-  width: clamp(320px, 80vw, 1126px); /*Never smaller than 320, prefers 80vw (80% of viewport), and never larger than 1126 for #root in the viewport*/
+  /*width: clamp(320px, 80vw, 1126px);*/ /*Never smaller than 320, prefers 80vw (80% of viewport), and never larger than 1126 for #root in the viewport*/
   
   margin: 0 auto; /*Centers the #root container in the middle.*/
   text-align: center; 

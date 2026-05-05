@@ -16,7 +16,7 @@ function SideNav({sections}) {
 
 export default function PageLayout({sections}) {
     return (
-        <div>
+        <div className = {styles.pageLayout}> 
             <SideNav sections = {sections}></SideNav>
             <main className = {styles.page}>
                 {sections.map(section => (
