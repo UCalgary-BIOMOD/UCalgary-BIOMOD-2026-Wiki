@@ -1,6 +1,7 @@
 .pageLayout{
     display: flex;
     flex-direction: row;
+    
 }
 
 .page{
@@ -8,18 +9,22 @@
     flex-direction: column;
     align-items:center;
     flex:1;
-    border: 2px solid red;
+    border: 0px solid red;
     
+}
+
+.page section{
+    scroll-margin-top: var(--top-nav-height);
 }
 
 .sideNav{
     position: sticky;
     width: 15%;
-    border: 2px solid pink;
+    border: 0px solid pink;
     display:flex;
     flex-direction:column;
     align-items:center;
-    top:0;
+    top: var(--top-nav-height);
     
     height: fit-content;
     
@@ -27,7 +32,7 @@
 
 .sideNav ul{
     list-style: none;
-    border: 2px solid blue;
+    border: 0px solid blue;
     padding-left: 0;
 }
 
@@ -56,4 +61,7 @@
 
 .sideNav path {
   transition: stroke-dashoffset 0.4s ease, stroke-dasharray 0.4s ease;
+  stroke: var(--text-h);
+  fill: none;
+  stroke-width: 3;
 }

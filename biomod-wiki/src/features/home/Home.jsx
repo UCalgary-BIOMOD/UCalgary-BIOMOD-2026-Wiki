@@ -100,6 +100,27 @@ export default function Home() {
                 </>
             )
         },
+        {
+            id: "Test2",
+            title: "Test2",
+            render: () => (
+                <>
+                    <h1>Test2</h1>
+                    <p>I just be writing whatever I want to write sometimes. It is so excellent and awesome.    </p>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                    <h2>.</h2>
+                </>
+            )
+        },
     ]
     return (
         <PageLayout sections = {sections}/>

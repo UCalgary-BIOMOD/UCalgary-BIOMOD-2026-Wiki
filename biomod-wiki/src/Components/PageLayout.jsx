@@ -103,8 +103,8 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
     }, [activeIds])
     return (
         <nav className = {styles.sideNav}>
-            <svg xmlns="http://www.w3.org/2000/svg" ref = {pathRef}  >
-                <path stroke="red" strokeWidth="2" fill="none" />
+            <svg xmlns="http://www.w3.org/2000/svg" ref = {pathRef} >
+                <path />
             </svg>
             <ul>
                 {sections.map((section) => ( //https://sentry.io/answers/react-for-loops/
@@ -130,7 +130,8 @@ export default function PageLayout({sections}) {
     useEffect(() => {
         const options = {
             root: null,
-            threshold: 0.1
+            rootMargin: "0px 0px -20% 0px",
+            threshold: 0.01
         }
         const callback = (entries) => {
             setActiveIds((prev) => {
@@ -165,7 +166,7 @@ export default function PageLayout({sections}) {
 
             <main className = {styles.page} >
                 {sections.map(section => (
-                    <section key={section.id} id = {section.id} style ={{border: "2px solid red"}}>
+                    <section key={section.id} id = {section.id} style ={{border: "0px solid red"}}>
                         {section.render()}
                     </section>
                 ))}

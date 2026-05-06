@@ -25,9 +25,12 @@
   -webkit-font-smoothing: antialiased; /*antialiasing for chrome*/
   -moz-osx-font-smoothing: grayscale; /*antialiasing for firefox*/
 
+   --top-nav-height: 56px; /*Navigation Bar Height*/
   @media (max-width: 1024px) { /*sets the font-size smaller if max-width is 1024 or lower*/
     font-size: 16px;
   }
+  
+ 
 }
 
 body {
