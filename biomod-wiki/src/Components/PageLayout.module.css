@@ -9,6 +9,7 @@
     align-items:center;
     flex:1;
     border: 2px solid red;
+    
 }
 
 .sideNav{
@@ -20,7 +21,7 @@
     align-items:center;
     top:0;
     
-    height: 100px;
+    height: fit-content;
 }
 
 .sideNav ul{
