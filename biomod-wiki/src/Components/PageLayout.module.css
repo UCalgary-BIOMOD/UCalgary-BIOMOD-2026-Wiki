@@ -53,3 +53,7 @@
   height: 100%;
   pointer-events: none;
 }
+
+.sideNav path {
+  transition: stroke-dashoffset 0.4s ease, stroke-dasharray 0.4s ease;
+}

@@ -48,6 +48,11 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
             }
             console.log("PATH:", path.join(" "))
         })
+        /** 
+        const length = navPath.getTotalLength()
+        navPath.style.strokeDashArray = `${length}`
+        navPath.style.strokeDashOffset = `${length}`
+        navPath.style.opacity = 1*/
     }
     function syncPath() {
         const svg = pathRef.current
@@ -98,7 +103,7 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
     }, [activeIds])
     return (
         <nav className = {styles.sideNav}>
-            <svg xmlns="http://www.w3.org/2000/svg" ref = {pathRef} width = "200px" height = "500px" >
+            <svg xmlns="http://www.w3.org/2000/svg" ref = {pathRef}  >
                 <path stroke="red" strokeWidth="2" fill="none" />
             </svg>
             <ul>
