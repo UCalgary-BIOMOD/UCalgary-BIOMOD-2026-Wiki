@@ -25,9 +25,12 @@
   -webkit-font-smoothing: antialiased; /*antialiasing for chrome*/
   -moz-osx-font-smoothing: grayscale; /*antialiasing for firefox*/
 
+   --top-nav-height: 56px; /*Navigation Bar Height*/
   @media (max-width: 1024px) { /*sets the font-size smaller if max-width is 1024 or lower*/
     font-size: 16px;
   }
+  
+ 
 }
 
 body {
@@ -35,7 +38,7 @@ body {
 }
 
 #root {
-  width: clamp(320px, 80vw, 1126px); /*Never smaller than 320, prefers 80vw (80% of viewport), and never larger than 1126 for #root in the viewport*/
+  /*width: clamp(320px, 80vw, 1126px);*/ /*Never smaller than 320, prefers 80vw (80% of viewport), and never larger than 1126 for #root in the viewport*/
   
   margin: 0 auto; /*Centers the #root container in the middle.*/
   text-align: center; 
@@ -95,4 +98,8 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+html{
+  scroll-behavior: smooth;
 }

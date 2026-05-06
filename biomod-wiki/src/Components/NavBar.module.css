@@ -3,6 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
+    position: sticky;
+    top: 0;
+    border: 0px solid green;
+    box-sizing: border-box;
+    height: var(--top-nav-height);
+    background-color: var(--bg);
     
 }
 
