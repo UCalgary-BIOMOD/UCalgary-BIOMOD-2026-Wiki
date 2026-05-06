@@ -15,6 +15,7 @@
 
 .page section{
     scroll-margin-top: var(--top-nav-height);
+    border: 2px solid orange;
 }
 
 .sideNav{
@@ -43,11 +44,11 @@
 }
 
 .sideNav ul a:hover{
-    color:aquamarine;
+    color: var(--text-h);
 }
 
 .sideNav ul a.active{
-    color:aquamarine;
+    color:var(--text-h);
 }
 
 .sideNav svg {
