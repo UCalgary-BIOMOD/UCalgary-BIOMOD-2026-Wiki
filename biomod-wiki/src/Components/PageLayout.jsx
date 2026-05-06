@@ -48,11 +48,11 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
             }
             console.log("PATH:", path.join(" "))
         })
-        /** 
+        
         const length = navPath.getTotalLength()
         navPath.style.strokeDashArray = `${length}`
         navPath.style.strokeDashOffset = `${length}`
-        navPath.style.opacity = 1*/
+        navPath.style.opacity = 0
     }
     function syncPath() {
         const svg = pathRef.current
@@ -92,8 +92,11 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
     }
     useEffect(() => {
         const id = requestAnimationFrame(() => {
+            
             drawPath()
             syncPath()
+            
+            
         })
         return () => cancelAnimationFrame(id)
     }, [sections])
