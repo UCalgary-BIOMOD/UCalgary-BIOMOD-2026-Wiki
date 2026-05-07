@@ -1,4 +1,4 @@
 .footer{
-    background-color: aliceblue;
-    padding: 2rem;
+    background-color: var(--social-bg);
+    padding: 6rem;
 }

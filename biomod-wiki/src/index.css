@@ -2,6 +2,7 @@
   --text: #E9ECEF; /* This is for <p> */
   --text-h: #EABE73; /* This is for <h1>, <h2>, etc. */
   --bg: #0C0922; /* General website background color */
+  --light-bg: #242238; /*Lighter background color to make nav and footer stand out*/
   --border: #E9ECEF; /*Changes color of left/right border of #root container; change to #FF0000 to observe bounds.*/
   --code-bg: #f4f3ec; /*Most likely change this to match --bg IF we host code on our website*/
   --accent: #0077b6; /*The next three affect the accent color; use later for maybe <a> or <button>*/
