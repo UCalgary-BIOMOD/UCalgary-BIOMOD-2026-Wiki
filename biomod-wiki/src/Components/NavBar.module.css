@@ -9,7 +9,7 @@
     border: 0px solid green; 
     box-sizing: border-box; /*The size given by height will incude both padding and the actual size of the content*/
     height: var(--top-nav-height); 
-    background-color: var(--bg);
+    background-color: var(--light-bg);
     
 }
 /*Styles for the list of links*/

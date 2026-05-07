@@ -1,6 +1,6 @@
 import styles from "./PageLayout.module.css"
 import {useEffect, useState, useRef} from "react"
-
+import Footer from "./Footer"
 
 /**
  * This is the function that builds up the side navigation bar for each page based on the sections.
@@ -206,17 +206,19 @@ export default function PageLayout({sections}) {
 
     return (
         <div className = {styles.pageLayout} ref = {pageRef} > 
-            
-            <SideNav sections = {sections} activeIds = {activeIds} pageRef = {pageRef}></SideNav>
-
-            <main className = {styles.page} >
-                
-                {sections.map(section => (
-                    <section key={section.id} id = {section.id}>
-                        {section.render()}
-                    </section>
-                ))}
-            </main>
+            <div className = {styles.mainContent}>
+                <SideNav sections = {sections} activeIds = {activeIds} pageRef = {pageRef}></SideNav>
+                <main className = {styles.page} >
+                    
+                    {sections.map(section => (
+                        <section key={section.id} id = {section.id}>
+                            {section.render()}
+                        </section>
+                    ))}
+                    
+                </main>
+            </div>
+            <Footer/>
         </div>
     )
 }
