@@ -3,7 +3,7 @@
     text-decoration: none; /* remove the underline */
     /* These two lines help fix the bug of full width hoverable/clickable region of elements. */
     align-self: center;
-   
+    /*width: fit-content*/ /*This is disabled for now, because it makes the images that are wrapped off-center; consider looking into this since it also breaks the clickable area too*/
 }
 
 .LinkWrapper > * { /* "> *" means apply this style to all direct children of LinkWrapper */

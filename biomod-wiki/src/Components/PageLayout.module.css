@@ -1,6 +1,10 @@
+/**
+This module holds everything related to the page layout framework and the side navigation bar.
+*/
+
 .pageLayout{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /*This is the lowest level div, which arranges the sidebar side-by-side with the page content.*/
     
 }
 
@@ -8,39 +12,40 @@
     display: flex;
     flex-direction: column;
     align-items:center;
-    flex:1;
+    flex:1; /*Makes the page expand to encompass all of the sections*/
     border: 0px solid red;
     
 }
 
+
 .page section{
-    scroll-margin-top: var(--top-nav-height);
-    border: 2px solid orange;
+    scroll-margin-top: var(--top-nav-height); /*Need to set the scroll-margin to be at the border of the top nav bar to prevent overlap*/
+    border: 0px solid orange;
 }
 
 .sideNav{
     position: sticky;
-    width: 15%;
+    width: 15%; /*Take up 15% of the total lowest level div size*/
     border: 0px solid pink;
     display:flex;
     flex-direction:column;
     align-items:center;
-    top: var(--top-nav-height);
+    top: var(--top-nav-height); /*This prevents overlap with the top nav bar*/
     
-    height: fit-content;
+    height: fit-content; /*Scales to only fit the content, which helps keep it sticky*/
     
 }
 
 .sideNav ul{
-    list-style: none;
+    list-style: none; /*Removes the bullet points*/
     border: 0px solid blue;
-    padding-left: 0;
+    padding-left: 0; /*Removes the default left padding for lists*/
 }
 
 .sideNav ul a{
     color: var(--text);
-    text-decoration: none;
-    transition: color 0.2s ease;
+    text-decoration: none; /*Removes the underline*/
+    transition: color 0.2s ease; /*From white, changes color to text color*/
 }
 
 .sideNav ul a:hover{
@@ -51,19 +56,20 @@
     color:var(--text-h);
 }
 
-.sideNav svg {
-    position: absolute;
+.sideNav svg { /*This is the indicator line thing*/
+  position: absolute; /*This removes the space allocation for the svg, making it overlap, instead of take up space. Remove this to see.*/
   top: 0;
   left: 0;
-  width: 100%;
+  /*Theoretically, these two should make the svg overlap with the entire side nav, making it aligned*/
+  width: 100%; 
   height: 100%;
-  pointer-events: none;
+  pointer-events: none; /*This makes it so that the links are clickable through the svg, in case*/
 }
 
 .sideNav path {
-  transition: stroke-dashoffset 0.4s ease, stroke-dasharray 0.4s ease;
-  stroke: var(--text-h);
-  fill: none;
-  stroke-width: 3;
+  transition: stroke-dashoffset 0.4s ease, stroke-dasharray 0.4s ease; /*Makes the line have an animation of snaking along*/
+  stroke: var(--text-h); /*Color of the stroke*/
+  fill: none; /*Makes it so that no fill is created and only lines are used*/
+  stroke-width: 3px;
   
 }

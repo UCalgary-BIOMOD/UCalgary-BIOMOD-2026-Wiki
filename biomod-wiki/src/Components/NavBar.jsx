@@ -1,6 +1,11 @@
 import {NavLink} from "react-router-dom"
 import styles from "./NavBar.module.css"
 
+
+/**
+ * This is the partial used for the top navigation bar.
+ * @returns The top navigation bar partial
+ */
 export default function NavBar() {
     return (
         <nav className={styles.nav}>
