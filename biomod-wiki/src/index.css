@@ -36,7 +36,6 @@
 body {
   margin: 0; /*disables default 8px border around whole <body>*/
 }
-
 #root {
   /*width: clamp(320px, 80vw, 1126px);*/ /*Never smaller than 320, prefers 80vw (80% of viewport), and never larger than 1126 for #root in the viewport*/
   
