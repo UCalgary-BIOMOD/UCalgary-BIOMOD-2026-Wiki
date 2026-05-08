@@ -3,7 +3,7 @@ import styles from "./LinkComponents.module.css"
 
 /**
  * The LinkWrapper function allows for children to be wrapped in a link to redirect elsewhere on the site.
- * @param to The link address to be linked to; does NOT apply to hyperlink, only internal navigation
+ * @param to The internal address or external URL
  * @param children The children to which the wrapper will be applied.
  * @returns The wrapped child(ren).
  */
