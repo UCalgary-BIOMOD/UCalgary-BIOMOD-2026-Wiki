@@ -2,11 +2,13 @@ import {Link, NavLink} from "react-router-dom"
 import styles from "./NavBar.module.css"
 import LinkWrapper from "./LinkComponents"
 import logo from "@/assets/aptonix-logo.png"
+import {useState} from "react";
 /**
  * This is the partial used for the top navigation bar.
  * @returns The top navigation bar partial
  */
 export default function NavBar() {
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <nav className={styles.nav}>
             <LinkWrapper to="/">
@@ -17,8 +19,16 @@ export default function NavBar() {
                 <li>
                     <NavLink to="/">Home</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/test">Test</NavLink>
+                <li className = {styles.dropdown}>
+                    <button className = {styles.dropdownTrigger} onClick={() => setIsOpen(!isOpen)}>
+                        Menu
+                    </button>
+                    
+                    <ul className = {`${styles.dropdownMenu} ${isOpen ? styles.showMenu : ""}`}>
+                        <li>
+                            <NavLink to="/test">Test</NavLink>
+                        </li>
+                    </ul>
                 </li>
                 
             </ul>
