@@ -198,7 +198,7 @@ Project Framework:
 
 General Project Conventions:
 
-    Please always write imports as derived from root. The root alias is currently set as "@" in vite.config.js
+    Please always write imports as derived from root. The root is src. The root alias is currently set as "@" in vite.config.js
 
     Please only write all strings and paths with double quotes (") and not single quotes (')
 
