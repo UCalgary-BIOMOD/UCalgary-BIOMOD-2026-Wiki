@@ -8,6 +8,14 @@ import styles from "./LinkComponents.module.css"
  * @returns The wrapped child(ren).
  */
 export default function LinkWrapper({to, children}) {
+    const isExternal = typeof to === "string" && (to.startsWith("http://")||(to.startsWith("https://")))
+    if (isExternal) {
+        
+        <a href={to} className={styles.LinkWrapper}>
+            {children}
+        </a>
+    }
+
     return (
         <Link to={to} className={styles.LinkWrapper}>
             {children}
