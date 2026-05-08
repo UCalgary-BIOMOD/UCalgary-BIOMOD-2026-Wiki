@@ -3,7 +3,11 @@ import TestText from "/src/Components/TextComponents.jsx"
 import LinkWrapper from "../../Components/LinkComponents"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import YouTubeEmbed from "../../Components/YouTubeEmbed"
+import ImageCarousel from "../../Components/ImageCarousel"
 
+
+import aptonixLogo from "@/assets/aptonix-logo.png"
+import iwannagohome from "@/assets/i-want-to-go-home.jpg"
 export default function Test() {
     const sections = [
 
@@ -30,6 +34,15 @@ export default function Test() {
                 <LinkWrapper to="https://www.roblox.com/home">
                     <h2>Click to go to roblo yayayayayayayayaya</h2>
                 </LinkWrapper>
+                <ImageCarousel 
+                    caption = "This is a test gallery of all of my pictures."
+                    imgs = {[
+                        {id: 1, src: aptonixLogo},
+                        {id: 2, src: iwannagohome},
+                    ]}
+                />
+
+                
             </>
             )
         },
