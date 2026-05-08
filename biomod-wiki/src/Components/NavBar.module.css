@@ -21,18 +21,26 @@
     padding: 0; /* so this doesn't mess up the padding from .nav */
 }
 
+
 .h2{
     margin: 0; /*remove the default margin and padding from index.css*/
     padding: 0;
     
 }
 
-.ul a{
+.ul a, .dropdownTrigger{
     text-decoration: none; /*remove default underline*/
     position: relative; /* for the pseudo element that makes the underline, this sets the parent to be the link NOT the page*/
     transition: color 0.2s ease; /*From white, changes color to text color*/
     font-weight: bold;
-    
+    cursor:pointer;
+    background-color: var(--bg-light);
+    text-decoration: none;
+    color: var(--text);
+    background: none;
+    border: none;
+    font: inherit;
+    font-weight:bold;
 
     &:global.active {
         transform: scaleX(1)
@@ -57,16 +65,51 @@
     transition: transform 0.2s ease-in-out; /*set timing and bezier curve for the transition here*/
 }
 
-.ul a:hover{
-    transform: scaleX(1)
-}
+
 
 .ul a:hover::after{
     
     transform: scaleX(1)
 }
 
+.dropdown{
+    position:relative;
+}
 
+.dropdownMenu{
+    position: absolute;
+    top: 100%;
+    left:0;
 
+    display: flex;
+    flex-direction: column;
 
+    
+    padding: 0rem 0;
+    margin-top: 0rem;
 
+    background-color: var(--bg);
+    border-radius: 0.25rem;
+    
+    list-style: none;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition: all 0.2s ease;
+    transition-property: opacity, transform, visibility;
+}
+
+.dropdownMenu a{
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+}
+
+.showMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
