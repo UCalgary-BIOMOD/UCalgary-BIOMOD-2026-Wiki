@@ -85,11 +85,11 @@
     flex-direction: column;
 
     
-    padding: 0.5rem 0;
-    margin-top: 0.5rem;
+    padding: 0rem 0;
+    margin-top: 0rem;
 
     background-color: var(--bg);
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     
     list-style: none;
 
