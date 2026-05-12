@@ -32,6 +32,9 @@ export default function NavBar() {
                         <li>
                             <NavLink to="/test" onClick={() => setIsOpen(!isOpen)}>Test</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/notebook" onClick={() => setIsOpen(!isOpen)}>Notebook</NavLink>
+                        </li>
                     </ul>
                 </li>
                 
