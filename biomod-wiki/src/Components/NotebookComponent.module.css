@@ -1,0 +1,75 @@
+.calendar{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.dates{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    min-height: 700px;
+    
+    
+}
+
+.week{
+    display: flex;
+    flex-grow: 1;
+    
+}
+
+.day{
+    min-width: 150px;
+    min-height: 50px;
+    border: 2px solid var(--social-bg);
+    background-color: var(--light-bg);
+    
+}
+
+.today{
+    background-color: aliceblue;
+}
+
+.monthHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 150px;
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.nav-button {
+  position: absolute; /*Allows overlay of the buttons*/
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--social-bg);
+  color: var(--text);
+  border: none;
+  border-radius: 50%; /*Makes this a circle*/
+  font-size: 1.5rem;
+  font-weight: normal;
+  cursor: pointer; /*Change cursor to show that it is clickable*/
+  
+  opacity: 0.5;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  line-height: 1;
+  z-index: 1; /*On top of the carousel*/
+}
+
+.left {
+  left: 1rem;
+}
+
+.right {
+  right: 1rem;
+}
+
+.nav-button:hover { /*On hover, make the button washed out with white*/
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
