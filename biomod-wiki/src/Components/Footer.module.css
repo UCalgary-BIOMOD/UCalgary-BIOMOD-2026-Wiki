@@ -1,4 +1,6 @@
+
+
 .footer{
     background-color: var(--social-bg);
-    padding: 6rem;
+    padding: 6rem; /*Size of the footer*/
 }

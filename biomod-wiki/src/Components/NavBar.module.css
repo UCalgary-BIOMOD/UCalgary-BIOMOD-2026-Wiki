@@ -32,19 +32,19 @@
     text-decoration: none; /*remove default underline*/
     position: relative; /* for the pseudo element that makes the underline, this sets the parent to be the link NOT the page*/
     transition: color 0.2s ease; /*From white, changes color to text color*/
-    font-weight: bold;
-    cursor:pointer;
+    
+    cursor:pointer; /*Makes it so hovering on the dropdown trigger shows clickable*/
     background-color: var(--bg-light);
-    text-decoration: none;
+    text-decoration: none; 
     color: var(--text);
     background: none;
     border: none;
-    font: inherit;
-    font-weight:bold;
-
+    font: inherit; /*Inherit from the navigation bar*/
+    font-weight: bold;
+    /*Underline indicator thing so it also works for the items in the drop down menu*/
     &:global.active {
         transform: scaleX(1)
-    }
+    } 
 
     &:global.active::after{
         transform: scaleX(1)
@@ -73,42 +73,43 @@
 }
 
 .dropdown{
-    position:relative;
+    position:relative; /*Allow dropdown menu to be absolute*/
 }
 
 .dropdownMenu{
     position: absolute;
-    top: 100%;
-    left:0;
-
+    
     display: flex;
     flex-direction: column;
 
     
-    padding: 0rem 0;
-    margin-top: 0rem;
+    padding: 0rem 0; /*Remove default padding as to not psuh the text*/
+    
 
     background-color: var(--bg);
-    border-radius: 0.25rem;
+    border-radius: 0.25rem; /*Rounds the corner of the box*/
     
-    list-style: none;
+    list-style: none; /*Remove bullet list*/
 
+    /*Set transition properties to default*/
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
 
+    /*Set the transition*/
     transition: all 0.2s ease;
-    transition-property: opacity, transform, visibility;
+    transition-property: opacity, transform, visibility; /*All properties listed in transition-property can be grouped in all*/
 }
 
 .dropdownMenu a{
-    padding: 0.75rem 1rem;
-    text-decoration: none;
+    padding: 0.75rem 1rem; /*Add padding because fitting to the text looks really bad*/
+    text-decoration: none; /*Remove the bullet point*/
     color: var(--text);
-    display: block;
+    display: block; /*Allows stacking of the links vertically*/
 }
 
 .showMenu {
+    /*Visible version of menu*/
     opacity: 1;
     visibility: visible;
     transform: translateY(0);

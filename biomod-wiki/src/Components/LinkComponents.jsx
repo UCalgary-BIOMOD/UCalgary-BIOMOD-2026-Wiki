@@ -8,6 +8,7 @@ import styles from "./LinkComponents.module.css"
  * @returns The wrapped child(ren).
  */
 export default function LinkWrapper({to, children}) {
+    /*hecks if the link is a URL or a internal link*/
     const isExternal = typeof to === "string" && (to.startsWith("http://")||(to.startsWith("https://")))
     if (isExternal) {
         

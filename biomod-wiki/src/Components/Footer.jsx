@@ -1,7 +1,7 @@
 
 import styles from "./Footer.module.css"
 
-
+/*Incomplete, need to add links and what not to the partial once the full site has been made*/
 
 export default function Footer() {
     return (

@@ -1,8 +1,22 @@
 import {useEffect, useState} from "react"
 import styles from "./ImageCarousel.module.css"
+/*Adapted from: https://dev.to/vishalthapaliya/build-a-smooth-performant-image-carousel-in-react-a-beginners-guide-48ji*/
+
+/**
+ * 
+ * @param caption The header before each image carousel
+ * @param imgs An array of images where each entry is a dictionary with an id and source img
+ * Ex:
+ *      imgs = {[
+            {id: 1, src: aptonixLogo},
+            {id: 2, src: iwannagohome},
+        ]}
+ * @returns An image carousel object
+ */
 
 export default function ImageCarousel({caption, imgs}) {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0) 
+    const [currentImageIndex, setCurrentImageIndex] = useState(0) /*The current index variable*/
+    
     const handlePrevClick = () => {
         setCurrentImageIndex(
             currentImageIndex=== 0 ? imgs.length - 1 : currentImageIndex - 1

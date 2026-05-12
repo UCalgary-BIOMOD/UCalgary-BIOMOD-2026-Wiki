@@ -8,11 +8,11 @@ import {useEffect, useState} from "react";
  * @returns The top navigation bar partial
  */
 export default function NavBar() {
-    const [isOpen, setIsOpen] = useState(false)
-    const location = useLocation()
+    const [isOpen, setIsOpen] = useState(false) /*Set a state for the dropdown (replicate this for multiple drop downs)*/
+    const location = useLocation() /*Returns the current page location in the react router*/
     useEffect(() => {
         setIsOpen(false)
-    }, [location.pathname])
+    }, [location.pathname]) /*Simply runs setIsOpen(false) when the location path name changs AKA user navigated to new page*/
     return (
         <nav className={styles.nav}>
             <LinkWrapper to="/">
