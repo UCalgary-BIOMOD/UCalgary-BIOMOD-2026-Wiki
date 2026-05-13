@@ -10,7 +10,7 @@
     box-sizing: border-box; /*The size given by height will incude both padding and the actual size of the content*/
     height: var(--top-nav-height); 
     background-color: var(--light-bg);
-    
+    z-index: 1000; /*Make sure everything is UNDER the navigation bar*/
 }
 /*Styles for the list of links*/
 .ul{
