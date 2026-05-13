@@ -27,20 +27,20 @@ const days = [
     "Saturday"
 ]
 
+const MIN_MONTH = DateTime.fromObject({year: 2026, month: 5}).startOf("month")
+const MAX_MONTH = DateTime.fromObject({year: 2026, month:9}).startOf("month")
+
 export default function NotebookComponent() {
-    const [monthOffset, setMonthOffset] = useState(0)
-    const date = useMemo(
-        () => DateTime.local().startOf("month").minus({months:monthOffset}),
-        [monthOffset]
-    )
+    const [currentMonth, setCurrentMonth] = useState(MIN_MONTH)
+    
     const today = useMemo(
         () => DateTime.local().startOf("day").minus({days: 0}),
         []
     )
     const month = useMemo(() => {
-        const monthIndex = date.month - 1
-        const startingIndex = date.weekday % 7
-        const daysInMonth = date.daysInMonth
+        const monthIndex = currentMonth.month - 1
+        const startingIndex = currentMonth.weekday % 7
+        const daysInMonth = currentMonth.daysInMonth
         const res = [
             [null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null],
@@ -64,14 +64,36 @@ export default function NotebookComponent() {
             }
         }
         return res
-    }, [date])
+    }, [currentMonth])
     return (
 
     <div className = {styles.calendar}>
         <div className = {styles.monthHeader}>
-            <button className={`${styles["nav-button"]} ${styles.left}`} onClick={() => setMonthOffset((m) => m + 1)}>&lt;</button>
-            <h2>{names[date.month - 1]} {date.year}</h2>
-            <button className={`${styles["nav-button"]} ${styles.right}`} onClick={() => setMonthOffset((m) => m - 1)}>&gt;</button>
+            <button 
+            className={`${styles["nav-button"]} ${styles.left}`} 
+            onClick={() => {
+                if (currentMonth > MIN_MONTH) {
+                    setCurrentMonth(currentMonth.minus({ months: 1 }))
+                }
+            }}
+            disabled = {!(currentMonth > MIN_MONTH)}
+            >&lt;</button>
+            <h2>{names[currentMonth.month - 1]} {currentMonth.year}</h2>
+            
+
+            <button 
+            className={`${styles["nav-button"]} ${styles.right}`} 
+            onClick={() => {
+                if (currentMonth < MAX_MONTH) {
+                    setCurrentMonth(currentMonth.plus({ months: 1 }))
+                }
+            }}
+            disabled = {!(currentMonth < MAX_MONTH)}
+            >&gt;</button>
+
+
+
+
         </div>
         <div className = {styles.dayHeader}>
             {days.map((day, _index) => {
@@ -90,8 +112,8 @@ export default function NotebookComponent() {
                             const isToday =
                                 day != null &&
                                 day === today.day &&
-                                date.month === today.month &&
-                                date.year === today.year;
+                                currentMonth.month === today.month &&
+                                currentMonth.year === today.year;
                             return (
                                 <div
                                     className = {`${styles.day} ${isToday ? styles.today : ""}`}
