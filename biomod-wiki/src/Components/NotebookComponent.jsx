@@ -17,6 +17,15 @@ const names = [
     "December"
 ]
 
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
 
 export default function NotebookComponent() {
     const [monthOffset, setMonthOffset] = useState(0)
@@ -30,7 +39,7 @@ export default function NotebookComponent() {
     )
     const month = useMemo(() => {
         const monthIndex = date.month - 1
-        const startingIndex = date.weekday === 7 ? 0 : date.weekday
+        const startingIndex = date.weekday % 7
         const daysInMonth = date.daysInMonth
         const res = [
             [null, null, null, null, null, null, null],
@@ -64,6 +73,13 @@ export default function NotebookComponent() {
             <h2>{names[date.month - 1]} {date.year}</h2>
             <button className={`${styles["nav-button"]} ${styles.right}`} onClick={() => setMonthOffset((m) => m - 1)}>&gt;</button>
         </div>
+        <div className = {styles.dayHeader}>
+            {days.map((day, _index) => {
+                return (
+                    <div key = {day}>{day}</div>
+                )
+            })}
+        </div>
         <div className = {styles.dates}>
             {month.map((week, weekIndex) => {
                 return week.every((x) => x === null) ? (
@@ -72,6 +88,7 @@ export default function NotebookComponent() {
                     <div className = {styles.week} key={JSON.stringify(week)}>
                         {week.map((day, dayIndex) => {
                             const isToday =
+                                day != null &&
                                 day === today.day &&
                                 date.month === today.month &&
                                 date.year === today.year;
@@ -80,7 +97,7 @@ export default function NotebookComponent() {
                                     className = {`${styles.day} ${isToday ? styles.today : ""}`}
                                     key={`${JSON.stringify(week)}-${day}-${dayIndex}`}
                                 >
-                                
+                                    {day && <span className = {styles.dayNumber}>{day}</span>}
                                 </div>
                             );
                         })}

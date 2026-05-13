@@ -24,11 +24,21 @@
     min-height: 50px;
     border: 2px solid var(--social-bg);
     background-color: var(--light-bg);
-    
+    position: relative;
+    padding: 0.5rem;
+}
+
+.dayNumber{
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .today{
-    background-color: aliceblue;
+    background-color: var(--accent);
 }
 
 .monthHeader{
@@ -72,4 +82,19 @@
 .nav-button:hover { /*On hover, make the button washed out with white*/
   background-color: rgba(255, 255, 255, 0.6);
   opacity: 1;
+}
+
+.dayHeader{
+  
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.dayHeader > div {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  font-weight:bold;
 }
