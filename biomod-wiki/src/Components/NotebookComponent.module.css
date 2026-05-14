@@ -5,17 +5,18 @@
 
 
 .dates{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0px;
     flex-grow: 1;
-    flex-direction: column;
+    
     min-height: 700px;
     
     
 }
 
 .week{
-    display: flex;
-    flex-grow: 1;
+    display: contents;
     
 }
 
@@ -91,11 +92,9 @@
 
 .dayHeader{
   
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0px;
 }
 
 .dayHeader > div {
