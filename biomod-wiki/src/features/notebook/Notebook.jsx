@@ -1,6 +1,6 @@
 import PageLayout from "@/Components/PageLayout.jsx"
 import NotebookComponent from "@/Components/NotebookComponent.jsx"
-import LabExperimentCard from "@/Components/LabExperimentCard.jsx"
+import VerticalCard from "@/Components/LabExperimentCard.jsx"
 import TextBlock from "@/Components/TextComponents.jsx"
 export default function Notebook() {
     const sections = [
@@ -22,7 +22,7 @@ export default function Notebook() {
 
             render: () => (
             <>
-                <LabExperimentCard caption = "Experiment on the Effects of Eating 10,000 Bananas!"
+                <VerticalCard caption = "Experiment on the Effects of Eating 10,000 Bananas!"
                 content = {
                     <TextBlock
                         heading = "Our Experiment on Eating 10,000 Bananas"

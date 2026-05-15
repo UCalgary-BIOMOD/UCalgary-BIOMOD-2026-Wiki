@@ -1,11 +1,11 @@
-import styles from "./LabExperimentCard.module.css"
+import styles from "./VerticalCard.module.css"
 import {useState} from "react";
-export default function LabExperimentCard({caption, content}) {
+export default function VerticalCard({caption, content}) {
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleCard = () => setIsOpen(!isOpen)
     return (
-    <div className = {styles.experimentCard}>
+    <div className = {styles.verticalCard}>
         <button 
         className = {styles.cardHeader}
         onClick = {toggleCard}
