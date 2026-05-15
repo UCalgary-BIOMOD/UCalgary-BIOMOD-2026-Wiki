@@ -6,8 +6,7 @@ import YouTubeEmbed from "../../Components/YouTubeEmbed"
 import ImageCarousel from "../../Components/ImageCarousel"
 
 
-import aptonixLogo from "@/assets/aptonix-logo.png"
-import iwannagohome from "@/assets/i-want-to-go-home.jpg"
+
 export default function Test() {
     const sections = [
 
@@ -19,7 +18,7 @@ export default function Test() {
             <>
                 <TestText {...content.Test}/>
                 <LinkWrapper to="/">
-                    <img src = "src/assets/i-want-to-go-home.jpg" alt="I want to go home!"></img>
+                    <img src = "/images/i-want-to-go-home.jpg" alt="I want to go home!"></img>
                 </LinkWrapper>
             </>
             )
@@ -37,8 +36,8 @@ export default function Test() {
                 <ImageCarousel 
                     caption = "This is a test gallery of all of my pictures."
                     imgs = {[
-                        {id: 1, src: aptonixLogo},
-                        {id: 2, src: iwannagohome},
+                        {id: 1, src: "/images/aptonix-logo.png"},
+                        {id: 2, src: "/images/i-want-to-go-home.jpg"},
                     ]}
                 />
 

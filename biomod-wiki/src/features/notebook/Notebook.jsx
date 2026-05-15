@@ -1,8 +1,51 @@
 import PageLayout from "@/Components/PageLayout.jsx"
 import NotebookComponent from "@/Components/NotebookComponent.jsx"
-import VerticalCard from "@/Components/LabExperimentCard.jsx"
+import VerticalCard from "@/Components/VerticalCard.jsx"
 import TextBlock from "@/Components/TextComponents.jsx"
+import ExperimentCard from "@/Components/ExperimentCard.jsx"
+
+import fm from "front-matter"
+
+
+
+function loadExperiments({markdownFiles}) {
+    
+    return Object.entries(markdownFiles).map(([path, raw]) => {
+        
+        const {attributes, body} = fm(raw)
+        
+        return {
+            ...attributes,
+            content: body,
+            slug: path.split("/").pop().replace(".md", "")
+        }
+    })
+}
+
 export default function Notebook() {
+
+    const markdownFiles = import.meta.glob(
+        "../../content/experiments/*.md",
+        {
+            query: "?raw",
+            import: "default",
+            eager: true,
+        }
+    )
+
+
+    const experiments = loadExperiments({markdownFiles})
+
+
+    
+
+
+    console.log(experiments)
+
+
+
+
+
     const sections = [
 
         {
@@ -17,22 +60,25 @@ export default function Notebook() {
             )
         },
         {
-            id: "testExpt",
-            title: "Test Experiment",
+            id: "experiments",
+            title: "Experiments",
 
             render: () => (
-            <>
-                <VerticalCard caption = "Experiment on the Effects of Eating 10,000 Bananas!"
-                content = {
-                    <TextBlock
-                        heading = "Our Experiment on Eating 10,000 Bananas"
-                        text = "We found that eating 10,000 bananas sufficiently raised the radioactivity of our participants by 1 Roentgen. The participant later died frm eating too many bananas. Will seek replicates. Yummy bananas though, shoutout mah boy Banana Man."
-                    />
-                }
-                />
-            </>
+                <>
+                    {experiments.map((experiment) => (
+                            <VerticalCard
+                                key={experiment.id}
+                                caption={experiment.title}
+                                content={
+                                    <ExperimentCard
+                                        {...experiment}
+                                    />
+                                }
+                            />
+                        ))}
+                </>
             )
-        },
+        }
     ]
     return (
         <PageLayout sections = {sections}/>

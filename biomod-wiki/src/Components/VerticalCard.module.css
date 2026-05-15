@@ -32,13 +32,13 @@
 .card{
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding: 0 2rem;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    
     background-color: var(--bg);
     min-width:100%;
 }
 
 .card.open{
     max-height: 500px;
-    padding: 2rem;
+    
 }

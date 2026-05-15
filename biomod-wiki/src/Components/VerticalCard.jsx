@@ -17,7 +17,7 @@ export default function VerticalCard({caption, content}) {
         </button>
         <div 
             className = {isOpen ? styles.card + " " + styles.open : styles.card}
-            style = {{textAlign: "left"}}
+            
         >
             
             {content}
