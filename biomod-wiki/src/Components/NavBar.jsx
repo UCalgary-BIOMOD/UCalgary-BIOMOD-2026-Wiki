@@ -34,7 +34,9 @@ export default function NavBar() {
                         </li>
                     </ul>
                 </li>
-                
+                <li>
+                    <NavLink to="/team">Team</NavLink>
+                </li>
             </ul>
         </nav>
     )

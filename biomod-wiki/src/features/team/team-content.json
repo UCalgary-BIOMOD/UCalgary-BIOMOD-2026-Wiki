@@ -1,0 +1,17 @@
+{
+    "Team": {
+        "heading": "Meet the Team", 
+        "size": "h1",
+        "text": "Section with the growing dendrimer tree lalala"
+    },
+    "Support": {
+        "heading": "Support", 
+        "size": "h1",
+        "text": "Section with faculty and student mentors"
+    },
+    "PhotoGallery": {
+        "heading": "Photo Gallery", 
+        "size": "h1",
+        "text": "Section with photo gallery"
+    }
+}
