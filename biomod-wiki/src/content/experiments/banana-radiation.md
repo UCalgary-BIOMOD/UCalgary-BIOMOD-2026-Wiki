@@ -1,7 +1,8 @@
 ---
 id: 1
 title: Banana Radiation Experiment
-date: May 15th, 2026
+startDate: 2026-05-15
+endDate: 2026-05-18
 researchers:
   - Allan
   - Sofea

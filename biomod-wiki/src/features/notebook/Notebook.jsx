@@ -40,7 +40,7 @@ export default function Notebook() {
     
 
 
-    console.log(experiments)
+    
 
 
 
