@@ -10,8 +10,12 @@ export default function ExperimentCard({id, startDate, endDate, researchers = []
     const dateFormatOptions = {
         year: "numeric",
         month: "long",
-        day: "numeric"
+        day: "numeric",
+        timeZone: "UTC"
     }
+
+    
+
     const formattedStart = new Date(startDate).toLocaleDateString("en-CA", dateFormatOptions)
     const formattedEnd = new Date(endDate).toLocaleDateString("en-CA", dateFormatOptions)
 

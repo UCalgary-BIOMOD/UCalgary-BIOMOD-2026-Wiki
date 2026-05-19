@@ -1,7 +1,8 @@
 ---
 id: 2
 title: Plant Growth Experiment
-date: May 16th, 2026
+startDate: 2026-05-19
+endDate: 2026-05-22
 researchers:
   - Neeor
   - Nam
