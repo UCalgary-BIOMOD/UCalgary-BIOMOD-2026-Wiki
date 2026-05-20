@@ -1,5 +1,6 @@
 .verticalCard{
     min-width:100%;
+    scroll-margin-top: var(--top-nav-height)
 }
 
 .cardHeader{
@@ -32,7 +33,7 @@
 .card{
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
+    transition: max-height 0.3s ease, padding 0.5s ease;
     
     background-color: var(--bg);
     min-width:100%;

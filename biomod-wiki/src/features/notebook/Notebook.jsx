@@ -3,7 +3,7 @@ import NotebookComponent from "@/Components/NotebookComponent.jsx"
 import VerticalCard from "@/Components/VerticalCard.jsx"
 import TextBlock from "@/Components/TextComponents.jsx"
 import ExperimentCard from "@/Components/ExperimentCard.jsx"
-
+import {useState, useEffect} from "react"
 import fm from "front-matter"
 
 
@@ -16,6 +16,7 @@ function loadExperiments({markdownFiles}) {
         
         return {
             ...attributes,
+            id: Number(attributes.id),
             content: body,
             slug: path.split("/").pop().replace(".md", "")
         }
@@ -37,14 +38,27 @@ export default function Notebook() {
     const experiments = loadExperiments({markdownFiles})
 
 
+    const [activeExperimentId, setActiveExperimentId] = useState(null)
+
+    /*Scroll*/
+
     
+    useEffect(() => {
+        if(activeExperimentId == null) return 
+
+        const timeout = setTimeout(() => {
+            document
+                .getElementById(`experiment-${activeExperimentId}`)
+                ?.scrollIntoView({behavior: "smooth", block: "start"
+            })
+        }, 501)
+
+        return () => clearTimeout(timeout)
+    }, [activeExperimentId])
+
 
 
     
-
-
-
-
 
     const sections = [
 
@@ -55,7 +69,7 @@ export default function Notebook() {
             render: () => (
             <>
                 <p>Here be the notebook of our glorious project</p>
-                <NotebookComponent/>
+                <NotebookComponent experiments = {experiments} setActiveExperimentId={setActiveExperimentId}/>
             </>
             )
         },
@@ -65,21 +79,34 @@ export default function Notebook() {
 
             render: () => (
                 <>
-                    {experiments.map((experiment) => (
+                    {experiments.map((experiment) => {
+                        
+                        const isOpen = activeExperimentId === experiment.id
+                        return (
                             <VerticalCard
+                                id = {`experiment-${experiment.id}`}
                                 key={experiment.id}
                                 caption={experiment.title}
+                                isOpen = {isOpen}
+                                onToggle={() => {
+                                    setActiveExperimentId(
+                                        isOpen ? null : experiment.id
+                                    )
+                                }}
                                 content={
                                     <ExperimentCard
                                         {...experiment}
+                                        isActive={isOpen}
                                     />
                                 }
                             />
-                        ))}
+                        )
+                    })}
                 </>
             )
         }
     ]
+    
     return (
         <PageLayout sections = {sections}/>
     )

@@ -24,9 +24,12 @@
     min-width: 150px;
     min-height: 30px;
     border: 2px solid var(--social-bg);
-    background-color: var(--light-bg);
+    background-color: var(--bg);
     position: relative;
     padding: 0.5rem;
+
+    display: flex;
+    flex-direction:column;
 }
 
 .dayNumber{
@@ -40,6 +43,10 @@
 
 .today{
     background-color: var(--accent);
+}
+
+.hasExperiment{
+  background-color: var(--bg)
 }
 
 .monthHeader{
@@ -102,5 +109,32 @@
   min-width: 150px;
   text-align: center;
   font-weight:bold;
+}
+
+.experimentList {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.experimentLink {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--light-bg);
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width:100%;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.experimentLink:hover{
+  color: var(--text-h)
 }
 

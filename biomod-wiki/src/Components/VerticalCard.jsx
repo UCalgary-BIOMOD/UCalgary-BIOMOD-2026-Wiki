@@ -1,14 +1,12 @@
 import styles from "./VerticalCard.module.css"
 import {useState} from "react";
-export default function VerticalCard({caption, content}) {
-    const [isOpen, setIsOpen] = useState(false)
-
-    const toggleCard = () => setIsOpen(!isOpen)
+export default function VerticalCard({id, caption, content, isOpen, onToggle}) {
+    
     return (
-    <div className = {styles.verticalCard}>
+    <div id = {id} className = {styles.verticalCard}>
         <button 
         className = {styles.cardHeader}
-        onClick = {toggleCard}
+        onClick = {onToggle}
         >
             <span className = {styles.chevron + (isOpen ? " " + styles.open : " ")}>
                 ▼

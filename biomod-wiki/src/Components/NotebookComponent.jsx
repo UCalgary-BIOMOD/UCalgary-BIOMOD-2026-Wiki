@@ -1,4 +1,4 @@
-import {DateTime} from "luxon"
+import {DateTime, Interval} from "luxon"
 import {Fragment, useMemo, useState} from "react"
 import styles from "./NotebookComponent.module.css"
 
@@ -30,7 +30,7 @@ const days = [
 const MIN_MONTH = DateTime.fromObject({year: 2026, month: 5}).startOf("month")
 const MAX_MONTH = DateTime.fromObject({year: 2026, month:9}).startOf("month")
 
-export default function NotebookComponent() {
+export default function NotebookComponent({experiments, setActiveExperimentId}) {
     const [currentMonth, setCurrentMonth] = useState(MIN_MONTH)
     
     const today = useMemo(
@@ -65,6 +65,16 @@ export default function NotebookComponent() {
         }
         return res
     }, [currentMonth])
+
+    /*Experiment Dates*/
+    
+    
+
+
+
+
+
+
     return (
 
     <div className = {styles.calendar}>
@@ -114,12 +124,55 @@ export default function NotebookComponent() {
                                 day === today.day &&
                                 currentMonth.month === today.month &&
                                 currentMonth.year === today.year;
+
+                            const currentDate = DateTime.fromObject({
+                                year: currentMonth.year,
+                                month: currentMonth.month,
+                                day: day
+                            }).startOf("day")
+
+
+                            const activeExperiments = experiments.filter((experiment) => {
+                                
+                                const start = DateTime.fromJSDate(experiment.startDate, {zone: "UTC"})
+                                const end = DateTime.fromJSDate(experiment.endDate, {zone: "UTC"})
+                                
+                                return (
+                                    currentDate >= start.startOf("day") &&
+                                    currentDate <= end.endOf("day")
+                                )
+                            })
+                            const hasExperiment = activeExperiments.length > 0
                             return (
                                 <div
-                                    className = {`${styles.day} ${isToday ? styles.today : ""}`}
+                                    className = {`
+                                        ${styles.day} 
+                                        ${isToday ? styles.today : ""}
+                                        ${hasExperiment ? styles.hasExperiment : ""}
+                                        `}
                                     key={`${JSON.stringify(week)}-${day}-${dayIndex}`}
                                 >
                                     {day && <span className = {styles.dayNumber}>{day}</span>}
+                                    <div className = {styles.experimentList}>
+                                        {activeExperiments.map((experiment) => {
+                                            return (
+                                            <button
+                                                key = {experiment.id}
+                                                onClick={() => {
+                                                    setActiveExperimentId(null)
+
+                                                    setTimeout(() => {
+                                                        setActiveExperimentId(experiment.id)
+                                                    }, 0)
+                                                    
+                                                    
+                                                }}
+                                                className = {styles.experimentLink}
+                                            >
+                                                {experiment.title}
+                                            </button>
+                                        )})}
+                                    </div>
                                 </div>
                             );
                         })}

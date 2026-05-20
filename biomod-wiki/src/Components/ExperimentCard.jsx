@@ -5,7 +5,7 @@ import TextBlock from "./TextComponents.jsx"
 import ReactMarkdown from "react-markdown"
 
 
-export default function ExperimentCard({id, startDate, endDate, researchers = [], content, images = []}) {
+export default function ExperimentCard({id, startDate, endDate, researchers = [], content, images = [], isActive}) {
 
     const dateFormatOptions = {
         year: "numeric",
@@ -18,9 +18,9 @@ export default function ExperimentCard({id, startDate, endDate, researchers = []
 
     const formattedStart = new Date(startDate).toLocaleDateString("en-CA", dateFormatOptions)
     const formattedEnd = new Date(endDate).toLocaleDateString("en-CA", dateFormatOptions)
-
+    
     return (
-        <div id = {`experiment-${id}`} className = {styles.experimentCard}>
+        <div id = {`experiment-${id}`} className = {`${styles.experimentCard} ${isActive ? styles.active : ""}`}>
             <div className = {styles.experimentText}>
                 <TextBlock
                     heading = {`${formattedStart} - ${formattedEnd}`}
