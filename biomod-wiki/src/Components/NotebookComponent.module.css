@@ -1,0 +1,140 @@
+.calendar{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.dates{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0px;
+    flex-grow: 1;
+    
+    min-height: 700px;
+    
+    
+}
+
+.week{
+    display: contents;
+    
+}
+
+.day{
+    min-width: 150px;
+    min-height: 30px;
+    border: 2px solid var(--social-bg);
+    background-color: var(--bg);
+    position: relative;
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction:column;
+}
+
+.dayNumber{
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.today{
+    background-color: var(--accent);
+}
+
+.hasExperiment{
+  background-color: var(--bg)
+}
+
+.monthHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 150px;
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.nav-button {
+  position: absolute; /*Allows overlay of the buttons*/
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--social-bg);
+  color: var(--text);
+  border: none;
+  border-radius: 50%; /*Makes this a circle*/
+  font-size: 1.5rem;
+  font-weight: normal;
+  cursor: pointer; /*Change cursor to show that it is clickable*/
+  
+  opacity: 0.5;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  line-height: 1;
+  z-index: 1; /*On top of the carousel*/
+}
+
+.left {
+  left: 1rem;
+}
+
+.right {
+  right: 1rem;
+}
+
+.nav-button:hover { /*On hover, make the button washed out with white*/
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.nav-button:disabled{
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.dayHeader{
+  
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0px;
+}
+
+.dayHeader > div {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  font-weight:bold;
+}
+
+.experimentList {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.experimentLink {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--light-bg);
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width:100%;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.experimentLink:hover{
+  color: var(--text-h)
+}
+

@@ -11,21 +11,23 @@ This module holds everything related to the page layout framework and the side n
 .page{
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     flex:1; /*Makes the page expand to encompass all of the sections*/
     border: 0px solid red;
-    
+    margin: 0 2rem;
 }
 
 
 .page section{
     scroll-margin-top: var(--top-nav-height); /*Need to set the scroll-margin to be at the border of the top nav bar to prevent overlap*/
-    border: 0px solid orange;
+    border: 0px solid lime;
+    width: 100%
 }
 
 .mainContent{
     display: flex;
     flex-direction: row;
+    
 }
 
 .sideNav{

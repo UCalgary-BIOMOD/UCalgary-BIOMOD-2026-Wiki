@@ -1,0 +1,16 @@
+.experimentCard{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+}
+
+.experimentImages{
+    flex: 0 0 40%; /*Make the images take up only 40% of the space*/
+}
+
+.experimentText{
+    flex: 0 0 60%; 
+    
+}
