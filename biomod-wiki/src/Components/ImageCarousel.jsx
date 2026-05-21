@@ -16,7 +16,12 @@ import styles from "./ImageCarousel.module.css"
 
 export default function ImageCarousel({caption, imgs}) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0) /*The current index variable*/
-    
+    const [activeDot, setActiveDot] = useState(0)
+
+    useEffect(() => {
+        setActiveDot(currentImageIndex)
+    }, [currentImageIndex])
+
     const handlePrevClick = () => {
         setCurrentImageIndex(
             currentImageIndex=== 0 ? imgs.length - 1 : currentImageIndex - 1
@@ -26,6 +31,11 @@ export default function ImageCarousel({caption, imgs}) {
         setCurrentImageIndex(
             (currentImageIndex + 1) % imgs.length
         ) 
+    }
+
+    const handleDotClick = (index) => {
+        setCurrentImageIndex(index)
+        setActiveDot(index)
     }
     return(
         <section>
@@ -41,6 +51,15 @@ export default function ImageCarousel({caption, imgs}) {
                     />
                 ))}
                 <button className={`${styles["nav-button"]} ${styles.right}`} onClick={handleNextClick}>&gt;</button>
+            </div>
+            <div className = {styles.dots}>
+                {imgs.map((_, index) => (
+                    <span
+                        key = {index}
+                        className = {`${styles.dot} ${activeDot === index ? styles.active : ""}`}
+                        onClick = {() => handleDotClick(index)}
+                    />
+                ))}
             </div>
         </section>
     )
