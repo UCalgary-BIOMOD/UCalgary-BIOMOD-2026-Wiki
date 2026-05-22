@@ -37,7 +37,9 @@ export default function NavBar() {
                         </li>
                     </ul>
                 </li>
-                
+                <li>
+                    <NavLink to="/team" onClick={() => setIsOpen(!isOpen)}>Team</NavLink>
+                </li>
             </ul>
         </nav>
     )

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Test from "/src/features/test/Test.jsx" 
 import Home from "/src/features/home/Home.jsx"
 import Notebook from "@/features/notebook/Notebook.jsx"
+import Team from "/src/features/team/Team.jsx"
 import NavBar from "/src/Components/NavBar.jsx"
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path = "/" element = {<Home />} />
         <Route path = "/test" element = {<Test />} />
         <Route path = "/notebook" element = {<Notebook />} />
+        <Route path = "/team" element = {<Team />} />
       </Routes>
     </BrowserRouter>
   )
