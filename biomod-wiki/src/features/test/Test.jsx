@@ -4,7 +4,7 @@ import LinkWrapper from "../../Components/LinkComponents"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import YouTubeEmbed from "../../Components/YouTubeEmbed"
 import ImageCarousel from "../../Components/ImageCarousel"
-
+import ProteinViewer from "../../Components/ProteinViewer"
 
 
 export default function Test() {
@@ -52,6 +52,16 @@ export default function Test() {
             render: () => (
             <>
                 <YouTubeEmbed w = "1030" h = "579" src="o_v9MY_FMcw"/>
+            </>
+            )
+        },
+        {
+            id: "protein",
+            title: "Protein",
+
+            render: () => (
+            <>
+                <ProteinViewer pdbUrl={"/public/proteins/DNA_Aptamer3_1.pdb"}/>
             </>
             )
         }
