@@ -8,9 +8,13 @@ export default function ProteinViewer({pdbUrl}) {
         if(!viewerRef.current) return
 
         const viewer = $3Dmol.createViewer(viewerRef.current, {
-            backgroundColor: "white",
+           
+           backgroundColor: "#0C0922"
+            
         })
-
+        
+        
+        
         fetch(pdbUrl)
             .then((res) => res.text())
             .then((data) => {
@@ -40,8 +44,8 @@ export default function ProteinViewer({pdbUrl}) {
 
     return (
         <div
-            ref = {viewerRed}
-            className = {styles.protein-viewer}
+            ref = {viewerRef}
+            className = {styles.proteinViewer}
         />
     )
 }
