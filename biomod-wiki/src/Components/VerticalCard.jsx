@@ -17,8 +17,9 @@ export default function VerticalCard({id, caption, content, isOpen, onToggle}) {
             className = {isOpen ? styles.card + " " + styles.open : styles.card}
             
         >
-            
-            {content}
+            <div className = {styles.classInner}>
+                {content}
+            </div>
         </div>
     </div>
     )

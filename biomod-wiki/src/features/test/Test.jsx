@@ -5,7 +5,7 @@ import PageLayout from "/src/Components/PageLayout.jsx"
 import YouTubeEmbed from "../../Components/YouTubeEmbed"
 import ImageCarousel from "../../Components/ImageCarousel"
 import ProteinViewer from "../../Components/ProteinViewer"
-
+import PDFViewer from "../../Components/PDFViewer"
 
 export default function Test() {
     const sections = [
@@ -61,7 +61,17 @@ export default function Test() {
 
             render: () => (
             <>
-                <ProteinViewer pdbUrl={"/public/proteins/DNA_Aptamer3_1.pdb"}/>
+                <ProteinViewer pdbUrl={"/proteins/DNA_Aptamer3_1.pdb"}/>
+            </>
+            )
+        },
+        {
+            id: "pdf",
+            title: "Example PDF",
+
+            render: () => (
+            <>  
+                <PDFViewer pdfPath = "/files/dendrimer-biosensors.pdf" caption = "Test PDF" />
             </>
             )
         }
