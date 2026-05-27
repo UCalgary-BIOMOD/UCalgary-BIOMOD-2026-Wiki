@@ -7,5 +7,16 @@
     "Random": {
         "heading": null,
         "text": "This is my favorite part of the song where it goes:\nWe will rock you!\nWe will rock you!"
-    }
+    },
+    "references": [
+      {
+        "text": "What is Dementia? Symptoms, Causes & Treatment | alz.org",
+        "url": "https://www.alz.org/alzheimers-dementia/what-is-dementia"
+      },
+
+      {
+        "text": "What causes Alzheimer’s disease?",
+        "url": "https://www.nia.nih.gov/health/alzheimers-causes-and-risk-factors/what-causes-alzheimers-disease"
+      }
+    ]
 }

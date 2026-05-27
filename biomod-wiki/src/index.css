@@ -11,7 +11,8 @@
   --social-bg: rgba(244, 243, 236, 0.5); /*Use this color to define backgrounds for social media or footer UI; ex. IG logo. Tweak 4th variable for opacity*/
   --shadow:
     rgba(255, 255, 255, 0.5) 0 12px 24px -6px, rgba(255, 255, 255, 0.05) 0 2px 8px -2px; /*Fun to add a box-shadow to components like cards*/
-
+  --link: #0077b6; /*Color of the links unvisited*/
+  --link-visited: #EABE73; /*Color of the links once visited.*/
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change default font of <p>, <a> etc.*/
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change heading font*/
   --mono: ui-monospace, Consolas, monospace; /*font for code*/

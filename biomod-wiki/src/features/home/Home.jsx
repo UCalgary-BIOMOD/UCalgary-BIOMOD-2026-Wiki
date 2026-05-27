@@ -2,6 +2,8 @@ import content from "./home-content.json"
 import TextBlock from "/src/Components/TextComponents.jsx"
 import LinkWrapper from "/src/Components/LinkComponents.jsx"
 import PageLayout from "/src/Components/PageLayout.jsx"
+import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
+
 
 export default function Home() {
     const sections = [
@@ -118,6 +120,17 @@ export default function Home() {
                     <h2>.</h2>
                     <h2>.</h2>
                     <h2>.</h2>
+                </>
+            )
+        },
+        {
+            id: "references",
+            title: "References",
+            render: () => (
+                <>
+                    <ReferencesViewer
+                        references={content.references}
+                    />
                 </>
             )
         },
