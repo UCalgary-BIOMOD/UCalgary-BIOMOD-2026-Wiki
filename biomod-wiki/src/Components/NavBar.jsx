@@ -16,7 +16,7 @@ export default function NavBar() {
     return (
         <nav className={styles.nav}>
             <LinkWrapper to="/">
-                <img src = "/images/aptonix-logo.png" alt="Logo" style={{maxWidth: "120px", height: "auto", objectFit: "cover"}}></img>
+                <img src = "/images/aptonix-logo-transparent.png" alt="Logo" style={{maxWidth: "120px", height: "auto", objectFit: "cover", paddingTop: "5%"}}></img>
             </LinkWrapper>
             <h2 className = {styles.h2}>UCalgary BIOMOD 2026</h2>
             <ul className = {styles.ul}>
@@ -25,19 +25,36 @@ export default function NavBar() {
                 </li>
                 <li className = {styles.dropdown}>
                     <button className = {styles.dropdownTrigger} onClick={() => setIsOpen(!isOpen)}>
-                        Menu
+                        Project
                     </button>
                     
                     <ul className = {`${styles.dropdownMenu} ${isOpen ? styles.showMenu : ""}`}>
                         <li>
+                            <NavLink to= "/project" onClick={() => setIsOpen(!isOpen)}>Abstract</NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/test" onClick={() => setIsOpen(!isOpen)}>Test</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/notebook" onClick={() => setIsOpen(!isOpen)}>Notebook</NavLink>
+                            <NavLink to="/description" onClick={() => setIsOpen(!isOpen)}>Description</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/modelling" onClick={() => setIsOpen(!isOpen)}>Modelling</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/experiments" onClick={() => setIsOpen(!isOpen)}>Experiments</NavLink>
                         </li>
                     </ul>
                 </li>
-                
+                <li>
+                    <NavLink to="/notebook">Notebook</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/elsi">ELSI</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/team">Team</NavLink>
+                </li>
             </ul>
         </nav>
     )

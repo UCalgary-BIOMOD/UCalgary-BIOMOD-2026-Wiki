@@ -3,6 +3,7 @@ import TextBlock from "/src/Components/TextComponents.jsx"
 import LinkWrapper from "/src/Components/LinkComponents.jsx"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
+import ProteinViewer from "/src/Components/ProteinViewer.jsx"
 
 
 export default function Home() {
@@ -12,114 +13,21 @@ export default function Home() {
             title: "Home",
             render: () => (
                 <>
-                    <TextBlock {...content.Home}/>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
+                    <img src = "/images/aptonix-logo-mockup.png" alt="I want to go home!"></img>
+                    <ProteinViewer pdbUrl={"/proteins/DNA_Aptamer3_1.pdb"}/>
                 </>
             )
         },
         {
-            id: "random",
-            title: "Random",
+            id: "problem",
+            title: "Problem",
             render: () => (
                 <>
-                    <TextBlock {...content.Random}/>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                </>
-            )
-        },
-        {
-            id: "test",
-            title: "Test",
-            render: () => (
-                <>
-                    <LinkWrapper to="/test">
-                        <h2>I should be clicked and go to test!</h2>
-                    </LinkWrapper>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                </>
-            )
-        },
-        {
-            id: "Test2",
-            title: "Test2",
-            render: () => (
-                <>
-                    <h1>Test2</h1>
-                    <p>I just be writing whatever I want to write sometimes. It is so excellent and awesome.    </p>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
-                    <h2>.</h2>
+                    <h1>Imagine forgetting the faces of those you love</h1>
+
+                    <p>As the most common form of dementia, Alzheimer's disease accounts for 60-80% of all cases [1].</p>
+                    
+                    
                 </>
             )
         },

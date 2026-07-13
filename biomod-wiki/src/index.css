@@ -84,6 +84,7 @@ h2 {
 
 p {
   margin: 0; /*No margin for <p> elements; most likely allow <ul> or <l> to control it.*/
+  font-size: 20px;
 }
 
 a{

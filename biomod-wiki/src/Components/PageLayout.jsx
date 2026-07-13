@@ -47,7 +47,7 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
             const svgRect = svg.getBoundingClientRect()
 
             /*Obtain x and y coordinates of the top left corner of each link, with respect to the svg positioning too*/
-            const x = rect.left - svgRect.left - 5 
+            const x = rect.left - svgRect.left - 5
             const y = rect.top - svgRect.top 
             const height = rect.height /*Get the height of the link*/
             /*Edge case: First interation has to set a point, and put a line straight down*/
