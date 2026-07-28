@@ -3,9 +3,9 @@ import VerticalCard from "./VerticalCard.jsx"
 import ImageCarousel from "./ImageCarousel.jsx"
 import TextBlock from "./TextComponents.jsx"
 import ReactMarkdown from "react-markdown"
+import {DateTime} from "luxon"
 
-
-export default function ExperimentCard({id, startDate, endDate, researchers = [], content, images = [], isActive}) {
+export default function ExperimentCard({id, dates, researchers = [], content, images = [], isActive}) {
 
     const dateFormatOptions = {
         year: "numeric",
@@ -15,15 +15,16 @@ export default function ExperimentCard({id, startDate, endDate, researchers = []
     }
 
     
-
-    const formattedStart = new Date(startDate).toLocaleDateString("en-CA", dateFormatOptions)
-    const formattedEnd = new Date(endDate).toLocaleDateString("en-CA", dateFormatOptions)
+    
+    
     
     return (
         <div id = {`experiment-${id}`} className = {`${styles.experimentCard} ${isActive ? styles.active : ""}`}>
             <div className = {styles.experimentText}>
                 <TextBlock
-                    heading = {`${formattedStart} - ${formattedEnd}`}
+                    heading = {dates
+                        .map((date) => DateTime.fromJSDate(date).toFormat("MMMM d"))
+                        .join(", ")}
                     size = "h3"
                     
                 />
@@ -35,14 +36,17 @@ export default function ExperimentCard({id, startDate, endDate, researchers = []
                     {content}
                 </ReactMarkdown>
             </div>
-            <ImageCarousel 
+            {images.length > 0 &&(
+               <ImageCarousel 
                 className = {styles.experimentImages}
                 caption=""
                 imgs={images.map((src, index) => ({
                     id: index,
                     src
                 }))}
-            />
+                /> 
+            )}
+            
         </div>
     )
 }

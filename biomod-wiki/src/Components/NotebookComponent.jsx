@@ -27,7 +27,7 @@ const days = [
     "Saturday"
 ]
 
-const MIN_MONTH = DateTime.fromObject({year: 2026, month: 5}).startOf("month")
+const MIN_MONTH = DateTime.fromObject({year: 2026, month: 6}).startOf("month")
 const MAX_MONTH = DateTime.fromObject({year: 2026, month:9}).startOf("month")
 
 export default function NotebookComponent({experiments, setActiveExperimentId}) {
@@ -133,15 +133,18 @@ export default function NotebookComponent({experiments, setActiveExperimentId}) 
 
 
                             const activeExperiments = experiments.filter((experiment) => {
+                                if (!Array.isArray(experiment.dates)) {
+                                    return false;
+                                }
                                 
-                                const start = DateTime.fromJSDate(experiment.startDate, {zone: "UTC"})
-                                const end = DateTime.fromJSDate(experiment.endDate, {zone: "UTC"})
-                                
-                                return (
-                                    currentDate >= start.startOf("day") &&
-                                    currentDate <= end.endOf("day")
-                                )
+                                return experiment.dates?.some((date) => {
+                                    const activeDate = DateTime.fromJSDate(date, { zone: "UTC" });
+                                    
+
+                                    return currentDate.hasSame(activeDate, "day");
+                                })
                             })
+                            
                             const hasExperiment = activeExperiments.length > 0
                             return (
                                 <div
@@ -155,9 +158,10 @@ export default function NotebookComponent({experiments, setActiveExperimentId}) 
                                     {day && <span className = {styles.dayNumber}>{day}</span>}
                                     <div className = {styles.experimentList}>
                                         {activeExperiments.map((experiment) => {
+                                            
                                             return (
                                             <button
-                                                key = {experiment.id}
+                                                key={`${experiment.id}-${currentDate.toISODate()}`}
                                                 onClick={() => {
                                                     setActiveExperimentId(null)
 
@@ -169,7 +173,7 @@ export default function NotebookComponent({experiments, setActiveExperimentId}) 
                                                 }}
                                                 className = {styles.experimentLink}
                                             >
-                                                {experiment.title}
+                                                {experiment.caption}
                                             </button>
                                         )})}
                                     </div>
