@@ -13,8 +13,7 @@ export default function Home() {
             title: "Home",
             render: () => (
                 <>
-                    <img src = "/images/aptonix-logo-mockup.png" alt="I want to go home!"></img>
-                    <ProteinViewer pdbUrl={"/proteins/DNA_Aptamer3_1.pdb"}/>
+                    
                 </>
             )
         },
@@ -44,7 +43,7 @@ export default function Home() {
         },
     ]
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} header = "/images/homepage-header.png"/>
     )
 }
 
