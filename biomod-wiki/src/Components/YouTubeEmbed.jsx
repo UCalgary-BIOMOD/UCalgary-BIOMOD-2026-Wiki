@@ -10,18 +10,37 @@ import YouTube from "react-youtube"
  * @returns The react-youtube video embed object with the proper options
  */
 export default function YouTubeEmbed({w, h, src}) {
-    /*Set the options for the embed.*/
+    /*Set the options for the embed. Use a responsive wrapper so video scales on mobile.*/
     const opts = {
-        height: h,
-        width: w,
+        height: '100%',
+        width: '100%',
         playerVars: {
             autoplay: 0,
-            
         }
     }
-    
 
-    return <YouTube videoId = {src} opts = {opts}  />;
+    const wrapperStyle = {
+        position: 'relative',
+        width: '100%',
+        paddingBottom: '56.25%', /* 16:9 aspect ratio */
+        height: 0,
+    }
+
+    const innerStyle = {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%'
+    }
+
+    return (
+        <div style={wrapperStyle}>
+            <div style={innerStyle}>
+                <YouTube videoId={src} opts={opts} />
+            </div>
+        </div>
+    );
 }
 
 

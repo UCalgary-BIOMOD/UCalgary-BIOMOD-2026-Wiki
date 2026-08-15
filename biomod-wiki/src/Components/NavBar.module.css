@@ -16,7 +16,7 @@
 .ul{
     display: flex;
     list-style: none; /* this removes the bulleted list */
-    gap: 1.5rem;
+    gap: 0.9rem; /* reduced horizontal spacing between top-level items */
     margin: 0;
     padding: 0; /* so this doesn't mess up the padding from .nav */
 }
@@ -50,6 +50,33 @@
         transform: scaleX(1)
     }
     
+}
+
+/* Make top-level triggers match link sizing by default */
+.ul a, .dropdownTrigger {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Tablet: increase title and nav sizing for better readability */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .h2 {
+        font-size: 1.25rem;
+    }
+    .nav {
+        height: 72px;
+    }
+    .nav img {
+        max-width: 96px;
+        padding-top: 0.25rem !important;
+    }
+    .ul a, .dropdownTrigger {
+        font-size: 18px;
+    }
+    /* Slightly larger gap on tablet for readability */
+    .ul {
+        gap: 1.2rem;
+    }
 }
 
 .ul a::after{
@@ -113,4 +140,113 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/* Mobile navigation: hide standard list and show hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* When mobile, hide the normal ul and use a stacked menu */
+@media (max-width: 768px) {
+    .ul {
+        display: none;
+        position: absolute; /* small dropdown anchored to hamburger */
+        right: 1rem;
+        top: calc(var(--top-nav-height) + 0.5rem);
+        background: var(--light-bg);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        padding: 0.25rem 0;
+        width: min(220px, 90vw);
+        z-index: 1100;
+        align-items: flex-start;
+        text-align: left;
+        transform-origin: top right;
+    }
+
+    .ul.showMobile {
+        display: flex;
+    }
+
+    .ul li {
+        padding: 0.35rem 0.9rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ul li + .ul li {
+        margin-top: 0.25rem;
+    }
+
+    .ul a {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        padding: 0.4rem 0;
+    }
+
+    .hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .h2 { /* reduce header title space on small screens */
+        font-size: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    /* Make nested dropdowns flow in mobile stacked menu */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdownTrigger {
+        width: 100%;
+        text-align: left;
+        padding: 0; /* use the li padding so top-level items align */
+        background: none;
+        border: none;
+        font-size: 18px;
+    }
+
+    /* Always show nested items inside mobile menu (no extra click needed) */
+    .dropdownMenu {
+        display: flex;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
+        padding-left: 1.4rem; /* indent nested items */
+        border-radius: 0;
+        margin-top: 0.1rem;
+    }
+
+    .dropdownMenu li {
+        padding: 0.25rem 0;
+        margin: 0;
+    }
+
+    .dropdownMenu a {
+        padding: 0;
+        font-size: 15px;
+    }
+
+    .dropdownMenu.showMenu {
+        /* kept for compatibility but has no effect on mobile */
+    }
+
+    .ul a, .dropdownMenu a {
+        line-height: 1.7;
+    }
 }

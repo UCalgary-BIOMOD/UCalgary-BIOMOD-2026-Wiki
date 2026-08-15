@@ -88,3 +88,19 @@ This module holds everything related to the page layout framework and the side n
   stroke-width: 3px;
   
 }
+
+/* Responsive: collapse side nav and stack content on small screens */
+@media (max-width: 768px) {
+    .mainContent {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .sideNav {
+        display: none;
+    }
+
+    .page {
+        margin: 0 1rem;
+    }
+}

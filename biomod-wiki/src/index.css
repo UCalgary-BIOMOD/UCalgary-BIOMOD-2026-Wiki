@@ -28,7 +28,12 @@
   -moz-osx-font-smoothing: grayscale; /*antialiasing for firefox*/
 
    --top-nav-height: 80px; /*Navigation Bar Height*/
-  @media (max-width: 1024px) { /*sets the font-size smaller if max-width is 1024 or lower*/
+  /* Tablets (e.g., iPad Mini): keep base font size readable */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    font-size: 18px;
+  }
+  /* Mobile phones: slightly reduced base font */
+  @media (max-width: 599px) {
     font-size: 16px;
   }
   

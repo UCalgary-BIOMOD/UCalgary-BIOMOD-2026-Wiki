@@ -9,9 +9,11 @@ import {useEffect, useState} from "react";
  */
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false) /*Set a state for the dropdown (replicate this for multiple drop downs)*/
+    const [mobileOpen, setMobileOpen] = useState(false);
     const location = useLocation() /*Returns the current page location in the react router*/
     useEffect(() => {
         setIsOpen(false)
+        setMobileOpen(false)
     }, [location.pathname]) /*Simply runs setIsOpen(false) when the location path name changs AKA user navigated to new page*/
     return (
         <nav className={styles.nav}>
@@ -19,7 +21,8 @@ export default function NavBar() {
                 <img src = "/images/aptonix-logo-transparent.png" alt="Logo" style={{maxWidth: "120px", height: "auto", objectFit: "cover", paddingTop: "5%"}}></img>
             </LinkWrapper>
             <h2 className = {styles.h2}>UCalgary BIOMOD 2026</h2>
-            <ul className = {styles.ul}>
+            <button aria-label="Open menu" className={styles.hamburger} onClick={() => setMobileOpen(!mobileOpen)}>☰</button>
+            <ul className = {`${styles.ul} ${mobileOpen ? styles.showMobile : ""}`}>
                 <li>
                     <NavLink to="/">Home</NavLink>
                 </li>
@@ -30,30 +33,30 @@ export default function NavBar() {
                     
                     <ul className = {`${styles.dropdownMenu} ${isOpen ? styles.showMenu : ""}`}>
                         <li>
-                            <NavLink to= "/project" onClick={() => setIsOpen(!isOpen)}>Abstract</NavLink>
+                            <NavLink to= "/project" onClick={() => { setIsOpen(!isOpen); setMobileOpen(false);}}>Abstract</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/test" onClick={() => setIsOpen(!isOpen)}>Test</NavLink>
+                            <NavLink to="/test" onClick={() => { setIsOpen(!isOpen); setMobileOpen(false);}}>Test</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/description" onClick={() => setIsOpen(!isOpen)}>Description</NavLink>
+                            <NavLink to="/description" onClick={() => { setIsOpen(!isOpen); setMobileOpen(false);}}>Description</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/modelling" onClick={() => setIsOpen(!isOpen)}>Modelling</NavLink>
+                            <NavLink to="/modelling" onClick={() => { setIsOpen(!isOpen); setMobileOpen(false);}}>Modelling</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/experiments" onClick={() => setIsOpen(!isOpen)}>Experiments</NavLink>
+                            <NavLink to="/experiments" onClick={() => { setIsOpen(!isOpen); setMobileOpen(false);}}>Experiments</NavLink>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <NavLink to="/notebook">Notebook</NavLink>
+                    <NavLink to="/notebook" onClick={() => setMobileOpen(false)}>Notebook</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/elsi">ELSI</NavLink>
+                    <NavLink to="/elsi" onClick={() => setMobileOpen(false)}>ELSI</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/team">Team</NavLink>
+                    <NavLink to="/team" onClick={() => setMobileOpen(false)}>Team</NavLink>
                 </li>
             </ul>
         </nav>
