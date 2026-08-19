@@ -16,6 +16,13 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change default font of <p>, <a> etc.*/
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change heading font*/
   --mono: ui-monospace, Consolas, monospace; /*font for code*/
+  /* Brand & UI Colors */
+  --bg-overlay: rgba(12, 9, 34, 0.75);
+  --text-primary: #ffffff;
+  /* Shared UIs and Tokens*/
+  --radius-pill: 9999px;
+  --font-size-sm: 0.8rem;
+
 
   font: 18px/145% var(--sans); /*adjust font size and vertical line height (for gaps between text)*/
   letter-spacing: 0.18px;
