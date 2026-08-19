@@ -1,8 +1,27 @@
-.proteinViewer{
+.proteinViewer {
     width: 100%;
     height: 80vh;
     position: relative;
     margin: 1rem auto;
-    
 }
 
+.canvasArea {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
+
+.hint {
+    position: absolute;
+    top: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(12, 9, 34, 0.75);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    pointer-events: none;
+    z-index: 2;
+}
