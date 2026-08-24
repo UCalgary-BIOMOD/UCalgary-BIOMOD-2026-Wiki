@@ -2,8 +2,40 @@
     "Team": {
         "heading": "Meet the Team", 
         "size": "h1",
-        "text": "Section with the growing dendrimer tree lalala"
+        "text": "Section with the growing dendrimer tree lalala",
+
+        "members": [
+            {
+                "name": "Sofea Zamzuri",
+                "nameHeadShot": "/images/sofea-headshot.JPG",
+                "role": "Wet Lab Lead",
+                "year": "4th Year",
+                "major": "Cellular, Molecular, and Microbial Biology",
+                "cardGame": "Cactus",
+                "snack": "idk",
+                "description": "idk",
+                "photo1": "/images/aptonix-logo.png",
+                "photo2": "/images/i-want-to-go-home.jpg",
+                "photo3": "/images/aptonix-logo.png"
+            },
+            {
+                "name": "Nam Phuong Dinh",
+                "nameHeadShot": "/images/nam-headshot.JPG",
+                "role": "Dry Lab Member",
+                "year": "4th Year",
+                "major": "Biochemistry and Bioinformatics",
+                "cardGame": "Big Two",
+                "snack": "Haribo",
+                "description": "Poopoo",
+                "photo1": "/images/aptonix-logo.png",
+                "photo2": "/images/i-want-to-go-home.jpg",
+                "photo3": "/images/aptonix-logo.png"
+            }
+        ]
     },
+    
+
+
     "Support": {
         "heading": "Support", 
         "size": "h1",

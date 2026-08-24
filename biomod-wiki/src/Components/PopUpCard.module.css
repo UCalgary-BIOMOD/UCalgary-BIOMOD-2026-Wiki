@@ -5,18 +5,27 @@
 
 /* INCLUDE REFERENCE IN GIT HUB READ ME */
 
+/* Clickable team member headshot photo*/
+.headShot {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
 /* Popup card container (team member photo + popup card) */
 .teamMember {
     position: relative;
     display: inline-block;
-    cursor: pointer;
 }
 
 /* Popup card */
 .teamMember .popUpCard {
     visibility: hidden;
-    width: (min(30vw, 900px)); /* Set width to 90% of viewport width or 900px, whichever is smaller */
-    max-height: 90vh;
+    width: 550px; 
+    max-width: 90vw;
+    max-height: calc(100vh - 300px); /* Prevent popup card from going under the menu bar */
     overflow-y: auto; /* Add vertical scroll if content exceeds max height */
     background-color: #181433;
     outline: 8px solid #198BFD;

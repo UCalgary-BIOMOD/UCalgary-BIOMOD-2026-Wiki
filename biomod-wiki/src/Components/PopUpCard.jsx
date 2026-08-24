@@ -11,26 +11,27 @@ import ImageCarousel from "./ImageCarousel";
 
 /**
  * The PopUpCard component displays a team member's photo and opens a popup card with additional photos and information when clicked.
- * @param {Object} props - The properties passed to the component.
+ * @param {Object} props - The properties passed to the component. 
+ * @param {string} props.nameHeadShot - The URL of the team member's headshot photo.
  * @param {string} props.name - The name of the team member.
+ * @param {string} props.photo1 - The URL of the first fun photo of the team member.
+ * @param {string} props.photo2 - The URL of the second fun photo of the team member.
+ * @param {string} props.photo3 - The URL of the third fun photo of the team member.
  * @param {string} props.role - The role of the team member.
  * @param {string} props.year - The year of study of the team member.
  * @param {string} props.major - The major of the team member.
  * @param {string} props.cardGame - The favorite card game of the team member.
  * @param {string} props.snack - The favorite snack of the team member.
  * @param {string} props.description - A brief description of the team member.  
- * @param {string} props.photo1 - The URL of the first photo of the team member.
- * @param {string} props.photo2 - The URL of the second photo of the team member.
- * @param {string} props.photo3 - The URL of the third photo of the team member.
  * @returns 
  */
 
-export default function PopUpCard({name, role, year, major, cardGame, snack, description, photo1, photo2, photo3}) {
+export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, role, year, major, cardGame, snack, description}) {
     const [isPopupOpen, setPopupOpen] = useState(false);
 
     return (
         <div className={styles.teamMember}>
-            <img src = "/images/aptonix-logo.png" alt="Logo" onClick={() => setPopupOpen(!isPopupOpen)}></img>
+            <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={() => setPopupOpen(!isPopupOpen)}></img>
             <div className={`${styles.popUpCard} ${isPopupOpen ? styles.show : ""}`}>
                 <button onClick={() => setPopupOpen(false)} className={styles.closeButton}>X</button>
                 <h2 className={styles.teamMemberName}>{name}</h2>
