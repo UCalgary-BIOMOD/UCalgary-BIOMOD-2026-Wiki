@@ -83,8 +83,10 @@ export default function Team() {
                     <TextBlock {...content.PhotoGallery}/>
                     <ImageCarousel 
                         imgs = {[
-                            {id: 1, src: "/images/aptonix-logo.png"},
-                            {id: 2, src: "/images/i-want-to-go-home.jpg"},
+                            {id: 1, src: "/images/team1.JPG"},
+                            {id: 2, src: "/images/team2.JPG"},
+                            {id: 3, src: "/images/team3.JPG"},
+                            {id: 4, src: "/images/team4.JPG"},
                         ]}
                     />
                     <h2>.</h2>

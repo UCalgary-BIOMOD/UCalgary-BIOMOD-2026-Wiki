@@ -32,6 +32,8 @@ export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, r
     return (
         <div className={styles.teamMember}>
             <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={() => setPopupOpen(!isPopupOpen)}></img>
+            <p className={styles.teamMemberName}>{name}</p>
+            <p className={styles.teamMemberRole}>{role}</p>
             <div className={`${styles.popUpCard} ${isPopupOpen ? styles.show : ""}`}>
                 <button onClick={() => setPopupOpen(false)} className={styles.closeButton}>X</button>
                 <h2 className={styles.teamMemberName}>{name}</h2>
