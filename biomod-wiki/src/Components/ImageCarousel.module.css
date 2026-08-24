@@ -12,7 +12,8 @@
     background-color: var(--bg);
     border-radius: 1rem; /*Round the corners of the carousel*/
     
-    height: 500px; /*Restrict height of the carousel to 500px. This probably clips tall images*/ 
+    width: 100%; /*Make the carousel take up the full width of its parent container*/
+    aspect-ratio: 4 / 3; /*Make the carousel height proportional to its width*/
 }
 
 .image-carousel img {

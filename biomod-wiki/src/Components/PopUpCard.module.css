@@ -1,0 +1,101 @@
+/** 
+ * Popup card styling adapted from W3Schools via 
+ * https://www.w3schools.com/howto/howto_js_popup.asp (Accessed: Aug 23, 2026)
+ */
+
+/* INCLUDE REFERENCE IN GIT HUB READ ME */
+
+/* Popup card container (team member photo + popup card) */
+.teamMember {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Popup card */
+.teamMember .popUpCard {
+    visibility: hidden;
+    width: (min(30vw, 900px)); /* Set width to 90% of viewport width or 900px, whichever is smaller */
+    max-height: 90vh;
+    overflow-y: auto; /* Add vertical scroll if content exceeds max height */
+    background-color: #181433;
+    outline: 8px solid #198BFD;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px 20px;
+    position: absolute;
+    z-index: 1; /* Layer popup card above other content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Fade in animation when team member photo clicked */
+.teamMember .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Define fade in animation */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/* 2x2 grid inside popup card */
+.popUpCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Fractional units, 2 columns of equal width*/
+    /* grid-template-rows: 1fr 1fr; 2 rows of equal height */
+    row-gap: 20px; /*Gap between rows*/
+    column-gap: 20px; /*Gap between columns*/
+}
+
+/* Position team member name */
+.teamMemberName {
+    grid-column: 1 / span 2; /* Name spans across both columns */
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+/* Position image carousel */
+.popUpCard .imageCarousel {
+    grid-column: 1; /* Left column */
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+/* Position team member information */
+.popUpCard .teamMemberInfo {
+    grid-column: 2; /* Right column */
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+/* Left-align team member info text */
+.teamMember .popUpCard .teamMemberInfo p {
+    text-align: left;
+    margin: 0;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #198BFD;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -1,0 +1,57 @@
+import styles from "./PopUpCard.module.css";
+import { useState } from "react";
+import ImageCarousel from "./ImageCarousel";
+
+/** 
+ * Open state logic adapted from Mobiscroll via 
+ * https://demo.mobiscroll.com/react/popup/showing-the-popover (Accessed: Aug 23, 2026)
+ */
+
+/*INCLUDE REFERENCE IN GIT HUB READ ME*/
+
+/**
+ * The PopUpCard component displays a team member's photo and opens a popup card with additional photos and information when clicked.
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} props.name - The name of the team member.
+ * @param {string} props.role - The role of the team member.
+ * @param {string} props.year - The year of study of the team member.
+ * @param {string} props.major - The major of the team member.
+ * @param {string} props.cardGame - The favorite card game of the team member.
+ * @param {string} props.snack - The favorite snack of the team member.
+ * @param {string} props.description - A brief description of the team member.  
+ * @param {string} props.photo1 - The URL of the first photo of the team member.
+ * @param {string} props.photo2 - The URL of the second photo of the team member.
+ * @param {string} props.photo3 - The URL of the third photo of the team member.
+ * @returns 
+ */
+
+export default function PopUpCard({name, role, year, major, cardGame, snack, description, photo1, photo2, photo3}) {
+    const [isPopupOpen, setPopupOpen] = useState(false);
+
+    return (
+        <div className={styles.teamMember}>
+            <img src = "/images/aptonix-logo.png" alt="Logo" onClick={() => setPopupOpen(!isPopupOpen)}></img>
+            <div className={`${styles.popUpCard} ${isPopupOpen ? styles.show : ""}`}>
+                <button onClick={() => setPopupOpen(false)} className={styles.closeButton}>X</button>
+                <h2 className={styles.teamMemberName}>{name}</h2>
+                <div className={styles.imageCarousel}> 
+                    <ImageCarousel 
+                        imgs = {[
+                            {id: 1, src: photo1},
+                            {id: 2, src: photo2},
+                            {id: 3, src: photo3},
+                        ]}
+                    />
+                </div>
+                <div className={styles.teamMemberInfo}>
+                    <p><strong>Role:</strong> {role}</p>
+                    <p><strong>Year:</strong> {year}</p>
+                    <p><strong>Major:</strong> {major}</p>
+                    <p><strong>Favorite Card Game:</strong> {cardGame}</p>
+                    <p><strong>Favorite Snack:</strong> {snack}</p>
+                    <p><strong>Description:</strong> {description}</p>
+                </div>
+            </div>
+        </div>
+    )
+}
