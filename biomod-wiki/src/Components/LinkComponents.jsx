@@ -8,18 +8,19 @@ import styles from "./LinkComponents.module.css"
  * @returns The wrapped child(ren).
  */
 export default function LinkWrapper({to, children}) {
-    /*hecks if the link is a URL or a internal link*/
+    /* Checks if the link is a URL or a internal link */
     const isExternal = typeof to === "string" && (to.startsWith("http://")||(to.startsWith("https://")))
     if (isExternal) {
-        
-        <a href={to} className={styles.LinkWrapper}>
-            {children}
-        </a>
+        return (
+            <a href={to} className={styles.LinkWrapper} target="_blank" rel="noopener noreferrer">
+                {children}
+            </a>
+        );
     }
 
     return (
         <Link to={to} className={styles.LinkWrapper}>
             {children}
         </Link>
-    )
+    );
 }

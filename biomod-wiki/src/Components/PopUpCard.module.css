@@ -122,3 +122,13 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+.cardGameURL a {
+    color: #C9C7D3;
+    text-decoration: underline;
+}
+
+.cardGameURL a:hover{
+    color: #198BFD;
+    text-decoration: underline;
+}

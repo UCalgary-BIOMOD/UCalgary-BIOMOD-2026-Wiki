@@ -18,7 +18,8 @@ export default function Team() {
                             key={member.name}
                             {...member}
                         />
-                    ))}
+                    ))
+                    },
                     <h2>hi</h2>
                     <h2>.</h2>
                     <h2>.</h2>

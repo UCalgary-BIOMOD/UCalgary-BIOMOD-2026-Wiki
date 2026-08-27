@@ -1,6 +1,7 @@
 import styles from "./PopUpCard.module.css";
 import { useState } from "react";
 import ImageCarousel from "./ImageCarousel";
+import LinkWrapper from "./LinkComponents";
 
 /** 
  * Open state logic adapted from Mobiscroll via 
@@ -21,14 +22,14 @@ import ImageCarousel from "./ImageCarousel";
  * @param {string} props.year - The year of study of the team member.
  * @param {string} props.major - The major of the team member.
  * @param {string} props.cardGame - The favorite card game of the team member.
+ * @param {string} props.cardGameURL - The URL to learn more about the team member's favorite card game.
  * @param {string} props.snack - The favorite snack of the team member.
  * @param {string} props.description - A brief description of the team member.  
  * @returns 
  */
 
-export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, role, year, major, cardGame, snack, description}) {
+export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, role, year, major, cardGame, cardGameURL, snack, description}) {
     const [isPopupOpen, setPopupOpen] = useState(false);
-
     return (
         <div className={styles.teamMember}>
             <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={() => setPopupOpen(!isPopupOpen)}></img>
@@ -50,7 +51,11 @@ export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, r
                     <p><strong>Role:</strong> {role}</p>
                     <p><strong>Year:</strong> {year}</p>
                     <p><strong>Major:</strong> {major}</p>
-                    <p><strong>Favorite Card Game:</strong> {cardGame}</p>
+                    <p><strong>Favorite Card Game:</strong> 
+                        <span className={styles.cardGameURL}>
+                            <LinkWrapper to={cardGameURL}>{cardGame}</LinkWrapper>
+                        </span>
+                    </p>
                     <p><strong>Favorite Snack:</strong> {snack}</p>
                     <p><strong>Description:</strong> {description}</p>
                 </div>
