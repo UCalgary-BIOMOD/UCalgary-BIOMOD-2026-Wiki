@@ -2,7 +2,7 @@
     "Team": {
         "heading": "Meet the Team", 
         "size": "h1",
-        "text": "Section with the growing dendrimer tree lalala",
+        "text": "",
 
         "members": [
             {
@@ -17,7 +17,11 @@
                 "description": "Passionate about interdisciplinary teamwork and research in biology, medicine, engineering, physics, and astronomy. Outside academics, I love coffee, tea, drawing, reading, and writing.",
                 "photo1": "/images/aptonix-logo.png",
                 "photo2": "/images/i-want-to-go-home.jpg",
-                "photo3": "/images/aptonix-logo.png"
+                "photo3": "/images/aptonix-logo.png",
+                "treePosition": {
+                    "left": "49.62%",
+                    "top": "12.10%"
+                }
             },
             {
                 "name": "Sofea Zamzuri",
@@ -31,7 +35,11 @@
                 "description": "Passionate about research in biology and making an impact in the field of science. Outside of academics, I love baking, reading, and watching hockey.",
                 "photo1": "/images/sofea1.jpeg",
                 "photo2": "/images/sofea2.jpeg",
-                "photo3": "/images/sofea3.jpeg"
+                "photo3": "/images/sofea3.jpeg",
+                "treePosition": {
+                    "left": "19.52%",
+                    "top": "24.25%"
+                }            
             },
             {
                 "name": "Allan Vu",
@@ -45,9 +53,13 @@
                 "description": "I enjoy playing ping pong with my friends.",
                 "photo1": "/images/aptonix-logo.png",
                 "photo2": "/images/i-want-to-go-home.jpg",
-                "photo3": "/images/aptonix-logo.png"
+                "photo3": "/images/aptonix-logo.png",
+                "treePosition": {
+                    "left": "79.03%",
+                    "top": "24.25%"
+                }
             },
-                        {
+            {
                 "name": "Sukhmanpreet Waraich",
                 "nameHeadShot": "/images/sukhman-headshot.JPG",
                 "role": "Wet Lab Member",
@@ -59,7 +71,11 @@
                 "description": "Passionate about exploring the opportunities at the intersection of biology and healthcare, and excited by the many ways science can come together across different fields to make a real difference in people’s lives. Outside of academics, I love exploring new cafés, hiking, and spending time with friends and family.",
                 "photo1": "/images/sukhman1.jpeg",
                 "photo2": "/images/sukhman2.jpeg",
-                "photo3": "/images/sukhman3.jpeg"
+                "photo3": "/images/sukhman3.jpeg",
+                "treePosition": {
+                    "left": "34.92%",
+                    "top": "49.8%"
+                }
             },
             {
                 "name": "Nam Phuong Dinh",
@@ -73,7 +89,47 @@
                 "description": "I like music, running, and hiking.",
                 "photo1": "/images/nam1.jpeg",
                 "photo2": "/images/nam2.jpeg",
-                "photo3": "/images/nam3.jpeg"
+                "photo3": "/images/nam3.jpeg",
+                "treePosition": {
+                    "left": "64.34%",
+                    "top": "49.8%"
+                }
+            },
+            {
+                "name": "Anahat Sidhu",
+                "nameHeadShot": "/images/anahat-headshot.JPG",
+                "role": "Wet Lab Member",
+                "year": "2nd Year",
+                "major": "Biomedical and Digital Engineering",
+                "cardGame": "Cactus",
+                "cardGameURL": "https://www.denexa.com/blog/cactus-golf/?srsltid=AfmBOoqI43REFU03myZGw1sjw_QIUChufAl9tifQNFDmHkUG7ddynzwa",
+                "snack": "Caramel and Cheese Popcorn",
+                "description": "Inspired by the intersection of engineering and medicine, I enjoy learning, collaborating, and solving meaningful problems that can improve lives. Outside of academics, you’ll often find me crocheting, painting, or working on a creative DIY project.",
+                "photo1": "/images/aptonix-logo.png",
+                "photo2": "/images/i-want-to-go-home.jpg",
+                "photo3": "/images/aptonix-logo.png",
+                "treePosition": {
+                    "left": "10.19%",
+                    "top": "62.2%"
+                }
+            },
+            {
+                "name": "Hannah Nguyen",
+                "nameHeadShot": "/images/hannah-headshot.JPG",
+                "role": "Wet/Dry Lab Member",
+                "year": "3rd Year",
+                "major": "Biomedical and Digital Engineering",
+                "cardGame": "Cactus",
+                "cardGameURL": "https://www.denexa.com/blog/cactus-golf/?srsltid=AfmBOoqI43REFU03myZGw1sjw_QIUChufAl9tifQNFDmHkUG7ddynzwa",
+                "snack": "Hershey's Cookies and Cream mini",
+                "description": "Living proof that everything works out eventually.",
+                "photo1": "/images/aptonix-logo.png",
+                "photo2": "/images/i-want-to-go-home.jpg",
+                "photo3": "/images/aptonix-logo.png",
+                "treePosition": {
+                    "left": "89.75%",
+                    "top": "62.2%"
+                }
             },
             {
                 "name": "Neeor Alam",
@@ -87,9 +143,13 @@
                 "description": "Retired thought leader and jack of all trades. I work on everything ranging from coding to biology research to creative work, and love learning things. Outside academics I play both deep story games and grinding games while trying to keep on top of all the side quests I try to approach.",
                 "photo1": "/images/aptonix-logo.png",
                 "photo2": "/images/i-want-to-go-home.jpg",
-                "photo3": "/images/aptonix-logo.png"
+                "photo3": "/images/aptonix-logo.png",
+                "treePosition": {
+                    "left": "30.86%",
+                    "top": "85.19%"
+                }
             },
-                        {
+            {
                 "name": "Shahzaib Khan",
                 "nameHeadShot": "/images/shahzaib-headshot.JPG",
                 "role": "Wet/Dry Lab Member",
@@ -101,35 +161,11 @@
                 "description": "Passionate about biomedical engineering, medicine, and improving healthcare through research and innovation. Outside of academics, I enjoy skiing, staying active, and exploring new places.",
                 "photo1": "/images/aptonix-logo.png",
                 "photo2": "/images/i-want-to-go-home.jpg",
-                "photo3": "/images/aptonix-logo.png"
-            },
-                        {
-                "name": "Anahat Sidhu",
-                "nameHeadShot": "/images/anahat-headshot.JPG",
-                "role": "Wet Lab Member",
-                "year": "2nd Year",
-                "major": "Biomedical and Digital Engineering",
-                "cardGame": "Cactus",
-                "cardGameURL": "https://www.denexa.com/blog/cactus-golf/?srsltid=AfmBOoqI43REFU03myZGw1sjw_QIUChufAl9tifQNFDmHkUG7ddynzwa",
-                "snack": "Caramel and Cheese Popcorn",
-                "description": "Inspired by the intersection of engineering and medicine, I enjoy learning, collaborating, and solving meaningful problems that can improve lives. Outside of academics, you’ll often find me crocheting, painting, or working on a creative DIY project.",
-                "photo1": "/images/aptonix-logo.png",
-                "photo2": "/images/i-want-to-go-home.jpg",
-                "photo3": "/images/aptonix-logo.png"
-            },
-                        {
-                "name": "Hannah Nguyen",
-                "nameHeadShot": "/images/hannah-headshot.JPG",
-                "role": "Wet Lab Member",
-                "year": "3rd Year",
-                "major": "Biomedical and Digital Engineering",
-                "cardGame": "Cactus",
-                "cardGameURL": "https://www.denexa.com/blog/cactus-golf/?srsltid=AfmBOoqI43REFU03myZGw1sjw_QIUChufAl9tifQNFDmHkUG7ddynzwa",
-                "snack": "Hershey's Cookies and Cream mini",
-                "description": "Living proof that everything works out eventually.",
-                "photo1": "/images/aptonix-logo.png",
-                "photo2": "/images/i-want-to-go-home.jpg",
-                "photo3": "/images/aptonix-logo.png"
+                "photo3": "/images/aptonix-logo.png",
+                "treePosition": {
+                    "left": "68.26%",
+                    "top": "85.19%"
+                }
             }
         ]
     },

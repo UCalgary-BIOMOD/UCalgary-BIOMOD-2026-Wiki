@@ -4,6 +4,9 @@ import LinkWrapper from "/src/Components/LinkComponents.jsx";
 import PageLayout from "/src/Components/PageLayout.jsx";
 import PopUpCard from "/src/Components/PopUpCard.jsx";
 import ImageCarousel from "/src/Components/ImageCarousel.jsx";
+import styles from "/src/Components/TreeAnimation.module.css";
+import TreeAnimation from "/src/Components/TreeAnimation.jsx";
+
 
 export default function Team() {
     const sections = [
@@ -13,13 +16,17 @@ export default function Team() {
             render: () => (
                 <>
                     <TextBlock {...content.Team}/>
-                    {content.Team.members.map((member) => ( /* Render a PopUpCard for each team member, passing in their details as props */
-                        <PopUpCard
-                            key={member.name}
-                            {...member}
-                        />
-                    ))
-                    },
+                    <TreeAnimation>
+                        {content.Team.members.map((member) => (
+                            <div
+                                key={member.name}
+                                className={styles.memberPosition}
+                                style={member.treePosition}
+                            >
+                                <PopUpCard {...member} />
+                            </div>
+                        ))}
+                    </TreeAnimation>        
                     <h2>hi</h2>
                     <h2>.</h2>
                     <h2>.</h2>
