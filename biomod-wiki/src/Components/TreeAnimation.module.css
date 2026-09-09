@@ -22,9 +22,18 @@
     height: auto;
 }
 
-.tree path {
+.tree path, .tree circle {
     stroke: #198BFD;
     fill: none;
+    stroke-width: 20;
+}
+
+.tree path {
+    stroke-linecap: round;
+}
+
+.tree circle {
+    stroke-linecap: butt;
 }
 
 .members {

@@ -16,15 +16,91 @@ import { useEffect, useRef } from "react";
 
 export default function TreeAnimation({children}) {
     const sectionRef = useRef(null);
-    const pathRef = useRef(null);
+    const segmentRefs = useRef([]);
     const stickyRef = useRef(null);
     useEffect(() => {
         const section = sectionRef.current;
-        const path = pathRef.current;
+
         const sticky = stickyRef.current;
-        const pathLength = path.getTotalLength();
-        path.style.strokeDasharray = pathLength;
-        path.style.strokeDashoffset = pathLength;
+
+        const groups = [ /* Each group contains the segments that should be animated together. */
+            // Bottom trunk
+            [
+                segmentRefs.current[0]
+            ],
+            // 5L. Neeor branch + 5R. Shahzaib branch
+            [
+                segmentRefs.current[1],
+                segmentRefs.current[2]
+            ],
+            // 5L. Neeor circle + 5R. Shahzaib circle
+            [
+                segmentRefs.current[3],
+                segmentRefs.current[4]
+            ],
+            // Trunk
+            [
+                segmentRefs.current[5]
+            ],
+            // 4L. Anahat branch + 4R. Hannah branch
+            [
+                segmentRefs.current[6],
+                segmentRefs.current[7]
+            ],
+            // 4L. Anahat circle + 4R. Hannah circle
+            [
+                segmentRefs.current[8],
+                segmentRefs.current[9]
+            ],
+            // Trunk
+            [
+                segmentRefs.current[10]
+            ],
+            // 3L. Sukhman branch + 3R. Nam branch
+            [
+                segmentRefs.current[11],
+                segmentRefs.current[12]
+            ],
+            // 3L. Sukhman circle + 3R. Nam circle
+            [
+                segmentRefs.current[13],
+                segmentRefs.current[14]
+            ],
+            // Trunk
+            [
+                segmentRefs.current[15]
+            ],
+            // 2L. Sofea branch + 2R. Allan branch
+            [
+                segmentRefs.current[16],
+                segmentRefs.current[17]
+            ],
+            // 2L. Sofea circle + 2R. Allan circle
+            [
+                segmentRefs.current[18],
+                segmentRefs.current[19]
+            ],
+            // Trunk
+            [
+                segmentRefs.current[20]
+            ],
+            // 1. Meagan circle
+            [
+                segmentRefs.current[21]
+            ]
+        ];
+        groups.forEach((group) => {
+            group.forEach((segment) => {
+                if (!segment) return;
+                const length = segment.getTotalLength();
+                segment.style.strokeDasharray = length;
+                if (segment.dataset.direction === "reverse") {
+                    segment.style.strokeDashoffset = -length;
+                } else {
+                    segment.style.strokeDashoffset = length;
+                }
+            });
+        });
         const handleScroll = () => {
             const sectionTop = section.getBoundingClientRect().top + window.scrollY;
             const sectionHeight = section.offsetHeight;
@@ -36,8 +112,27 @@ export default function TreeAnimation({children}) {
             const animationDuration = stickyDuration * 0.9;
             let progress = (window.scrollY - stickyStart) / animationDuration;
             progress = Math.max(0, Math.min(1, progress));
-            path.style.strokeDashoffset = pathLength * (1 - progress);
+            const groupCount = groups.length;
+            groups.forEach((group, groupIndex) => {
+                const groupStart = groupIndex / groupCount;
+                const groupEnd = (groupIndex + 1) / groupCount;
+                let groupProgress = (progress - groupStart) / (groupEnd - groupStart);
+                groupProgress = Math.max(0, Math.min(1, groupProgress));
+                group.forEach((segment) => {
+                    if (!segment) return;
+                    const length = segment.getTotalLength();
+                    if (segment.dataset.direction === "reverse") {
+                        segment.style.strokeDashoffset =
+                            -length * (1 - groupProgress);
+                    } else {
+                        segment.style.strokeDashoffset =
+                            length * (1 - groupProgress);
+                    }
+                    if (segment.tagName.toLowerCase() === "circle") {segment.style.visibility = groupProgress <= 0 ? "hidden" : "visible";}
+                });            
+            });
         };
+
         handleScroll();
         window.addEventListener("scroll", handleScroll);
         return () => {
@@ -54,12 +149,194 @@ export default function TreeAnimation({children}) {
                     fill="none"
                     className={styles.tree}
                 >
+                    {/* Bottom trunk */}
                     <path
-                        ref={pathRef}
-                        d="M586.964 231C647.992 231 697.464 181.527 697.464 120.5C697.464 59.4725 647.992 10 586.964 10C525.937 10 476.464 59.4725 476.464 120.5C476.464 181.527 525.937 231 586.964 231ZM586.964 231L586.464 451.5M951.253 619.5C951.253 680.527 1000.73 730 1061.75 730C1122.78 730 1172.25 680.527 1172.25 619.5C1172.25 558.473 1122.78 509 1061.75 509C1000.73 509 951.253 558.473 951.253 619.5ZM951.253 619.5C586.464 637.5 591.756 705.837 586.964 793.5M231 619.5C231 680.527 181.527 730 120.5 730C59.4725 730 10 680.527 10 619.5C10 558.473 59.4725 509 120.5 509C181.527 509 231 558.473 231 619.5ZM231 619.5C581.005 637.5 582.178 704.667 586.964 793.5M696.964 848.5C696.964 909.527 746.437 959 807.464 959C868.492 959 917.964 909.527 917.964 848.5C917.964 787.473 868.492 738 807.464 738C746.437 738 696.964 787.473 696.964 848.5ZM696.964 848.5C617.716 859.81 616.464 874.5 586.964 959M475.622 848.5C475.622 909.527 426.15 959 365.122 959C304.095 959 254.622 909.527 254.622 848.5C254.622 787.473 304.095 738 365.122 738C426.15 738 475.622 787.473 475.622 848.5ZM475.622 848.5C542.268 858.975 560.342 870.555 586.964 959M341.473 241.5C341.473 302.527 292 352 230.973 352C169.945 352 120.473 302.527 120.473 241.5C120.473 180.473 169.945 131 230.973 131C292 131 341.473 180.473 341.473 241.5ZM341.473 241.5C557.464 295.5 568.464 321.5 586.464 451.5M824.413 241.5C824.413 302.527 873.886 352 934.913 352C995.941 352 1045.41 302.527 1045.41 241.5C1045.41 180.473 995.941 131 934.913 131C873.886 131 824.413 180.473 824.413 241.5ZM824.413 241.5C610.964 304.5 605.464 319.5 586.464 451.5M586.964 959V793.5M586.964 959V985.5M586.964 793.5L586.464 619.5M586.464 619.5C595.71 567.699 606.681 518.273 650.643 511M586.464 619.5C576.966 567.516 567.105 516.569 522.286 511M586.464 619.5V451.5M523.585 496C523.585 557.027 474.113 606.5 413.085 606.5C352.058 606.5 302.585 557.027 302.585 496C302.585 434.973 352.058 385.5 413.085 385.5C474.113 385.5 523.585 434.973 523.585 496ZM871.643 496C871.643 557.027 822.17 606.5 761.143 606.5C700.115 606.5 650.643 557.027 650.643 496C650.643 434.973 700.115 385.5 761.143 385.5C822.17 385.5 871.643 434.973 871.643 496Z"
-                        stroke="#198BFD"
-                        strokeWidth="20"
-                        strokeLinecap="round"
+                        ref={(el) => segmentRefs.current[0] = el}
+                        d="M586.964 985.5 L586.964 959"
+                    />
+                    {/* 5L. Neeor branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[1] = el}
+                        d="
+                            M586.964 959
+                            C560.342 870.555
+                            542.268 858.975
+                            475.622 848.5
+                        "
+                    />
+                    {/* 5R. Shahzaib branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[2] = el}
+                        d="
+                            M586.964 959
+                            C616.464 874.5
+                            617.716 859.81
+                            696.964 848.5
+                        "
+                    />
+                    {/* 5L. Neeor circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[3] = el}
+                        cx="365.122"
+                        cy="848.5"
+                        r="110.5"
+                    />
+                    {/* 5R. Shahzaib circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[4] = el}
+                        cx="807.464"
+                        cy="848.5"
+                        r="110.5"
+                        transform="rotate(180 807.464 848.5)"
+                        data-direction="reverse"
+                    />
+                    {/* Trunk */}
+                    <path
+                        ref={(el) => segmentRefs.current[5] = el}
+                        d="M586.964 959 L586.964 793.5"
+                    />
+                    {/* 4L. Anahat branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[6] = el}
+                        d="
+                            M586.964 793.5
+                            C582.178 704.667
+                            581.005 637.5
+                            231 619.5
+                        "
+                    />
+                    {/* 4R. Hannah branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[7] = el}
+                        d="
+                            M586.964 793.5
+                            C591.756 705.837
+                            586.464 637.5
+                            951.253 619.5
+                        "
+                    />
+                    {/* 4L. Anahat circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[8] = el}
+                        cx="120.5"
+                        cy="619.5"
+                        r="110.5"
+                    />
+                    {/* 4R. Hannah circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[9] = el}
+                        cx="1061.753"
+                        cy="619.5"
+                        r="110.5"
+                        transform="rotate(180 1061.753 619.5)"
+                        data-direction="reverse"
+                    />
+                    {/* Trunk */}
+                    <path
+                        ref={(el) => segmentRefs.current[10] = el}
+                        d="
+                            M586.964 793.5
+                            L586.464 619.5
+                        "
+                    />
+                    {/* 3L. Sukhman branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[11] = el}
+                        d="
+                            M586.464 619.5
+                            C576.966 567.516
+                            567.105 516.569
+                            522.286 511
+                        "
+                    />
+                    {/* 3R. Nam branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[12] = el}
+                        d="
+                            M586.464 619.5
+                            C595.71 567.699
+                            606.681 518.273
+                            650.643 511
+                        "
+                    />
+                    {/* 3L. Sukhman circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[13] = el}
+                        cx="413.085"
+                        cy="496"
+                        r="110.5"
+                        transform="rotate(7.8 413.085 496)"
+
+                    />
+                    {/* 3R. Nam circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[14] = el}
+                        cx="761.143"
+                        cy="496"
+                        r="110.5"
+                        transform="rotate(172.2 761.143 496)"
+                        data-direction="reverse"
+                    />
+                    {/* Trunk */}
+                    <path
+                        ref={(el) => segmentRefs.current[15] = el}
+                        d="
+                            M586.464 619.5
+                            L586.464 451.5
+                        "
+                    />
+                    {/* 2L. Sofea branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[16] = el}
+                        d="
+                            M586.464 451.5
+                            C568.464 321.5
+                            557.464 295.5
+                            341.473 241.5
+                        "
+                    />
+                    {/* 2R. Allan branch */}
+                    <path
+                        ref={(el) => segmentRefs.current[17] = el}
+                        d="
+                            M586.464 451.5
+                            C605.464 319.5
+                            610.964 304.5
+                            824.413 241.5
+                        "
+                    />
+                    {/* 2L. Sofea circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[18] = el}
+                        cx="230.973"
+                        cy="241.5"
+                        r="110.5"
+                    />
+                    {/* 2R. Allan circle */}
+                    <circle
+                        ref={(el) => segmentRefs.current[19] = el}
+                        cx="934.913"
+                        cy="241.5"
+                        r="110.5"
+                        transform="rotate(180 934.913 241.5)"
+                        data-direction="reverse"
+                    />
+                    {/* Trunk */}
+                    <path
+                        ref={(el) => segmentRefs.current[20] = el}
+                        d="
+                            M586.464 451.5
+                            L586.964 231
+                        "
+                    />
+                    {/* 1. Meagan circle*/}
+                    <circle
+                        ref={(el) => segmentRefs.current[21] = el}
+                        cx="586.964"
+                        cy="120.5"
+                        r="110.5"
+                        transform="rotate(90 586.964 120.5)"
+
                     />
                 </svg>
                 <div className={styles.members}>
