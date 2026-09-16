@@ -119,7 +119,7 @@ export default function TreeAnimation({children}) {
             const stickyStart = sectionTop - stickyTop;
             const stickyEnd = sectionTop + sectionHeight - stickyHeight - stickyTop;
             const stickyDuration = stickyEnd - stickyStart;
-            const animationDuration = stickyDuration * 0.9;
+            const animationDuration = stickyDuration * 0.6;
             let progress = (window.scrollY - stickyStart) / animationDuration;
             progress = Math.max(0, Math.min(1, progress));
             const groupCount = groups.length;
