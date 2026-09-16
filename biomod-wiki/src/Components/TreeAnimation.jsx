@@ -6,12 +6,21 @@ import { useEffect, useRef } from "react";
  * https://www.youtube.com/watch?v=w8DOo_ICJds (Accessed: Sep 9, 2026)
  */
 
-/*INCLUDE REFERENCE IN GIT HUB READ ME*/
 
 /**
- * Animates the tree SVG path based on the user's scroll position.
- * The path is treated as a single dash spanning the full length of the tree.
- * As the user scrolls, the dash offset decreases, gradually revealing the tree.
+ *  ChatGPT was used to assist with refactoring the original SVG path into separate branches and circles.
+ */
+
+/*INCLUDE REFERENCEs IN GIT HUB READ ME*/
+
+/**
+ * The TreeAnimation component animates the tree SVG based on the user's scroll position.
+ * The tree is divided into separate SVG branches and circles that are grouped by level.
+ * Each segment uses stroke-dasharray and stroke-dashoffset to create a drawing animation.
+ * As the user scrolls, the tree is gradually drawn from bottom to top, with branches at the same level animated simultaneously.
+ * @param {Object} props - The properties passed to the component.
+ * @param {React.ReactNode} props.children - The children elements rendered within the TreeAnimation component.
+ * @returns {JSX.Element} The rendered TreeAnimation component.
  */
 
 export default function TreeAnimation({children}) {
@@ -102,6 +111,7 @@ export default function TreeAnimation({children}) {
             });
         });
         const handleScroll = () => {
+            const members = section.querySelectorAll(`.${styles.memberPosition}`);
             const sectionTop = section.getBoundingClientRect().top + window.scrollY;
             const sectionHeight = section.offsetHeight;
             const stickyHeight = sticky.offsetHeight;
@@ -129,8 +139,17 @@ export default function TreeAnimation({children}) {
                             length * (1 - groupProgress);
                     }
                     if (segment.tagName.toLowerCase() === "circle") {segment.style.visibility = groupProgress <= 0 ? "hidden" : "visible";}
-                });            
+                });
             });
+            members[7].style.opacity = progress >= 3 / groupCount ? 1 : 0; // Neeor
+            members[8].style.opacity = progress >= 3 / groupCount ? 1 : 0; // Shahzaib
+            members[5].style.opacity = progress >= 6 / groupCount ? 1 : 0; // Anahat
+            members[6].style.opacity = progress >= 6 / groupCount ? 1 : 0; // Hannah
+            members[3].style.opacity = progress >= 9 / groupCount ? 1 : 0; // Sukhman
+            members[4].style.opacity = progress >= 9 / groupCount ? 1 : 0; // Nam
+            members[1].style.opacity = progress >= 12 / groupCount ? 1 : 0; // Sofea
+            members[2].style.opacity = progress >= 12 / groupCount ? 1 : 0; // Allan
+            members[0].style.opacity = progress >= 14 / groupCount ? 1 : 0; // Meagan
         };
 
         handleScroll();

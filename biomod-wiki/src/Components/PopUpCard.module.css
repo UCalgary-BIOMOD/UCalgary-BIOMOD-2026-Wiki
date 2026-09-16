@@ -26,7 +26,6 @@
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
-    margin: 0;
     text-align: center;
     font-style: italic;
     font-size: 0.7rem;
@@ -46,7 +45,6 @@
 .headShot:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
-    outline:#198BFD solid 7px;
 }
 
 /* Popup card container (team member photo + popup card) */
