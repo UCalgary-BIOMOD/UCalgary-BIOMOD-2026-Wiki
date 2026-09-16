@@ -6,9 +6,10 @@ import PopUpCard from "/src/Components/PopUpCard.jsx";
 import ImageCarousel from "/src/Components/ImageCarousel.jsx";
 import styles from "/src/Components/TreeAnimation.module.css";
 import TreeAnimation from "/src/Components/TreeAnimation.jsx";
-
+import { useState } from "react";
 
 export default function Team() {
+    const [openMember, setOpenMember] = useState(null);
     const sections = [
         {
             id: "team",
@@ -16,14 +17,18 @@ export default function Team() {
             render: () => (
                 <>
                     <TextBlock {...content.Team}/>
-                    <TreeAnimation>
+                    <TreeAnimation onOutsideClick={() => setOpenMember(null)}>
                         {content.Team.members.map((member) => (
                             <div
                                 key={member.name}
                                 className={styles.memberPosition}
                                 style={member.treePosition}
                             >
-                                <PopUpCard {...member} />
+                                <PopUpCard {...member}
+                                    isPopupOpen={openMember === member.name}
+                                    onOpen={() => setOpenMember(member.name)}
+                                    onClose={() => setOpenMember(null)}
+                                />
                             </div>
                         ))}
                     </TreeAnimation>        

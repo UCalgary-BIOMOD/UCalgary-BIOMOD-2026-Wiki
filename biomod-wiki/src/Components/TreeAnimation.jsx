@@ -23,7 +23,7 @@ import { useEffect, useRef } from "react";
  * @returns {JSX.Element} The rendered TreeAnimation component.
  */
 
-export default function TreeAnimation({children}) {
+export default function TreeAnimation({children, onOutsideClick}) {
     const sectionRef = useRef(null);
     const segmentRefs = useRef([]);
     const stickyRef = useRef(null);
@@ -160,9 +160,9 @@ export default function TreeAnimation({children}) {
     }, []);
 
     return (
-    <section ref={sectionRef} className={styles.treeSection}>
+    <section ref={sectionRef} className={styles.treeSection} onClick={onOutsideClick}>
         <div ref={stickyRef} className={styles.stickyTree}>
-            <div className={styles.treeWrapper}>
+            <div className={styles.treeWrapper} onClick={(e) => e.stopPropagation()}>
                 <svg
                     viewBox="0 0 1183 996"
                     fill="none"

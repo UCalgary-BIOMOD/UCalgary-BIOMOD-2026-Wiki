@@ -1,5 +1,4 @@
 import styles from "./PopUpCard.module.css";
-import { useState } from "react";
 import ImageCarousel from "./ImageCarousel";
 import LinkWrapper from "./LinkComponents";
 
@@ -28,15 +27,14 @@ import LinkWrapper from "./LinkComponents";
  * @returns 
  */
 
-export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, role, year, major, cardGame, cardGameURL, snack, description}) {
-    const [isPopupOpen, setPopupOpen] = useState(false);
+export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, role, year, major, cardGame, cardGameURL, snack, description, isPopupOpen, onOpen, onClose}) {
     return (
         <div className={styles.teamMember} data-popup-open={isPopupOpen}>
             <p className={styles.popupName}>{name}</p>
             <p className={styles.teamMemberRole}>{role}</p>
-            <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={() => setPopupOpen(!isPopupOpen)}></img>
-            <div className={`${styles.popUpCard} ${isPopupOpen ? styles.show : ""}`}>
-                <button onClick={() => setPopupOpen(false)} className={styles.closeButton}>X</button>
+            <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={onOpen}></img>
+            <div className={`${styles.popUpCard} ${isPopupOpen ? styles.show : ""} ${name === "Meagan Davies" ? styles.meaganPopup : ""}`}>
+                <button onClick={onClose} className={styles.closeButton}>X</button>
                 <h2 className={styles.teamMemberName}>{name}</h2>
                 <div className={styles.imageCarousel}> 
                     <ImageCarousel 

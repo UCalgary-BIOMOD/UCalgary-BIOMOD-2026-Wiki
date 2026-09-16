@@ -59,7 +59,7 @@
     visibility: hidden;
     width: 450px; 
     max-width: 85vw;
-    max-height: calc(100vh - 400px); /* Prevent popup card from going under the menu bar */
+    max-height: calc(100vh - var(--top-nav-height) - 2rem);
     overflow-y: auto; /* Add vertical scroll if content exceeds max height */
     background-color: #181433;
     outline: 8px solid #198BFD;
@@ -67,12 +67,17 @@
     text-align: center;
     border-radius: 20px;
     padding: 10px 10px;
-    position: absolute;
+    position: fixed;
     z-index: 1001; /* Layer popup card above other content */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.7rem;
+}
+
+/* Ensure Meagan's popup card is positioned below the menu */
+.meaganPopup {
+    top: 100% !important;
 }
 
 /* Fade in animation when team member photo clicked */
