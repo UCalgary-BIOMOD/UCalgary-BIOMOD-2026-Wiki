@@ -60,7 +60,7 @@
                 }
             },
             {
-                "name": "Sukhmanpreet Waraich",
+                "name": "Sukhman Waraich",
                 "nameHeadShot": "/images/sukhman-headshot.JPG",
                 "role": "Wet Lab Member",
                 "year": "4th Year",
@@ -175,11 +175,39 @@
     "Support": {
         "heading": "Support", 
         "size": "h1",
-        "text": "Section with faculty and student mentors"
+        "text": "",
+        "supporters": [
+            {
+                "name": "Dr. Richa Pandey",
+                "role": "Faculty Advisor",
+                "department": "Department of Biomedical Engineering",
+                "photo": "/images/drpandey.jpeg"
+            },
+            {
+                "name": "Muhammad Faeez Ansari",
+                "role": "Previous BMERIT President",
+                "department": "Department of Mechanical Engineering",
+                "photo": "/images/muhammad.jpeg"
+            },
+            {
+                "name": "Amber Quo",
+                "role": "BMERIT President",
+                "department": "Department of Biomedical Engineering",
+                "photo": "/images/amber.jpeg"
+            },
+            {
+                "name": "Brianne Burkinshaw",
+                "role": "Faculty Advisor",
+                "department": "Department of Biological Sciences",
+                "photo": "/images/drburkinshaw.jpeg"
+            }        
+        ]
+
+    
     },
     "PhotoGallery": {
         "heading": "Photo Gallery", 
         "size": "h1",
-        "text": "Section with photo gallery"
+        "text": ""
     }
 }

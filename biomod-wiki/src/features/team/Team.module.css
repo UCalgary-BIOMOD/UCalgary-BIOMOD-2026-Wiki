@@ -1,0 +1,40 @@
+.supportGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.supportImage {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 30px;
+    outline: 7px solid #198BFD;
+}
+
+.supportName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #EABE73;
+    margin-top: 10px;
+}
+
+.supportRole {
+    font-size: 0.7rem;
+    font-style: italic;
+    color: white;
+    margin: 0;
+}
+
+.supportDepartment {
+    font-size: 0.6rem;
+    color: white;
+    margin: 0;
+}
+
+.imageCarousel {
+    width: 20vw;
+    max-width: 20vw;
+    overflow: hidden;
+}
