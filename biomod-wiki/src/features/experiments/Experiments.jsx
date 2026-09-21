@@ -16,6 +16,6 @@ export default function Modelling() {
         }
     ]
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} bannerImgs = {[ "/images/dna-ladder.png"]}/>
     )
 }

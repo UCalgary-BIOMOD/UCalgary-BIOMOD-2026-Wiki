@@ -109,6 +109,6 @@ export default function Notebook() {
     ]
     
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/aptonix-logo.png"]}/>
     )
 }

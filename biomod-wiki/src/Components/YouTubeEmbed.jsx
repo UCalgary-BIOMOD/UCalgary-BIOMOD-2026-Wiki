@@ -19,27 +19,16 @@ export default function YouTubeEmbed({w, h, src}) {
         }
     }
 
-    const wrapperStyle = {
-        position: 'relative',
-        width: '100%',
-        paddingBottom: '56.25%', /* 16:9 aspect ratio */
-        height: 0,
-    }
+    
 
-    const innerStyle = {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%'
-    }
+    
 
     return (
-        <div style={wrapperStyle}>
-            <div style={innerStyle}>
-                <YouTube videoId={src} opts={opts} />
-            </div>
+        
+        <div style = {{width: "100%", aspectRatio: "16 / 9", flex: "1 1 auto", minHeight: "0"}}>
+            <YouTube videoId={src} opts={opts} style = {{width: "100%", height: "100%"}}/>
         </div>
+        
     );
 }
 

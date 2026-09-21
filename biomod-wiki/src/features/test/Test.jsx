@@ -77,7 +77,7 @@ export default function Test() {
         }
     ]
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} bannerImgs = {[]}/>
     )
 }
 

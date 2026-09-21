@@ -177,7 +177,7 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
     )
 }
 
-export default function PageLayout({sections, header}) {
+export default function PageLayout({sections, bannerImgs, bannerHeight, caption = null}) {
     const [activeIds, setActiveIds] = useState(new Set())
     const [resizeVersion, setResizeVersion] = useState(0)
     const pageRef = useRef(null)
@@ -271,7 +271,20 @@ export default function PageLayout({sections, header}) {
     return (
         <div className = {styles.pageLayout} ref = {pageRef}>
             <div> 
-                <img src = {header} className = {styles.header}></img>
+                <div className = {styles.topLine}/>
+                <div className = {styles.bannerContainer} style = {{"--banner-height":bannerHeight}}>
+                    {bannerImgs.map((image, index) => (
+                        <img
+                            key = {image}
+                            src = {image}
+                            className = {styles.bannerImage}
+                            alt = "banner"
+                            style = {{zIndex: bannerImgs.length - index}} /*This orders the first child on the very top, and successive ones underlapping*/
+                        />
+                    ))}
+                    <h1>{caption}</h1>
+                </div>
+                
                 <div className = {styles.mainContent}>
                     <SideNav sections = {sections} activeIds = {activeIds} pageRef = {pageRef}></SideNav>
                     <main className = {styles.page} >

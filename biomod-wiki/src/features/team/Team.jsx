@@ -16,6 +16,6 @@ export default function Team() {
         }
     ]
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/aptonix-logo.png"]}/>
     )
 }

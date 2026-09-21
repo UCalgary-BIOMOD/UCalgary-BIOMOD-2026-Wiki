@@ -12,6 +12,7 @@ import Modelling from "/src/features/modelling/Modelling.jsx"
 import Experiments from "/src/features/experiments/Experiments.jsx"
 import ELSI from "/src/features/elsi/ELSI.jsx"
 import Team from "/src/features/team/Team.jsx"
+import Results from "/src/features/results/Results.jsx"
 function App() {
   
 
@@ -29,6 +30,7 @@ function App() {
         <Route path = "/experiments" element = {<Experiments/>}/>
         <Route path = "/elsi" element = {<ELSI/>}/>
         <Route path = "/team" element = {<Team/>}/>
+        <Route path = "/results" element = {<Results/>}/>
       </Routes>
     </BrowserRouter>
   )
