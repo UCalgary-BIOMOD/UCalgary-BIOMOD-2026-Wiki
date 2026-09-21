@@ -47,6 +47,9 @@ export default function NavBar() {
                         <li>
                             <NavLink to="/experiments" onClick={() => { setIsOpen(!isOpen); setMobileOpen(false);}}>Experiments</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/results" onClick={() => { setIsOpen(!isOpen); setMobileOpen(false);}}>Results</NavLink>
+                        </li>
                     </ul>
                 </li>
                 <li>

@@ -29,7 +29,7 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
      * It also will link together all svg paths with the associated <li> in itemDataRef
      */
     function drawPath() {
-        
+        itemDataRef.current = {}
         const svg = pathRef.current /*Obtain svg object from its path*/
         if (!svg) return
         const navPath = svg.querySelector("path") /*Obtain the path from the ref*/
@@ -77,15 +77,16 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
             
             /*console.log("PATH:", path.join(" "))*/
         })
-        /*Set the styling of the navPath. Important to have opacity 0 to make it not visible until sync*/
+        /*Set the styling of the navPath. */
         const length = navPath.getTotalLength()
         navPath.style.strokeDashArray = `${length}`
         navPath.style.strokeDashOffset = `${length}`
-        navPath.style.opacity = 0
+        
     }
 
     function syncPath() {
         const svg = pathRef.current
+        
         if (!svg) return
 
         const navPath = svg.querySelector("path")
@@ -113,6 +114,8 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
             navPath.style.setProperty("stroke-dashoffset", "1")
             navPath.style.setProperty("stroke-dasharray", dashArray)
             navPath.style.setProperty("opacity", 1)
+        } else {
+            navPath.style.setProperty("opacity", 0)
         }
         /*cache last path for next update*/
         const { start: lastStart, end: lastEnd } = lastPathRef.current
@@ -121,13 +124,24 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
             // update path
             lastPathRef.current = { start: pathStart, end: pathEnd }
         }
+        
     }
+    /*Just neatly wraps the other two*/
+    function updatePath() {
+        drawPath()
+        syncPath()
+    }
+
+    
+    
+    
+    
+    
     /*Request draw*/
     useEffect(() => {
         const id = requestAnimationFrame(() => {
             
-            drawPath()
-            syncPath()
+            updatePath()
             
             
         })
@@ -136,9 +150,11 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
    
     /*Request redraw*/
     useEffect(() => {
-        syncPath()
+        updatePath()
     }, [activeIds])
 
+    
+    
     return (
         <nav className = {styles.sideNav}>
             <svg xmlns="http://www.w3.org/2000/svg" ref = {pathRef}>
@@ -161,19 +177,68 @@ function SideNav({sections, activeIds, pageRef}) { //https://codepen.io/agrimsru
     )
 }
 
-export default function PageLayout({sections}) {
+export default function PageLayout({sections, bannerImgs, bannerHeight, caption = null}) {
     const [activeIds, setActiveIds] = useState(new Set())
-    
+    const [resizeVersion, setResizeVersion] = useState(0)
     const pageRef = useRef(null)
+    const observerRef = useRef(null)
+
+    function createObserver(callback, options) {
+        if (observerRef.current) {
+            observerRef.current.disconnect()
+        }
+        observerRef.current = new IntersectionObserver(callback, options)
+
+        pageRef.current
+            ?.querySelectorAll("section")
+            .forEach((el) => observerRef.current.observe(el))
+        
+    }
+
     useEffect(() => {
-        /*Edit to change IntersectionObserver settings*/
+
         const options = {
             root: null,
-            rootMargin: "0px 0px -20% 0px",
+            rootMargin: "0px 0px 0px 0px",
             threshold: 0.01
         }
         /*Upon a change of observed sections, create a set of sections that are active (in view)*/
         const callback = (entries) => {
+            
+            setActiveIds((prev) => {
+                const newSet = new Set(prev)
+                entries.forEach((entry) => {
+                    const id = entry.target.id
+                    if (entry.isIntersecting) {
+                        newSet.add(id)
+                    } else {
+                        newSet.delete(id)
+                    }
+                })
+                return newSet
+            })
+        }
+        const observer = new ResizeObserver(() => {
+            observerRef.current?.disconnect()
+            createObserver(callback, options)
+            setResizeVersion(v => v + 1)
+        })
+
+        observer.observe(pageRef.current)
+        return () => observer.disconnect()
+    }, [])
+
+    
+    useEffect(() => {
+        /*Edit to change IntersectionObserver settings*/
+        const options = {
+            root: null,
+            rootMargin: "0px 0px 0px 0px",
+            threshold: 0.01
+        }
+        /*Upon a change of observed sections, create a set of sections that are active (in view)*/
+        const callback = (entries) => {
+            
             setActiveIds((prev) => {
                 const newSet = new Set(prev)
                 entries.forEach((entry) => {
@@ -190,13 +255,12 @@ export default function PageLayout({sections}) {
         /*init, add all to sectionelements, and observe all <sections></sections>*/
         /*Comment this block to turn off indicator system*/
         
-        const observer = new IntersectionObserver(callback,options)
-        const sectionElements = pageRef.current?.querySelectorAll("section") || []
-        sectionElements.forEach((element) => observer.observe(element))
-        return () => observer.disconnect()
+        createObserver(callback, options)
+        
+        return () => observerRef.current?.disconnect()
         
         
-        }, [])
+    }, [])
         
     
     
@@ -205,20 +269,36 @@ export default function PageLayout({sections}) {
 
 
     return (
-        <div className = {styles.pageLayout} ref = {pageRef} > 
-            <div className = {styles.mainContent}>
-                <SideNav sections = {sections} activeIds = {activeIds} pageRef = {pageRef}></SideNav>
-                <main className = {styles.page} >
-                    
-                    {sections.map(section => (
-                        <section key={section.id} id = {section.id}>
-                            {section.render()}
-                        </section>
+        <div className = {styles.pageLayout} ref = {pageRef}>
+            <div> 
+                <div className = {styles.topLine}/>
+                <div className = {styles.bannerContainer} style = {{"--banner-height":bannerHeight}}>
+                    {bannerImgs.map((image, index) => (
+                        <img
+                            key = {image}
+                            src = {image}
+                            className = {styles.bannerImage}
+                            alt = "banner"
+                            style = {{zIndex: bannerImgs.length - index}} /*This orders the first child on the very top, and successive ones underlapping*/
+                        />
                     ))}
-                    
-                </main>
+                    <h1>{caption}</h1>
+                </div>
+                
+                <div className = {styles.mainContent}>
+                    <SideNav sections = {sections} activeIds = {activeIds} pageRef = {pageRef}></SideNav>
+                    <main className = {styles.page} >
+                        
+                        {sections.map(section => (
+                            <section key={section.id} id = {section.id}>
+                                {section.render()}
+                            </section>
+                        ))}
+                        
+                    </main>
+                </div>
+                <Footer/>
             </div>
-            <Footer/>
         </div>
     )
 }

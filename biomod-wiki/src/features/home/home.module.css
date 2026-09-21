@@ -1,0 +1,76 @@
+.accent{
+    color: var(--accent)
+}
+
+
+
+.halfSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.dot{
+    position: "absolute";
+    width: "10px";
+    height: "10px";
+    backgroundColor: "red";
+    borderRadius: "50%";
+}
+
+.lifeStageButton {
+    position: relative;
+    padding: 0.25rem 0;
+    
+    background: none;
+    border: none;
+    color: var(--black);
+    
+    font: inherit;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    
+    cursor: pointer;
+    
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Animated underline */
+.lifeStageButton::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+    width: 100%;
+    height: 0.1rem;
+    
+    background-color: var(--text-h);
+    
+    transform: scaleX(0);
+    transform-origin: center;
+    
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover */
+.lifeStageButton:hover {
+    color: var(--text-h);
+}
+
+.lifeStageButton:hover::after {
+    transform: scaleX(1);
+}
+
+/* Selected option */
+.lifeStageButton.selected {
+    color: var(--accent);
+}
+
+.lifeStageButton.selected::after {
+    background-color: var(--accent);
+    transform: scaleX(1);
+}
