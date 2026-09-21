@@ -7,6 +7,7 @@ import treeStyles from "/src/Components/TreeAnimation.module.css";
 import teamStyles from "./Team.module.css"
 import TreeAnimation from "/src/Components/TreeAnimation.jsx";
 import { useState } from "react";
+import SectionTitle from "/src/Components/SectionTitle.jsx";
 
 export default function Team() {
     const [openMember, setOpenMember] = useState(null);
@@ -16,7 +17,6 @@ export default function Team() {
             title: "Team",
             render: () => (
                 <>
-                    <TextBlock {...content.Team}/>
                     <TreeAnimation onOutsideClick={() => setOpenMember(null)}>
                         {content.Team.members.map((member) => (
                             <div
@@ -48,7 +48,7 @@ export default function Team() {
             title: "Support",
             render: () => (
                 <>
-                    <TextBlock {...content.Support}/>
+                    <SectionTitle sectionImgs = {["./images/section-title.png"]} sectionTitleHeight = "10vw" caption = "SUPPORT"></SectionTitle>
                     <div className={teamStyles.supportGrid}>
                         {content.Support.supporters.map((supporter) => (
                             <div key={supporter.name} className={teamStyles.supportMember}>
@@ -68,7 +68,7 @@ export default function Team() {
             title: "Photo Gallery",
             render: () => (
                 <>
-                    <TextBlock {...content.PhotoGallery}/>
+                    <SectionTitle sectionImgs = {["./images/section-title.png"]} sectionTitleHeight = "10vw" caption = "PHOTO GALLERY"></SectionTitle>
                     <div className={teamStyles.imageCarouselContainer}>
                         <ImageCarousel
                             imgs = {[
@@ -84,6 +84,6 @@ export default function Team() {
         },
     ]
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "TEAM"></PageLayout>
     )
 }

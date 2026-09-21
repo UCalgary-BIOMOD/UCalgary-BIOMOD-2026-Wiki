@@ -41,20 +41,20 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #EABE73;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .supportRole {
     font-size: 0.7rem;
     font-style: italic;
     color: white;
-    margin: 0;
+    margin: 10px;
 }
 
 .supportDepartment {
     font-size: 0.6rem;
     color: white;
-    margin: 0;
+    margin: 10px;
 }
 
 .imageCarouselContainer {

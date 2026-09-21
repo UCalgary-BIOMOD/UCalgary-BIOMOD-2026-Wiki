@@ -69,6 +69,6 @@ export default function Project() {
         }
     ]
     return (
-        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "Abstract"/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "ABSTRACT"/>
     )
 }
