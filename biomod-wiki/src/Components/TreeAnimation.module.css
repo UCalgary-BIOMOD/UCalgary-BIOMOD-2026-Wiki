@@ -5,9 +5,11 @@
 
 .stickyTree {
     position: sticky;
-    top: calc(var(--top-nav-height) + 2rem);    
+    top: calc(var(--top-nav-height) + 2rem); 
+    height: calc(100vh - var(--top-nav-height));   
     display: flex;
     justify-content: center;
+    align-items: center;
     z-index: 0;
 }
 

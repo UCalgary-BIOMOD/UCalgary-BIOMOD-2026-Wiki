@@ -33,7 +33,14 @@ export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, r
             <p className={styles.popupName}>{name}</p>
             <p className={styles.teamMemberRole}>{role}</p>
             <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={onOpen}></img>
-            <div className={`${styles.popUpCard} ${isPopupOpen ? styles.show : ""} ${name === "Meagan Davies" ? styles.meaganPopup : ""}`}>
+            <div 
+                className={`
+                    ${styles.popUpCard} 
+                    ${isPopupOpen ? styles.show : ""} 
+                    ${name === "Meagan Davies" ? styles.meaganPopup : ""}
+                    ${name === "Neeor Alam" ? styles.neeorPopup : ""}
+                    ${name === "Shahzaib Khan" ? styles.shahzaibPopup : ""}
+                `}>
                 <button onClick={onClose} className={styles.closeButton}>X</button>
                 <h2 className={styles.teamMemberName}>{name}</h2>
                 <div className={styles.imageCarousel}> 
