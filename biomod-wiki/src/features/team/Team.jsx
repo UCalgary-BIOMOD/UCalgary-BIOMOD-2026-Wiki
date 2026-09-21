@@ -69,14 +69,16 @@ export default function Team() {
             render: () => (
                 <>
                     <TextBlock {...content.PhotoGallery}/>
-                    <ImageCarousel className={teamStyles.imageCarousel}
-                        imgs = {[
-                            {id: 1, src: "/images/team1.JPG"},
-                            {id: 2, src: "/images/team2.JPG"},
-                            {id: 3, src: "/images/team3.JPG"},
-                            {id: 4, src: "/images/team4.JPG"},
-                        ]}
-                    />
+                    <div className={teamStyles.imageCarouselContainer}>
+                        <ImageCarousel
+                            imgs = {[
+                                {id: 1, src: "/images/team1.JPG"},
+                                {id: 2, src: "/images/team2.JPG"},
+                                {id: 3, src: "/images/team3.JPG"},
+                                {id: 4, src: "/images/team4.JPG"},
+                            ]}
+                        />
+                    </div>
                 </>
             )
         },
