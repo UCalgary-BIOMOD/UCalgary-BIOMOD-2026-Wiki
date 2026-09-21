@@ -1,0 +1,11 @@
+.viewport {
+    width: 100%;
+    height: calc(100svh - var(--top-nav-height));
+    min-height: calc(100svh - var(--top-nav-height));
+    box-sizing: border-box;
+    border: 0px solid lightblue;
+    display: flex;
+    flex-direction: column;
+    
+    
+}

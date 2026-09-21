@@ -4,8 +4,14 @@
         "size": "h1",
         "text": "This will be the part where the home page is or something. Blah, blah, blah, blah, whatever whatever, hahahahahaha."
     },
-    "Random": {
-        "heading": null,
-        "text": "This is my favorite part of the song where it goes:\nWe will rock you!\nWe will rock you!"
-    }
+    "Problem": {
+        "heading": "Imagine forgetting the faces of those you love",
+        "text": "As the most common form of dementia, Alzheimer's disease accounts for 60-80% of all cases [1]. "
+    },
+    "references": [
+      {
+        "text": "Alzheimer's Disease and Dementia | About Dementia",
+        "url": "https://www.cdc.gov/alzheimers-dementia/about/"
+      }
+    ]
 }

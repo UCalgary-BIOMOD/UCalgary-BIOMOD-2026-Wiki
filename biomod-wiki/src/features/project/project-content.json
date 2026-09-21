@@ -1,0 +1,6 @@
+{
+    "Abstract": {
+        "heading": "",
+        "text": "   Alzheimer’s disease is the leading cause of dementia and a potential key to delaying its onset is the early detection of the disease’s biomarkers such as amyloid-beta or tau protein. Our aim is to develop an aptamer-based electrochemical biosensor for the detection of amyloid beta 42. An aptamer was used to detect amyloid beta 42 via conformational change. We identified that a PAMAM dendrimer could be useful as a structural backbone and aid in noise reduction of our Differential Pulse Voltammetry (DPV) signal. We also implemented a toehold-mediated strand displacement (TMSD) to allow for aptamer exchange. Previous work identified dendrimers as signal amplifiers for electrochemical biosensors. We demonstrated the efficacy of our biosensor by demonstrating identification of unknowns using a calibration curve. This demonstrated the accuracy of the sensor in an analytical solution. Then, in a blood-mimetic solution, we successfully identified accuracy, showing that the sensor was applicable in a point-of-care setting. By demonstrating the use of this biosensor, early detection of Alzheimer’s may be scaled up to population-wide testing and help delay onset by informing risk-targeted interventions for improving brain fitness."
+    }
+}

@@ -1,7 +1,13 @@
+@import "@fontsource/league-spartan/400.css";
+@import "@fontsource/league-spartan/500.css";
+@import "@fontsource/league-spartan/600.css";
+@import "@fontsource/league-spartan/700.css";
+
 :root {
   --text: #E9ECEF; /* This is for <p> */
   --text-h: #EABE73; /* This is for <h1>, <h2>, etc. */
   --bg: #0C0922; /* General website background color */
+  --black: #000000;
   --light-bg: #242238; /*Lighter background color to make nav and footer stand out*/
   --border: #E9ECEF; /*Changes color of left/right border of #root container; change to #FF0000 to observe bounds.*/
   --code-bg: #f4f3ec; /*Most likely change this to match --bg IF we host code on our website*/
@@ -11,23 +17,40 @@
   --social-bg: rgba(244, 243, 236, 0.5); /*Use this color to define backgrounds for social media or footer UI; ex. IG logo. Tweak 4th variable for opacity*/
   --shadow:
     rgba(255, 255, 255, 0.5) 0 12px 24px -6px, rgba(255, 255, 255, 0.05) 0 2px 8px -2px; /*Fun to add a box-shadow to components like cards*/
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change default font of <p>, <a> etc.*/
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change heading font*/
+  --link: #0077b6; /*Color of the links unvisited*/
+  --link-visited: #EABE73; /*Color of the links once visited.*/
+  --sans: system-ui, 'League Spartan', system-ui, sans-serif; /*edit to change default font of <p>, <a> etc.*/
+  --heading: system-ui, 'League Spartan', system-ui, sans-serif; /*edit to change heading font*/
   --mono: ui-monospace, Consolas, monospace; /*font for code*/
+  /* Brand & UI Colors */
+  --bg-overlay: rgba(12, 9, 34, 0.75);
+  --text-primary: #ffffff;
+  /* Shared UIs and Tokens*/
+  --radius-pill: 9999px;
+  --font-size-sm: 0.8rem;
+
 
   font: 18px/145% var(--sans); /*adjust font size and vertical line height (for gaps between text)*/
   letter-spacing: 0.18px;
   /*color-scheme: light;*/
   color: var(--text); /*text color of root, see --text*/
   background: var(--bg);
-  font-synthesis: none; /*Leave at none because it prevents making up fake font approximations for different weights*/
+  /*font-synthesis: none;*/ /*Leave at none because it prevents making up fake font approximations for different weights*/
   text-rendering: optimizeLegibility; /*Just tells browser to prioritize legibility, but fine to keep in*/
   -webkit-font-smoothing: antialiased; /*antialiasing for chrome*/
   -moz-osx-font-smoothing: grayscale; /*antialiasing for firefox*/
 
-   --top-nav-height: 80px; /*Navigation Bar Height*/
-  @media (max-width: 1024px) { /*sets the font-size smaller if max-width is 1024 or lower*/
+  --top-nav-height: 80px; /*Navigation Bar Height*/
+
+  /*Custom banner sizes*/
+  --banner-height: 100vsg;
+  
+  /* Tablets (e.g., iPad Mini): keep base font size readable */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    font-size: 18px;
+  }
+  /* Mobile phones: slightly reduced base font */
+  @media (max-width: 599px) {
     font-size: 16px;
   }
   
@@ -52,25 +75,37 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
 }
 
 h1 { 
-  font-size: 56px;
+  font-size: 60px;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  /*line-height:0%; Consider editing this to remove excessive line spacing*/
+  line-height:100%; 
   @media (max-width: 1024px) { /*if viewport less than 1024 px, change margin and font-size*/
     font-size: 36px;
-    margin: 20px 0;
+    margin: 20px 0; 
   }
   
 }
 h2 {
-  font-size: 24px;
+  font-size: 55px;
+  line-height: 100%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-size: 25px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
@@ -80,7 +115,10 @@ h2 {
 }
 
 p {
-  margin: 0; /*No margin for <p> elements; most likely allow <ul> or <l> to control it.*/
+  margin: 0 0 30px; /*No margin for <p> elements; most likely allow <ul> or <l> to control it.*/
+  font-size: 30px;
+  line-height: 100%;
+  font-weight: 500;
 }
 
 a{

@@ -36,23 +36,30 @@ This module holds everything related to the page layout framework and the side n
     border: 0px solid pink;
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items: flex-start;
     top: var(--top-nav-height); /*This prevents overlap with the top nav bar*/
     
     height: fit-content; /*Scales to only fit the content, which helps keep it sticky*/
-    
+    background-color: var(--bg);
 }
 
 .sideNav ul{
+    width: 100%;
+    z-index: 5;
     list-style: none; /*Removes the bullet points*/
     border: 0px solid blue;
-    padding-left: 0; /*Removes the default left padding for lists*/
+    padding-left: 20%; /*Removes the default left padding for lists*/
 }
 
 .sideNav ul a{
+    display: block;
+    width: 90%;
     color: var(--text);
     text-decoration: none; /*Removes the underline*/
     transition: color 0.2s ease; /*From white, changes color to text color*/
+    text-align: left;
+    border: 0px solid gray;
+   
 }
 
 .sideNav ul a:hover{
@@ -71,6 +78,7 @@ This module holds everything related to the page layout framework and the side n
   width: 100%; 
   height: 100%;
   pointer-events: none; /*This makes it so that the links are clickable through the svg, in case*/
+  border: 0px solid darkmagenta;
 }
 
 .sideNav path {
@@ -79,4 +87,60 @@ This module holds everything related to the page layout framework and the side n
   fill: none; /*Makes it so that no fill is created and only lines are used*/
   stroke-width: 3px;
   
+}
+
+/* Responsive: collapse side nav and stack content on small screens */
+@media (max-width: 768px) {
+    .mainContent {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .sideNav {
+        display: none;
+    }
+
+    .page {
+        margin: 0 1rem;
+    }
+}
+
+.bannerContainer{
+    height: calc(var(--banner-height) - var(--top-nav-height));
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bannerContainer h1 {
+    position: relative;
+    z-index: 10;
+}
+
+.bannerImage{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contained image */
+.bannerImage:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Oversized image, let's it flow off the banner container stylistically */
+.bannerImage:nth-child(2) {
+  height: 120%; 
+}
+
+.topLine{
+    background-color: var(--border);
+    height: 0.20rem;
 }

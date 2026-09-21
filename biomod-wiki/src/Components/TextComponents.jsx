@@ -10,7 +10,7 @@ export default function TextBlock({heading, size: Tag = "h1", text}) {
     return (
         <section>
             {heading && <Tag>{heading}</Tag>}
-            <p style = {{whiteSpace: "pre-line"}}>{text}</p>
+            <p style = {{whiteSpace: "pre-line", textAlign: "start", textIndent: "3em"}}>{text}</p>
         </section>
     )
 }   

@@ -4,8 +4,8 @@ import LinkWrapper from "../../Components/LinkComponents"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import YouTubeEmbed from "../../Components/YouTubeEmbed"
 import ImageCarousel from "../../Components/ImageCarousel"
-
-
+import ProteinViewer from "../../Components/ProteinViewer"
+import PDFViewer from "../../Components/PDFViewer"
 
 export default function Test() {
     const sections = [
@@ -54,10 +54,30 @@ export default function Test() {
                 <YouTubeEmbed w = "1030" h = "579" src="o_v9MY_FMcw"/>
             </>
             )
+        },
+        {
+            id: "protein",
+            title: "Protein",
+
+            render: () => (
+            <>
+                <ProteinViewer pdbUrl={"/proteins/DNA_Aptamer3_1.pdb"}/>
+            </>
+            )
+        },
+        {
+            id: "pdf",
+            title: "Example PDF",
+
+            render: () => (
+            <>  
+                <PDFViewer pdfPath = "/files/dendrimer-biosensors.pdf" caption = "Test PDF" />
+            </>
+            )
         }
     ]
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} bannerImgs = {[]}/>
     )
 }
 

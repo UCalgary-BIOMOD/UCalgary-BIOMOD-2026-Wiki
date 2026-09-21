@@ -21,6 +21,7 @@ function loadExperiments({markdownFiles}) {
             slug: path.split("/").pop().replace(".md", "")
         }
     })
+    .sort((a, b) => a.id - b.id);
 }
 
 export default function Notebook() {
@@ -108,6 +109,6 @@ export default function Notebook() {
     ]
     
     return (
-        <PageLayout sections = {sections}/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/aptonix-logo.png"]}/>
     )
 }

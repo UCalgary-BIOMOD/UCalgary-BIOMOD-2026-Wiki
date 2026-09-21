@@ -2,7 +2,7 @@
     text-align: left;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    
     position: relative;
 }
 
@@ -12,5 +12,5 @@
 
 .experimentText{
     flex: 0 0 60%; 
-    
+    text-align:left;
 }
