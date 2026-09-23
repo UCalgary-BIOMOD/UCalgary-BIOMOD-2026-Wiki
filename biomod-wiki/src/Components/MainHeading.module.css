@@ -1,21 +1,22 @@
 
-.sectionContainer{
-    height: calc(var(--section-title-height));
+.mainHeadingContainer{
+    height: calc(var(--main-heading-height));
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sectionContainer h1 {
+.mainHeadingContainer h1 {
     position: relative;
     z-index: 10;
     margin: 0;
     font-size: 3vw;
     font-weight: bold;
+    font-family: "Monteserrat";
 }
 
-.sectionImage{
+.mainHeadingImage{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -23,14 +24,14 @@
 }
 
 /* Contained image */
-.sectionImage:nth-child(1) {
+.mainHeadingImage:nth-child(1) {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
 /* Oversized image, let's it flow off the banner container stylistically */
-.sectionImage:nth-child(2) {
+.mainHeadingImage:nth-child(2) {
   height: 120%; 
 }
 
