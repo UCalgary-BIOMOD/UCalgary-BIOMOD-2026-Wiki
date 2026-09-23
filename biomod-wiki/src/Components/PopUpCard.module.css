@@ -5,30 +5,39 @@
 
 /* INCLUDE REFERENCE IN GIT HUB READ ME */
 
+/* Popup card container (team member photo + popup card) */
+.teamMember {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 /* Team member names above pictures  */
 .popupName {
     position: absolute;
-    bottom: calc(100% + 4.5cqw);
+    bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
     text-align: center;
     font-weight: bold;
     color: #EABE73;
+    font-size: clamp(0.2rem, 1.8vmin, 1rem);
     margin: 0;
-    font-size: 1.8cqw;
 }
 
 /* Team member roles above pictures  */
 .teamMemberRole {
     position: absolute;
-    bottom: calc(100% - 1.5cqw);
+    bottom: 115%;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
     text-align: center;
     font-style: italic;
-    font-size: 1.5cqw;
+    color: white;
+    font-size: clamp(0.1rem, 1.5vmin, 0.8rem);
+    margin: 0;
+
 }
 
 /* Clickable team member headshot photo*/
@@ -47,12 +56,6 @@
     transition: transform 0.3s ease;
 }
 
-/* Popup card container (team member photo + popup card) */
-.teamMember {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
 
 /* Popup card */
 .teamMember .popUpCard {
