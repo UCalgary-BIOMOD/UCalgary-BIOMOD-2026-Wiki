@@ -27,7 +27,7 @@ import LinkWrapper from "./LinkComponents";
  * @returns 
  */
 
-export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, role, year, major, cardGame, cardGameURL, snack, description, isPopupOpen, onOpen, onClose}) {
+export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, photo4, role, year, major, cardGame, cardGameURL, snack, description, isPopupOpen, onOpen, onClose}) {
     return (
         <div className={styles.teamMember} data-popup-open={isPopupOpen}>
             <p className={styles.popupName}>{name}</p>
@@ -49,6 +49,7 @@ export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, r
                             {id: 1, src: photo1},
                             {id: 2, src: photo2},
                             {id: 3, src: photo3},
+                            ...(photo4 ? [{id: 4, src: photo4}] : [])
                         ]}
                     />
                 </div>
