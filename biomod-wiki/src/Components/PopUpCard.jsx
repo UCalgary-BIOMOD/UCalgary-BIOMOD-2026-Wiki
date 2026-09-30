@@ -46,9 +46,9 @@ export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, p
                 <div className={styles.imageCarousel}> 
                     <ImageCarousel 
                         imgs = {[
-                            {id: 1, src: photo1},
-                            {id: 2, src: photo2},
-                            {id: 3, src: photo3},
+                            ...(photo1 ? [{id: 1, src: photo1}] : []),
+                            ...(photo2 ? [{id: 2, src: photo2}] : []),
+                            ...(photo3 ? [{id: 3, src: photo3}] : []),
                             ...(photo4 ? [{id: 4, src: photo4}] : [])
                         ]}
                     />
