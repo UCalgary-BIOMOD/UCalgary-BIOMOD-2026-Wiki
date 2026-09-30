@@ -1,0 +1,34 @@
+{
+    "ethical": [
+    {
+      "subtitle": "1. Informed Consent and Patient Autonomy",
+      "image": "/images/ethical1.svg",
+      "text": "Patients should be able to make decisions for themselves, give consent uncoerced and with decision-making capacity based on information about the study’s purpose, risks, benefits, and available alternatives. In this research, it means participants should be informed that Aptonix is a proof-of-concept biosensor designed to detect amyloid beta 42 (Aβ42) and has not been clinically validated to diagnose Alzheimer’s disease or replace assessment by a qualified healthcare professional. The right to withdraw from the study or test at any time will also be maintained. Patients also have the right to either know or not know their results."
+    },
+    {
+      "subtitle": "2. Psychological Effects of Biomarker Testing",
+      "image": "/images/aptonix-logo.png",
+      "text": "Yearly Aβ42 screening during routine health check ups may increase anxiety around potential results, especially if Aβ42 levels fluctuate normally but are misinterpreted as a significant increase. This can result in hypochondria or unneeded medical interventions and lifestyle alterations. Physician-mediated communication and plain-language result reports could reduce misunderstanding. However, professional interpretation cannot eliminate the emotional effect of receiving uncertain health information."
+    }
+  ],
+    "legal": [
+    {
+      "subtitle": "1. Research Ethics and Use of Human Samples",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "Research involving identifiable human biological materials would require institutional Research Ethics Board review before samples are collected or used. The consent process would need to address the purpose of collection, foreseeable risks, data linkage, storage duration, future secondary use, withdrawal, and sample disposal [government of canada]. The present proof-of-concept does not involve testing identifiable patient samples."
+    }
+  ],
+    "socialImplications": [
+    {
+      "subtitle": "1. Healthcare Disparities",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "Access to Aptonix may differ across developed and developing countries because of cost, healthcare infrastructure, laboratory capacity, and trained staff [BKN Yadav]. Aptonix is intended as a potentially scalable electrochemical platform, but it would still require sample collection, an electrochemical reader, quality control, trained interpretation, and an appropriate follow-up pathway. Therefore, a lower-cost screening test alone would not eliminate unequal access to Alzheimer’s assessment."
+    }
+  ],
+    "references": [
+      {
+        "text": "Alzheimer's Disease and Dementia | About Dementia",
+        "url": "https://www.cdc.gov/alzheimers-dementia/about/"
+      }
+    ]
+}

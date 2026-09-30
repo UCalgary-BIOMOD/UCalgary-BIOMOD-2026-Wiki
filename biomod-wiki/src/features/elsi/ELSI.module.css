@@ -1,0 +1,40 @@
+.ethicalHeading {
+    margin-top: 10rem;
+}
+
+.elsiMaterial {
+    width: 70vw;
+    margin: 4rem;
+    font-family: 'Montserrat';
+}
+
+.elsiSubtitle {
+    color: #EABE73;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    margin-bottom: 2rem;
+}
+
+.elsiGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.materialImage {
+    width: 100%;
+    max-width: 20rem;
+    justify-self: center;
+}
+
+.materialText {
+    margin: 0;
+    text-align: left;
+    font-size: clamp(1.5rem, 1rem, 3rem);
+}
+
+@media (max-width: 700px) {
+    .elsiGrid {
+        grid-template-columns: 1fr;
+    }
+}

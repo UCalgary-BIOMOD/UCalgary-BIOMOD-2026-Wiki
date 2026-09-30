@@ -7,7 +7,6 @@ import treeStyles from "/src/Components/TreeAnimation.module.css";
 import teamStyles from "./Team.module.css"
 import TreeAnimation from "/src/Components/TreeAnimation.jsx";
 import { useState } from "react";
-import mainHeading from "/src/Components/MainHeading.jsx";
 import MainHeading from "../../Components/MainHeading";
 
 export default function Team() {
