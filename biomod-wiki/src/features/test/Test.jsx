@@ -61,7 +61,7 @@ export default function Test() {
 
             render: () => (
             <>
-                <ProteinViewer pdbUrl={"/proteins/DNA_Aptamer3_1.pdb"}/>
+                <ProteinViewer pdbUrl={"/proteins/all_components_merged.pdb"}/>
             </>
             )
         },

@@ -1,0 +1,13 @@
+.mobileCalendar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktopCalendar {
+        display: none;
+    }
+
+    .mobileCalendar {
+        display: block;
+    }
+}

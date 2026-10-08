@@ -4,6 +4,7 @@ import LinkWrapper from "/src/Components/LinkComponents.jsx"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 import ProteinViewer from "/src/Components/ProteinViewer.jsx"
+import MoleculeLegend from "/src/Components/MoleculeLegend.jsx"
 import ViewportSection from "../../Components/ViewportSection"
 import CanadaDot from "./CanadaDots.jsx"
 import Biomarker from "./Biomarker.jsx"
@@ -76,8 +77,27 @@ export default function Home() {
     ]
     
     const [selectedLifestage, setSelectedLifestage] = useState("select")
+    const [selectedComponent, setSelectedComponent] = useState(null)
     
     const sections = [
+        {
+            id: "home",
+            title: "Home",
+            render: () => (
+                <>
+                    <img src="/images/aptonix-logo-mockup.png" alt="I want to go home!" />
+                    <ProteinViewer
+                        pdbUrl="/proteins/all_components_merged.pdb"
+                        externalActiveId={selectedComponent}
+                        onComponentHover={setSelectedComponent}
+                    />
+                    <MoleculeLegend
+                        externalActiveId={selectedComponent}
+                        onActiveChange={setSelectedComponent}
+                    />
+                </>
+            )
+        },
         {
             id: "problem",
             title: "Problem",

@@ -1,52 +1,174 @@
-import {useEffect, useRef, useState} from "react"
-import * as $3Dmol from "3dmol"
+import { useEffect, useRef, useState } from "react"
+import { Stage } from "ngl"
 import styles from "./ProteinViewer.module.css"
 
-const TAP_THRESHOLD = 8 // px of movement still counted as "just a tap"
+const TAP_THRESHOLD = 8
 
-export default function ProteinViewer({pdbUrl}) {
+// Same idea as before: which chain letter belongs to which legend item.
+// This still has to be written by hand, because your PDB file's chain
+// letters (A, B, C, L, M, T) don't carry English labels — only your
+// team's own REMARK notes tell us what each one means.
+const CHAIN_TO_COMPONENT = {
+    A: "aptamer",
+    B: "tmsd",
+    C: "dendrimer",
+    M: "methylene-blue",
+    T: "biomarker"
+}
+
+export default function ProteinViewer({ pdbUrl, externalActiveId = null, onComponentHover }) {
     const wrapperRef = useRef(null)
-    const canvasRef = useRef(null)
+    const viewerDivRef = useRef(null) // NGL will build its own canvas inside this div
+    const stageRef = useRef(null)
+    const reprMapRef = useRef({}) // stores each colored "layer" so we can show/hide them later
+
     const [active, setActive] = useState(false)
+    const [showInfo, setShowInfo] = useState(false)
+    const [loadError, setLoadError] = useState(null)
+    const selectedComponentRef = useRef(null)
+    const externalActiveRef = useRef(externalActiveId)
+
+    const onHoverRef = useRef(onComponentHover)
+    useEffect(() => {
+        onHoverRef.current = onComponentHover
+    }, [onComponentHover])
+
+    // Show only the selected component's layer; null = show everything
+    const applyHighlight = (componentId) => {
+        const reprMap = reprMapRef.current
+        Object.entries(reprMap).forEach(([id, repr]) => {
+            const shouldShow = !componentId || componentId === id
+            repr.setVisibility(shouldShow)
+        })
+    }
 
     useEffect(() => {
-        if (!canvasRef.current) return
+        externalActiveRef.current = externalActiveId
+        applyHighlight(externalActiveId)
+    }, [externalActiveId])
 
-        const viewer = $3Dmol.createViewer(canvasRef.current, {
-            backgroundColor: "#0C0922"
-        })
+    useEffect(() => {
+        if (!viewerDivRef.current) return
+
+        // This is NGL's equivalent of $3Dmol.createViewer(...)
+        const stage = new Stage(viewerDivRef.current, { backgroundColor: "#0C0922" })
+        stageRef.current = stage
+        let cancelled = false
 
         fetch(pdbUrl)
-            .then((res) => res.text())
-            .then((data) => {
-                viewer.addModel(data, "pdb")
-                viewer.setStyle({}, { cartoon: { color: "spectrum" } })
-                viewer.zoomTo()
-                viewer.render()
+            .then((res) => {
+                if (!res.ok) throw new Error(`Could not load protein file (${res.status})`)
+                return res.text()
+            })
+            .then((pdbText) => {
+                if (cancelled) return null
+                setLoadError(null)
+                // NGL wants a Blob, not raw text, when loading from memory
+                const blob = new Blob([pdbText], { type: "text/plain" })
+
+                return stage.loadFile(blob, { ext: "pdb" }).then((component) => {
+                    if (cancelled) return
+                    const rootStyles = getComputedStyle(document.documentElement)
+                    const colors = {
+                        dendrimer: rootStyles.getPropertyValue("--dendrimer").trim(),
+                        tmsd: rootStyles.getPropertyValue("--tmsd").trim(),
+                        aptamer: rootStyles.getPropertyValue("--aptamer").trim(),
+                        methyleneBlue: rootStyles.getPropertyValue("--methylene-blue").trim(),
+                        biomarker: rootStyles.getPropertyValue("--biomarker").trim()
+                    }
+
+                    // Each line below adds ONE colored "layer" to the model.
+                    // ":X" means "chain X" in NGL's selection language.
+                    // DNA chains use "cartoon" (a ribbon); small molecules
+                    // (dendrimer, linker, methylene blue) use "ball+stick"
+                    // since they have no backbone for a ribbon to follow.
+                    const reprMap = {}
+
+                    reprMap["tmsd"] = component.addRepresentation("cartoon", {
+                        sele: ":B", color: colors.tmsd
+                    })
+                    reprMap["aptamer"] = component.addRepresentation("cartoon", {
+                        sele: ":A", color: colors.aptamer
+                    })
+                    reprMap["biomarker"] = component.addRepresentation("cartoon", {
+                        sele: ":T", color: colors.biomarker
+                    })
+                    reprMap["dendrimer"] = component.addRepresentation("ball+stick", {
+                        sele: ":C", color: colors.dendrimer
+                    })
+                    reprMap["methylene-blue"] = component.addRepresentation("ball+stick", {
+                        sele: ":M", color: colors.methyleneBlue
+                    })
+                    // Linker (chain L) — always visible, no legend entry,
+                    // just shown in plain gray so the structure looks whole.
+                    component.addRepresentation("ball+stick", {
+                        sele: ":L", color: "gray"
+                    })
+
+                    reprMapRef.current = reprMap
+                    applyHighlight(externalActiveRef.current || selectedComponentRef.current)
+
+                    component.autoView() // same idea as viewer.zoomTo()
+
+                    // This is NGL's click detection — the equivalent of
+                    // 3Dmol's setClickable, which never worked for us.
+                    stage.signals.clicked.add((pickingProxy) => {
+                        if (!pickingProxy || !pickingProxy.atom) return
+                        const chain = pickingProxy.atom.chainname
+                        const componentId = CHAIN_TO_COMPONENT[chain] || null
+
+                        const next = selectedComponentRef.current === componentId ? null : componentId
+                        selectedComponentRef.current = next
+                        applyHighlight(next)
+                        onHoverRef.current?.(next)
+                    })
+
+                    stage.signals.hovered.add((pickingProxy) => {
+                        const chain = pickingProxy?.atom?.chainname
+                        const componentId = CHAIN_TO_COMPONENT[chain] || null
+                        const visibleComponent = componentId || selectedComponentRef.current
+
+                        applyHighlight(visibleComponent)
+                        onHoverRef.current?.(componentId || selectedComponentRef.current)
+                    })
+
+                    stage.signals.unhovered.add(() => {
+                        applyHighlight(selectedComponentRef.current)
+                        onHoverRef.current?.(selectedComponentRef.current)
+                    })
+                })
+            })
+            .catch((error) => {
+                if (!cancelled) setLoadError(error.message)
             })
 
-        const handleResize = () => {
-            viewer.resize()
-            viewer.render()
-        }
+        const handleResize = () => stage.handleResize()
         window.addEventListener("resize", handleResize)
 
         return () => {
+            cancelled = true
             window.removeEventListener("resize", handleResize)
-            viewer.clear()
-            viewer.render()
+            stage.dispose() // NGL's cleanup method, equivalent of viewer.clear()
         }
     }, [pdbUrl])
 
-    // Tap detection on the WRAPPER, capture phase — always sees the
-    // touch before the 3Dmol canvas does, so there's no race at all.
+    useEffect(() => {
+        if (!active) {
+            selectedComponentRef.current = null
+            onHoverRef.current?.(null)
+            applyHighlight(null)
+        }
+    }, [active])
+
+    // Everything below is UNCHANGED from before — the tap-to-activate
+    // logic works on plain DOM events, so it doesn't care which 3D
+    // library is running underneath it.
     useEffect(() => {
         const el = wrapperRef.current
         if (!el) return
 
         let start = null
         let moved = false
-
         const getPoint = (e) => (e.touches ? e.touches[0] : e)
 
         const onStart = (e) => {
@@ -54,7 +176,6 @@ export default function ProteinViewer({pdbUrl}) {
             start = { x: p.clientX, y: p.clientY }
             moved = false
         }
-
         const onMove = (e) => {
             if (!start) return
             const p = getPoint(e)
@@ -62,11 +183,8 @@ export default function ProteinViewer({pdbUrl}) {
             const dy = Math.abs(p.clientY - start.y)
             if (dx > TAP_THRESHOLD || dy > TAP_THRESHOLD) moved = true
         }
-
         const onEnd = () => {
-            if (start && !moved) {
-                setActive(a => !a) // plain tap, no drag -> toggle
-            }
+            if (!active && start && !moved) setActive(true)
             start = null
             moved = false
         }
@@ -86,20 +204,55 @@ export default function ProteinViewer({pdbUrl}) {
             el.removeEventListener("mousemove", onMove, { capture: true })
             el.removeEventListener("mouseup", onEnd, { capture: true })
         }
-    }, [])
+    }, [active])
 
     return (
-        <div
-            ref={wrapperRef}
-            className={styles.proteinViewer}
-            style={{ touchAction: active ? "none" : "pan-y" }}
-        >
+        <div className={styles.frame}>
             <div
-                ref={canvasRef}
-                className={styles.canvasArea}
-                style={{ pointerEvents: active ? "auto" : "none" }}
-            />
-            {!active && <div className={styles.hint}></div>}
+                ref={wrapperRef}
+                className={styles.proteinViewer}
+                style={{ touchAction: active ? "none" : "pan-y" }}
+            >
+                <div
+                    ref={viewerDivRef}
+                    className={styles.canvasArea}
+                    style={{ pointerEvents: active ? "auto" : "none" }}
+                />
+
+                {!active && <div className={styles.hint}>Give hannah money to view</div>}
+
+                {loadError && <div className={styles.error}>Protein viewer error: {loadError}</div>}
+
+                {active && (
+                    <button
+                        type="button"
+                        className={styles.closeButton}
+                        aria-label="Stop interacting with viewer"
+                        onClick={() => setActive(false)}
+                    >
+                        ×
+                    </button>
+                )}
+
+                <button
+                    type="button"
+                    className={styles.infoButton}
+                    aria-label="Show viewer instructions"
+                    onClick={() => setShowInfo((v) => !v)}
+                >
+                    i
+                </button>
+
+                {showInfo && (
+                    <div className={styles.infoBox}>
+                        <p><strong>Tap</strong> to activate the viewer</p>
+                        <p><strong>Drag</strong> while active to rotate the DNA</p>
+                        <p><strong>Pinch</strong> (or scroll, on desktop) to zoom in and out</p>
+                        <p><strong>Tap a part</strong> while active to highlight just that component</p>
+                        <p>Use the <strong>×</strong> button to exit</p>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

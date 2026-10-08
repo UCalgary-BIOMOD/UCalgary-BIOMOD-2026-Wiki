@@ -1,5 +1,4 @@
 import styles from "./VerticalCard.module.css"
-import {useState} from "react";
 export default function VerticalCard({id, caption, content, isOpen, onToggle}) {
     
     return (
@@ -11,7 +10,7 @@ export default function VerticalCard({id, caption, content, isOpen, onToggle}) {
             <span className = {styles.chevron + (isOpen ? " " + styles.open : " ")}>
                 ▼
             </span>
-            {caption}
+            <span className={styles.caption}>{caption}</span>
         </button>
         <div 
             className = {isOpen ? styles.card + " " + styles.open : styles.card}
