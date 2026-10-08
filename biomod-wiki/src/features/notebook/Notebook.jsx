@@ -1,10 +1,12 @@
 import PageLayout from "@/Components/PageLayout.jsx"
 import NotebookComponent from "@/Components/NotebookComponent.jsx"
+import NotebookMobileComponent from "@/Components/NotebookMobileComponent.jsx"
 import VerticalCard from "@/Components/VerticalCard.jsx"
 import TextBlock from "@/Components/TextComponents.jsx"
 import ExperimentCard from "@/Components/ExperimentCard.jsx"
 import {useState, useEffect} from "react"
 import fm from "front-matter"
+import styles from "./Notebook.module.css"
 
 
 
@@ -70,7 +72,12 @@ export default function Notebook() {
             render: () => (
             <>
                 <p>Here be the notebook of our glorious project</p>
-                <NotebookComponent experiments = {experiments} setActiveExperimentId={setActiveExperimentId}/>
+                <div className={styles.desktopCalendar}>
+                    <NotebookComponent experiments={experiments} setActiveExperimentId={setActiveExperimentId} />
+                </div>
+                <div className={styles.mobileCalendar}>
+                    <NotebookMobileComponent experiments={experiments} setActiveExperimentId={setActiveExperimentId} />
+                </div>
             </>
             )
         },

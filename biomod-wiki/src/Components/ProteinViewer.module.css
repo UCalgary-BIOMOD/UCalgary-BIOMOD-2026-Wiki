@@ -14,14 +14,110 @@
 
 .hint {
     position: absolute;
-    top: 0.75rem;
+    top: 1rem;
     left: 50%;
+    background: transparent;
     transform: translateX(-50%);
-    background: var(--bg-overlay);
-    color: var(--text-primary);
+    color: var(--text-h);
     padding: 0.3rem 0.8rem;
+    border: 2px solid var(--text-h);
     border-radius: var(--radius-pill);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-lg);
     pointer-events: none;
     z-index: 2;
+}
+
+.frame {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 4px solid var(--text-h);
+    border-radius: 20px;
+    background: var(--bg);
+    overflow: hidden;
+    align-self: start;   /* stops flex/grid from stretching it tall */
+    height: fit-content;  /* explicitly hug content instead of filling */
+
+}
+
+.closeButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--text-h);
+    border-radius: 50%;
+
+    background: var(--bg);
+    color: var(--text-h);
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+    z-index: 1000;
+
+    transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+    background: var(--text-h);
+    color: var(--bg);
+    transform: scale(1.05);
+}
+.infoButton {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 3;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--text-h);
+    border: 2px solid var(--text-h);
+    border-radius: 50%;
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.infoBox {
+    position: absolute;
+    top: 3.25rem;
+    left: 0.75rem;
+    z-index: 3;
+    max-width: 220px;
+    background: transparent;
+    border: 2px solid var(--text-h);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    color: var(--text-h);
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+}
+
+.infoBox p {
+    margin: 0 0 0.4rem 0;
+}
+
+.infoBox p:last-child {
+    margin-bottom: 0;
+}
+
+.infoBox strong {
+    color: var(--accent-gold);
 }

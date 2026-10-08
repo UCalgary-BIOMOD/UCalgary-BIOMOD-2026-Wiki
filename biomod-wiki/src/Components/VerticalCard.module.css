@@ -26,6 +26,11 @@
     font-size: 0.8rem;
 }
 
+.caption{
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
 .chevron.open{
     transform: rotate(-180deg);
 }
@@ -42,4 +47,18 @@
 .card.open{
     max-height: 2000px;
     
+}
+
+@media (max-width: 768px) {
+    .cardHeader {
+        height: auto;
+        min-height: 3rem;
+        padding: 0.65rem 1rem;
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .chevron {
+        flex: 0 0 auto;
+    }
 }

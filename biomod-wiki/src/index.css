@@ -17,7 +17,7 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif; /*edit to change heading font*/
   --mono: ui-monospace, Consolas, monospace; /*font for code*/
   /* Brand & UI Colors */
-  --bg-overlay: rgba(12, 9, 34, 0.75);
+  --bg-overlay: rgba(105, 90, 216, 0.75);
   --text-primary: #ffffff;
   /* Shared UIs and Tokens*/
   --radius-pill: 9999px;
@@ -120,4 +120,14 @@ code {
 
 html{
   scroll-behavior: smooth;
+}
+
+/*Color for protein viewer components*/
+:root{
+  --dendrimer:#EABE73;
+  --tmsd: rgb(210, 58, 58);
+  --aptamer: rgb(234, 231, 42);
+  --methylene-blue: rgb(42, 90, 234);
+  --biomarker: rgb(78, 204, 50);
+
 }
