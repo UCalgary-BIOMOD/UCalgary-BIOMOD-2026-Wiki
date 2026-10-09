@@ -84,18 +84,7 @@ export default function Home() {
             id: "home",
             title: "Home",
             render: () => (
-                <>
-                    <img src="/images/aptonix-logo-mockup.png" alt="I want to go home!" />
-                    <ProteinViewer
-                        pdbUrl="/proteins/all_components_merged.pdb"
-                        externalActiveId={selectedComponent}
-                        onComponentHover={setSelectedComponent}
-                    />
-                    <MoleculeLegend
-                        externalActiveId={selectedComponent}
-                        onActiveChange={setSelectedComponent}
-                    />
-                </>
+                <></>
             )
         },
         {
@@ -103,34 +92,24 @@ export default function Home() {
             title: "Problem",
             render: () => (
                 <>
-                    <div
-                    style={{
-                        position: "fixed",
-                        inset: 0,
-                        border: "3px solid red",
-                        pointerEvents: "none",
-                        zIndex: 9999,
-                        boxSizing: "border-box",
-                    }}
-                    />
-                    <ViewportSection style = {{minHeight: "calc((100svh - var(--top-nav-height)) * 0.3)", height: "calc((100svh - var(--top-nav-height)) * 0.3)"}}>
+                    <ViewportSection>
                         <h1 style = {{zIndex: 5}}>Imagine forgetting the faces of the people you love...</h1>
                     </ViewportSection>
                     <ViewportSection style = {{display: "flex", alignItems: "center", justifyContent: "center"}} >
                         <motion.img  ref = {familyRef} src = "./images/family-collage.png" style = {{filter: blur, width: "80%", height: "80%"}} alt = "Family"/>
                     </ViewportSection>
-                    <ViewportSection style = {{flexDirection: "row"}}>
+                    <ViewportSection className = {styles.storyRow} style = {{flexDirection: "row"}}>
                         <div style = {{flex: 1}} className = {styles.halfSection}>
                             <h1 style = {{textAlign: "left", padding: "1rem"}}>As the most common form of dementia, Alzheimer’s disease accounts for <span className = {styles.accent}>60-80%</span> of all cases [1].</h1>
                         </div>
-                        <div style = {{flex: 1, position: "relative"}} className = {styles.halfSection} ref = {brainRef}>
+                        <div style = {{flex: 1, position: "relative"}} className = {`${styles.halfSection} ${styles.visualSection}`} ref = {brainRef}>
                             <motion.img style = {{position: "absolute", zIndex: 4, clipPath: brainClip}} src = "./images/brain-off-color.png" alt = "Brain" />
                             <img style = {{position: "absolute"}}  src = "./images/brain.png" alt = "Brain"></img>
                             
                         </div>
                     </ViewportSection>
-                    <ViewportSection style = {{flexDirection: "row"}}>
-                        <div style = {{flex: 1, position: "relative"}} className = {styles.halfSection}  ref = {canadaRef}>
+                    <ViewportSection className = {styles.storyRow} style = {{flexDirection: "row"}}>
+                        <div style = {{flex: 1, position: "relative"}} className = {`${styles.halfSection} ${styles.visualSection}`} ref = {canadaRef}>
                             <img style = {{position: "absolute"}} src = "./images/canada-map.png" alt = "Canada"></img>
                             {canadaDots.map((dot, index) => (
                                 <CanadaDot
@@ -148,19 +127,21 @@ export default function Home() {
                             <h1 style = {{textAlign: "right", padding: "1rem"}}>In Canada alone, 2022 saw approximately <span className = {styles.accent}>600,000</span> individuals with dementia, with an estimated <span className = {styles.accent}>1.7 million</span> of all cases [1].</h1>
                         </div>
                     </ViewportSection>
-                    <ViewportSection style = {{minHeight: "calc((100svh - var(--top-nav-height)) * 0.75)", height: "calc((100svh - var(--top-nav-height)) * 0.75)"}}>
+                    <ViewportSection>
                         <h1 >Without an established cure, the primary goal in the fight against Alzheimer’s is to <span className = {styles.accent}>delay its onset.</span> Studies simulating different scenarios in Canada show that even <span className = {styles.accent}>1 year</span> of delayed onset could translate into <span className = {styles.accent}>500,000</span> fewer cases of Alzheimer’s by 2050 [2].</h1>
                     </ViewportSection>
-                    <ViewportSection style = {{minHeight: "calc((100svh - var(--top-nav-height)) * 0.5)", height: "calc((100svh - var(--top-nav-height)) * 0.5)"}}>
+                    <ViewportSection>
                         <h1 >To have been made <span className = {styles.accent}>AWARE</span> is to be <span className = {styles.accent}>PREPARED.</span></h1>
                         <p> Despite age being the largest risk factor, research has linked the incidence of Alzheimer’s disease with many risk factors such as genetics, lifestyle, and related health concerns.</p>
                     </ViewportSection>
-                    <ViewportSection style = {{minHeight: "calc((100svh - var(--top-nav-height)) * 0.6)", height: "calc((100svh - var(--top-nav-height)) * 0.6)"}}>
+                    <ViewportSection>
                         <div >
                             <h3 style = {{textAlign: "left", paddingLeft: "5%"}} >Risk factors that:</h3>
-                            <div style = {{display: "flex", justifyContent: "center", flexDirection: "row", alignItems: "center"}}>
-                                <img src = "./images/can-not-be-changed.png" alt = "Risk Factors"></img>
-                                <div style = {{display: "flex", position: "relative", width: "30%", alignItems: "center", justifyContent: "center"}}>
+                            <div className = {styles.riskFactorGraphics}>
+                                <div className = {styles.riskFactorGraphic}>
+                                    <img src = "./images/can-not-be-changed.png" alt = "Risk Factors"></img>
+                                </div>
+                                <div className = {styles.riskFactorGraphic}>
                                     <img style = {{position: "absolute"}} src = "./images/can-be-changed.png" alt = "Can Be Changed"></img>
                                     <div style = {{position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "0.25rem"}}>
                                         <button className = {styles.lifeStageButton} onClick={() => setSelectedLifestage("early")}>
@@ -177,7 +158,7 @@ export default function Home() {
                                     </div>
 
                                 </div>
-                                <div style = {{display: "flex", position: "relative", width: "35%", alignItems: "center", justifyContent: "center"}}>
+                                <div className = {styles.riskFactorGraphic}>
                                     <AnimatePresence mode = "wait">
                                         {selectedLifestage === "select" && (
                                             <motion.img
@@ -232,11 +213,11 @@ export default function Home() {
                     </ViewportSection>
 
                     <p>The issue with these risk factors are that they present multimodally, where they must exist in combination to signify risk. Many of them are also unquantifiable.</p>
-                    <ViewportSection style = {{flexDirection: "row"}}>
+                    <ViewportSection className = {styles.storyRow} style = {{flexDirection: "row"}}>
                         <div style = {{flex: 1}} className = {styles.halfSection}>
                             <h2 style = {{textAlign: "left", fontSize: "clamp(1rem, 2.2vw, 2rem)", padding: "5%"}}>However, the accumulation of biomarkers - such as <span className = {styles.accent}>amyloid-beta (Aβ) or tau</span> - may be measured in the pre-clinical stage, helping screen for those at risk of developing Alzheimer’s even if they present zero symptoms [3].</h2>
                         </div>
-                        <div style = {{flex: 1, position: "relative"}} className = {styles.halfSection} ref = {biomarkerRef   }>
+                        <div style = {{flex: 1, position: "relative"}} className = {`${styles.halfSection} ${styles.visualSection}`} ref = {biomarkerRef}>
                             <img src = "./images/biomarker-bg.png" alt = "Background" style = {{width: "70%", height: "70%", objectFit: "contain", position: "absolute"}}></img>
                             {biomarkers.map((dot, index) => (
                                 <Biomarker
@@ -250,30 +231,38 @@ export default function Home() {
                             ))}
                         </div>
                     </ViewportSection>
-                    <ViewportSection style = {{flexDirection: "column", minHeight: "calc((100svh - var(--top-nav-height)) * 0.6)", height: "calc((100svh - var(--top-nav-height)) * 0.6)"}}>
-                        <div style = {{display: "flex", flex: 1, height: "30%", minHeight: "30%", flexDirection: "row"}}>
+                    <ViewportSection style = {{flexDirection: "column"}}>
+                        <div className = {styles.storyRow} style = {{display: "flex", flex: 1, flexDirection: "row", alignItems: "center"}}>
                             <div style = {{display: "flex", flex: 1, flexDirection: "column"}} className = {styles.halfSection}>
                                 <h2>The path forward...</h2>
-                                <img src = "./images/aptonix-text-no-bg.png" alt = "Aptonix" style = {{height: "60%", paddingTop: "1rem"}}></img>
+                                <img src = "./images/aptonix-text-no-bg.png" alt = "Aptonix" style = {{width: "60%", height: "auto", paddingTop: "1rem"}}></img>
                             </div>
                             <div style = {{flex: 1}} className = {styles.halfSection}>
-                                <img src = "./images/aptonix-logo-circle.png" alt = "Logo" style = {{height:"90%"}}></img>
+                                <img src = "./images/aptonix-logo-circle.png" alt = "Logo" style = {{width:"70%", height:"auto"}}></img>
                             </div>
                         </div>
                         
                     </ViewportSection>
-                    <ViewportSection style = {{flexDirection: "row"}}>
+                    <ViewportSection className = {styles.storyRow} style = {{flexDirection: "row"}}>
                          
                         <div style = {{backgroundColor: "var(--text-h)", borderRadius: "5%", transform: "scale(0.90)"}} className = {styles.halfSection}>
                             <img src = "./images/potentiostat.png" alt = "Potentiostat"></img>
                         </div>
                         <div style = {{backgroundColor: "var(--accent)", borderRadius: "5%", transform: "scale(0.90)", display: "flex", flexDirection: "column"}} className = {styles.halfSection}>
-                            <p style = {{padding: "0 5% 0 5%"}}> To bring a high-throughput, minimally invasive, and cost-effective solution, we propose <span style = {{color: "var(--text-h)"}}>Aptonix</span>, an aptamer-based electrochemical biosensor for the detection of amyloid-beta 42.</p>
+                            <p style = {{padding: "0 5% 0 5%"}}> To bring a high-throughput, minimally invasive, and cost-effective solution, we propose an aptamer-based electrochemical biosensor for the detection of amyloid-beta 42.</p>
                             <p style = {{padding: "0 5% 0 5%"}}>Built upon a dendrimer backbone, an active assembly composed of the aptamer, methylene blue, and toe-hold mediated strand displacement (TMSD) will be used to convert the concentration of the biomarker into an electrical signal.</p>
                         </div>
                     </ViewportSection>
-                    <ViewportSection style = {{minHeight: "calc((100svh - var(--top-nav-height)) * 0.8)", height: "calc((100svh - var(--top-nav-height)) * 0.8)"}}>
-                            <ProteinViewer pdbUrl={"/proteins/DNA_Aptamer3_1.pdb"}/>
+                    <ViewportSection style = {{minHeight: "0", height: "auto", alignItems: "center", padding: "1rem 0"}}>
+                        <ProteinViewer
+                            pdbUrl="/proteins/all_components_merged.pdb"
+                            externalActiveId={selectedComponent}
+                            onComponentHover={setSelectedComponent}
+                        />
+                        <MoleculeLegend
+                            externalActiveId={selectedComponent}
+                            onActiveChange={setSelectedComponent}
+                        />
                     </ViewportSection>
                     
                 </>
@@ -297,7 +286,7 @@ export default function Home() {
             render: () => (
                 <>
                     <ViewportSection style = {{display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "center"}}>
-                        <div style = {{display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "center", gap: "5%"}}>
+                        <div className = {styles.linkGrid} style = {{display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "center", gap: "5%"}}>
                             <div>
                                 <LinkWrapper to = "/project">
                                     <img src = "./images/project-button.png" alt = "Project"></img>

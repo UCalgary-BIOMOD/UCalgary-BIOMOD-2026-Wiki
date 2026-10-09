@@ -17,11 +17,20 @@
 .ul{
     display: flex;
     list-style: none; /* this removes the bulleted list */
-    gap: 0.9rem; /* reduced horizontal spacing between top-level items */
+    gap: 0.9rem;
     margin: 0;
     padding: 0; /* so this doesn't mess up the padding from .nav */
 }
 
+.h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.1;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
 
 .h3{
     margin: 0; /*remove the default margin and padding from index.css*/
@@ -200,8 +209,8 @@
     }
 
     .h2 { /* reduce header title space on small screens */
-        font-size: 1rem;
-        margin: 0 0.5rem;
+        font-size: clamp(0.95rem, 4.2vw, 1.1rem);
+        margin: 0 0.25rem;
     }
 
     /* Make nested dropdowns flow in mobile stacked menu */

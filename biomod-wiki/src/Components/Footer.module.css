@@ -169,14 +169,31 @@ footer li {
 /* Only stack footer on smaller mobile screens; keep horizontal on tablets */
 @media (max-width: 768px) {
     .row {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 1.25rem;
     }
+
     .socials,
     .navCol {
         flex: 1 1 100%;
-        min-width: auto;
+        width: 100%;
+        min-width: 0;
         text-align: center;
+    }
+
+    .socials {
+        align-items: center;
+    }
+
+    .list {
+        text-align: center;
+    }
+
+    .footer {
+        margin-top: 2rem;
+        padding: 2rem 1rem;
     }
 }
 

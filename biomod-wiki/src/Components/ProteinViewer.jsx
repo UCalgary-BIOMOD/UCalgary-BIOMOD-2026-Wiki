@@ -51,7 +51,10 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
         if (!viewerDivRef.current) return
 
         // This is NGL's equivalent of $3Dmol.createViewer(...)
-        const stage = new Stage(viewerDivRef.current, { backgroundColor: "#0C0922" })
+        const stage = new Stage(viewerDivRef.current, {
+            backgroundColor: "#0C0922",
+            tooltip: false
+        })
         stageRef.current = stage
         let cancelled = false
 
@@ -108,6 +111,8 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
                     reprMapRef.current = reprMap
                     applyHighlight(externalActiveRef.current || selectedComponentRef.current)
 
+                    stage.viewer.rotationGroup.rotation.y = Math.PI / 2
+                    stage.viewer.rotationGroup.updateMatrixWorld(true)
                     component.autoView() // same idea as viewer.zoomTo()
 
                     // This is NGL's click detection — the equivalent of
@@ -132,10 +137,6 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
                         onHoverRef.current?.(componentId || selectedComponentRef.current)
                     })
 
-                    stage.signals.unhovered.add(() => {
-                        applyHighlight(selectedComponentRef.current)
-                        onHoverRef.current?.(selectedComponentRef.current)
-                    })
                 })
             })
             .catch((error) => {
