@@ -200,10 +200,20 @@
                 "role": "Faculty Advisor",
                 "department": "Department of Biological Sciences",
                 "photo": "/images/drburkinshaw.jpeg"
-            }        
+            },
+            {
+                "name": "Dhruvi Kakadiya",
+                "role": "Lab Support",
+                "department": "Department of Biomedical Engineering",
+                "photo": "/images/dhruvi.png"
+            },
+            {
+                "name": "Paul Williamson",
+                "role": "Lab Support + PhD Student",
+                "department": "Department of Biomedical Engineering",
+                "photo": "/images/paul.jpeg"
+            }
         ]
-
-    
     },
     "PhotoGallery": {
         "heading": "Photo Gallery", 

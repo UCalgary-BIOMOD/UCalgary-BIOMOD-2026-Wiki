@@ -10,7 +10,7 @@
 .supportBackground {
     position: absolute;
     bottom: 0;
-    width: 45vw;
+    width: 80vw;
     height: 100vw;
     background-image: url("./images/support-background.svg");
     background-size: contain;
@@ -21,7 +21,7 @@
 
 .supportGrid {
     display: grid;
-    grid-template-columns: repeat(4, 9rem);
+    grid-template-columns: repeat(3, 9rem);
     justify-content: center;
     gap: 30px;
     padding: 40px;
