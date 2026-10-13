@@ -60,11 +60,15 @@
     outline: 7px solid #198BFD;
 }
 
-.supportName {
+.supportName a {
     font-size: 1.2rem;
     font-weight: bold;
     color: #EABE73;
     margin: 10px;
+    text-align: center;
+}
+.supportName a:hover {
+    text-decoration: underline;
 }
 
 .supportRole {

@@ -11,8 +11,9 @@
     width: 100%;
     height: 100%;
 }
+
 /* Team member names above pictures  */
-.popupName {
+.popUpName a {
     position: absolute;
     bottom: 125%;
     left: 50%;
@@ -23,6 +24,10 @@
     color: #EABE73;
     font-size: clamp(0.2rem, 1.8vmin, 1rem);
     margin: 0;
+}
+
+.popUpName a:hover {
+    text-decoration: underline;
 }
 
 /* Team member roles above pictures  */
@@ -123,10 +128,21 @@
 /* Position team member name */
 .teamMemberName {
     grid-column: 1 / span 2; /* Name spans across both columns */
+    grid-row: 1;
+    text-align: center;
+}
+
+.teamMemberName a {
     font-weight: bold;
     text-align: center;
     margin: 1px;
     font-size: clamp(1rem, 2vw, 1.8rem);
+    color: #EABE73;
+    text-decoration: none;
+}
+
+.teamMemberName a:hover{
+    text-decoration: underline;
 }
 
 /* Position image carousel */

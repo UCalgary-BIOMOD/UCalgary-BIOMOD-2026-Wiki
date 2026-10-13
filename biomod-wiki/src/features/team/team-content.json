@@ -7,6 +7,7 @@
         "members": [
             {
                 "name": "Meagan Davies",
+                "nameURL": "https://www.linkedin.com/in/meagan-davies-407245214/",
                 "nameHeadShot": "/images/meagan-headshot.JPG",
                 "role": "Team Lead",
                 "year": "6th Year",
@@ -26,6 +27,7 @@
             },
             {
                 "name": "Sofea Zamzuri",
+                "nameURL": "",
                 "nameHeadShot": "/images/sofea-headshot.JPG",
                 "role": "Wet Lab Lead",
                 "year": "5th Year",
@@ -44,6 +46,7 @@
             },
             {
                 "name": "Allan Vu",
+                "nameURL": "https://www.linkedin.com/in/allan-vu-/",
                 "nameHeadShot": "/images/allan-headshot.JPG",
                 "role": "Dry Lab Lead",
                 "year": "4th Year",
@@ -62,6 +65,7 @@
             },
             {
                 "name": "Sukhman Waraich",
+                "nameURL": "https://www.linkedin.com/in/sukhman-waraich/",
                 "nameHeadShot": "/images/sukhman-headshot.JPG",
                 "role": "Wet Lab Member",
                 "year": "4th Year",
@@ -80,6 +84,7 @@
             },
             {
                 "name": "Nam Phuong Dinh",
+                "nameURL": "https://www.linkedin.com/in/namphuong-dinh/",
                 "nameHeadShot": "/images/nam-headshot.JPG",
                 "role": "Dry Lab Member",
                 "year": "4th Year",
@@ -98,6 +103,7 @@
             },
             {
                 "name": "Anahat Sidhu",
+                "nameURL": "https://www.linkedin.com/in/anahat-sidhu-163a06395/",
                 "nameHeadShot": "/images/anahat-headshot.JPG",
                 "role": "Wet Lab Member",
                 "year": "2nd Year",
@@ -116,6 +122,7 @@
             },
             {
                 "name": "Hannah Nguyen",
+                "nameURL": "https://www.linkedin.com/in/hannah-nguyen-045434362/",
                 "nameHeadShot": "/images/hannah-headshot.JPG",
                 "role": "Wet/Dry Lab Member",
                 "year": "3rd Year",
@@ -134,6 +141,7 @@
             },
             {
                 "name": "Neeor Alam",
+                "nameURL": "https://www.linkedin.com/in/astroneeor/",
                 "nameHeadShot": "/images/neeor-headshot.JPG",
                 "role": "Wet Lab Member",
                 "year": "3rd Year",
@@ -152,6 +160,7 @@
             },
             {
                 "name": "Shahzaib Khan",
+                "nameURL": "",
                 "nameHeadShot": "/images/shahzaib-headshot.JPG",
                 "role": "Wet/Dry Lab Member",
                 "year": "4th Year",
@@ -179,36 +188,42 @@
         "supporters": [
             {
                 "name": "Dr. Richa Pandey",
+                "URL": "https://profiles.ucalgary.ca/richa-pandey",
                 "role": "Faculty Advisor",
                 "department": "Department of Biomedical Engineering",
                 "photo": "/images/drpandey.jpeg"
             },
             {
                 "name": "Muhammad Faeez Ansari",
+                "URL:": "https://www.linkedin.com/in/muhammad-ansari-b93126244/",
                 "role": "Previous BMERIT President",
                 "department": "Department of Mechanical Engineering",
                 "photo": "/images/muhammad.jpeg"
             },
             {
                 "name": "Amber Quo",
+                "URL": "https://www.linkedin.com/in/amber-quo/",
                 "role": "BMERIT President",
                 "department": "Department of Biomedical Engineering",
                 "photo": "/images/amber.jpeg"
             },
             {
                 "name": "Brianne Burkinshaw",
+                "URL": "https://profiles.ucalgary.ca/brianne-burkinshaw",
                 "role": "Faculty Advisor",
                 "department": "Department of Biological Sciences",
                 "photo": "/images/drburkinshaw.jpeg"
             },
             {
                 "name": "Dhruvi Kakadiya",
+                "URL": "https://www.linkedin.com/in/dhruvi-kakadiya-4b3bb2175/",
                 "role": "Lab Support",
                 "department": "Department of Biomedical Engineering",
                 "photo": "/images/dhruvi.png"
             },
             {
                 "name": "Paul Williamson",
+                "URL": "https://www.linkedin.com/in/paul-williamson-461a26201/",
                 "role": "Lab Support + PhD Student",
                 "department": "Department of Biomedical Engineering",
                 "photo": "/images/paul.jpeg"

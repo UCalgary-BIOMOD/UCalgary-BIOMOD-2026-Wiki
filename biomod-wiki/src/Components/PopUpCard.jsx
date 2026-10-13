@@ -27,10 +27,12 @@ import LinkWrapper from "./LinkComponents";
  * @returns 
  */
 
-export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, photo4, role, year, major, cardGame, cardGameURL, snack, description, isPopupOpen, onOpen, onClose}) {
+export default function PopUpCard({nameURL, name, nameHeadShot, photo1, photo2, photo3, photo4, role, year, major, cardGame, cardGameURL, snack, description, isPopupOpen, onOpen, onClose}) {
     return (
         <div className={styles.teamMember} data-popup-open={isPopupOpen}>
-            <p className={styles.popupName}>{name}</p>
+            <span className={styles.popUpName}>
+                <LinkWrapper to={nameURL}>{name}</LinkWrapper>
+            </span>
             <p className={styles.teamMemberRole}>{role}</p>
             <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={onOpen}></img>
             <div 
@@ -42,7 +44,10 @@ export default function PopUpCard({nameHeadShot, name, photo1, photo2, photo3, p
                     ${name === "Shahzaib Khan" ? styles.shahzaibPopup : ""}
                 `}>
                 <button onClick={onClose} className={styles.closeButton}>X</button>
-                <h2 className={styles.teamMemberName}>{name}</h2>
+                {/* <h2 className={styles.teamMemberName}>{name}</h2> */}
+                <span className={styles.teamMemberName}>
+                    <LinkWrapper to={nameURL}>{name}</LinkWrapper>
+                </span>
                 <div className={styles.imageCarousel}> 
                     <ImageCarousel 
                         imgs = {[

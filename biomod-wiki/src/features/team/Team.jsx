@@ -7,7 +7,8 @@ import treeStyles from "/src/Components/TreeAnimation.module.css";
 import teamStyles from "./Team.module.css"
 import TreeAnimation from "/src/Components/TreeAnimation.jsx";
 import { useState } from "react";
-import MainHeading from "../../Components/MainHeading";
+import MainHeading from "/src/Components/MainHeading.jsx";
+import LinkWrapper from "/src/Components/LinkComponents.jsx";
 
 export default function Team() {
     const [openMember, setOpenMember] = useState(null);
@@ -50,7 +51,9 @@ export default function Team() {
                             {content.Support.supporters.map((supporter) => (
                                 <div key={supporter.name} className={teamStyles.supportMember}>
                                     <img src={supporter.photo} alt={supporter.name} className={teamStyles.supportImage}/>
-                                    <p className={teamStyles.supportName}>{supporter.name}</p>
+                                    <span className={teamStyles.supportName}>
+                                        <LinkWrapper to={supporter.URL}>{supporter.name}</LinkWrapper>
+                                    </span>
                                     <p className={teamStyles.supportRole}>{supporter.role}</p>
                                     <p className={teamStyles.supportDepartment}>{supporter.department}</p>
                                 </div>
