@@ -1,6 +1,7 @@
 import styles from "./PopUpCard.module.css";
 import ImageCarousel from "./ImageCarousel";
 import LinkWrapper from "./LinkComponents";
+import {useLayoutEffect, useRef} from "react";
 
 /** 
  * Open state logic adapted from Mobiscroll via 
@@ -28,6 +29,34 @@ import LinkWrapper from "./LinkComponents";
  */
 
 export default function PopUpCard({nameURL, name, nameHeadShot, photo1, photo2, photo3, photo4, role, year, major, cardGame, cardGameURL, snack, description, isPopupOpen, onOpen, onClose}) {
+    const cardRef = useRef(null)
+
+    /**
+     * The popup is centered on the headshot it belongs to, so on narrow screens (or for headshots near an edge)
+     * it can hang off the screen. When it opens, measure it and nudge it back inside the viewport (below the nav bar).
+     * The nudge is stored in --shift-x / --shift-y, which PopUpCard.module.css adds to the centering transform.
+     */
+    useLayoutEffect(() => {
+        const card = cardRef.current
+        if (!card) return
+        card.style.setProperty("--shift-x", "0px")
+        card.style.setProperty("--shift-y", "0px")
+        if (!isPopupOpen) return
+
+        const edge = 8
+        const navHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--top-nav-height")) || 0
+        const rect = card.getBoundingClientRect()
+        let shiftX = 0
+        let shiftY = 0
+        if (rect.left < edge) shiftX = edge - rect.left
+        else if (rect.right > window.innerWidth - edge) shiftX = window.innerWidth - edge - rect.right
+        if (rect.top < navHeight + edge) shiftY = navHeight + edge - rect.top
+        else if (rect.bottom > window.innerHeight - edge) shiftY = window.innerHeight - edge - rect.bottom
+
+        card.style.setProperty("--shift-x", `${shiftX}px`)
+        card.style.setProperty("--shift-y", `${shiftY}px`)
+    }, [isPopupOpen])
+
     return (
         <div className={styles.teamMember} data-popup-open={isPopupOpen}>
             <span className={styles.popUpName}>
@@ -36,6 +65,7 @@ export default function PopUpCard({nameURL, name, nameHeadShot, photo1, photo2, 
             <p className={styles.teamMemberRole}>{role}</p>
             <img className={styles.headShot} src = {nameHeadShot} alt={name} onClick={onOpen}></img>
             <div 
+                ref={cardRef}
                 className={`
                     ${styles.popUpCard} 
                     ${isPopupOpen ? styles.show : ""} 

@@ -5,8 +5,8 @@
 
 .stickyTree {
     position: sticky;
-    top: calc(var(--top-nav-height) + 2rem); 
-    height: calc(100vh - var(--top-nav-height));   
+    top: calc(var(--top-nav-height) + 2rem); /*Sticks just below the nav bar*/
+    height: calc(100svh - var(--top-nav-height));   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,8 +15,16 @@
 
 .treeWrapper {
     position: relative;
-    width: min(55vw, calc((100vh - var(--top-nav-height) - 2rem) * 1183 / 996));
-    container-type: inline-size;
+    /*55% of the window wide, but never taller than the space under the nav bar (1183x996 is the tree artwork's ratio)*/
+    width: min(55vw, calc((100svh - var(--top-nav-height) - 2rem) * 1183 / 996));
+    container-type: inline-size; /*Makes this a size container: names/roles inside use cqw so they scale with the tree*/
+}
+
+/*Side nav is hidden on phones/small tablets, so the tree can use the whole column*/
+@media (max-width: 768px) {
+    .treeWrapper {
+        width: min(100%, calc((100svh - var(--top-nav-height) - 2rem) * 1183 / 996));
+    }
 }
 
 .tree {
@@ -26,7 +34,7 @@
 }
 
 .tree path, .tree circle {
-    stroke: #198BFD;
+    stroke: var(--brand-blue);
     fill: none;
     stroke-width: 20;
 }

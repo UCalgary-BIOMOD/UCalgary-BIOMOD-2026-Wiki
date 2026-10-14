@@ -1,70 +1,62 @@
+/*
+    Team page styles.
+    Background art is sized from its own section (%, aspect-ratio) instead of vw, so it can never push the page wider than the window.
+*/
+
 .teamSection {
-    margin-bottom: 8rem;
+    margin-bottom: var(--space-xl);
 }
 
 .supportSection {
     position: relative;
-    margin-bottom: 8rem;
+    margin-bottom: var(--space-xl);
 }
 
+/*Decorative arcs, anchored bottom-left behind the grid. 1440x1024 is the artwork's own ratio.*/
 .supportBackground {
     position: absolute;
     bottom: 0;
-    width: 80vw;
-    height: 100vw;
-    background-image: url("./images/support-background.svg");
-    background-size: contain;
-    background-position: left bottom;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1440 / 1024;
+    background-image: url("/images/support-background.svg");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: -1;
 }
 
+/*
+    Three cards per row, each card is a size container (see .supportMember) so photo outline, radius and text scale with it.
+    --support-card is the card width: ~9rem at 1920, shrinks with the window.
+*/
 .supportGrid {
+    --support-card: clamp(6.5rem, 4rem + 4.5vw, 12rem);
     display: grid;
-    grid-template-columns: repeat(3, 9rem);
+    grid-template-columns: repeat(3, minmax(0, var(--support-card)));
     justify-content: center;
-    gap: 30px;
-    padding: 40px;
+    gap: var(--space-md);
+    padding: var(--space-lg);
 }
 
-@media (max-width: 700px) {
-    .supportGrid {
-        gap: 10px;
-        padding: 10px;
-        grid-template-columns: repeat(auto-fit, 8rem);
-    }
-
-    .supportImage {
-        outline-width: 3px;
-        border-radius: 10px;
-    }
-
-    .supportName {
-        font-size: 0.7rem;
-    }
-
-    .supportRole {
-        font-size: 0.5rem;
-    }
-
-    .supportDepartment {
-        font-size: 0.45rem;
-    }
+.supportMember {
+    container-type: inline-size;
+    min-width: 0;
 }
 
 .supportImage {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border-radius: 30px;
-    outline: 7px solid #198BFD;
+    border-radius: 18.5cqw;
+    outline: 4.3cqw solid var(--brand-blue);
 }
 
+/*Text sizes are a share of the card width with a readable floor on small screens*/
 .supportName a {
-    font-size: 1.2rem;
+    font-size: max(0.8rem, 13.3cqw);
     font-weight: bold;
-    color: #EABE73;
-    margin: 10px;
+    color: var(--text-h);
+    margin: 0.6em;
     text-align: center;
 }
 .supportName a:hover {
@@ -72,21 +64,24 @@
 }
 
 .supportRole {
-    font-size: 0.7rem;
+    font-size: max(0.65rem, 7.8cqw);
     font-style: italic;
-    color: white;
-    margin: 10px;
+    color: var(--text-primary);
+    margin: 0.6em;
+    line-height: 1.2;
 }
 
 .supportDepartment {
-    font-size: 0.6rem;
-    color: white;
-    margin: 10px;
+    font-size: max(0.6rem, 6.7cqw);
+    color: var(--text-primary);
+    margin: 0.6em;
+    line-height: 1.2;
 }
 
+/*The gallery art keeps its own 1836x1125 ratio, so the section is as tall as the art is*/
 .photoGallerySection {
     position: relative;
-    min-height: 50vw;
+    aspect-ratio: 1836 / 1125;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,16 +91,15 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 50vw;
-    background-image: url("./images/photo-gallery-background.svg");
-    background-size: auto 100%;
-    background-position: left bottom;
+    width: 100%;
+    aspect-ratio: 1836 / 1125;
+    background-image: url("/images/photo-gallery-background.svg");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: -1;
 }
 
 .imageCarouselContainer {
-    width: 52vw;
+    width: min(100%, 55rem);
     overflow: hidden;
 }
