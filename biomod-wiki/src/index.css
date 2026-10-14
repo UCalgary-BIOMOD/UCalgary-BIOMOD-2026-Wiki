@@ -28,10 +28,42 @@
   /* Shared UIs and Tokens*/
   --radius-pill: 9999px;
   --font-size-sm: 0.8rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1rem;
+  --brand-blue: #198BFD; /*Blue used for the team tree, headshot outlines and popup borders (was hard-coded in several files)*/
+  --accent-gold: var(--text-h); /*Was referenced but never defined; resolves to the same gold the text already inherited*/
 
+  /*
+    ===== SCALING SYSTEM (read before adding styles) =====
+    Everything sizes from three fluid scales so the site looks the same shape at any width.
+    Each fluid value is calibrated to equal the original desktop value at a 1920px-wide window,
+    and shrinks smoothly (never jumps at a breakpoint) down to a phone-sized floor.
 
-  font: 18px/145% var(--sans); /*adjust font size and vertical line height (for gaps between text)*/
-  letter-spacing: 0.18px;
+    1. Root size   -> every rem on the site follows it (16px phones ... 18px @1920 ... 20px cap)
+    2. Type scale  -> --fs-h1/h2/h3/body, use these instead of px for text
+    3. Space scale -> --space-xs ... --space-xl for margins, padding and gaps
+    Prefer %, rem, em, clamp() and container units (cqw) over px / vw / hard-coded positions.
+  */
+  font-size: clamp(16px, 14.6px + 0.18vw, 20px);
+
+  /*Type scale*/
+  --fs-h1: clamp(1.75rem, 1.25rem + 1.96vw, 3.5rem);   /*60px @1920*/
+  --fs-h2: clamp(1.25rem, 0.75rem + 2.16vw, 3.25rem);  /*55px @1920*/
+  --fs-h3: clamp(1.1rem, 0.9rem + 0.46vw, 1.5rem);     /*25px @1920*/
+  --fs-body: clamp(1.05rem, 0.83rem + 0.78vw, 1.75rem);/*30px @1920*/
+  --fs-small: clamp(0.85rem, 0.75rem + 0.25vw, 1rem);
+
+  /*Space scale*/
+  --space-xs: clamp(0.25rem, 0.15rem + 0.2vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 0.3rem + 0.4vw, 1rem);
+  --space-md: clamp(1rem, 0.6rem + 0.8vw, 1.75rem);
+  --space-lg: clamp(1.5rem, 1rem + 1.6vw, 3rem);
+  --space-xl: clamp(2.5rem, 1.5rem + 3vw, 6rem);
+  --gutter: clamp(1rem, 0.5rem + 1.5vw, 2rem); /*Page left/right margin*/
+
+  line-height: 1.45; /*Unitless on purpose: scales with each element's own font-size (a % would freeze into one px value for every child)*/
+  font-family: var(--sans);
+  letter-spacing: 0.01em;
   /*color-scheme: light;*/
   color: var(--text); /*text color of root, see --text*/
   background: var(--bg);
@@ -40,21 +72,17 @@
   -webkit-font-smoothing: antialiased; /*antialiasing for chrome*/
   -moz-osx-font-smoothing: grayscale; /*antialiasing for firefox*/
 
-  --top-nav-height: 80px; /*Navigation Bar Height*/
+  --top-nav-height: 80px; /*Navigation Bar Height; also the offset for sticky/scroll-margin so keep it a single fixed value*/
+}
 
-  /*Custom banner sizes*/
-  --banner-height: 100vsg;
-  
-  /* Tablets (e.g., iPad Mini): keep base font size readable */
-  @media (min-width: 600px) and (max-width: 1024px) {
-    font-size: 18px;
-  }
-  /* Mobile phones: slightly reduced base font */
-  @media (max-width: 599px) {
-    font-size: 16px;
-  }
-  
- 
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /*width/height always include padding + border, so 100% never overflows*/
+}
+
+img {
+  max-width: 100%; /*Images may shrink with their container but never overflow it*/
 }
 
 body {
@@ -84,39 +112,28 @@ h4 {
 }
 
 h1 { 
-  font-size: 60px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
+  font-size: var(--fs-h1);
+  letter-spacing: -0.028em;
+  margin: var(--space-md) 0;
   line-height:100%; 
-  @media (max-width: 1024px) { /*if viewport less than 1024 px, change margin and font-size*/
-    font-size: 36px;
-    margin: 20px 0; 
-  }
-  
 }
 h2 {
-  font-size: 55px;
+  font-size: var(--fs-h2);
   line-height: 100%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  letter-spacing: -0.004em;
+  margin: 0 0 var(--space-xs);
 }
 
 h3 {
-  font-size: 25px;
+  font-size: var(--fs-h3);
   line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-xs);
 }
 
 p {
-  margin: 0 0 30px; /*No margin for <p> elements; most likely allow <ul> or <l> to control it.*/
-  font-size: 30px;
+  margin: 0 0 var(--space-md); /*Bottom margin only; pages can override per-component.*/
+  font-size: var(--fs-body);
   line-height: 100%;
   font-weight: 500;
 }
@@ -129,14 +146,14 @@ code,
 .counter {
   font-family: var(--mono);
   display: inline-flex;
-  border-radius: 4px;
+  border-radius: 0.25em;
   color: var(--text-h);
 }
 
 code {
-  font-size: 15px;
+  font-size: 0.85rem;
   line-height: 135%;
-  padding: 4px 8px;
+  padding: 0.25em 0.5em;
   background: var(--code-bg);
 }
 

@@ -13,8 +13,9 @@ This module holds everything related to the page layout framework and the side n
     flex-direction: column;
     align-items: center;
     flex:1; /*Makes the page expand to encompass all of the sections*/
+    min-width: 0; /*Lets the content column shrink instead of pushing the page wider than the window*/
     border: 0px solid red;
-    margin: 0 2rem;
+    margin: 0 var(--gutter); /*Fluid side margin (2rem on desktop, 1rem on phones)*/
 }
 
 
@@ -27,7 +28,7 @@ This module holds everything related to the page layout framework and the side n
 .mainContent{
     display: flex;
     flex-direction: row;
-    
+    overflow-x: clip; /*Decorative backgrounds may bleed past the column without causing a horizontal page scrollbar (clip, unlike hidden, keeps the sticky side nav working)*/
 }
 
 .sideNav{
@@ -100,9 +101,6 @@ This module holds everything related to the page layout framework and the side n
         display: none;
     }
 
-    .page {
-        margin: 0 1rem;
-    }
 }
 
 .bannerContainer{
@@ -118,7 +116,7 @@ This module holds everything related to the page layout framework and the side n
 .bannerContainer h1 {
     position: relative;
     z-index: 10;
-    font-size: 6.5vw;
+    font-size: max(6.5vw, 2rem); /*Scales with the window but never gets smaller than readable on phones*/
     font-weight: bold;
 }
 
@@ -144,5 +142,5 @@ This module holds everything related to the page layout framework and the side n
 
 .topLine{
     background-color: var(--border);
-    height: 0.20rem;
+    height: 0.2rem;
 }

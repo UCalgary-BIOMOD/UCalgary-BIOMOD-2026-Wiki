@@ -196,6 +196,26 @@ Project Framework:
 
         Contains all of our react-router stuff. To add new page links, copy over a link and give it a name. 
 
+Scaling & Layout (read before writing CSS):
+
+    The site is fluid: it should look right at any window width without per-page breakpoints.
+    The whole system is documented at the top of src/index.css. In short:
+
+        Use the tokens, not px:
+            Text:    var(--fs-h1) / var(--fs-h2) / var(--fs-h3) / var(--fs-body) / var(--fs-small)
+            Spacing: var(--space-xs) ... var(--space-xl), and var(--gutter) for the page's side margin
+            Anything in rem also scales, because the root font size is fluid.
+
+        Don't use vw for widths of things inside the page column (it ignores the side nav and margins and causes horizontal scrolling). Use % or min(100%, 40rem).
+
+        Put overlay positions (dots on a map, labels on a tree) in % of a container, and size things inside that container with cqw
+        (1cqw = 1% of the nearest container's width; mark the container with container-type: inline-size).
+
+        Don't hand-write flex rows with inline styles. Use the shared components:
+            <SplitSection> / <SplitHalf>   two columns that stack on phones (src/Components/SplitSection.jsx)
+            <LinkGrid items={[...]}>       image-button tiles with labels (src/Components/LinkGrid.jsx)
+            <ViewportSection center>       a full-width block, optionally centered
+
 General Project Conventions:
 
     Please always write imports as derived from root. The root is src. The root alias is currently set as "@" in vite.config.js

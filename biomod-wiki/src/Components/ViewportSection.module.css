@@ -8,6 +8,11 @@
     flex-direction: column;
 }
 
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width: 768px) {
     .viewport {
         padding-block: 1rem;
