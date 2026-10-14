@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between; /*Push objects (header and links) to the ends*/
     align-items: center; /*Align both vertical and horizontal*/
-    padding: 0.5rem 2rem; /*Padding for the objects within*/
+    padding: 0.5rem var(--gutter); /*Padding for the objects within*/
     position: sticky; /*Make it stick and move through*/
     top: 0; /*All stick things need a top value*/
     border: 0px solid green; 
@@ -20,6 +20,14 @@
     gap: 0.9rem;
     margin: 0;
     padding: 0; /* so this doesn't mess up the padding from .nav */
+}
+
+.logo {
+    display: block;
+    width: clamp(5rem, 4rem + 2vw, 6.7rem); /*~120px at 1920, shrinks on small windows*/
+    height: auto;
+    object-fit: cover;
+    padding-top: 5%;
 }
 
 .h2 {
@@ -62,31 +70,11 @@
     
 }
 
-/* Make top-level triggers match link sizing by default */
+/* Make top-level triggers match link sizing by default.
+   rem-based so it follows the fluid root size (16px at 1920, a little smaller on narrow windows). */
 .ul a, .dropdownTrigger {
-    font-size: 16px;
+    font-size: 0.89rem;
     line-height: 1.4;
-}
-
-/* Tablet: increase title and nav sizing for better readability */
-@media (min-width: 600px) and (max-width: 1024px) {
-    .h2 {
-        font-size: 1.25rem;
-    }
-    .nav {
-        height: 72px;
-    }
-    .nav img {
-        max-width: 96px;
-        padding-top: 0.25rem !important;
-    }
-    .ul a, .dropdownTrigger {
-        font-size: 18px;
-    }
-    /* Slightly larger gap on tablet for readability */
-    .ul {
-        gap: 1.2rem;
-    }
 }
 
 .ul a::after{
@@ -170,11 +158,11 @@
         right: 1rem;
         top: calc(var(--top-nav-height) + 0.5rem);
         background: var(--light-bg);
-        border-radius: 8px;
+        border-radius: 0.5rem;
         box-shadow: var(--shadow);
         flex-direction: column;
         padding: 0.25rem 0;
-        width: min(220px, 90vw);
+        width: min(13.75rem, 90vw);
         z-index: 1100;
         align-items: flex-start;
         text-align: left;
@@ -198,7 +186,7 @@
     .ul a {
         display: block;
         width: 100%;
-        font-size: 18px;
+        font-size: 1.1rem;
         padding: 0.4rem 0;
     }
 
@@ -224,7 +212,7 @@
         padding: 0; /* use the li padding so top-level items align */
         background: none;
         border: none;
-        font-size: 18px;
+        font-size: 1.1rem;
     }
 
     /* Always show nested items inside mobile menu (no extra click needed) */
@@ -249,7 +237,7 @@
 
     .dropdownMenu a {
         padding: 0;
-        font-size: 15px;
+        font-size: 0.95rem;
     }
 
     .dropdownMenu.showMenu {

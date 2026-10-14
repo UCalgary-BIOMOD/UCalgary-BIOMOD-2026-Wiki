@@ -18,7 +18,7 @@ export default function NavBar() {
     return (
         <nav className={styles.nav}>
             <LinkWrapper to="/">
-                <img src = "/images/aptonix-logo-transparent.png" alt="Logo" style={{maxWidth: "120px", height: "auto", objectFit: "cover", paddingTop: "5%"}}></img>
+                <img src = "/images/aptonix-logo-transparent.png" alt="Logo" className = {styles.logo}></img>
             </LinkWrapper>
             <h2 className = {styles.h2}>UCalgary BIOMOD 2026</h2>
             <button aria-label="Open menu" className={styles.hamburger} onClick={() => setMobileOpen(!mobileOpen)}>☰</button>
