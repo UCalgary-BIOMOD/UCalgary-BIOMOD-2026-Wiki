@@ -172,12 +172,20 @@
 /*Potentiostat photo + proposal text, side by side*/
 .cardRow {
     align-items: stretch;
+    gap: var(--space-lg);
 }
 
+/*A fixed radius (not %) so the corners are the same circle on both cards, whatever their width/height.
+  overflow: hidden clips the photo to the same rounded shape.*/
 .cardGold,
 .cardBlue {
-    border-radius: 5%;
-    transform: scale(0.9);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    padding: var(--space-md);
+}
+
+.cardGold img {
+    border-radius: 0.75rem;
 }
 
 .cardGold {

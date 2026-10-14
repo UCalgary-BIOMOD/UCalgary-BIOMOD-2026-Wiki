@@ -6,6 +6,7 @@
     border: 0px solid lightblue;
     display: flex;
     flex-direction: column;
+    padding-block: var(--space-md); /*Breathing room between stacked sections*/
 }
 
 .center {
