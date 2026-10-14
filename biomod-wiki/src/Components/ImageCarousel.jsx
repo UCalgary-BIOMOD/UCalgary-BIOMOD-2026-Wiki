@@ -5,6 +5,7 @@ import styles from "./ImageCarousel.module.css"
 /**
  * 
  * @param caption The header before each image carousel
+ * @param className Optional class for the outer section (use it to size/position the carousel from the parent)
  * @param imgs An array of images where each entry is a dictionary with an id and source img
  * Ex:
  *      imgs = {[
@@ -14,7 +15,7 @@ import styles from "./ImageCarousel.module.css"
  * @returns An image carousel object
  */
 
-export default function ImageCarousel({caption, imgs}) {
+export default function ImageCarousel({caption, imgs, className = ""}) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0) /*The current index variable*/
     const [activeDot, setActiveDot] = useState(0)
 
@@ -38,7 +39,7 @@ export default function ImageCarousel({caption, imgs}) {
         setActiveDot(index)
     }
     return(
-        <section>
+        <section className = {className}>
             <h2 className = {styles.h2}>{caption}</h2>
             <div className = {styles["image-carousel"]}>
                 <button className={`${styles["nav-button"]} ${styles.left}`} onClick={handlePrevClick}>&lt;</button>

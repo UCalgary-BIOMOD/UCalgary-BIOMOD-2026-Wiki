@@ -18,8 +18,8 @@ export default function CanadaDots({top, left, index, progress, total}) {
                 position: "absolute",
                 top,
                 left,
-                width: "10px",
-                height: "10px",
+                width: "1.6cqw", /*1% of the map frame = 1cqw, so the dot grows/shrinks with the map*/
+                height: "1.6cqw",
                 borderRadius: "50%",
                 backgroundColor: "red",
                 opacity,
@@ -29,7 +29,7 @@ export default function CanadaDots({top, left, index, progress, total}) {
             animate={{
                 boxShadow: [
                     "0 0 0px rgba(255, 0, 0, 0)",
-                    "0 0 12px rgba(255, 0, 0, 0.8)",
+                    "0 0 2cqw rgba(255, 0, 0, 0.8)",
                     "0 0 0px rgba(255, 0, 0, 0)",
                 ],
             }}

@@ -1,33 +1,62 @@
+/*
+    Home page styles.
+    Layout rows are built with <SplitSection>/<SplitHalf> (Components/SplitSection) and the link tiles with <LinkGrid>,
+    so this file only holds what is unique to the home page. Sizes are relative (%, rem, cqw) so the page scales with the window.
+*/
+
 .accent{
     color: var(--accent)
 }
 
-
-
-.halfSection{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 0;
-    min-width: 0;
+/*Lets the first heading sit above the oversized banner image*/
+.aboveBanner{
+    z-index: 5;
 }
 
-.halfSection img {
-    max-width: 100%;
-    object-fit: contain;
+.familyImage{
+    width: 80%;
+    height: auto;
 }
 
+/*
+    A square frame whose children are layered on top of each other (map + dots, brain + overlay, ...).
+    Overlay positions inside it are percentages (see canadaDots / biomarkers in Home.jsx), so they follow the frame at any size.
+    It is also a size container: children can use cqw (1cqw = 1% of the frame width) for sizes that must scale with it.
+*/
 .visualSection {
+    position: relative;
     width: 100%;
     max-width: 34rem;
     aspect-ratio: 1;
     align-self: center;
+    container-type: inline-size;
 }
 
-.visualSection img {
+.visualSection > img {
+    position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+}
+
+.visualSection > .biomarkerBg {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.biomarkerText {
+    --split-text-pad: 5%;
+}
+
+.biomarkerText h2 {
+    font-size: clamp(1rem, 2.2vw, 2rem);
+}
+
+/*Risk factor circles*/
+.riskFactorTitle {
+    text-align: left;
+    padding-left: 5%;
 }
 
 .riskFactorGraphics {
@@ -39,11 +68,13 @@
     margin-inline: auto;
 }
 
+/*Each circle is a size container so its button text scales with the circle (see .lifeStageButton)*/
 .riskFactorGraphic {
     position: relative;
     width: 100%;
     min-width: 0;
     aspect-ratio: 1;
+    container-type: inline-size;
 }
 
 .riskFactorGraphic > img,
@@ -61,61 +92,29 @@
     z-index: 1;
 }
 
-.visualSection {
-    width: 100%;
-    max-width: 34rem;
-    aspect-ratio: 1;
-    align-self: center;
-}
-
-.visualSection img {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.linkGrid {
-    width: 100%;
-}
-
-.linkGrid > div {
-    flex: 1 1 0;
-    min-width: 0;
-}
-
-.linkGrid a {
-    width: 100%;
-}
-
-.linkGrid img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.dot{
-    position: "absolute";
-    width: "10px";
-    height: "10px";
-    backgroundColor: "red";
-    borderRadius: "50%";
+.lifeStageButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
 }
 
 .lifeStageButton {
     position: relative;
     padding: 0.25rem 0;
-    
+
     background: none;
     border: none;
     color: var(--black);
-    
+
     font: inherit;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: clamp(0.6rem, 8.4cqw, 1.4rem); /*8.4% of the circle's width*/
     line-height: 1.4;
-    
+
     cursor: pointer;
-    
+
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -125,15 +124,15 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    
+
     width: 100%;
     height: 0.1rem;
-    
+
     background-color: var(--text-h);
-    
+
     transform: scaleX(0);
     transform-origin: center;
-    
+
     transition: transform 0.2s ease-in-out;
 }
 
@@ -156,66 +155,43 @@
     transform: scaleX(1);
 }
 
-@media (max-width: 768px) {
-    :global(#problem) h1,
-    :global(#problem) h2 {
-        font-size: clamp(1.35rem, 5vw, 2rem);
-        line-height: 1.15;
-        letter-spacing: 0;
-    }
+/*"The path forward" logo block*/
+.aptonixText {
+    width: 60%;
+    height: auto;
+    padding-top: 1rem;
+}
 
-    :global(#problem) p {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
+.aptonixLogo {
+    width: 70%;
+    height: auto;
+}
 
-    .storyRow {
-        flex-direction: column !important;
-        align-items: stretch;
-        gap: 1rem;
-    }
+/*Potentiostat photo + proposal text, side by side*/
+.cardRow {
+    align-items: stretch;
+}
 
-    .storyRow > .halfSection {
-        width: 100%;
-        flex: 1 1 auto !important;
-    }
+.cardGold,
+.cardBlue {
+    border-radius: 5%;
+    transform: scale(0.9);
+}
 
-    .storyRow h1,
-    .storyRow h2 {
-        text-align: center !important;
-        padding: 0.5rem !important;
-    }
+.cardGold {
+    background-color: var(--text-h);
+}
 
-    .visualSection {
-        width: min(100%, 24rem);
-    }
+.cardBlue {
+    background-color: var(--accent);
+}
 
-    .riskFactorGraphics {
-        gap: 0.35rem;
-    }
+.cardBlue p {
+    padding: 0 5%;
+}
 
-    .riskFactorGraphics button {
-        font-size: clamp(0.58rem, 2.5vw, 0.8rem);
-        padding-inline: 0;
-    }
-
-    .linkGrid {
-        gap: 0.5rem !important;
-    }
-
-    .linkGrid > div {
-        flex: 1 1 0;
-        min-width: 0;
-    }
-
-    .linkGrid img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    .linkGrid h3 {
-        font-size: 0.85rem;
-        text-align: center;
-    }
+/*Protein viewer + legend*/
+.viewerSection {
+    align-items: center;
+    padding: var(--space-sm) 0;
 }
