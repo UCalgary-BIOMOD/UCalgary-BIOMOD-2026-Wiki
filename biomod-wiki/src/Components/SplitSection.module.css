@@ -8,6 +8,9 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    max-width: var(--block-max-width); /*Same cap as ViewportSection*/
+    margin-inline: auto;
+    padding-block: var(--section-pad); /*Same value as ViewportSection, so the gap between any two blocks is always the same*/
     gap: var(--space-lg);
 }
 

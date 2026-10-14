@@ -60,6 +60,8 @@
   --space-lg: clamp(1.5rem, 1rem + 1.6vw, 3rem);
   --space-xl: clamp(2.5rem, 1.5rem + 3vw, 6rem);
   --gutter: clamp(1rem, 0.5rem + 1.5vw, 2rem); /*Page left/right margin*/
+  --section-pad: var(--space-lg); /*Top and bottom padding of every full-width page block (ViewportSection, SplitSection). Use it for any new block so vertical gaps stay identical.*/
+  --block-max-width: 70rem; /*Widest a page block (text row, headline) gets; keeps lines readable on large monitors*/
 
   line-height: 1.45; /*Unitless on purpose: scales with each element's own font-size (a % would freeze into one px value for every child)*/
   font-family: var(--sans);

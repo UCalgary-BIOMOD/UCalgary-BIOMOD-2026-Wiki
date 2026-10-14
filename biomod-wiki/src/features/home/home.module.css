@@ -51,8 +51,9 @@
     --split-text-pad: 5%;
 }
 
+/*Was clamp(1rem, 2.2vw, 2rem): shrank to 1rem as the window narrowed. A rem-based floor and a gentler slope keep it readable.*/
 .biomarkerText h2 {
-    font-size: clamp(1rem, 2.2vw, 2rem);
+    font-size: clamp(1.15rem, 0.9rem + 1vw, 2rem);
 }
 
 /*Risk factor circles*/
@@ -203,5 +204,4 @@
 /*Protein viewer + legend*/
 .viewerSection {
     align-items: center;
-    padding: var(--space-sm) 0;
 }

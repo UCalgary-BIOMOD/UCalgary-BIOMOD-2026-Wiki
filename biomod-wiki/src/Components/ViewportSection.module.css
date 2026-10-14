@@ -1,21 +1,17 @@
 .viewport {
     width: 100%;
+    max-width: var(--block-max-width); /*Keeps text lines a readable length on very wide screens*/
+    margin-inline: auto;
     height: auto;
     min-height: 0;
     box-sizing: border-box;
     border: 0px solid lightblue;
     display: flex;
     flex-direction: column;
-    padding-block: var(--space-md); /*Breathing room between stacked sections*/
+    padding-block: var(--section-pad); /*Same value as SplitSection, so the gap between any two blocks is always the same*/
 }
 
 .center {
     align-items: center;
     justify-content: center;
-}
-
-@media (max-width: 768px) {
-    .viewport {
-        padding-block: 1rem;
-    }
 }

@@ -211,7 +211,9 @@ export default function Home() {
 
                     </ViewportSection>
 
-                    <p>The issue with these risk factors are that they present multimodally, where they must exist in combination to signify risk. Many of them are also unquantifiable.</p>
+                    <ViewportSection>
+                        <p>The issue with these risk factors are that they present multimodally, where they must exist in combination to signify risk. Many of them are also unquantifiable.</p>
+                    </ViewportSection>
                     <SplitSection>
                         <SplitHalf text = "left" className = {styles.biomarkerText}>
                             <h2>However, the accumulation of biomarkers - such as <span className = {styles.accent}>amyloid-beta (Aβ) or tau</span> - may be measured in the pre-clinical stage, helping screen for those at risk of developing Alzheimer’s even if they present zero symptoms [3].</h2>
