@@ -2,15 +2,29 @@
     text-align: left;
     display: flex;
     flex-direction: row;
+    gap: var(--space-md);
     
     position: relative;
 }
 
 .experimentImages{
     flex: 0 0 40%; /*Make the images take up only 40% of the space*/
+    min-width: 0;
 }
 
 .experimentText{
-    flex: 0 0 60%; 
+    flex: 1 1 0; /*Text takes the rest (about 60%)*/
+    min-width: 0;
     text-align:left;
+}
+
+/*Stack the text above the images on narrow screens*/
+@media (max-width: 768px) {
+    .experimentCard{
+        flex-direction: column;
+    }
+
+    .experimentImages{
+        flex: 0 0 auto;
+    }
 }

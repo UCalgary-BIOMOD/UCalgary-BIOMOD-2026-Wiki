@@ -35,18 +35,26 @@
     transform: rotate(-180deg);
 }
 
+/*
+    Open/close by animating the grid row from 0fr to 1fr. Unlike a fixed max-height this
+    always fits the content, however tall it gets on narrow screens.
+*/
 .card{
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.5s ease;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
     
     background-color: var(--bg);
     min-width:100%;
 }
 
 .card.open{
-    max-height: 2000px;
-    
+    grid-template-rows: 1fr;
+}
+
+.cardInner{
+    overflow: hidden;
+    min-height: 0;
 }
 
 @media (max-width: 768px) {

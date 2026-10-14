@@ -6,11 +6,11 @@
 
 .dates{
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr)); /*minmax(0, ...) lets the 7 columns shrink with the window instead of overflowing it*/
     gap: 0px;
     flex-grow: 1;
     
-    min-height: 700px;
+    min-height: clamp(26rem, 40vw, 39rem);
     
     
 }
@@ -21,8 +21,8 @@
 }
 
 .day{
-    min-width: 150px;
-    min-height: 30px;
+    min-width: 0;
+    min-height: 2rem;
     border: 2px solid var(--social-bg);
     background-color: var(--bg);
     position: relative;
@@ -53,7 +53,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    min-width: 150px;
+    min-width: 0;
     background-color: var(--light-bg);
     position: relative;
 }
@@ -100,13 +100,13 @@
 .dayHeader{
   
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0px;
 }
 
 .dayHeader > div {
   flex: 1;
-  min-width: 150px;
+  min-width: 0;
   text-align: center;
   font-weight:bold;
 }
