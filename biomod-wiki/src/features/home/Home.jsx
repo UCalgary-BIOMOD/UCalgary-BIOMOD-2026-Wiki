@@ -73,10 +73,12 @@ export default function Home() {
         offset: ["start end", "end end"],
     })
 
+    /*top/left are the top-left corner of each biomarker, which is 50% of the frame, so its center is +25%. These centers (38/52, 50/40, 62/54)
+      cluster the three helices in the middle of the yellow glow (which is centered at 50/50).*/
     const biomarkers = [
-        { top: "29%", left: "24%" },
-        { top: "22%", left: "7%" },
-        { top: "24%", left: "44%" },
+        { top: "27%", left: "13%" },
+        { top: "15%", left: "25%" },
+        { top: "29%", left: "37%" },
     ]
 
     const [selectedLifestage, setSelectedLifestage] = useState("select")
