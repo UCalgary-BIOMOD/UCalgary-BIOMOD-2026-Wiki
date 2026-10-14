@@ -22,7 +22,7 @@ export default function ELSI() {
                                 <p className={styles.materialText}>{material.text}</p>
                             </div>
                         </div>
-                    ))},
+                    ))}
                 </>
             )
         },
@@ -40,7 +40,7 @@ export default function ELSI() {
                                 <p className={styles.materialText}>{material.text}</p>
                             </div>
                         </div>
-                    ))},                
+                    ))}
                 </>
             )
         },
@@ -58,7 +58,7 @@ export default function ELSI() {
                                 <p className={styles.materialText}>{material.text}</p>
                             </div>
                         </div>
-                    ))},
+                    ))}
                 </>
             )
         },

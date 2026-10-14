@@ -5,6 +5,7 @@ import PageLayout from "/src/Components/PageLayout.jsx"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 import ProteinViewer from "/src/Components/ProteinViewer.jsx"
 import ViewportSection from "../../Components/ViewportSection"
+import LinkGrid from "/src/Components/LinkGrid.jsx"
 
 export default function Project() {
     const sections = [
@@ -14,8 +15,8 @@ export default function Project() {
             title: "Abstract",
             render: () => (
                 <>
-                    <ViewportSection style = {{display: "flex", alignItems: "center", justifyContent: "center"}}>
-                        <p>{...content.Abstract.text}</p>
+                    <ViewportSection center>
+                        <p>{content.Abstract.text}</p>
                     </ViewportSection>
                     
                 </>
@@ -26,42 +27,18 @@ export default function Project() {
             title: "Links",
             render: () => (
                 <>
-                    <ViewportSection style = {{display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}>
-                        <div style = {{display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "center", gap: "5%"}}>
-                            <div>
-                                <LinkWrapper to = "/description">
-                                    <img src = "./images/description-button.png" alt = "Description"></img>
-                                </LinkWrapper>
-                                <h3>Project Description</h3>
-                            </div>
-                            <div>
-                                <LinkWrapper to = "/modelling">
-                                    <img src = "./images/modelling-button.png" alt = "Modelling"></img>
-                                </LinkWrapper>
-                                <h3>Modelling</h3>
-                            </div>
-                            <div>
-                                <LinkWrapper to = "/experiments">
-                                    <img src = "./images/project-button.png" alt = "Experiments"></img>
-                                </LinkWrapper>
-                                <h3>Experiments</h3>
-                            </div>
-                        </div>
-                        <div style = {{display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "center", gap: "5%"}}>
-                            <div>
-                                <LinkWrapper to = "/results">
-                                    <img src = "./images/results-button.png" alt = "Results"></img>
-                                </LinkWrapper>
-                                <h3>Results</h3>
-                            </div>
-                            <div>
-                                <LinkWrapper to = "/notebook">
-                                    <img src = "./images/notebook-button.png" alt = "Notebook"></img>
-                                </LinkWrapper>
-                                <h3>Notebook</h3>
-                            </div>
-                        </div>
-                        
+                    <ViewportSection center>
+                        <LinkGrid
+                            columns = {3}
+                            tileMax = "13.5rem"
+                            items = {[
+                                {to: "/description", img: "./images/description-button.png", alt: "Description", label: "Project Description"},
+                                {to: "/modelling", img: "./images/modelling-button.png", label: "Modelling"},
+                                {to: "/experiments", img: "./images/project-button.png", label: "Experiments"},
+                                {to: "/results", img: "./images/results-button.png", label: "Results"},
+                                {to: "/notebook", img: "./images/notebook-button.png", label: "Notebook"},
+                            ]}
+                        />
                     </ViewportSection>
                     
                 </>

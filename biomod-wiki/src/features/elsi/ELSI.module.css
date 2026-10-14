@@ -3,21 +3,22 @@
 }
 
 .elsiMaterial {
-    width: 70vw;
-    margin: 4rem;
+    --elsi-space: clamp(2rem, 1rem + 2.5vw, 4rem); /*4rem at 1920, tighter on small screens*/
+    width: min(100%, 74rem); /*Fills the column on small screens, caps at the original ~70vw-at-1920 width*/
+    margin: var(--elsi-space) 0;
 }
 
 .elsiSubtitle {
-    color: #EABE73;
+    color: var(--text-h);
     font-size: clamp(1.5rem, 3vw, 3rem);
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-md);
 }
 
 .elsiGrid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
-    gap: 4rem;
+    gap: var(--elsi-space);
 }
 
 .materialImage {
@@ -29,10 +30,10 @@
 .materialText {
     margin: 0;
     text-align: left;
-    font-size: clamp(1.5rem, 1rem, 3rem);
+    font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem); /*Was clamp(1.5rem, 1rem, 3rem), which always resolved to 1.5rem*/
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .elsiGrid {
         grid-template-columns: 1fr;
     }
