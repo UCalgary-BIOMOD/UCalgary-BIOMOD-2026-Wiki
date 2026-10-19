@@ -8,6 +8,7 @@
   --text-h: #EABE73; /* This is for <h1>, <h2>, etc. */
   --bg: #0C0922; /* General website background color */
   --black: #000000;
+  --header-bg: #312D4C; /*Top navigation bar (NewHeader1.0 mockup)*/
   --light-bg: #242238; /*Lighter background color to make nav and footer stand out*/
   --border: #E9ECEF; /*Changes color of left/right border of #root container; change to #FF0000 to observe bounds.*/
   --code-bg: #f4f3ec; /*Most likely change this to match --bg IF we host code on our website*/
@@ -74,7 +75,13 @@
   -webkit-font-smoothing: antialiased; /*antialiasing for chrome*/
   -moz-osx-font-smoothing: grayscale; /*antialiasing for firefox*/
 
-  --top-nav-height: 80px; /*Navigation Bar Height; also the offset for sticky/scroll-margin so keep it a single fixed value*/
+  --top-nav-height: 80px; /*Navigation Bar Height; also the offset for sticky/scroll-margin so keep it a single px value per breakpoint*/
+}
+
+@media (min-width: 769px) {
+  :root {
+    --top-nav-height: 112px; /*Taller header on desktop, per the NewHeader1.0 mockup*/
+  }
 }
 
 *,

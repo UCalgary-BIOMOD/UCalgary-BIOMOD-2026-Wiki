@@ -4,39 +4,45 @@
     justify-content: space-between; /*Push objects (header and links) to the ends*/
     align-items: center; /*Align both vertical and horizontal*/
     padding: 0.5rem var(--gutter); /*Padding for the objects within*/
+    gap: var(--space-md);
     position: sticky; /*Make it stick and move through*/
     top: 0; /*All stick things need a top value*/
     border: 0px solid green; 
     box-sizing: border-box; /*The size given by height will incude both padding and the actual size of the content*/
     height: var(--top-nav-height); 
-    background-color: var(--light-bg);
+    background-color: var(--header-bg);
     z-index: 1000; /*Make sure everything is UNDER the navigation bar*/
     
 }
 /*Styles for the list of links*/
 .ul{
     display: flex;
+    align-items: center;
     list-style: none; /* this removes the bulleted list */
-    gap: 0.9rem;
+    gap: clamp(0.6rem, 0.3rem + 0.8vw, 1.1rem);
     margin: 0;
     padding: 0; /* so this doesn't mess up the padding from .nav */
 }
 
 .logo {
     display: block;
-    width: clamp(5rem, 4rem + 2vw, 6.7rem); /*~120px at 1920, shrinks on small windows*/
-    height: auto;
-    object-fit: cover;
-    padding-top: 5%;
+    width: clamp(3.25rem, 2rem + 3.4vw, 5.5rem); /*Black disc behind the brain, as in the header mockup*/
+    aspect-ratio: 1;
+    padding: 5%;
+    border-radius: 50%;
+    background-color: #000;
+    object-fit: contain;
 }
 
 .h2 {
     flex: 1 1 auto;
     min-width: 0;
-    margin: 0 1rem;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    line-height: 1.1;
-    text-align: center;
+    margin: 0 0 0 var(--space-sm);
+    font-family: "League Spartan", system-ui, sans-serif; /*Geometric face from the header mockup (system-ui comes first in --sans)*/
+    font-size: clamp(1.2rem, 0.6rem + 3vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.05;
+    text-align: left;
     overflow-wrap: anywhere;
 }
 
@@ -58,7 +64,9 @@
     background: none;
     border: none;
     font: inherit; /*Inherit from the navigation bar*/
-    font-weight: bold;
+    font-family: "League Spartan", system-ui, sans-serif;
+    font-weight: 700;
+    padding: 0;
     /*Underline indicator thing so it also works for the items in the drop down menu*/
     &:global.active {
         transform: scaleX(1)
@@ -73,7 +81,7 @@
 /* Make top-level triggers match link sizing by default.
    rem-based so it follows the fluid root size (16px at 1920, a little smaller on narrow windows). */
 .ul a, .dropdownTrigger {
-    font-size: 0.89rem;
+    font-size: clamp(1rem, 0.7rem + 0.6vw, 1.5rem);
     line-height: 1.4;
 }
 
@@ -197,7 +205,7 @@
     }
 
     .h2 { /* reduce header title space on small screens */
-        font-size: clamp(0.95rem, 4.2vw, 1.1rem);
+        font-size: clamp(1rem, 5vw, 1.4rem);
         margin: 0 0.25rem;
     }
 
