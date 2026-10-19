@@ -8,6 +8,7 @@ import MoleculeLegend from "/src/Components/MoleculeLegend.jsx"
 import ViewportSection from "../../Components/ViewportSection"
 import SplitSection, {SplitHalf} from "/src/Components/SplitSection.jsx"
 import LinkGrid from "/src/Components/LinkGrid.jsx"
+import BrainAnimation from "/src/Components/BrainAnimation.jsx"
 import CanadaDot from "./CanadaDots.jsx"
 import Biomarker from "./Biomarker.jsx"
 import {motion, useScroll, useTransform, AnimatePresence} from "motion/react"
@@ -18,7 +19,6 @@ import YouTubeEmbed from "../../Components/YouTubeEmbed"
 
 export default function Home() {
     const familyRef = useRef(null)
-    const brainRef = useRef(null)
     const canadaRef = useRef(null)
     const biomarkerRef = useRef(null)
 
@@ -33,19 +33,6 @@ export default function Home() {
         scrollYProgress,
         [0, 1],
         ["blur(0px)", "blur(20px)"]
-    )
-
-    const { scrollYProgress: brainScroll } = useScroll({
-        target: brainRef,
-        offset: ["start end", "end end"],
-    })
-
-    const brainClip = useTransform(
-        brainScroll,
-        [0.3, 1],
-        [
-        "inset(0% 0% 100% 0%)",
-        "inset(0% 0% 40% 0%)"]
     )
 
     const {scrollYProgress: canadaScroll} = useScroll({
@@ -107,9 +94,8 @@ export default function Home() {
                         <SplitHalf text = "left">
                             <h1>As the most common form of dementia, Alzheimer’s disease accounts for <span className = {styles.accent}>60-80%</span> of all cases [1].</h1>
                         </SplitHalf>
-                        <SplitHalf className = {styles.visualSection} ref = {brainRef}>
-                            <motion.img style = {{zIndex: 4, clipPath: brainClip}} src = "./images/brain-off-color.png" alt = "Brain" />
-                            <img src = "./images/brain.png" alt = "Brain"></img>
+                        <SplitHalf className = {styles.visualSection}>
+                            <BrainAnimation />
                         </SplitHalf>
                     </SplitSection>
                     <SplitSection>

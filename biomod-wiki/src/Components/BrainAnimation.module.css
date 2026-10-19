@@ -1,0 +1,31 @@
+.brain {
+    position: absolute;
+    inset: 0;
+}
+
+.brain > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.defs {
+    position: absolute;
+    pointer-events: none;
+}
+
+/*Two stacked, increasingly dark copies of the brain, each revealed only below its own wave. The mask (set in the component) trims each copy to the brain outline*/
+.backWave,
+.frontWave {
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+}
+
+.backWave {
+    filter: brightness(0.6) saturate(0.8);
+}
+
+.frontWave {
+    filter: brightness(0.35) saturate(0.7);
+}

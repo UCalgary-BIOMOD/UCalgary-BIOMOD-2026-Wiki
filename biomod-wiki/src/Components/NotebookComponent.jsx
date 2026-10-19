@@ -1,5 +1,7 @@
 import {DateTime, Interval} from "luxon"
 import {Fragment, useMemo, useState} from "react"
+import {CategoryDot} from "./CategoryLegend.jsx"
+import {categoryOf} from "./experimentCategories.js"
 import styles from "./NotebookComponent.module.css"
 
 const names = [
@@ -173,6 +175,7 @@ export default function NotebookComponent({experiments, setActiveExperimentId}) 
                                                 }}
                                                 className = {styles.experimentLink}
                                             >
+                                                <CategoryDot color = {categoryOf(experiment)?.color ?? "var(--text)"} />
                                                 {experiment.caption}
                                             </button>
                                         )})}

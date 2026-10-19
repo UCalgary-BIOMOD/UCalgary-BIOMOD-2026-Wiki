@@ -118,7 +118,10 @@
 }
 
 .experimentLink {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  text-align: left;
   overflow: hidden;
   text-decoration: none;
   color: var(--text);

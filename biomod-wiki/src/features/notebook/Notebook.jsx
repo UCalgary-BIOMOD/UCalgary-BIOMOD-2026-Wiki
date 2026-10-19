@@ -4,6 +4,8 @@ import NotebookMobileComponent from "@/Components/NotebookMobileComponent.jsx"
 import VerticalCard from "@/Components/VerticalCard.jsx"
 import TextBlock from "@/Components/TextComponents.jsx"
 import ExperimentCard from "@/Components/ExperimentCard.jsx"
+import CategoryLegend, {CategoryDot} from "@/Components/CategoryLegend.jsx"
+import {CATEGORIES, categoryOf} from "@/Components/experimentCategories.js"
 import {useState, useEffect} from "react"
 import fm from "front-matter"
 import styles from "./Notebook.module.css"
@@ -42,6 +44,15 @@ export default function Notebook() {
 
 
     const [activeExperimentId, setActiveExperimentId] = useState(null)
+    const [openCategory, setOpenCategory] = useState(null)
+
+    /*Opening an experiment (e.g. from the calendar) also opens the category group that holds it*/
+    const selectExperiment = (id) => {
+        setActiveExperimentId(id)
+        const experiment = experiments.find((candidate) => candidate.id === id)
+        const category = experiment && categoryOf(experiment)
+        if (category) setOpenCategory(category.key)
+    }
 
     /*Scroll*/
 
@@ -73,11 +84,12 @@ export default function Notebook() {
             <>
                 <p>Here be the notebook of our glorious project</p>
                 <div className={styles.desktopCalendar}>
-                    <NotebookComponent experiments={experiments} setActiveExperimentId={setActiveExperimentId} />
+                    <NotebookComponent experiments={experiments} setActiveExperimentId={selectExperiment} />
                 </div>
                 <div className={styles.mobileCalendar}>
-                    <NotebookMobileComponent experiments={experiments} setActiveExperimentId={setActiveExperimentId} />
+                    <NotebookMobileComponent experiments={experiments} setActiveExperimentId={selectExperiment} />
                 </div>
+                <CategoryLegend />
             </>
             )
         },
@@ -87,25 +99,36 @@ export default function Notebook() {
 
             render: () => (
                 <>
-                    {experiments.map((experiment) => {
-                        
-                        const isOpen = activeExperimentId === experiment.id
+                    {CATEGORIES.map((category) => {
+                        const entries = experiments.filter((experiment) => categoryOf(experiment) === category)
                         return (
                             <VerticalCard
-                                id = {`experiment-${experiment.id}`}
-                                key={experiment.id}
-                                caption={experiment.title}
-                                isOpen = {isOpen}
-                                onToggle={() => {
-                                    setActiveExperimentId(
-                                        isOpen ? null : experiment.id
-                                    )
-                                }}
-                                content={
-                                    <ExperimentCard
-                                        {...experiment}
-                                        isActive={isOpen}
-                                    />
+                                id = {`category-${category.key}`}
+                                key = {category.key}
+                                caption = {<><CategoryDot color = {category.color} /> {category.groupLabel}</>}
+                                isOpen = {openCategory === category.key}
+                                onToggle = {() => setOpenCategory(openCategory === category.key ? null : category.key)}
+                                content = {
+                                    entries.length === 0 ? (
+                                        <p className = {styles.emptyCategory}>No entries yet.</p>
+                                    ) : <div className = {styles.entries} style = {{"--category-color": category.color}}>{entries.map((experiment) => {
+                                        const isOpen = activeExperimentId === experiment.id
+                                        return (
+                                            <VerticalCard
+                                                id = {`experiment-${experiment.id}`}
+                                                key = {experiment.id}
+                                                caption = {experiment.title}
+                                                isOpen = {isOpen}
+                                                onToggle = {() => setActiveExperimentId(isOpen ? null : experiment.id)}
+                                                content = {
+                                                    <ExperimentCard
+                                                        {...experiment}
+                                                        isActive = {isOpen}
+                                                    />
+                                                }
+                                            />
+                                        )
+                                    })}</div>
                                 }
                             />
                         )

@@ -1,0 +1,104 @@
+{
+    "background": [
+        "Early detection of many diseases is significant as it allows physicians to develop timely treatment plans. This includes the neurodegenerative disease, Alzheimer's disease, where cognitive decline is attributed to a build up of proteins in the brain. Preclinical Alzheimer’s disease is the stage where there is evidence of a biomarker, amyloid-beta (Aβ) or tau, present [LHB]. Because cognitive function appears normal, this stage can go on for many years unnoticed. Identifying these biomarkers before symptoms arise could provide an important opportunity for earlier intervention and disease monitoring.",
+        "Traditional methods of diagnosis for neurodegenerative diseases include neuroimaging, specifically magnetic resonance imaging (MRI), positron emission tomography (PET), computerized tomography (CT), and more [P jiang]. However, these methods usually only flag disease after significant progression has already occurred. For example, MRI produces detailed 3D images of the brain, but diagnosis depends on visible structural changes, such as brain atrophy, which may be too late for early intervention [Chapman]",
+        "On top of these neuroimaging techniques, spinal taps and neurophysical tests come with negatives for the goals of early detection too. Spinal taps are invasive procedures and difficult to administer on a population-wide level. Tests measuring cognitive impairment can be useful for differentiating between normal aging and early Alzheimer’s, but these tests depend on untimely late stage pathologies [ ]",
+        "Biosensors offer a promising alternative by enabling biomarker detection using smaller sample volumes and potentially more accessible testing platforms. However, many existing biosensors are designed for single use or the detection of only one specific biomarker. Their clinical utility may also be limited by insufficient sensitivity or selectivity, particularly when target biomarkers are present at very low concentrations. Therefore, there is a need for sensitive, selective, and potentially reusable biosensing systems capable of supporting earlier detection and continued monitoring of Alzheimer’s disease."
+    ],
+    "motivation": [
+        "Although there is currently no cure for Alzheimer’s disease or most neurodegenerative diseases, earlier detection allows individuals to adjust their lifestyle, manage emerging symptoms, and make important decisions while their cognitive abilities remain largely intact [d wallon]. Our team is motivated to address the issue of the lack of early diagnosis in neurodegenerative diseases. We aim to do this by developing a biosensing approach that could make early biomarker detection more practical and accessible."
+    ],
+    "solution": [
+        "Our solution for the early detection of Alzheimer’s disease is an electrochemical biosensor designed to detect amyloid-beta 42 (Aβ42). The biosensor comprises 3 major components: an aptamer, toehold-mediated strand displacement (TMSD), and a polyamidoamine (PAMAM) dendrimer."
+    ],
+    "aptamers": [
+        "Aptamers are single stranded DNA (ssDNA). Their tertiary structures are capable of binding specific targets. We chose the Aβ7-92-1H1 aptamer for its ability to bind to Aβ42, an Alzheimer’s disease biomarker. The aptamer is labelled with methylene blue, a redox active synthetic dye that transfers electrons to and from the electrode. When Aβ42 binds to the aptamer, the aptamer undergoes a conformational change that brings the attached methylene blue closer to the electrode. This results in a movement of electrons which therefore, leads to a current and an electrochemical method of detecting the presence of Aβ42. If Aβ42 is absent, the aptamers will remain in their original state and methylene blue will be too far from the electrode to produce any significant current."
+    ],
+    "goals": [
+        {
+            "name": "Wet Lab",
+            "tone": "gold",
+            "categories": [
+                {
+                    "title": "Aptamer Experiments",
+                    "items": [
+                        "Prepare all experimental buffers",
+                        "Resuspend and refold commercially made aptamers",
+                        "Validate aptamer binding to Aβ42 using native PAGE",
+                        "Covalently attach methylene blue (MB) to aptamer",
+                        "Purify aptamer-MB conjugate mixture",
+                        "Validate aptamer-MB conjugate binding to Aβ42 using native PAGE",
+                        "MB functionality test with and without aptamer"
+                    ]
+                },
+                {
+                    "title": "TMSD Experiments",
+                    "items": [
+                        "Validate TMSD X, Y, and S strands with non-SDS native PAGE",
+                        "Validate thiol-modified TMSD Y with non-SDS native PAGE",
+                        "Anneal TMSD Y strand and aptamer strand",
+                        "Validate TMSD Y-aptamer conjugate with non-SDS native PAGE",
+                        "Stain and image non-SDS native PAGE gels"
+                    ]
+                },
+                {
+                    "title": "Dendrimer Experiments",
+                    "items": [
+                        "Attach dendrimer to gold electrode",
+                        "Validate immobilization of dendrimer with cyclic voltammetry (CV) and electrochemical impedance spectroscopy (EIS)",
+                        "Attach TMSD Y to dendrimer",
+                        "Validate TMSD Y-dendrimer conjugate with non-SDS native PAGE"
+                    ]
+                },
+                {
+                    "title": "General",
+                    "items": [
+                        "Validate TMSD X, Y, and S strands with non-SDS native PAGE",
+                        "Validate thiol-modified TMSD Y with non-SDS native PAGE",
+                        "Anneal TMSD Y strand and aptamer strand",
+                        "Validate TMSD Y-aptamer conjugate with non-SDS native PAGE",
+                        "Stain and image non-SDS native PAGE gels"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Dry Lab",
+            "tone": "blue",
+            "categories": [
+                {
+                    "title": "Aptamer Modelling",
+                    "items": [
+                        "Structural Model of Literature Aptamer",
+                        "Docking Simulations for Literature Aptamer"
+                    ]
+                },
+                {
+                    "title": "In-Silico SELEX",
+                    "items": [
+                        "Aptamer Sequence Generation",
+                        "Secondary Structure Generation",
+                        "PDB File Generation",
+                        "Docking Simulation Integration",
+                        "Sequence Optimization Mutation"
+                    ]
+                },
+                {
+                    "title": "TMSD Modelling",
+                    "items": [
+                        "Structural Model of Literature TMSD"
+                    ]
+                },
+                {
+                    "title": "System Modelling",
+                    "items": [
+                        "Structural Model of Literature Aptamer + TMSD",
+                        "Aptamer + TMSD Substrate/Enzyme Model",
+                        "Structural Model of TMSD & Aptamer + HRP + TMB",
+                        "Docking Simulation of Full Model"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+.group {
+    width: min(100%, 40rem);
+    margin-inline: auto;
+    text-align: left;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.list {
+    margin: 0 0 var(--space-md);
+    padding-left: 1.5rem;
+    font-size: var(--fs-small);
+}
+
+.tabs {
+    display: flex;
+    gap: var(--space-xs);
+    padding-inline: var(--space-md);
+}
+
+.tab {
+    flex: 1 1 0;
+    max-width: 4.5rem;
+    padding: 0.2rem 0;
+    background-color: var(--brand-blue);
+    color: #fff;
+    border: none;
+    border-radius: 0.6rem 0.6rem 0 0;
+    font: inherit;
+    font-size: var(--fs-h3);
+    cursor: pointer;
+    /*Sit on top of the window border so the active tab flows into it*/
+    position: relative;
+    margin-bottom: -3px;
+    transition: filter 0.2s ease;
+}
+
+.tab:hover {
+    filter: brightness(1.15);
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+.activeTab {
+    background-color: var(--text-h);
+    color: var(--bg);
+    font-weight: 700;
+    z-index: 1;
+}
+
+.window {
+    border: 3px solid var(--text-h);
+    border-radius: 1rem;
+    background-color: var(--bg);
+    padding: var(--space-md);
+    height: clamp(16rem, 30vw, 24rem);
+    overflow-y: auto;
+}
+
+.empty {
+    margin: 0;
+    text-align: center;
+    font-size: var(--fs-small);
+}
+
+/*Fingers need a bigger target than a cursor (44px minimum)*/
+@media (pointer: coarse) {
+    .tab {
+        min-height: 2.75rem;
+    }
+}

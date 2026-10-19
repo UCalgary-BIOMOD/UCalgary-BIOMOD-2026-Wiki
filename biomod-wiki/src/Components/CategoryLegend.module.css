@@ -1,0 +1,27 @@
+.legend {
+    list-style: none;
+    margin: var(--space-md) auto;
+    padding: var(--space-md) var(--space-lg);
+    width: fit-content;
+    border: 3px solid var(--text-h);
+    border-radius: 0.75rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    font-size: var(--fs-h3);
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.dot {
+    flex: 0 0 auto;
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    border-radius: 50%;
+}

@@ -1,0 +1,56 @@
+{
+    "groups": [
+        {
+            "id": "aptamer",
+            "title": "Aptamer Experiments",
+            "navTitle": "Aptamer",
+            "experiments": [
+                {"title": "Resuspending and Refolding Aptamer From IDT"},
+                {"title": "Validation of Aptamer Binding to Amyloid beta 42 Using Native PAGE"},
+                {"title": "Covalently Attaching Methylene Blue to 5' End of DNA Aptamer"},
+                {"title": "Purifying Aptamer-MB Conjugate Mixture"},
+                {"title": "Validation of Aptamer-MB Conjugate Binding to Amyloid Beta-42 (Aβ42) Using Native PAGE"},
+                {"title": "Methylene Blue Functionality Test With Aptamer and Without"}
+            ]
+        },
+        {
+            "id": "tmsd",
+            "title": "TMSD Experiments",
+            "navTitle": "TMSD",
+            "experiments": [
+                {"title": "1x TBE Buffer"},
+                {"title": "PBS Buffer"},
+                {"title": "MES Buffer"},
+                {"title": "10% APS"},
+                {"title": "Non-SDS Native Page For TMSDX, TMSDY, TMSDS Strands"},
+                {"title": "Non-SDS Native Page With Thiol TMSDY Strand Modification"},
+                {"title": "Non-SDS Native Page With Non-specific Thiol TMSDY Strand Modification"},
+                {"title": "Annealing TMSD Strand and Aptamer Strand"},
+                {"title": "Non-SDS Native PAGE With TMSD Strands and Aptamer"},
+                {"title": "Non-SDS Native PAGE Staining and Imaging Process"},
+                {"title": "Resuspending Oligonucleotides"},
+                {"title": "Diluting Oligonucleotides Stock Solution"},
+                {"title": "Reducing Thiol TMSDY with TCEP"},
+                {"title": "Attaching TMSDY to Dendrimer Using SMCC"}
+            ]
+        },
+        {
+            "id": "dendrimer",
+            "title": "Dendrimer Experiments",
+            "navTitle": "Dendrimer",
+            "experiments": []
+        },
+        {
+            "id": "electrode",
+            "title": "Electrode Experiments",
+            "navTitle": "Electrode",
+            "experiments": []
+        },
+        {
+            "id": "full-system",
+            "title": "Full System Experiments",
+            "navTitle": "Full System",
+            "experiments": []
+        }
+    ]
+}

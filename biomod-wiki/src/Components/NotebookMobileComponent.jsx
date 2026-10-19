@@ -1,5 +1,7 @@
 import { DateTime } from "luxon"
 import { useMemo, useState } from "react"
+import {CategoryDot} from "./CategoryLegend.jsx"
+import {categoryOf} from "./experimentCategories.js"
 import styles from "./NotebookMobileComponent.module.css"
 
 const monthNames = [
@@ -165,7 +167,9 @@ export default function NotebookMobileComponent({ experiments, setActiveExperime
                 ) : (
                     activeExperiments.map((experiment) => (
                         <div key={experiment.id} className={styles.experimentEntry}>
-                            <h3 className={styles.experimentCaption}>{experiment.caption}</h3>
+                            <h3 className={styles.experimentCaption}>
+                                <CategoryDot color={categoryOf(experiment)?.color ?? "var(--text)"} /> {experiment.caption}
+                            </h3>
 
                             {experiment.description ? (
                                 <p className={styles.experimentDescription}>

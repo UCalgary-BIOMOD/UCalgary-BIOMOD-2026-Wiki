@@ -171,4 +171,10 @@ html{
   --methylene-blue: rgb(42, 90, 234);
   --biomarker: rgb(78, 204, 50);
 
+  /*Notebook/experiment category colors (calendar dots, legend, accordions)*/
+  --electrode: var(--brand-blue);
+  --full-system: var(--biomarker);
+
+  /*Raised panel used by figure windows, goal cards and tab headers*/
+  --panel: #2E2B4A;
 }
