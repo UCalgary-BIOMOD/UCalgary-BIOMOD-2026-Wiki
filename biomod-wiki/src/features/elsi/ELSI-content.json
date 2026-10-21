@@ -1,4 +1,9 @@
 {
+    "introduction": [
+    {
+      "text": "This page explores the ethical, legal, and social implications associated with the development, testing, and potential deployment of Aptonix, a biosensor designed to detect the Alzheimer’s disease biomarker Aβ42. The aim is to identify how the biosensor could impact its users, affected communities, and the environment, showing how these considerations have been addressed while highlighting areas for further improvement. Conducting an ELSI analysis during the early stages of biosensor development helps identify potential risks and guide the implementation of appropriate safeguards, particularly when human biological samples are involved."
+    }
+  ],
     "ethical": [
     {
       "subtitle": "1. Informed Consent and Patient Autonomy",
@@ -9,13 +14,48 @@
       "subtitle": "2. Psychological Effects of Biomarker Testing",
       "image": "/images/aptonix-logo.png",
       "text": "Yearly Aβ42 screening during routine health check ups may increase anxiety around potential results, especially if Aβ42 levels fluctuate normally but are misinterpreted as a significant increase. This can result in hypochondria or unneeded medical interventions and lifestyle alterations. Physician-mediated communication and plain-language result reports could reduce misunderstanding. However, professional interpretation cannot eliminate the emotional effect of receiving uncertain health information."
+    },
+    {
+      "subtitle": "3. False Positive Results",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "False positive test results may cause psychological harm to patients as they incorrectly assume they could have Alzheimer’s disease. This can trigger unnecessary and invasive follow up procedures, adding financial burden to all parties as well as misallocating care from patients who need it. Methods to prevent false positive results include: adding an antifouling layer to the electrode, extensive aptamer screening, lowering sensor sensitivity, and using unspiked matrix blanks."
+    },
+    {
+      "subtitle": "4. False Negative Results",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "False negative test results may set back intervention and give patients false confidence, potentially ignoring continuing symptoms. Methods to prevent false negative results include: sample dilutions, determining the limit of detection, and testing the biosensor’s stability."
+    },
+    {
+      "subtitle": "5. Privacy, Data Security, and Misuse of Health Information",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "Personal privacy is a critical and fundamental right that we must respect. When it comes to sample and data collection, any obtained information must be protected with high security and kept confidential. Information may only be disclosed with patient consent, complying with the Health Information Act (HIA) [1]. Future clinical use of Aptonix should store patient results electronically with encryption, authentication, restricted access, audit logs, and compliance with applicable health-information legislation. Lastly, all biological samples should be incinerated after use. These measures are to prevent the misuse of health information from database breaches or targeted hacking. Cyberattacks risk compromising medical data integrity, resulting in flawed diagnostics and unreliable outcomes [2]. Additionally, the release of personal health information may be used inappropriately and discriminately by insurance companies to deny coverage or increase premiums. This data can also be used unfairly by employers to sway hiring or promotion decisions which violates the Alberta Human Rights Act [3]."
+    },
+    {
+      "subtitle": "6. Sustainability",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "The production of Aptonix uses rare resources such as gold. The production of pure DNA oligomers is also resource intensive. We purchase oligomers from Integrated DNA Technologies (IDT), who use solid-phosphoramidite chemistry that requires a high volume of consumable solvents for purification by HPLC [4]. Additionally, the packaging to enclose and transport the biosensor will most likely be produced of plastic, contributing to nonbiodegradable waste in landfills. Our biosensor is designed to mitigate production waste with the implementation of the TMSD mechanism to allow replacement of the sensing strand without discarding the complete electrode. However, the number of safe reuse cycles and the overall environmental benefit have not yet been established."
     }
   ],
     "legal": [
     {
       "subtitle": "1. Research Ethics and Use of Human Samples",
       "image": "/images/i-want-to-go-home.jpg",
-      "text": "Research involving identifiable human biological materials would require institutional Research Ethics Board review before samples are collected or used. The consent process would need to address the purpose of collection, foreseeable risks, data linkage, storage duration, future secondary use, withdrawal, and sample disposal [government of canada]. The present proof-of-concept does not involve testing identifiable patient samples."
+      "text": "Research involving identifiable human biological materials would require institutional Research Ethics Board review before samples are collected or used. The consent process would need to address the purpose of collection, foreseeable risks, data linkage, storage duration, future secondary use, withdrawal, and sample disposal [5] The present proof-of-concept does not involve testing identifiable patient samples."
+    },
+    {
+      "subtitle": "2. Biosafety, Containment, and Waste-Disposal Requirements",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "Institutional risk assessments should be done in each location to determine the appropriate biosafety level environment for blood diagnostic testing and sample processing. Human blood and contaminated consumables would be handled and disposed of as potentially infectious biohazards. A medical waste contractor would then autoclave, heat, and then dispose of the biohazards in the landfill [6]. Chemical waste will be disposed of based on the information presented in their respective safety data sheets and the local regulations."
+    },
+    {
+      "subtitle": "3. Medical Device Classification",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "If developed in clinic use in Canada, Aptonix would most likely be classified as a Class III near-patient in vitro diagnostic device (IVDD). The device analyzes blood samples for disease-associated biomarkers and is intended for point-of-care use in clinical settings. Under Health Canada’s Rule 6, near-patient IVDDs are classified as Class III, except for specific higher - or lower-risk categories [7]. The classification may change depending on the biomarker targeted in future applications. For example, Health Canada specifically classifies IVDDs that are intended to detect HIV, hepatitis B virus (HBV), hepatitis C virus (HCV), and other specified transmissible agents as Class IV when used to determine disease or immune status. The higher classification reflects the potential public-health consequences associated with transmissible, life-threatening diseases. Therefore, while Aptonix’s initial application for Aβ42 (Alzheimer’s targeted biomarker) and other non-transmissible targeted biomarkers would be expected to fall under Class III, future versions targeting certain transmissible agents could require Class IV classification and a more stringent regulatory pathway."
+    },
+    {
+      "subtitle": "4. Patient and Operator Safety",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "The biosensor should comply with global regulations to ensure the electrical, chemical, biological, and physical safety of the patient and the user, usually the physician. If developed for clinical sale in Canada, Aptonix would need to follow Health Canada’s regulatory pathway for in-vitro diagnostic medical devices. Commercialization in other jurisdictions would require separate review, such as compliance with the EU IVDR or applicable FDA requirements in the United States."
     }
   ],
     "socialImplications": [
@@ -23,12 +63,67 @@
       "subtitle": "1. Healthcare Disparities",
       "image": "/images/i-want-to-go-home.jpg",
       "text": "Access to Aptonix may differ across developed and developing countries because of cost, healthcare infrastructure, laboratory capacity, and trained staff [BKN Yadav]. Aptonix is intended as a potentially scalable electrochemical platform, but it would still require sample collection, an electrochemical reader, quality control, trained interpretation, and an appropriate follow-up pathway. Therefore, a lower-cost screening test alone would not eliminate unequal access to Alzheimer’s assessment."
+    },
+    {
+      "subtitle": "2. Representation in Research and Clinical Validation",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "There is no standard Aβ42 baseline value to characterize a healthy individual as this varies between population characteristics such as ethnicity, age, and health conditions [9, 10]. In order to determine if an AB42 reading is significantly higher than the baseline, clinical validation will need to include a diverse demographic."
+    },
+    {
+      "subtitle": "3. Effects on Family and Social Relationships",
+      "image": "/images/i-want-to-go-home.jpg",
+      "text": "An abnormal biomarker result could affect how individuals view themselves and how family members respond to them. Relatives may become overprotective, begin discussing future caregiving prematurely, or misunderstand the result as a confirmed diagnosis. The tested individual could also experience stigma or withdraw from social relationships [11]. Results should be communicated in plain language by a qualified healthcare professional, with explicit explanation that the biosensor does not independently diagnose Alzheimer’s disease. Counselling and appropriate follow-up should be available when results may have substantial psychological or family consequences."
     }
+
   ],
     "references": [
-      {
-        "text": "Alzheimer's Disease and Dementia | About Dementia",
-        "url": "https://www.cdc.gov/alzheimers-dementia/about/"
-      }
-    ]
+    {
+      "text": "“Health Information Act,” Alberta.ca",
+      "url": "https://www.alberta.ca/health-information-act"
+    },
+    {
+      "text": "'Cybersecurity And Ethical Considerations In Biosensors And Bioelectronics Conferences | Europe | Asia | Middle East | Canada | Japan | Australia | USA | Peers Alley Media,' Peersalleyconferences.com, 2025.",
+      "url": "https://advanced-biosensors-bioelectronics.peersalleyconferences.com/tracks/cybersecurity-and-ethical-considerations-in-biosensors-and-bioelectronics"
+    },
+    {
+      "text": "“Alberta Human Rights Act - Open Government,” Alberta.ca, 2023",
+      "url": "https://open.alberta.ca/publications/a25p5"
+    },
+    {
+      "text": "A. Grajkowski, J. Cieślak, and S. L. Beaucage, “A High‐Throughput Process for the Solid‐Phase Purification of Synthetic DNA Sequences,” Current Protocols in Nucleic Acid Chemistry, vol. 69, no. 1, June 2017, doi: 10.1002/cpnc.31.",
+      "url": "https://currentprotocols.onlinelibrary.wiley.com/doi/abs/10.1002/cpnc.31"
+    },
+    {
+      "text": "Government of Canada, Interagency Advisory Panel on Research Ethics, “Tri-Council Policy Statement: Ethical Conduct for Research Involving Humans – TCPS 2 (2018) – Chapter 12: Human Biological Materials Including Materials Related to Human Reproduction,” Ethics.gc.ca, 2018. ",
+      "url": "https://ethics.gc.ca/eng/tcps2-eptc2_2018_chapter12-chapitre12.html"
+    },
+    {
+      "text": "T. Maris, “What Is Blood Waste and How To Dispose of It?,” Daniels Health Canada, Oct. 24, 2024.",
+      "url": "https://www.danielshealth.ca/knowledge-centre/what-blood-waste-and-how-dispose-it"
+    },
+    {
+      "text": "H. Canada, “Guidance Document: Guidance for the Risk-based Classification System for In Vitro Diagnostic Devices (IVDDs) - Canada.ca,” Canada.ca, 2026. ",
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/medical-devices/application-information/guidance-documents/guidance-document-guidance-risk-based-classification-system-vitro.html"
+    },
+    {
+      "text": "B. K. N. Yadav and C. Fernandes, “Regulatory, Ethical and Legal Aspects in Healthcare and Pharmaceuticals Related to Biosensors,” Nanosensors in Healthcare, pp. 182–194, Oct. 2025, doi: 10.1201/9781003015147-7.",
+      "url": ""
+    },
+    {
+      "text": "C. Xiong et al., “Baseline levels and longitudinal rates of change in plasma Aβ42/40 among self-identified Black/African American and White individuals,” Jan. 2024, doi: 10.21203/rs.3.rs-3783571/v1.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10802715/"
+    },
+    {
+      "text": "N. Schupf et al., “Elevated Plasma β-Amyloid Peptide Aβ42 Levels, Incident Dementia, and Mortality in Down Syndrome,” Archives of Neurology, vol. 64, no. 7, p. 1007, July 2007, doi: 10.1001/archneur.64.7.1007.",
+      "url": "https://jamanetwork.com/journals/jamaneurology/fullarticle/794158"
+    },
+    {
+      "text": "“Changes in Relationships | Alzheimer’s Association,” Alzheimer’s Association, 2019. ",
+      "url": "https://www.alz.org/help-support/i-have-alz/know-what-to-expect/changes-in-relationships"
+    },
+    {
+      "text": "“11 Steps to Performing a Robust Product Risk Analysis | Simplexity,” Simplexity Product Development, Nov. 07, 2023. ",
+      "url": "https://www.simplexitypd.com/11-steps-to-performing-a-robust-product-risk-analysis-copy/"
+    }
+  ]
 }

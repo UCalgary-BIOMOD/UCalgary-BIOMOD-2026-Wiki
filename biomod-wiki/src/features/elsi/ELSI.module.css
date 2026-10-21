@@ -27,10 +27,17 @@
     justify-self: center;
 }
 
+.introductionText {
+    font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem);
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .materialText {
     margin: 0;
     text-align: left;
-    font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem); /*Was clamp(1.5rem, 1rem, 3rem), which always resolved to 1.5rem*/
+    font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem); 
 }
 
 @media (max-width: 768px) {

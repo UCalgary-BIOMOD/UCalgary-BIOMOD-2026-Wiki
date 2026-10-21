@@ -9,6 +9,21 @@ import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 export default function ELSI() {
     const sections = [
         {
+            id: "introduction",
+            title: "Introduction",
+            render: () => (
+                <>
+                    <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "10vw" caption = "INTRODUCTION" className={styles.introductionHeading}></MainHeading>
+                    {content.introduction.map((material) => (
+                        <div className={styles.elsiMaterial} key={material.subtitle}>
+                            <h2 className={styles.elsiSubtitle}>{material.subtitle}</h2>
+                            <p className={styles.introductionText}>{material.text}</p>
+                        </div>
+                    ))}
+                </>
+            )
+        },
+        {
             id: "ethical",
             title: "Ethical",
             render: () => (
