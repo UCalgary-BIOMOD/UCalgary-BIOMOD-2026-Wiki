@@ -23,7 +23,7 @@ export default function ExperimentCard({id, dates, researchers = [], content, im
             <div className = {styles.experimentText}>
                 <TextBlock
                     heading = {dates
-                        .map((date) => DateTime.fromJSDate(date).toFormat("MMMM d"))
+                        .map((date) => DateTime.fromJSDate(date, {zone: "UTC"}).toFormat("MMMM d"))
                         .join(", ")}
                     size = "h3"
                     
