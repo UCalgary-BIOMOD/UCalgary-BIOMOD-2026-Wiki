@@ -9,7 +9,6 @@ researchers:
   - Sofea
   - Hannah
 tag:
-  - TMSD
   - Aptamer
   - Native PAGE
   - Thiol Modification

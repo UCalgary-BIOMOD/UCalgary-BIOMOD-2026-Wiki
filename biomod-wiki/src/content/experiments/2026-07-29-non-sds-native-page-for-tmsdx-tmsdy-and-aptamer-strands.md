@@ -10,7 +10,6 @@ researchers:
   - Neeor
   - Anahat
 tag:
-  - TMSD
   - Aptamer
   - Native PAGE
 ---

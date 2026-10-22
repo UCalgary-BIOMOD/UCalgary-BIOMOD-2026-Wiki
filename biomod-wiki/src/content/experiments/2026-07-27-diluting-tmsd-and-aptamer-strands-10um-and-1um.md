@@ -8,7 +8,6 @@ researchers:
   - Sofea
   - Hannah
 tag:
-  - TMSD
   - Aptamer
   - Reagent Prep
 ---

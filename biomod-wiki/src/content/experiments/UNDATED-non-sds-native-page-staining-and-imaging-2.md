@@ -7,7 +7,6 @@ dates: []
 # Partner(s) not given in Lab Notebook 2026.docx - needs confirming.
 researchers: []
 tag:
-  - TMSD
   - Aptamer
   - Native PAGE
   - Imaging

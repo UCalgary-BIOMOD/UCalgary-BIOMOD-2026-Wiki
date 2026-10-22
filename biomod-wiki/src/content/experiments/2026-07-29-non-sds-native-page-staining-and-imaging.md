@@ -8,7 +8,6 @@ researchers:
   - Hannah
   - Sofea
 tag:
-  - TMSD
   - Aptamer
   - Native PAGE
   - Imaging

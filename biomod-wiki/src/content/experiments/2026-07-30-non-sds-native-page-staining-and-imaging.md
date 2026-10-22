@@ -8,7 +8,6 @@ researchers:
   - Shahzaib
   - Neeor
 tag:
-  - TMSD
   - Aptamer
   - Native PAGE
   - Imaging
