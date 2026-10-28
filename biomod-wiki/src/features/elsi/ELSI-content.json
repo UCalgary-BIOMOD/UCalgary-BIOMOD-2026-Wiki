@@ -39,39 +39,39 @@
     "legal": [
     {
       "subtitle": "1. Research Ethics and Use of Human Samples",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/legal1.png",
       "text": "Research involving identifiable human biological materials would require institutional Research Ethics Board review before samples are collected or used. The consent process would need to address the purpose of collection, foreseeable risks, data linkage, storage duration, future secondary use, withdrawal, and sample disposal [5] The present proof-of-concept does not involve testing identifiable patient samples."
     },
     {
       "subtitle": "2. Biosafety, Containment, and Waste-Disposal Requirements",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/legal2.png",
       "text": "Institutional risk assessments should be done in each location to determine the appropriate biosafety level environment for blood diagnostic testing and sample processing. Human blood and contaminated consumables would be handled and disposed of as potentially infectious biohazards. A medical waste contractor would then autoclave, heat, and then dispose of the biohazards in the landfill [6]. Chemical waste will be disposed of based on the information presented in their respective safety data sheets and the local regulations."
     },
     {
       "subtitle": "3. Medical Device Classification",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/legal3.png",
       "text": "If developed in clinic use in Canada, Aptonix would most likely be classified as a Class III near-patient in vitro diagnostic device (IVDD). The device analyzes blood samples for disease-associated biomarkers and is intended for point-of-care use in clinical settings. Under Health Canada’s Rule 6, near-patient IVDDs are classified as Class III, except for specific higher - or lower-risk categories [7]. The classification may change depending on the biomarker targeted in future applications. For example, Health Canada specifically classifies IVDDs that are intended to detect HIV, hepatitis B virus (HBV), hepatitis C virus (HCV), and other specified transmissible agents as Class IV when used to determine disease or immune status. The higher classification reflects the potential public-health consequences associated with transmissible, life-threatening diseases. Therefore, while Aptonix’s initial application for Aβ42 (Alzheimer’s targeted biomarker) and other non-transmissible targeted biomarkers would be expected to fall under Class III, future versions targeting certain transmissible agents could require Class IV classification and a more stringent regulatory pathway."
     },
     {
       "subtitle": "4. Patient and Operator Safety",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/legal4.png",
       "text": "The biosensor should comply with global regulations to ensure the electrical, chemical, biological, and physical safety of the patient and the user, usually the physician. If developed for clinical sale in Canada, Aptonix would need to follow Health Canada’s regulatory pathway for in-vitro diagnostic medical devices. Commercialization in other jurisdictions would require separate review, such as compliance with the EU IVDR or applicable FDA requirements in the United States."
     }
   ],
     "socialImplications": [
     {
       "subtitle": "1. Healthcare Disparities",
-      "image": "/images/i-want-to-go-home.jpg",
-      "text": "Access to Aptonix may differ across developed and developing countries because of cost, healthcare infrastructure, laboratory capacity, and trained staff [BKN Yadav]. Aptonix is intended as a potentially scalable electrochemical platform, but it would still require sample collection, an electrochemical reader, quality control, trained interpretation, and an appropriate follow-up pathway. Therefore, a lower-cost screening test alone would not eliminate unequal access to Alzheimer’s assessment."
+      "image": "/images/social1.png",
+      "text": "Access to Aptonix may differ across developed and developing countries because of cost, healthcare infrastructure, laboratory capacity, and trained staff [8]. Aptonix is intended as a potentially scalable electrochemical platform, but it would still require sample collection, an electrochemical reader, quality control, trained interpretation, and an appropriate follow-up pathway. Therefore, a lower-cost screening test alone would not eliminate unequal access to Alzheimer’s assessment."
     },
     {
       "subtitle": "2. Representation in Research and Clinical Validation",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/social2.png",
       "text": "There is no standard Aβ42 baseline value to characterize a healthy individual as this varies between population characteristics such as ethnicity, age, and health conditions [9, 10]. In order to determine if an AB42 reading is significantly higher than the baseline, clinical validation will need to include a diverse demographic."
     },
     {
       "subtitle": "3. Effects on Family and Social Relationships",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/social3.png",
       "text": "An abnormal biomarker result could affect how individuals view themselves and how family members respond to them. Relatives may become overprotective, begin discussing future caregiving prematurely, or misunderstand the result as a confirmed diagnosis. The tested individual could also experience stigma or withdraw from social relationships [11]. Results should be communicated in plain language by a qualified healthcare professional, with explicit explanation that the biosensor does not independently diagnose Alzheimer’s disease. Counselling and appropriate follow-up should be available when results may have substantial psychological or family consequences."
     }
 
