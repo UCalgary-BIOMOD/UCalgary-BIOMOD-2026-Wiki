@@ -7,32 +7,32 @@
     "ethical": [
     {
       "subtitle": "1. Informed Consent and Patient Autonomy",
-      "image": "/images/ethical1.svg",
+      "image": "/images/ethical1.png",
       "text": "Patients should be able to make decisions for themselves, give consent uncoerced and with decision-making capacity based on information about the study’s purpose, risks, benefits, and available alternatives. In this research, it means participants should be informed that Aptonix is a proof-of-concept biosensor designed to detect amyloid beta 42 (Aβ42) and has not been clinically validated to diagnose Alzheimer’s disease or replace assessment by a qualified healthcare professional. The right to withdraw from the study or test at any time will also be maintained. Patients also have the right to either know or not know their results."
     },
     {
       "subtitle": "2. Psychological Effects of Biomarker Testing",
-      "image": "/images/aptonix-logo.png",
+      "image": "/images/ethical2.png",
       "text": "Yearly Aβ42 screening during routine health check ups may increase anxiety around potential results, especially if Aβ42 levels fluctuate normally but are misinterpreted as a significant increase. This can result in hypochondria or unneeded medical interventions and lifestyle alterations. Physician-mediated communication and plain-language result reports could reduce misunderstanding. However, professional interpretation cannot eliminate the emotional effect of receiving uncertain health information."
     },
     {
       "subtitle": "3. False Positive Results",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/ethical3.png",
       "text": "False positive test results may cause psychological harm to patients as they incorrectly assume they could have Alzheimer’s disease. This can trigger unnecessary and invasive follow up procedures, adding financial burden to all parties as well as misallocating care from patients who need it. Methods to prevent false positive results include: adding an antifouling layer to the electrode, extensive aptamer screening, lowering sensor sensitivity, and using unspiked matrix blanks."
     },
     {
       "subtitle": "4. False Negative Results",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/ethical4.png",
       "text": "False negative test results may set back intervention and give patients false confidence, potentially ignoring continuing symptoms. Methods to prevent false negative results include: sample dilutions, determining the limit of detection, and testing the biosensor’s stability."
     },
     {
       "subtitle": "5. Privacy, Data Security, and Misuse of Health Information",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/ethical5.png",
       "text": "Personal privacy is a critical and fundamental right that we must respect. When it comes to sample and data collection, any obtained information must be protected with high security and kept confidential. Information may only be disclosed with patient consent, complying with the Health Information Act (HIA) [1]. Future clinical use of Aptonix should store patient results electronically with encryption, authentication, restricted access, audit logs, and compliance with applicable health-information legislation. Lastly, all biological samples should be incinerated after use. These measures are to prevent the misuse of health information from database breaches or targeted hacking. Cyberattacks risk compromising medical data integrity, resulting in flawed diagnostics and unreliable outcomes [2]. Additionally, the release of personal health information may be used inappropriately and discriminately by insurance companies to deny coverage or increase premiums. This data can also be used unfairly by employers to sway hiring or promotion decisions which violates the Alberta Human Rights Act [3]."
     },
     {
       "subtitle": "6. Sustainability",
-      "image": "/images/i-want-to-go-home.jpg",
+      "image": "/images/ethical6.png",
       "text": "The production of Aptonix uses rare resources such as gold. The production of pure DNA oligomers is also resource intensive. We purchase oligomers from Integrated DNA Technologies (IDT), who use solid-phosphoramidite chemistry that requires a high volume of consumable solvents for purification by HPLC [4]. Additionally, the packaging to enclose and transport the biosensor will most likely be produced of plastic, contributing to nonbiodegradable waste in landfills. Our biosensor is designed to mitigate production waste with the implementation of the TMSD mechanism to allow replacement of the sensing strand without discarding the complete electrode. However, the number of safe reuse cycles and the overall environmental benefit have not yet been established."
     }
   ],
