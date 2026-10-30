@@ -2,16 +2,18 @@ import content from "./description-content.json"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import MainHeading from "/src/Components/MainHeading.jsx"
 import ViewportSection from "/src/Components/ViewportSection.jsx"
+import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 import FigureArea from "/src/Components/FigureArea.jsx"
 import GoalSection from "/src/Components/GoalSection.jsx"
 import styles from "./description.module.css"
+
 
 function Heading({caption}) {
     return <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "max(10vw, 4.5rem)" caption = {caption} />
 }
 
 function Paragraphs({paragraphs}) {
-    return paragraphs.map((text) => <p key = {text} className = {styles.copy}>{text}</p>)
+    return paragraphs.map((text, index) => <p key = {index} className = {styles.copy} dangerouslySetInnerHTML={{__html: text}}></p>)
 }
 
 export default function Description() {
@@ -45,7 +47,31 @@ export default function Description() {
                     <Paragraphs paragraphs = {content.solution} />
                     <h2 className = {styles.subheading}>Aptamers</h2>
                     <Paragraphs paragraphs = {content.aptamers} />
-                    <FigureArea number = {1} caption = "CAPTION" />
+                    <FigureArea 
+                        number = {1} 
+                        children = 
+                        {<img
+                            src = "./images/project-description-figure-1.png"
+                            alt = "Aptamer-MB construct"
+                            style={{ width: "90%", height: "auto" }}
+                        ></img>} 
+                        caption = "Rendering of the simplified aptamer construct in the presence and absence of a generic biomarker. Without the biomarker, the aptamer is straightened and methylene blue is oxidized. Upon binding of the biomarker, this causes a conformational change in the aptamer, moving methylene blue and reducing it, causing current in the electrode. Not to scale and excludes other components (TMSD, dendrimer). " />
+                    <h2 className = {styles.subheading}>TMSD</h2>
+                    <Paragraphs paragraphs = {content.tmsd} />
+                    <h2 className = {styles.subheading}>Dendrimers</h2>
+                    <Paragraphs paragraphs = {content.dendrimers}/>
+                    <h2 className = {styles.subheading}>Novelty</h2>
+                    <Paragraphs paragraphs = {content.novelty}/>
+                    <FigureArea 
+                        number = {2} 
+                        children = 
+                        {<img
+                            src = "./images/project-description-figure-2.png"
+                            alt = "Full system construct"
+                            style={{ width: "90%", height: "90%" }}
+                        ></img>} 
+                        caption = "Rendering of the full system configuration for our solution including the biomarker, methylene blue, the aptamer, the dendrimer scaffold, and the hybridized TMSD segment. Blue boxes indicate the high-level purpose of each component. System was visualized in UCSF Chimera. "
+                    />
                 </ViewportSection>
             )
         },
@@ -55,6 +81,7 @@ export default function Description() {
             render: () => (
                 <ViewportSection center>
                     <Heading caption = "FEASIBILITY" />
+                    <Paragraphs paragraphs = {content.feasability}/>
                 </ViewportSection>
             )
         },
@@ -64,6 +91,7 @@ export default function Description() {
             render: () => (
                 <ViewportSection center>
                     <Heading caption = "IMPACT" />
+                    <Paragraphs paragraphs={content.impact}/>
                 </ViewportSection>
             )
         },
@@ -83,6 +111,9 @@ export default function Description() {
             render: () => (
                 <ViewportSection center>
                     <Heading caption = "REFERENCES" />
+                    <ReferencesViewer
+                        references={content.references}
+                    />
                 </ViewportSection>
             )
         }
