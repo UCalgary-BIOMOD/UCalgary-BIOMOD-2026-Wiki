@@ -6,6 +6,7 @@
 
 .table {
     width: 100%;
+    min-width: 1200px;
     border-collapse: collapse;
     text-align: left;
     font-size: var(--fs-small);
@@ -24,6 +25,12 @@
     padding: var(--space-sm) var(--space-md);
     border: 2px solid var(--social-bg);
     vertical-align: top;
+    overflow-wrap: break-word;
+
+}
+
+.table td {
+    white-space: pre-line;
 }
 
 .table th {

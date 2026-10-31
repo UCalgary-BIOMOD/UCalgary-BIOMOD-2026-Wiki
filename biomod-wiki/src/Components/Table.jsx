@@ -23,6 +23,13 @@ export default function Table({columns, rows = [], caption, className = "", head
                             ))}
                         </tr>
                     )}
+                    <tr>
+                        {columns.map((column) => (
+                            <th key={column.key} scope="col">
+                                {column.label}
+                            </th>
+                        ))}
+                    </tr>
                 </thead>
                 <tbody>
                     {rows.map((row, rowIndex) => (

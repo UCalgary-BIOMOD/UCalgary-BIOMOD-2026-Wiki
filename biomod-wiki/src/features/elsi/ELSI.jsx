@@ -4,11 +4,30 @@ import MainHeading from "../../Components/MainHeading";
 import SecondHeading from "../../Components/SecondHeading";
 import styles from "./ELSI.module.css"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
-// import Table from "/src/Components/Table.jsx"
+import Table from "/src/Components/Table.jsx"
 
 
 
 export default function ELSI() {
+    const hazardColumns = [
+        { key: "id", label: "Risk ID" },
+        { key: "step", label: "Process Step" },
+        { key: "hazard", label: "Hazard" },
+        { key: "harm", label: "Potential Harm" },
+        { key: "preSeverity", label: "Severity (S)" },
+        { key: "preProbability", label: "Probability of Harm (P)" },
+        { key: "preRisk", label: "Risk" },
+        { key: "control", label: "Risk Control Measure" },
+        { key: "postSeverity", label: "Severity (S)" },
+        { key: "postProbability", label: "Probability of Harm (P)" },
+        { key: "residualRisk", label: "Residual Risk" }
+    ];
+    const hazardHeaderGroups = [
+        { label: "", colSpan: 4 },
+        { label: "Pre-Mitigation", colSpan: 3 },
+        { label: "Mitigation", colSpan: 1 },
+        { label: "Post-Mitigation", colSpan: 3 }
+    ];
     const sections = [
         {
             id: "introduction",
@@ -90,7 +109,7 @@ export default function ELSI() {
                         <h2 className={styles.safetySubtitle}>{material.subtitle}</h2>
                         <p className={styles.safetyText}>{material.text}</p>
                     </div> */}
-                    {/* <Table columns={content.safety.columns} rows={content.safety.rows} caption="Table 1. XXXXXXX" className={styles.safetyTable} /> */}
+                    <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. XXXX"/>
                 </>
             )
         },
