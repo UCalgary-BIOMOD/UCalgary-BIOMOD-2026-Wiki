@@ -12,6 +12,11 @@ export default function Table({columns, rows = [], caption, className = "", head
     return (
         <div className = {`${styles.wrapper} ${className}`}>
             <table className = {styles.table}>
+                <colgroup>
+                    {columns.map((column) => (
+                        <col key={column.key} style={{ width: column.width}}/>
+                    ))}
+                </colgroup>
                 {caption && <caption className = {styles.caption}>{caption}</caption>}
                 <thead>
                     {headerGroups.length > 0 && (

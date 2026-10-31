@@ -78,7 +78,7 @@
     "safety": {
       "hazardRows": [
         {
-          "id": "R3.1",
+          "id": "3.1",
           "step": {
             "value": "Result interpretation",
             "rowSpan": 2
@@ -90,6 +90,19 @@
           "preRisk": "Medium",
           "control": "- Conduct analytical and clinical validation\n- Test matrix blanks, matrix spikes, non-target proteins, and scrambled-aptamer controls\n- Assess cross-reactivity and matrix interference\n- Establish justified thresholds\n- Repeat unexpected results\n- Require qualified review before reporting\n- Establish justified thresholds\n- Repeat unexpected results\n- Require qualified review before reporting",
           "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
+        },
+        {
+          "id": "3.2",
+          "step": null,
+          "hazard": "False negative result",
+          "harm": "False reassurance and delayed assessment",
+          "preSeverity": 4,
+          "preProbability": 3,
+          "preRisk": "High",
+          "control": "- Determine sensitivity and limit of detection\n- Use positive controls and replicate testing\n- Control sample collection and storage\n- Monitor sensor stability\n- Repeat testing when clinically indicated\n- Clearly state that a negative result does not exclude disease",
+          "postSeverity": 4,
           "postProbability": 2,
           "residualRisk": "Medium"
         }

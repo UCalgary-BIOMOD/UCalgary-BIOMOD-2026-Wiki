@@ -10,17 +10,17 @@ import Table from "/src/Components/Table.jsx"
 
 export default function ELSI() {
     const hazardColumns = [
-        { key: "id", label: "Risk ID" },
-        { key: "step", label: "Process Step" },
-        { key: "hazard", label: "Hazard" },
-        { key: "harm", label: "Potential Harm" },
-        { key: "preSeverity", label: "Severity (S)" },
-        { key: "preProbability", label: "Probability of Harm (P)" },
-        { key: "preRisk", label: "Risk" },
-        { key: "control", label: "Risk Control Measure" },
-        { key: "postSeverity", label: "Severity (S)" },
-        { key: "postProbability", label: "Probability of Harm (P)" },
-        { key: "residualRisk", label: "Residual Risk" }
+    { key: "id", label: "Risk ID", width: "7%" },
+    { key: "step", label: "Process Step", width: "10%" },
+    { key: "hazard", label: "Hazard", width: "10%" },
+    { key: "harm", label: "Potential Harm", width: "14%" },
+    { key: "preSeverity", label: "S", width: "4%" },
+    { key: "preProbability", label: "P", width: "4%" },
+    { key: "preRisk", label: "Risk", width: "9%" },
+    { key: "control", label: "Risk Control Measure", width: "24%" },
+    { key: "postSeverity", label: "S", width: "4%" },
+    { key: "postProbability", label: "P", width: "4%" },
+    { key: "residualRisk", label: "Residual Risk", width: "10%" }
     ];
     const hazardHeaderGroups = [
         { label: "", colSpan: 4 },
@@ -109,7 +109,7 @@ export default function ELSI() {
                         <h2 className={styles.safetySubtitle}>{material.subtitle}</h2>
                         <p className={styles.safetyText}>{material.text}</p>
                     </div> */}
-                    <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. XXXX"/>
+                    <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. XXXX S = Severity, P = Probability"/>
                 </>
             )
         },

@@ -7,6 +7,7 @@
 .table {
     width: 100%;
     min-width: 1200px;
+    table-layout: fixed;
     border-collapse: collapse;
     text-align: left;
     font-size: var(--fs-small);
