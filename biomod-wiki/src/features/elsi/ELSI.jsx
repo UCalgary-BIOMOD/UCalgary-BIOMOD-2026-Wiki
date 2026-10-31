@@ -1,8 +1,10 @@
 import content from "./ELSI-content.json"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import MainHeading from "../../Components/MainHeading";
+import SecondHeading from "../../Components/SecondHeading";
 import styles from "./ELSI.module.css"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
+// import Table from "/src/Components/Table.jsx"
 
 
 
@@ -83,6 +85,12 @@ export default function ELSI() {
             render: () => (
                 <>
                     <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "10vw" caption = "SAFETY" className={styles.safetyHeading}></MainHeading>
+                    <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Hazard Analysis" className={styles.introductionHeading}></SecondHeading>
+                    {/* <div className={styles.safetyMaterial} key={material.subtitle}>
+                        <h2 className={styles.safetySubtitle}>{material.subtitle}</h2>
+                        <p className={styles.safetyText}>{material.text}</p>
+                    </div> */}
+                    {/* <Table columns={content.safety.columns} rows={content.safety.rows} caption="Table 1. XXXXXXX" className={styles.safetyTable} /> */}
                 </>
             )
         },

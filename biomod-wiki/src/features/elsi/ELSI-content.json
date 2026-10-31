@@ -74,7 +74,11 @@
       "image": "/images/social3.png",
       "text": "An abnormal biomarker result could affect how individuals view themselves and how family members respond to them. Relatives may become overprotective, begin discussing future caregiving prematurely, or misunderstand the result as a confirmed diagnosis. The tested individual could also experience stigma or withdraw from social relationships [11]. Results should be communicated in plain language by a qualified healthcare professional, with explicit explanation that the biosensor does not independently diagnose Alzheimer’s disease. Counselling and appropriate follow-up should be available when results may have substantial psychological or family consequences."
     }
-
+  ],
+    "safety": [
+    {
+      "text": "Severity and probability ratings are preliminary qualitative estimates based on reasonably foreseeable hazards, potential consequences, expected device use, and the team’s informed judgment. Because Aptonix is a proof-of-concept device with limited verification and clinical data, these ratings represent educated estimates rather than experimentally established values. The ratings will require reassessment as sufficient verification, validation, clinical, usability, and post-market data become available."
+    }
   ],
     "references": [
     {
