@@ -11,16 +11,16 @@ import Table from "/src/Components/Table.jsx"
 export default function ELSI() {
     const hazardColumns = [
     { key: "id", label: "Risk ID", width: "7%" },
-    { key: "step", label: "Process Step", width: "10%" },
-    { key: "hazard", label: "Hazard", width: "10%" },
-    { key: "harm", label: "Potential Harm", width: "14%" },
+    { key: "step", label: "Process Step", width: "11%" },
+    { key: "hazard", label: "Hazard", width: "12%" },
+    { key: "harm", label: "Potential Harm", width: "13%" },
     { key: "preSeverity", label: "S", width: "4%" },
     { key: "preProbability", label: "P", width: "4%" },
-    { key: "preRisk", label: "Risk", width: "9%" },
-    { key: "control", label: "Risk Control Measure", width: "24%" },
+    { key: "preRisk", label: "Risk", width: "8%" },
+    { key: "control", label: "Risk Control Measure", width: "25%" },
     { key: "postSeverity", label: "S", width: "4%" },
     { key: "postProbability", label: "P", width: "4%" },
-    { key: "residualRisk", label: "Residual Risk", width: "10%" }
+    { key: "residualRisk", label: "Residual Risk", width: "8%" }
     ];
     const hazardHeaderGroups = [
         { label: "", colSpan: 4 },

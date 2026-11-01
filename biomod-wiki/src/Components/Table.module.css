@@ -9,7 +9,6 @@
     min-width: 1200px;
     table-layout: fixed;
     border-collapse: collapse;
-    text-align: left;
     font-size: var(--fs-small);
 }
 
@@ -25,9 +24,10 @@
 .table td {
     padding: var(--space-sm) var(--space-md);
     border: 2px solid var(--social-bg);
-    vertical-align: top;
-    overflow-wrap: break-word;
-
+    vertical-align: middle;
+    text-align: center;
+    /* overflow-wrap: break-word; */
+    overflow-wrap: normal;
 }
 
 .table td {

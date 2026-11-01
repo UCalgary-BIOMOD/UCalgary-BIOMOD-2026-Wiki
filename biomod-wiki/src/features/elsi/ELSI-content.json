@@ -78,6 +78,61 @@
     "safety": {
       "hazardRows": [
         {
+          "id": "1.1",
+          "step": "Blood collection",
+          "hazard": "Needlestick injury",
+          "harm": "Physical injury and exposure to potentially infectious blood",
+          "preSeverity": 3,
+          "preProbability": 3,
+          "preRisk": "Medium",
+          "control": "- Collection by trained personnel\n- Wear appropriate PPE\n- Prohibit needle recapping\n- Immediately discard sharps in approved containers\n- Establish an exposure-response procedure",
+          "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
+        },
+        {
+          "id": "1.2",
+          "step": "Sample application",
+          "hazard": "Blood splash, spill, or contaminated surface",
+          "harm": "Operator exposure to potentially infectious material or cross-contamination between samples",
+          "preSeverity": 3,
+          "preProbability": 3,
+          "preRisk": "Medium",
+          "control": "- Treat all blood as potentially infectious\n- Wear appropriate PPE\n- Minimize open handling\n- Disinfect spills according to institutional procedures\n- Change contaminated gloves\n- Separate samples and work areas",
+          "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
+        },
+        {
+          "id": "2.1",
+          "step": {
+            "value": "Electrochemical current read out",
+            "rowSpan": 2
+          },
+          "hazard": "Equipment or software error",
+          "harm": "Incorrect result reported",
+          "preSeverity": 3,
+          "preProbability": 3,
+          "preRisk": "Medium",
+          "control": "- Perform calibration and system checks\n- Use positive, negative, and blank controls\n- Validate software\n- Inspect electrode connections\n- Repeat unexpected results\n- Require qualified review before reporting",
+          "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
+        },
+        {
+          "id": "2.2",
+          "step": null,
+          "hazard": "Damaged power supply, exposed wiring, liquid spill near powered equipment, or improperly grounded equipment",
+          "harm": "Electric shock",
+          "preSeverity": 3,
+          "preProbability": 2,
+          "preRisk": "Medium",
+          "control": "- Use approved equipment according to manufacturer instructions\n- Inspect cables and connectors\n- Keep connections dry\n- Ensure proper grounding\n- Disconnect equipment before cleaning or maintenance\n- Remove damaged equipment from service",
+          "postSeverity": 3,
+          "postProbability": 1,
+          "residualRisk": "Medium"
+        },
+        {
           "id": "3.1",
           "step": {
             "value": "Result interpretation",
@@ -105,8 +160,60 @@
           "postSeverity": 4,
           "postProbability": 2,
           "residualRisk": "Medium"
+        },
+        {
+          "id": "4",
+          "step": "Data storage and transmission",
+          "hazard": "Unauthorized access or alteration of health information",
+          "harm": "Loss of privacy, discrimination, identity misuse, or clinical decisions based on altered data",
+          "preSeverity": 3,
+          "preProbability": 3,
+          "preRisk": "Medium",
+          "control": "- Minimize collected data\n- Encrypt stored and transmitted information\n- Use strong authentication and role-based access\n- Maintain audit logs and integrity checks\n- Establish retention, deletion, and breach-response procedures\n- Follow applicable health-information legislation",
+          "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
+        },
+        {
+          "id": "5",
+          "step": "Waste disposal",
+          "hazard": "Improper handling of blood-contaminated or chemically contaminated waste",
+          "harm": "Worker exposure to potentially infectious material or environmental contamination",
+          "preSeverity": 3,
+          "preProbability": 3,
+          "preRisk": "Medium",
+          "control": "- Treat all blood as potentially infectious\n- Segregate sharps, biological waste, and chemical waste\n- Use labelled, leak-resistant containers\n- Train personnel\n- Follow institutional decontamination and disposal procedures\n- Use approved waste contractors where required",
+          "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
+        },
+        {
+          "id": "6",
+          "step": "Biosensor reuse",
+          "hazard": "Incomplete decontamination, sample carryover, or reduced sensor performance",
+          "harm": "Cross-contamination, operator exposure, or an inaccurate result",
+          "preSeverity": 3,
+          "preProbability": 4,
+          "preRisk": "High",
+          "control": "- Do not reuse patient-contact components unless cleaning, decontamination, carryover, and performance-retention procedures have been validated\n- Use disposable patient-contact components during development\n- Investigate regeneration only under controlled laboratory conditions",
+          "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
+        },
+        {
+          "id": "7",
+          "step": "Biosensor storage",
+          "hazard": "Component (aptamer, TMSD, dendrimer, electrode) degradation",
+          "harm": "Reduced sensitivity or inaccurate results",
+          "preSeverity": 3,
+          "preProbability": 3,
+          "preRisk": "Medium",
+          "control": "- Experimentally establish shelf life\n- Define storage temperature, humidity, light, and packaging conditions\n- Label storage requirements and expiry dates\n- Monitor storage conditions\n- Conduct pre-use quality-control checks\n- Reject expired or damaged sensors",
+          "postSeverity": 3,
+          "postProbability": 2,
+          "residualRisk": "Medium"
         }
-    ]
+      ]
   },
     "references": [
     {
