@@ -2,8 +2,9 @@
 import {Link} from "react-router-dom"
 import styles from "./Footer.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faEnvelope, faHouse, faFlask, faScaleBalanced, faUsers } from '@fortawesome/free-solid-svg-icons';
 import {
+    faGithub,
     faInstagram,
     faLinkedinIn,
     faYoutube
@@ -16,8 +17,10 @@ import {
     - Accessibility: each social anchor includes `aria-label` and SVGs have `aria-hidden`.
     - Maintainer notes:
         * Adjust spacing or the icon-stack under the logo in `Footer.module.css` (.socials, .socialIcons, .logo).
-        * The current width/size is tuned for five icons; if you add/remove icons, update the
+        * The current width/size is tuned for six icons; if you add/remove icons, update the
             `.socialIcons` constrained width and icon sizing for symmetry.
+        * The nav columns sit in a fixed grid (`.row` in Footer.module.css), so adding a column means
+          updating its `grid-template-columns` too. Each column title takes a Font Awesome icon.
 */
 
 export default function Footer() {
@@ -82,6 +85,17 @@ export default function Footer() {
                             <FontAwesomeIcon icon={faYoutube} />
                         </a>
 
+                        {/* GitHub: the repository this website is built from */}
+                        <a
+                            href="https://github.com/meagan-davies/UCalgary-BIOMOD-2026-Wiki"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.socialLink}
+                            aria-label="GitHub repository"
+                        >
+                            <FontAwesomeIcon icon={faGithub} />
+                        </a>
+
                         {/* Email */}
                         <a
                             href="mailto:bmerit@ucalgary.ca"
@@ -95,7 +109,7 @@ export default function Footer() {
 
                 {/* Home */}
                 <div className={styles.navCol}>
-                    <h5 className={styles.sectionTitle}>Home</h5>
+                    <h5 className={styles.sectionTitle}><FontAwesomeIcon icon={faHouse} className={styles.titleIcon} />Home</h5>
                     <ul className={styles.list}>
                         <li><Link to="/" className={styles.navLink}>Home</Link></li>
                     </ul>
@@ -103,7 +117,7 @@ export default function Footer() {
 
                 {/* Project */}
                 <div className={styles.navCol}>
-                    <h5 className={styles.sectionTitle}>Project</h5>
+                    <h5 className={styles.sectionTitle}><FontAwesomeIcon icon={faFlask} className={styles.titleIcon} />Project</h5>
                     <ul className={styles.list}>
                         <li><Link to="/description" className={styles.navLink}>Description</Link></li>
                         <li><Link to="/modelling" className={styles.navLink}>Modelling</Link></li>
@@ -115,7 +129,7 @@ export default function Footer() {
 
                 {/* ELSI */}
                 <div className={styles.navCol}>
-                    <h5 className={styles.sectionTitle}>ELSI</h5>
+                    <h5 className={styles.sectionTitle}><FontAwesomeIcon icon={faScaleBalanced} className={styles.titleIcon} />ELSI</h5>
                     <ul className={styles.list}>
                         <li><Link to="/elsi" className={styles.navLink}>ELSI</Link></li>
                     </ul>
@@ -123,7 +137,7 @@ export default function Footer() {
 
                 {/* Team */}
                 <div className={styles.navCol}>
-                    <h5 className={styles.sectionTitle}>Team</h5>
+                    <h5 className={styles.sectionTitle}><FontAwesomeIcon icon={faUsers} className={styles.titleIcon} />Team</h5>
                     <ul className={styles.list}>
                         <li><Link to="/team" className={styles.navLink}>Team</Link></li>
                     </ul>
@@ -136,9 +150,10 @@ export default function Footer() {
                 {/* Disclaimer */}
                 <div className={styles.disclaimer}>
                     <p className={styles.disclaimerText}>
-                        The repository used to create this website is available at {" "}
+                        <FontAwesomeIcon icon={faGithub} className={styles.titleIcon} />
+                        The repository used to create this website is available on{" "}
                         <a href="https://github.com/meagan-davies/UCalgary-BIOMOD-2026-Wiki" className={styles.navLink} target="_blank" rel="noopener noreferrer">
-                            github.com/meagan-davies/UCalgary-BIOMOD-2026-Wiki
+                            GitHub
                         </a>
                     </p>
                 </div>

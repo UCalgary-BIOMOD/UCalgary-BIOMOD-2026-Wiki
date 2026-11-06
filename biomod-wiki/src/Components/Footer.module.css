@@ -35,17 +35,20 @@
     margin: 0 auto;
 }
 
+/*
+    One fixed grid row: the logo/socials column plus the four nav columns.
+    The columns shrink together (minmax(0, ...)) instead of wrapping, so no column ever drops onto a second row.
+    Below 768px the footer stacks instead (see the media query at the bottom).
+*/
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(10rem, 1.5fr) repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
 }
 
 .navCol {
-    flex: 1 1 10rem;
-    min-width: 7.5rem;
+    min-width: 0;
     text-align: left;
 }
 
@@ -55,8 +58,7 @@
     - `gap` kept very small so the icons appear close to the logo (tighter visual stack).
 */
 .socials {
-        flex: 1 1 14.5rem;
-        min-width: 12rem;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -75,16 +77,16 @@
 }
 
 /* Social icons row
-   - constrained width (`216px`) so five circular icons line up roughly under the logo.
+   - constrained width (`14.6rem`) so six circular icons line up roughly under the logo.
    - `margin-top` is slightly negative to remove the remaining visual gap beneath the logo root.
 */
 .socialIcons {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /*Wraps to a second row when the logo column is narrow, so the icons never overflow*/
     gap: 0.55rem;
     align-items: center;
     justify-content: center;
-    width: min(100%, 12rem);
+    width: min(100%, 14.6rem);
     margin-top: -0.35rem;
 }
 
@@ -129,6 +131,11 @@
     letter-spacing: 0.055em;
 }
 
+/*Small icon placed before a column title or the repository note*/
+.titleIcon {
+    margin-right: 0.45em;
+}
+
 .list {
     padding: 0;
     margin: 0;
@@ -164,20 +171,19 @@ footer li {
     margin: 0;
     color: var(--text);
     opacity: 0.9;
+    font-size: 0.85rem; /*Kept small: the repository note is a footnote, not body text*/
 }
 
 /* Only stack footer on smaller mobile screens; keep horizontal on tablets */
 @media (max-width: 768px) {
     .row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
         gap: 1.25rem;
     }
 
     .socials,
     .navCol {
-        flex: 1 1 100%;
         width: 100%;
         min-width: 0;
         text-align: center;
