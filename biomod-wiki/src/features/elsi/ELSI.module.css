@@ -25,6 +25,7 @@
     width: 100%;
     max-width: 20rem;
     justify-self: center;
+    image-rendering: pixelated;
 }
 
 .introductionText {

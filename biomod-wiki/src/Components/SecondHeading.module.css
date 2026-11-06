@@ -1,0 +1,40 @@
+
+.secondHeadingContainer{
+    height: calc(var(--second-heading-height));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondHeadingContainer h1 {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    font-size: clamp(1.5rem, 2vw, 3.5rem); /*Tracks the heading image height (10vw) but stays readable on phones*/
+    font-weight: bold;
+}
+
+.secondHeadingImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Contained image */
+.secondHeadingImage:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Oversized image, let's it flow off the banner container stylistically */
+.secondHeadingImage:nth-child(2) {
+  height: 120%; 
+}
+
+.topLine{
+    background-color: var(--border);
+    height: 0.20rem;
+}
