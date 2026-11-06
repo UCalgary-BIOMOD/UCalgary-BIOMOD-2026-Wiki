@@ -82,7 +82,6 @@ export default function Notebook() {
 
             render: () => (
             <>
-                <p>Here be the notebook of our glorious project</p>
                 <div className={styles.desktopCalendar}>
                     <NotebookComponent experiments={experiments} setActiveExperimentId={selectExperiment} />
                 </div>
@@ -139,6 +138,6 @@ export default function Notebook() {
     ]
     
     return (
-        <PageLayout sections = {sections} bannerImgs = {["./images/aptonix-logo.png"]}/>
+        <PageLayout sections = {sections} bannerImgs = {["/images/dna-ladder.png"]} bannerHeight = "40svh" caption = "NOTEBOOK"/>
     )
 }
