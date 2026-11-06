@@ -12,6 +12,10 @@ tag:
   - Reagent Prep
 ---
 
+## Objective
+
+Make 1x PBS buffer for TMSD native PAGE experiment.
+
 ## Materials
 
 - 200 mL 10x PBS
