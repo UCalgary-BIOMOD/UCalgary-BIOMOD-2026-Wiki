@@ -22,9 +22,13 @@ export default function Home() {
     const canadaRef = useRef(null)
     const biomarkerRef = useRef(null)
 
+    /*
+        The collage only starts to blur once all of it is on screen (its bottom edge reaches the bottom of the window)
+        and is fully blurred once that bottom edge has scrolled up to 20% from the top of the window.
+    */
     const { scrollYProgress } = useScroll({
         target: familyRef,
-        offset: ["start 60%", "end 20%"],
+        offset: ["end end", "end 20%"],
     })
 
 
@@ -68,6 +72,12 @@ export default function Home() {
         { top: "29%", left: "37%" },
     ]
 
+    /*The "can be changed" risk-factor buttons. The clicked one stays highlighted (styles.selected) until another is picked.*/
+    const lifeStages = [
+        {id: "early", label: "Early Life"},
+        {id: "mid", label: "Midlife"},
+        {id: "late", label: "Later Life"},
+    ]
     const [selectedLifestage, setSelectedLifestage] = useState("select")
     const [selectedComponent, setSelectedComponent] = useState(null)
 
@@ -133,17 +143,17 @@ export default function Home() {
                                 <div className = {styles.riskFactorGraphic}>
                                     <img src = "./images/can-be-changed.png" alt = "Can Be Changed"></img>
                                     <div className = {styles.lifeStageButtons}>
-                                        <button className = {styles.lifeStageButton} onClick={() => setSelectedLifestage("early")}>
-                                            Early Life
-                                        </button>
-
-                                        <button className = {styles.lifeStageButton} onClick={() => setSelectedLifestage("mid")}>
-                                            Midlife
-                                        </button>
-
-                                        <button className = {styles.lifeStageButton} onClick={() => setSelectedLifestage("late")}>
-                                            Later Life
-                                        </button>
+                                        {lifeStages.map((stage) => (
+                                            <button
+                                                key = {stage.id}
+                                                type = "button"
+                                                className = {`${styles.lifeStageButton} ${selectedLifestage === stage.id ? styles.selected : ""}`}
+                                                aria-pressed = {selectedLifestage === stage.id}
+                                                onClick = {() => setSelectedLifestage(stage.id)}
+                                            >
+                                                {stage.label}
+                                            </button>
+                                        ))}
                                     </div>
 
                                 </div>
