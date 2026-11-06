@@ -232,8 +232,6 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
                     style={{ pointerEvents: active ? "auto" : "none" }}
                 />
 
-                {!active && <div className={styles.hint}>Give hannah money to view</div>}
-
                 {loadError && <div className={styles.error}>Protein viewer error: {loadError}</div>}
 
                 {active && (
