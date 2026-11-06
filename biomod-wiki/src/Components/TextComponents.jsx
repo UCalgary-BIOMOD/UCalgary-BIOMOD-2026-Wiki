@@ -1,3 +1,5 @@
+import styles from "./TextComponents.module.css"
+
 /**
  * This is the standard TextBlock component. It allows the option to have a header and set its size. 
  * It also allows the JSON to set the props, as well as accepting newLines as a style in its <p>
@@ -10,7 +12,7 @@ export default function TextBlock({heading, size: Tag = "h1", text}) {
     return (
         <section>
             {heading && <Tag>{heading}</Tag>}
-            <p style = {{whiteSpace: "pre-line", textAlign: "start", textIndent: "3em"}}>{text}</p>
+            <p className = {styles.text}>{text}</p>
         </section>
     )
 }   

@@ -55,7 +55,7 @@ export default function Description() {
                         {<img
                             src = "./images/project-description-figure-1.png"
                             alt = "Aptamer-MB construct"
-                            style={{ width: "90%", height: "auto" }}
+                            className = {styles.figureImage}
                         ></img>} 
                         caption = "Rendering of the simplified aptamer construct in the presence and absence of a generic biomarker. Without the biomarker, the aptamer is straightened and methylene blue is oxidized. Upon binding of the biomarker, this causes a conformational change in the aptamer, moving methylene blue and reducing it, causing current in the electrode. Not to scale and excludes other components (TMSD, dendrimer). " />
                     <h2 className = {styles.subheading}>TMSD</h2>
@@ -70,7 +70,7 @@ export default function Description() {
                         {<img
                             src = "./images/project-description-figure-2.png"
                             alt = "Full system construct"
-                            style={{ width: "90%", height: "90%" }}
+                            className = {styles.figureImage}
                         ></img>} 
                         caption = "Rendering of the full system configuration for our solution including the biomarker, methylene blue, the aptamer, the dendrimer scaffold, and the hybridized TMSD segment. Blue boxes indicate the high-level purpose of each component. System was visualized in UCSF Chimera. "
                     />
