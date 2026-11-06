@@ -96,6 +96,12 @@ The legend on the page is built from the same list, so a new color only has to b
 
 ---
 
+## Weekly summaries (optional)
+
+The notebook timeline's **View weekly summary** button builds a summary automatically from each entry's Objective. To write one by hand instead, add a file to `src/content/weekly-summaries/`; the format is in that folder's README.
+
+---
+
 ## 2. Experiments page (`src/features/experiments/experiment-content.json`)
 
 The page is a list of **groups** (Aptamer, TMSD, Dendrimer, Electrode, Full System). Each group becomes a section with a numbered list, a row of numbered tabs, and one window showing the selected experiment. **Tab 1 is the first item in `experiments`, tab 2 the second, and so on.** The tabs and the numbered list are made for you.

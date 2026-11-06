@@ -183,6 +183,16 @@
     color: var(--text-h);
 }
 
+/*The team's hand-written summary text (markdown), shown above the list of that week's entries*/
+.summaryText {
+    margin-bottom: var(--space-sm);
+    font-size: var(--fs-small);
+}
+
+.summaryText p {
+    margin: 0 0 var(--space-xs);
+}
+
 .summaryCount,
 .summaryEmpty {
     margin: 0 0 var(--space-sm);

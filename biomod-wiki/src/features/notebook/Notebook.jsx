@@ -34,6 +34,21 @@ function loadExperiments({markdownFiles}) {
     .sort((a, b) => a.id - b.id);
 }
 
+/**
+ * Reads the hand-written weekly summaries in src/content/weekly-summaries/*.md (see the README in that folder).
+ * @param summaryFiles Object of {path: raw file text}, from import.meta.glob
+ * @returns Array of {week: Date, content: markdown} (README.md is skipped)
+ */
+function loadSummaries({summaryFiles}) {
+    return Object.entries(summaryFiles)
+        .filter(([path]) => !path.endsWith("README.md"))
+        .map(([, raw]) => {
+            const {attributes, body} = fm(raw)
+            return {week: attributes.week, content: body}
+        })
+        .filter((summary) => summary.week instanceof Date)
+}
+
 export default function Notebook() {
 
     const markdownFiles = import.meta.glob(
@@ -47,6 +62,13 @@ export default function Notebook() {
 
 
     const experiments = loadExperiments({markdownFiles})
+
+    const summaries = loadSummaries({
+        summaryFiles: import.meta.glob(
+            "../../content/weekly-summaries/*.md",
+            {query: "?raw", import: "default", eager: true}
+        )
+    })
 
 
     const [activeExperimentId, setActiveExperimentId] = useState(null)
@@ -88,7 +110,7 @@ export default function Notebook() {
 
             render: () => (
             <>
-                <NotebookTimeline experiments={experiments} setActiveExperimentId={selectExperiment} />
+                <NotebookTimeline experiments={experiments} summaries={summaries} setActiveExperimentId={selectExperiment} />
                 <CategoryLegend />
             </>
             )

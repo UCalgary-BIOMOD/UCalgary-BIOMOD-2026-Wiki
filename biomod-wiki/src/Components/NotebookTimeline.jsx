@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown"
 import {DateTime} from "luxon"
 import {useMemo, useState} from "react"
 import {CategoryDot} from "./CategoryLegend.jsx"
@@ -81,9 +82,11 @@ function listWeeks(entriesByDay) {
  * (they still appear in the Experiments dropdowns). Colors, dots and the category list match the old calendar.
  *
  * @param experiments The notebook entries from Notebook.jsx (front-matter fields plus `content`)
+ * @param summaries Hand-written weekly summaries, [{week: Date, content: markdown}] (see src/content/weekly-summaries).
+ *                  A week with one shows that text; other weeks get an automatic summary from their entries' Objectives.
  * @param setActiveExperimentId Called with an entry id to open that entry in the Experiments section below
  */
-export default function NotebookTimeline({experiments, setActiveExperimentId}) {
+export default function NotebookTimeline({experiments, summaries = [], setActiveExperimentId}) {
     const entriesByDay = useMemo(() => groupByDay(experiments), [experiments])
     const weeks = useMemo(() => listWeeks(entriesByDay), [entriesByDay])
 
@@ -105,6 +108,8 @@ export default function NotebookTimeline({experiments, setActiveExperimentId}) {
     })
     /*Each entry once for the summary, even if it spans several days of the week*/
     const weekEntries = [...new Map(days.flatMap((day) => day.entries).map((entry) => [entry.id, entry])).values()]
+    /*The hand-written summary for the shown week, if the team wrote one (matched on the week's Sunday)*/
+    const handWritten = summaries.find((summary) => startOfWeek(DateTime.fromJSDate(summary.week, UTC)).toISODate() === weekStart.toISODate())
     const activeDays = days.filter((day) => day.entries.length > 0).length
 
     /*Same trick as the old calendar: clear, then set, so clicking the same entry again re-scrolls to it*/
@@ -193,6 +198,11 @@ export default function NotebookTimeline({experiments, setActiveExperimentId}) {
             {showSummary && (
                 <div className = {styles.summary} aria-live = "polite">
                     <h3 className = {styles.summaryTitle}>Week {weekIndex + 1} summary ({weekRange(weekStart)})</h3>
+                    {handWritten && (
+                        <div className = {styles.summaryText}>
+                            <ReactMarkdown>{handWritten.content}</ReactMarkdown>
+                        </div>
+                    )}
                     {weekEntries.length === 0 ? (
                         <p className = {styles.summaryEmpty}>No experiments were logged this week.</p>
                     ) : (
@@ -211,7 +221,7 @@ export default function NotebookTimeline({experiments, setActiveExperimentId}) {
                                             {experiment.dates.map((date) => DateTime.fromJSDate(date, UTC).toFormat("LLL d")).join(", ")}
                                             {experiment.researchers?.length > 0 && ` · ${experiment.researchers.join(", ")}`}
                                         </span>
-                                        {objectiveOf(experiment.content) && <p className = {styles.summaryObjective}>{objectiveOf(experiment.content)}</p>}
+                                        {!handWritten && objectiveOf(experiment.content) && <p className = {styles.summaryObjective}>{objectiveOf(experiment.content)}</p>}
                                     </li>
                                 ))}
                             </ul>
