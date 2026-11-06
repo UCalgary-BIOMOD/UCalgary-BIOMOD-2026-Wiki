@@ -12,6 +12,13 @@ import styles from "./Notebook.module.css"
 
 
 
+/**
+ * Reads every notebook entry in src/content/experiments/*.md and returns them sorted by id.
+ * Each file has YAML front matter (id, title, caption, dates, researchers, tag, images) followed by a markdown body;
+ * see src/content/README.md for what each field does.
+ * @param markdownFiles Object of {path: raw file text}, from import.meta.glob
+ * @returns Array of entries: the front-matter fields plus `content` (the markdown body) and `slug` (the file name)
+ */
 function loadExperiments({markdownFiles}) {
     
     return Object.entries(markdownFiles).map(([path, raw]) => {

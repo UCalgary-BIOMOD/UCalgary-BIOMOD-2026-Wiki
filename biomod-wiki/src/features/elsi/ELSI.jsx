@@ -8,6 +8,11 @@ import Table from "/src/Components/Table.jsx"
 
 
 
+/**
+ * The Ethical, Legal and Social Implications page (/elsi): introduction, ethical, legal, social and safety sections plus references.
+ * The text and images come from ELSI-content.json. The safety section is a hazard-analysis table; its columns and grouped
+ * headers are defined at the top of this component and its rows are content.safety.hazardRows.
+ */
 export default function ELSI() {
     const hazardColumns = [
     { key: "id", label: "Risk ID", width: "7%" },

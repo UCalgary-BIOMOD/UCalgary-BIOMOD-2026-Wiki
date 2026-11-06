@@ -34,6 +34,13 @@ const ITEMS = [
     }
 ]
 
+/**
+ * The color legend for the 3D model (see ProteinViewer.jsx): one item per molecule component with a short description.
+ * Hovering or tapping an item highlights that component in the viewer, and highlighting in the viewer lights the item up here.
+ * The items themselves are the ITEMS list at the top of this file; the ids must match the ids used in ProteinViewer.jsx.
+ * @param externalActiveId The component id currently highlighted (shared state, owned by the page). null shows all.
+ * @param onActiveChange Called with a component id (or null) when the user picks an item here
+ */
 export default function MoleculeLegend({ externalActiveId = null, onActiveChange }) {
     const [hoverIndex, setHoverIndex] = useState(null)
 

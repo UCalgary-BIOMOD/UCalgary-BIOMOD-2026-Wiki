@@ -7,6 +7,10 @@ import ImageCarousel from "../../Components/ImageCarousel"
 import ProteinViewer from "../../Components/ProteinViewer"
 import PDFViewer from "../../Components/PDFViewer"
 
+/**
+ * A sandbox page (/test) used to try components (text, links, video, carousel, 3D viewer, PDF) while developing.
+ * It is not part of the finished site and should be removed from NavBar.jsx and App.jsx before launch.
+ */
 export default function Test() {
     const sections = [
 

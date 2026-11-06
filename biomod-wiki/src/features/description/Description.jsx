@@ -13,6 +13,11 @@ function Heading({caption}) {
     return <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "max(10vw, 4.5rem)" caption = {caption} />
 }
 
+/**
+ * The Project Description page (/description): background, motivation, solution, feasibility, impact, goals and references.
+ * All text lives in description-content.json (paragraph strings may contain simple HTML such as <sub>). The two figures are
+ * placed here in the Solution section. The goals checklist comes from content.goals (see GoalSection.jsx for its format).
+ */
 export default function Description() {
     const sections = [
         {

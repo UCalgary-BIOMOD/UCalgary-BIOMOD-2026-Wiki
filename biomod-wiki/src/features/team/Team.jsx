@@ -10,6 +10,11 @@ import { useState } from "react";
 import MainHeading from "/src/Components/MainHeading.jsx";
 import LinkWrapper from "/src/Components/LinkComponents.jsx";
 
+/**
+ * The Team page (/team): an animated tree of team members (click a headshot for their popup card) and a Support section
+ * listing the people and groups who supported the team. Everything shown comes from team-content.json. Only one popup can be open at a time
+ * (the `openMember` state holds the open member's name).
+ */
 export default function Team() {
     const [openMember, setOpenMember] = useState(null);
     const sections = [

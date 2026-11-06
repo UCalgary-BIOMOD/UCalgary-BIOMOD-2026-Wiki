@@ -23,6 +23,10 @@ import {
           updating its `grid-template-columns` too. Each column title takes a Font Awesome icon.
 */
 
+/**
+ * The site footer shown at the bottom of every page (PageLayout renders it): logo, social links, page links and a repository note.
+ * See the maintainer notes in the comment above before changing the column layout or the number of icons.
+ */
 export default function Footer() {
     return (
         <footer className={styles.footer}>

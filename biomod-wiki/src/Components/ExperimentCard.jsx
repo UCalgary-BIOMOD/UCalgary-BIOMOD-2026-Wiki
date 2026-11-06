@@ -5,6 +5,16 @@ import TextBlock from "./TextComponents.jsx"
 import ReactMarkdown from "react-markdown"
 import {DateTime} from "luxon"
 
+/**
+ * The body of one notebook entry (see content/experiments/*.md): its dates, researchers, the markdown text and an image carousel.
+ * Notebook.jsx spreads the parsed front matter onto this component, so the props are the front-matter fields.
+ * @param id The entry's unique id (used for the element id the calendar scrolls to)
+ * @param dates Array of Date objects, one per day the work happened (YAML dates are parsed as UTC midnight)
+ * @param researchers Array of researcher names
+ * @param content The entry's markdown body (Objective, Materials, Procedure, ...)
+ * @param images Optional array of image paths under /public, shown as a carousel beside the text
+ * @param isActive True while this entry is the open one; adds the highlighted style
+ */
 export default function ExperimentCard({id, dates, researchers = [], content, images = [], isActive}) {
 
     const dateFormatOptions = {

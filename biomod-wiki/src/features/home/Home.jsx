@@ -17,6 +17,13 @@ import styles from "./home.module.css"
 import YouTubeEmbed from "../../Components/YouTubeEmbed"
 
 
+/**
+ * The home page (/): the story of the project told as a sequence of scroll sections (problem, video, links, references).
+ * The sections are an array of {id, title, render} passed to PageLayout, which builds the side navigation from them.
+ * Text lives in this file; the reference list lives in home-content.json. Scroll-driven effects (the collage blur,
+ * the map dots, the biomarkers) use the motion library's useScroll; the 3D model and its legend share the
+ * `selectedComponent` state so hovering one highlights the other.
+ */
 export default function Home() {
     const familyRef = useRef(null)
     const canadaRef = useRef(null)

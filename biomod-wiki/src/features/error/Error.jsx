@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
 import LinkWrapper from "../../Components/LinkComponents"
 
+/**
+ * The 404 page, shown by the catch-all route in App.jsx for any address that does not exist.
+ */
 export default function ErrorPage() {
     return(
         <div>
