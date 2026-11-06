@@ -5,15 +5,12 @@ import ViewportSection from "/src/Components/ViewportSection.jsx"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 import FigureArea from "/src/Components/FigureArea.jsx"
 import GoalSection from "/src/Components/GoalSection.jsx"
+import Paragraphs from "/src/Components/Paragraphs.jsx"
 import styles from "./description.module.css"
 
 
 function Heading({caption}) {
     return <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "max(10vw, 4.5rem)" caption = {caption} />
-}
-
-function Paragraphs({paragraphs}) {
-    return paragraphs.map((text, index) => <p key = {index} className = {styles.copy} dangerouslySetInnerHTML={{__html: text}}></p>)
 }
 
 export default function Description() {
