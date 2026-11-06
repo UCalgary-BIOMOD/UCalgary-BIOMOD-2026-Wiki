@@ -30,7 +30,7 @@ const days = [
 ]
 
 const MIN_MONTH = DateTime.fromObject({year: 2026, month: 6}).startOf("month")
-const MAX_MONTH = DateTime.fromObject({year: 2026, month:9}).startOf("month")
+const MAX_MONTH = DateTime.fromObject({year: 2026, month: 11}).startOf("month") /*Last month the calendar can show (November 2026)*/
 
 export default function NotebookComponent({experiments, setActiveExperimentId}) {
     const [currentMonth, setCurrentMonth] = useState(MIN_MONTH)

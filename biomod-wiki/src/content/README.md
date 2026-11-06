@@ -79,7 +79,7 @@ Use `##` headings, in this order, to match the lab-entry template: **Objective, 
 
 - **Quotes around dates break the entry.** Write `2026-06-02`, never `"2026-06-02"`.
 - **A missing or misspelled `tag` hides the entry.** It is not placed in any accordion, and its calendar dot turns plain white. If an entry is not showing, check the tag first.
-- **The calendar only covers June to September 2026** (set by `MIN_MONTH` / `MAX_MONTH` at the top of `src/Components/NotebookComponent.jsx` and `NotebookMobileComponent.jsx`). An entry dated outside that range still appears in its accordion, but has no calendar square. Ask for the range to be extended if you need other months.
+- **The calendar only covers June to November 2026** (set by `MIN_MONTH` / `MAX_MONTH` at the top of `src/Components/NotebookComponent.jsx` and `NotebookMobileComponent.jsx`). An entry dated outside that range still appears in its accordion, but has no calendar square. Ask for the range to be extended if you need other months.
 - Indent the YAML with spaces, not tabs.
 
 ### Colors

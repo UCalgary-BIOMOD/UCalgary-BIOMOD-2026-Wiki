@@ -10,7 +10,7 @@ const monthNames = [
 ]
 
 const MIN_MONTH = DateTime.fromObject({ year: 2026, month: 6 }).startOf("month")
-const MAX_MONTH = DateTime.fromObject({ year: 2026, month: 9 }).startOf("month")
+const MAX_MONTH = DateTime.fromObject({ year: 2026, month: 11 }).startOf("month") /*Last month the calendar can show (November 2026)*/
 
 // Build the list of valid year/month combinations between MIN_MONTH and MAX_MONTH,
 // so the dropdowns never let someone pick a month outside your project's range.
