@@ -1,4 +1,5 @@
 
+import {Link} from "react-router-dom"
 import styles from "./Footer.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -27,13 +28,13 @@ export default function Footer() {
 
                 {/* Logo + Socials */}
                 <div className={styles.socials}>
-                    <a href="/">
+                    <Link to="/">
                         <img
                             src="/images/aptonix-logo-transparent.png"
                             alt="Logo"
                             className={styles.logo}
                         />
-                    </a>
+                    </Link>
 
                     <div className={styles.socialIcons}>
 
@@ -96,7 +97,7 @@ export default function Footer() {
                 <div className={styles.navCol}>
                     <h5 className={styles.sectionTitle}>Home</h5>
                     <ul className={styles.list}>
-                        <li><a href="/" className={styles.navLink}>Home</a></li>
+                        <li><Link to="/" className={styles.navLink}>Home</Link></li>
                     </ul>
                 </div>
 
@@ -104,11 +105,11 @@ export default function Footer() {
                 <div className={styles.navCol}>
                     <h5 className={styles.sectionTitle}>Project</h5>
                     <ul className={styles.list}>
-                        <li><a href="/description" className={styles.navLink}>Description</a></li>
-                        <li><a href="/modelling" className={styles.navLink}>Modelling</a></li>
-                        <li><a href="/experiments" className={styles.navLink}>Experiments</a></li>
-                        <li><a href="/results" className={styles.navLink}>Results</a></li>
-                        <li><a href="/notebook" className={styles.navLink}>Notebook</a></li>
+                        <li><Link to="/description" className={styles.navLink}>Description</Link></li>
+                        <li><Link to="/modelling" className={styles.navLink}>Modelling</Link></li>
+                        <li><Link to="/experiments" className={styles.navLink}>Experiments</Link></li>
+                        <li><Link to="/results" className={styles.navLink}>Results</Link></li>
+                        <li><Link to="/notebook" className={styles.navLink}>Notebook</Link></li>
                     </ul>
                 </div>
 
@@ -116,7 +117,7 @@ export default function Footer() {
                 <div className={styles.navCol}>
                     <h5 className={styles.sectionTitle}>ELSI</h5>
                     <ul className={styles.list}>
-                        <li><a href="/elsi" className={styles.navLink}>ELSI</a></li>
+                        <li><Link to="/elsi" className={styles.navLink}>ELSI</Link></li>
                     </ul>
                 </div>
 
@@ -124,7 +125,7 @@ export default function Footer() {
                 <div className={styles.navCol}>
                     <h5 className={styles.sectionTitle}>Team</h5>
                     <ul className={styles.list}>
-                        <li><a href="/team" className={styles.navLink}>Team</a></li>
+                        <li><Link to="/team" className={styles.navLink}>Team</Link></li>
                     </ul>
                 </div>
 
