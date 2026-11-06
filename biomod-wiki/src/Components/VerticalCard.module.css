@@ -20,6 +20,11 @@
     border: none;
 }
 
+/*Optional variant (the `centered` prop): chevron and caption sit in the middle of the header*/
+.cardHeader.centered{
+    justify-content: center;
+}
+
 .chevron{
     display: inline-block;
     transition: transform 0.3s ease;
@@ -29,6 +34,9 @@
 .caption{
     min-width: 0;
     overflow-wrap: anywhere;
+    display: inline-flex; /*Lines an inline color dot (see CategoryDot) up with the caption text*/
+    align-items: center;
+    gap: 0.4em;
 }
 
 .chevron.open{

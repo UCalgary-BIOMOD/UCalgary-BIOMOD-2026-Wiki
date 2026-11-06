@@ -105,6 +105,7 @@ export default function Notebook() {
                                 id = {`category-${category.key}`}
                                 key = {category.key}
                                 caption = {<><CategoryDot color = {category.color} /> {category.groupLabel}</>}
+                                centered
                                 isOpen = {openCategory === category.key}
                                 onToggle = {() => setOpenCategory(openCategory === category.key ? null : category.key)}
                                 content = {
