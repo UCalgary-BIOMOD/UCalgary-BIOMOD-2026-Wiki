@@ -1,6 +1,5 @@
 import PageLayout from "@/Components/PageLayout.jsx"
-import NotebookComponent from "@/Components/NotebookComponent.jsx"
-import NotebookMobileComponent from "@/Components/NotebookMobileComponent.jsx"
+import NotebookTimeline from "@/Components/NotebookTimeline.jsx"
 import VerticalCard from "@/Components/VerticalCard.jsx"
 import TextBlock from "@/Components/TextComponents.jsx"
 import ExperimentCard from "@/Components/ExperimentCard.jsx"
@@ -89,12 +88,7 @@ export default function Notebook() {
 
             render: () => (
             <>
-                <div className={styles.desktopCalendar}>
-                    <NotebookComponent experiments={experiments} setActiveExperimentId={selectExperiment} />
-                </div>
-                <div className={styles.mobileCalendar}>
-                    <NotebookMobileComponent experiments={experiments} setActiveExperimentId={selectExperiment} />
-                </div>
+                <NotebookTimeline experiments={experiments} setActiveExperimentId={selectExperiment} />
                 <CategoryLegend />
             </>
             )

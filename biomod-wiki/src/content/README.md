@@ -64,12 +64,12 @@ One or two sentences on why we ran this.
 | --- | --- |
 | `id` | A number that is **unique** across all entries. Entries are listed lowest `id` first, so use the next free number. |
 | `title` | The full name. Shown on the accordion header and the phone day view. |
-| `caption` | A short label (about 20 characters) shown on the calendar square. A long caption is cut off with "...". |
+| `caption` | A short label (about 20 characters) shown on the weekly timeline. Long captions wrap onto extra lines, so keep it short. |
 | `dates` | Every day the work happened, as `YYYY-MM-DD` with **no quotes**. An entry with several dates appears on each one. |
 | `researchers` | One name per line. |
 | `tag` | **Exactly one** of: `Dendrimer`, `TMSD`, `Aptamer`, `Electrode`, `Full System`. It sets the dot color and which accordion the entry sits in. Spelling and capitals must match. |
 | `images` (optional) | A list of image paths under `public/`, e.g. `- /images/gel-1.png`. They show as a gallery next to the text. |
-| `description` (optional) | One or two sentences. If present, the phone calendar shows this text instead of a "View details" button. |
+| `description` (optional) | One or two sentences. Not currently shown anywhere (it belonged to the old phone calendar); safe to leave out. |
 
 ### Body sections
 
@@ -78,8 +78,8 @@ Use `##` headings, in this order, to match the lab-entry template: **Objective, 
 ### Things that trip people up
 
 - **Quotes around dates break the entry.** Write `2026-06-02`, never `"2026-06-02"`.
-- **A missing or misspelled `tag` hides the entry.** It is not placed in any accordion, and its calendar dot turns plain white. If an entry is not showing, check the tag first.
-- **The calendar only covers June to November 2026** (set by `MIN_MONTH` / `MAX_MONTH` at the top of `src/Components/NotebookComponent.jsx` and `NotebookMobileComponent.jsx`). An entry dated outside that range still appears in its accordion, but has no calendar square. Ask for the range to be extended if you need other months.
+- **A missing or misspelled `tag` hides the entry.** It is not placed in any accordion, and its timeline dot turns plain white. If an entry is not showing, check the tag first.
+- **The timeline builds itself from the dates.** It runs from the week of the earliest entry to the latest entry's week or the current week (whichever is later), so there is no month range to edit. An entry with no dates (`dates: []`) still appears in its accordion but has no place on the timeline.
 - Indent the YAML with spaces, not tabs.
 
 ### Colors
@@ -165,4 +165,4 @@ Copy a whole group block, give it a new unique lowercase `id` (no spaces) and a 
 1. Add a color in `src/index.css`, next to `--electrode` / `--full-system`.
 2. Add a line to `CATEGORIES` in `src/Components/experimentCategories.js`: `key` (the exact `tag` text), `label` (legend), `groupLabel` (accordion header), and `color`.
 
-The calendar dots, legend and accordions all update from that one list.
+The timeline dots, legend and accordions all update from that one list.
