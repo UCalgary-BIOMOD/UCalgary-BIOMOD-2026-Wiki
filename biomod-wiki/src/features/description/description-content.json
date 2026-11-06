@@ -64,11 +64,11 @@
                 {
                     "title": "TMSD Experiments",
                     "items": [
-                        "Validate TMSD X, Y, and S strands with non-SDS native PAGE",
-                        "Validate thiol-modified TMSD Y with non-SDS native PAGE",
-                        "Anneal TMSD Y strand and aptamer strand",
-                        "Validate TMSD Y-aptamer conjugate with non-SDS native PAGE",
-                        "Stain and image non-SDS native PAGE gels"
+                        {"text": "Validate TMSD X, Y, and S strands with non-SDS native PAGE", "done": true},
+                        {"text": "Validate thiol-modified TMSD Y with non-SDS native PAGE", "done": true},
+                        {"text": "Anneal TMSD Y strand and aptamer strand", "done": true},
+                        {"text": "Validate TMSD Y-aptamer conjugate with non-SDS native PAGE", "done": true},
+                        {"text": "Stain and image non-SDS native PAGE gels", "done": true}
                     ]
                 },
                 {
