@@ -113,7 +113,7 @@ export default function Home() {
                             ))}
                         </SplitHalf>
                         <SplitHalf text = "right">
-                            <h1>In Canada alone, 2022 saw approximately <span className = {styles.accent}>600,000</span> individuals with dementia, with an estimated <span className = {styles.accent}>1.7 million</span> of all cases [1].</h1>
+                            <h1>In Canada, 2022 saw approximately <span className = {styles.accent}>600,000</span> individuals with dementia, with an estimated <span className = {styles.accent}>1.7 million</span> of all cases [2].</h1>
                         </SplitHalf>
                     </SplitSection>
                     <ViewportSection>
