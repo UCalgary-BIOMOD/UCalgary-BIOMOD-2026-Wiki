@@ -7,6 +7,9 @@ import ProteinViewer from "/src/Components/ProteinViewer.jsx"
 import ViewportSection from "../../Components/ViewportSection"
 import LinkGrid from "/src/Components/LinkGrid.jsx"
 
+/**
+ * The Project page (/project): the abstract (text in project-content.json) and a grid of links to the other project pages.
+ */
 export default function Project() {
     const sections = [
         

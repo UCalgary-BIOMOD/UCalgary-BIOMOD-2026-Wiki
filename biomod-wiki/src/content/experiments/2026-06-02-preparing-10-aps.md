@@ -1,22 +1,20 @@
 ---
 id: 1
 title: Preparing 10% APS
-caption: Preparing 10% APS
-dates: 
-- 2026-06-02
-
+caption: 10% APS
+dates:
+  - 2026-06-02
 researchers:
   - Sofea
   - Sukhman
-
-
 tag:
   - TMSD
+  - Reagent Prep
 ---
 
 ## Objective
 
-Make 10% APS for making native PAGE gel
+Make 10% APS for making native PAGE gel.
 
 ## Materials
 
@@ -37,4 +35,8 @@ Make 10% APS for making native PAGE gel
 
 ## Notes/Observations
 
-We weighed out 1501.7 mg of ammonium persulfate. 
+- We weighed out 1501.7 mg of ammonium persulfate.
+
+## Supplementary Information
+
+- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

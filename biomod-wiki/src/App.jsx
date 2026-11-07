@@ -5,6 +5,7 @@ import Test from "/src/features/test/Test.jsx"
 import Home from "/src/features/home/Home.jsx"
 import Notebook from "@/features/notebook/Notebook.jsx"
 import NavBar from "/src/Components/NavBar.jsx"
+import ScrollToTop from "/src/Components/ScrollToTop.jsx"
 import ErrorPage from "/src/features/error/Error.jsx"
 import Project from "/src/features/project/Project.jsx"
 import Description from "/src/features/description/Description.jsx"
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <NavBar/>
       <Routes>
         <Route path = "/" element = {<Home />} />

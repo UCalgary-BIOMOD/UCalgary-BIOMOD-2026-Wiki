@@ -5,6 +5,9 @@ import PageLayout from "/src/Components/PageLayout.jsx"
 
 
 
+/**
+ * The Modelling page (/modelling). Placeholder: the page content has not been written yet.
+ */
 export default function Modelling() {
     const sections = [
         {

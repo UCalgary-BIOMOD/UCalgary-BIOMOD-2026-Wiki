@@ -1,0 +1,7 @@
+/*One paragraph of body text: a readable line length, centered, with space below it*/
+.copy {
+    max-width: 55rem;
+    margin: 0 auto var(--space-md);
+    font-size: var(--fs-h3);
+    line-height: 1.3;
+}

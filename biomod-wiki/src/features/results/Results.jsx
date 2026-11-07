@@ -3,6 +3,9 @@ import TextBlock from "/src/Components/TextComponents.jsx"
 import PageLayout from "/src/Components/PageLayout.jsx"
 
 
+/**
+ * The Results page (/results). Placeholder: the page content has not been written yet.
+ */
 export default function Results() {
     const sections = [
         {

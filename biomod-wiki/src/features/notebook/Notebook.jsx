@@ -1,6 +1,5 @@
 import PageLayout from "@/Components/PageLayout.jsx"
-import NotebookComponent from "@/Components/NotebookComponent.jsx"
-import NotebookMobileComponent from "@/Components/NotebookMobileComponent.jsx"
+import NotebookTimeline from "@/Components/NotebookTimeline.jsx"
 import VerticalCard from "@/Components/VerticalCard.jsx"
 import TextBlock from "@/Components/TextComponents.jsx"
 import ExperimentCard from "@/Components/ExperimentCard.jsx"
@@ -12,6 +11,13 @@ import styles from "./Notebook.module.css"
 
 
 
+/**
+ * Reads every notebook entry in src/content/experiments/*.md and returns them sorted by id.
+ * Each file has YAML front matter (id, title, caption, dates, researchers, tag, images) followed by a markdown body;
+ * see src/content/README.md for what each field does.
+ * @param markdownFiles Object of {path: raw file text}, from import.meta.glob
+ * @returns Array of entries: the front-matter fields plus `content` (the markdown body) and `slug` (the file name)
+ */
 function loadExperiments({markdownFiles}) {
     
     return Object.entries(markdownFiles).map(([path, raw]) => {
@@ -28,6 +34,21 @@ function loadExperiments({markdownFiles}) {
     .sort((a, b) => a.id - b.id);
 }
 
+/**
+ * Reads the hand-written weekly summaries in src/content/weekly-summaries/*.md (see the README in that folder).
+ * @param summaryFiles Object of {path: raw file text}, from import.meta.glob
+ * @returns Array of {week: Date, content: markdown} (README.md is skipped)
+ */
+function loadSummaries({summaryFiles}) {
+    return Object.entries(summaryFiles)
+        .filter(([path]) => !path.endsWith("README.md"))
+        .map(([, raw]) => {
+            const {attributes, body} = fm(raw)
+            return {week: attributes.week, content: body}
+        })
+        .filter((summary) => summary.week instanceof Date)
+}
+
 export default function Notebook() {
 
     const markdownFiles = import.meta.glob(
@@ -41,6 +62,13 @@ export default function Notebook() {
 
 
     const experiments = loadExperiments({markdownFiles})
+
+    const summaries = loadSummaries({
+        summaryFiles: import.meta.glob(
+            "../../content/weekly-summaries/*.md",
+            {query: "?raw", import: "default", eager: true}
+        )
+    })
 
 
     const [activeExperimentId, setActiveExperimentId] = useState(null)
@@ -82,13 +110,7 @@ export default function Notebook() {
 
             render: () => (
             <>
-                <p>Here be the notebook of our glorious project</p>
-                <div className={styles.desktopCalendar}>
-                    <NotebookComponent experiments={experiments} setActiveExperimentId={selectExperiment} />
-                </div>
-                <div className={styles.mobileCalendar}>
-                    <NotebookMobileComponent experiments={experiments} setActiveExperimentId={selectExperiment} />
-                </div>
+                <NotebookTimeline experiments={experiments} summaries={summaries} setActiveExperimentId={selectExperiment} />
                 <CategoryLegend />
             </>
             )
@@ -106,6 +128,7 @@ export default function Notebook() {
                                 id = {`category-${category.key}`}
                                 key = {category.key}
                                 caption = {<><CategoryDot color = {category.color} /> {category.groupLabel}</>}
+                                centered
                                 isOpen = {openCategory === category.key}
                                 onToggle = {() => setOpenCategory(openCategory === category.key ? null : category.key)}
                                 content = {
@@ -139,6 +162,6 @@ export default function Notebook() {
     ]
     
     return (
-        <PageLayout sections = {sections} bannerImgs = {["./images/aptonix-logo.png"]}/>
+        <PageLayout sections = {sections} bannerImgs = {["/images/dna-ladder.png"]} bannerHeight = "40svh" caption = "NOTEBOOK"/>
     )
 }

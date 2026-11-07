@@ -139,9 +139,7 @@ How to make commits on this repository:
 
     <description> should explain your changes in depth and be conscious of whom may be reading your commit. Make clear what changes you have made, possibly why you made these changes, and include EVERY change! Use proper grammar and try not make puncutation or whitespace errors! Never think your code is self-explanatory. If you went into the commit with a problem in mind, always state the problem!
 
-!!ORGANIZE THIS LATER!!
-
-Project Framework:
+Project Framework (see also biomod-wiki/README.md for the page map and component list):
 
     src/features/:
 
@@ -152,7 +150,7 @@ Project Framework:
             PageName.jsx
 
             The content for the page, given as:
-            PageName.json
+            pagename-content.json
 
             Any specialized components of the page, given as:
             FeatureName.jsx
@@ -167,10 +165,10 @@ Project Framework:
         All components will usually have two files:
 
         Hold the main component code in:
-        <ComponentName>Components.jsx
+        <ComponentName>.jsx
 
         Hold the module css for each component file in:
-        <ComponentName>Components.module.css
+        <ComponentName>.module.css
 
         For connecting styling to components, always use styles.<stylename>!
 

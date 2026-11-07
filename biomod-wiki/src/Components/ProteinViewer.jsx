@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from "react"
 import { Stage } from "ngl"
 import styles from "./ProteinViewer.module.css"
 
+/*How far (in px) a pointer may move between press and release and still count as a tap rather than a drag*/
 const TAP_THRESHOLD = 8
 
-// Same idea as before: which chain letter belongs to which legend item.
-// This still has to be written by hand, because your PDB file's chain
-// letters (A, B, C, L, M, T) don't carry English labels — only your
-// team's own REMARK notes tell us what each one means.
+/*
+    Maps each chain letter in the PDB file to the id of its legend item (see MoleculeLegend.jsx).
+    This is written by hand because the chain letters (A, B, C, L, M, T) carry no labels of their own;
+    the meaning of each chain is recorded in the REMARK lines of /public/proteins/all_components_merged.pdb.
+    Chain L (linker) has no legend item and is always shown.
+*/
 const CHAIN_TO_COMPONENT = {
     A: "aptamer",
     B: "tmsd",
@@ -16,11 +19,19 @@ const CHAIN_TO_COMPONENT = {
     T: "biomarker"
 }
 
+/**
+ * Interactive 3D viewer for the full biosensor model, built on NGL (https://nglviewer.github.io/).
+ * The viewer starts inactive so the page can still scroll past it; a tap activates it, and the x button deactivates it.
+ * Each molecule component is its own NGL representation (a "layer"), so the legend can show or hide it independently.
+ * @param pdbUrl Path to the PDB file, e.g. "/proteins/all_components_merged.pdb"
+ * @param externalActiveId The component id highlighted from outside (the legend). null shows every component.
+ * @param onComponentHover Called with the component id under the pointer (or the clicked one), or null, so the legend can follow
+ */
 export default function ProteinViewer({ pdbUrl, externalActiveId = null, onComponentHover }) {
     const wrapperRef = useRef(null)
-    const viewerDivRef = useRef(null) // NGL will build its own canvas inside this div
+    const viewerDivRef = useRef(null) // NGL builds its canvas inside this div
     const stageRef = useRef(null)
-    const reprMapRef = useRef({}) // stores each colored "layer" so we can show/hide them later
+    const reprMapRef = useRef({}) // component id -> NGL representation, used to show/hide each layer
 
     const [active, setActive] = useState(false)
     const [showInfo, setShowInfo] = useState(false)
@@ -33,7 +44,7 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
         onHoverRef.current = onComponentHover
     }, [onComponentHover])
 
-    // Show only the selected component's layer; null = show everything
+    /*Shows only the given component's layer. null shows everything.*/
     const applyHighlight = (componentId) => {
         const reprMap = reprMapRef.current
         Object.entries(reprMap).forEach(([id, repr]) => {
@@ -50,7 +61,7 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
     useEffect(() => {
         if (!viewerDivRef.current) return
 
-        // This is NGL's equivalent of $3Dmol.createViewer(...)
+        /*Create the NGL stage (the 3D scene) inside the viewer div*/
         const stage = new Stage(viewerDivRef.current, {
             backgroundColor: "#0C0922",
             tooltip: false
@@ -66,7 +77,7 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
             .then((pdbText) => {
                 if (cancelled) return null
                 setLoadError(null)
-                // NGL wants a Blob, not raw text, when loading from memory
+                /*NGL loads from memory through a Blob rather than a raw string*/
                 const blob = new Blob([pdbText], { type: "text/plain" })
 
                 return stage.loadFile(blob, { ext: "pdb" }).then((component) => {
@@ -80,11 +91,12 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
                         biomarker: rootStyles.getPropertyValue("--biomarker").trim()
                     }
 
-                    // Each line below adds ONE colored "layer" to the model.
-                    // ":X" means "chain X" in NGL's selection language.
-                    // DNA chains use "cartoon" (a ribbon); small molecules
-                    // (dendrimer, linker, methylene blue) use "ball+stick"
-                    // since they have no backbone for a ribbon to follow.
+                    /*
+                        Each addRepresentation call below adds one colored layer to the model.
+                        ":X" selects chain X in NGL's selection language.
+                        DNA chains are drawn as a "cartoon" ribbon; the small molecules
+                        (dendrimer, linker, methylene blue) are drawn as "ball+stick" because they have no backbone to follow.
+                    */
                     const reprMap = {}
 
                     reprMap["tmsd"] = component.addRepresentation("cartoon", {
@@ -102,8 +114,7 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
                     reprMap["methylene-blue"] = component.addRepresentation("ball+stick", {
                         sele: ":M", color: colors.methyleneBlue
                     })
-                    // Linker (chain L) — always visible, no legend entry,
-                    // just shown in plain gray so the structure looks whole.
+                    /*Linker (chain L): always visible and gray, with no legend entry, so the structure looks connected*/
                     component.addRepresentation("ball+stick", {
                         sele: ":L", color: "gray"
                     })
@@ -113,10 +124,9 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
 
                     stage.viewer.rotationGroup.rotation.y = Math.PI / 2
                     stage.viewer.rotationGroup.updateMatrixWorld(true)
-                    component.autoView() // same idea as viewer.zoomTo()
+                    component.autoView() // fit the whole model in the frame
 
-                    // This is NGL's click detection — the equivalent of
-                    // 3Dmol's setClickable, which never worked for us.
+                    /*Clicking a part highlights its component; clicking the same one again clears it*/
                     stage.signals.clicked.add((pickingProxy) => {
                         if (!pickingProxy || !pickingProxy.atom) return
                         const chain = pickingProxy.atom.chainname
@@ -149,7 +159,7 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
         return () => {
             cancelled = true
             window.removeEventListener("resize", handleResize)
-            stage.dispose() // NGL's cleanup method, equivalent of viewer.clear()
+            stage.dispose() // frees the WebGL context
         }
     }, [pdbUrl])
 
@@ -161,9 +171,11 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
         }
     }, [active])
 
-    // Everything below is UNCHANGED from before — the tap-to-activate
-    // logic works on plain DOM events, so it doesn't care which 3D
-    // library is running underneath it.
+    /*
+        Tap-to-activate: the viewer ignores the pointer until the user taps it, so scrolling past it on a touch screen does not rotate the model.
+        A press that moves more than TAP_THRESHOLD counts as a drag (a scroll), not a tap.
+        This uses plain DOM events, so it is independent of the 3D library.
+    */
     useEffect(() => {
         const el = wrapperRef.current
         if (!el) return
@@ -219,8 +231,6 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
                     className={styles.canvasArea}
                     style={{ pointerEvents: active ? "auto" : "none" }}
                 />
-
-                {!active && <div className={styles.hint}>Give hannah money to view</div>}
 
                 {loadError && <div className={styles.error}>Protein viewer error: {loadError}</div>}
 
