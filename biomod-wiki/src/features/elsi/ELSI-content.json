@@ -76,6 +76,11 @@
     }
   ],
     "safety": {
+      "introduction":[
+        {
+          "text": "Severity and probability ratings are preliminary qualitative estimates based on reasonably foreseeable hazards, potential consequences, expected device use, and the team’s informed judgment. Because Aptonix is a proof-of-concept device with limited verification and clinical data, these ratings represent educated estimates rather than experimentally established values. The ratings will require reassessment as sufficient verification, validation, clinical, usability, and post-market data become available."
+        }
+      ],
       "hazardRows": [
         {
           "id": "1.1",
@@ -215,6 +220,20 @@
         }
       ]
   },
+    "supplementaryInformation": [
+    {
+      "supplementaryInformationText": "Table S1. Descriptions of severity ratings in risk analysis is presented in [12, Tab. 6].",
+      "supplementaryInformationImage": "/images/supplementary1.jpg"
+    },
+    {
+      "supplementaryInformationText": "Table S2. Descriptions of probability ratings in risk analysis is presented in [12, Tab. 4].",
+      "supplementaryInformationImage": "/images/supplementary2.jpg"
+    },
+    {
+      "supplementaryInformationText": "Figure S1. Risk matrix of severity and probability ratings as illustrated in [12, Fig. 4].",
+      "supplementaryInformationImage": "/images/supplementary3.jpg"
+    }
+  ],
     "references": [
     {
       "text": "“Health Information Act,” Alberta.ca",

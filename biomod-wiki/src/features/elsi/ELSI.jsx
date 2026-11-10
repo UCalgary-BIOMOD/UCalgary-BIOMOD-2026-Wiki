@@ -110,11 +110,27 @@ export default function ELSI() {
                 <>
                     <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "10vw" caption = "SAFETY" className={styles.safetyHeading}></MainHeading>
                     <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Hazard Analysis" className={styles.introductionHeading}></SecondHeading>
-                    {/* <div className={styles.safetyMaterial} key={material.subtitle}>
-                        <h2 className={styles.safetySubtitle}>{material.subtitle}</h2>
-                        <p className={styles.safetyText}>{material.text}</p>
-                    </div> */}
+                    {content.safety.introduction.map((material, index) => (
+                        <div className={styles.safetyMaterial} key={index}>
+                            <p className={styles.safetyText}>{material.text}</p>
+                        </div>
+                    ))}
                     <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. Hazard analysis of the Aptonix biosensor, including pre- and post-mitigation risk assessments. Severity (S), probability of harm (P), and risk levels were evaluated using criteria adapted from [12]."/>
+                </>
+            )
+        },
+        {
+            id: "supplementaryInformation",
+            title: "Supplementary Information",
+            render: () => (
+                <>
+                    <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "10vw" caption = "SUPPLEMENTARY INFORMATION" className={styles.supplementaryHeading}></MainHeading>
+                    {content.supplementaryInformation.map((material, index) => (
+                        <div key={index}>
+                            <p className={styles.supplementaryInformationText}>{material.supplementaryInformationText}</p>
+                            <img src={material.supplementaryInformationImage} className={styles.supplementaryInformationImage} alt=""/>
+                        </div>
+                    ))}
                 </>
             )
         },
@@ -129,7 +145,7 @@ export default function ELSI() {
                 </>
             )
         }
-        ]
+    ]
     return (
         <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "ELSI"></PageLayout>
     )

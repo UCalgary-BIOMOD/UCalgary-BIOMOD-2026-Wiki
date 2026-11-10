@@ -42,6 +42,30 @@
     font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem); 
 }
 
+.safetyText {
+    font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem);
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.supplementaryInformationText {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 3rem auto 1rem;
+}
+
+.supplementaryInformationImage {
+    display: block;
+    width: 70%;
+    max-width: 800px;
+    height: auto;
+    margin: 1rem auto 4rem;
+}
+
 @media (max-width: 768px) {
     .elsiGrid {
         grid-template-columns: 1fr;
