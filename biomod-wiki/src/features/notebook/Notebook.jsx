@@ -162,6 +162,6 @@ export default function Notebook() {
     ]
     
     return (
-        <PageLayout sections = {sections} bannerImgs = {["/images/dna-ladder.png"]} bannerHeight = "40svh" caption = "NOTEBOOK"/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "NOTEBOOK"></PageLayout>
     )
 }

@@ -1,18 +1,19 @@
-
 .mainHeadingContainer{
-    height: calc(var(--main-heading-height));
+    width: 100%;
+    height: max(9vw, 5rem);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem;
+    flex-shrink: 0;
 }
 
 .mainHeadingContainer h1 {
     position: relative;
     z-index: 10;
     margin: 0;
-    font-size: clamp(1.5rem, 3vw, 3.5rem); /*Tracks the heading image height (10vw) but stays readable on phones*/
+    font-size: clamp(2rem, 3.5vw, 4rem);
     font-weight: bold;
 }
 

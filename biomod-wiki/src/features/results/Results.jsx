@@ -19,6 +19,6 @@ export default function Results() {
         }
     ]
     return (
-        <PageLayout sections = {sections} bannerImgs = {["./images/aptonix-logo.png"]}/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "RESULTS"></PageLayout>
     )
 }

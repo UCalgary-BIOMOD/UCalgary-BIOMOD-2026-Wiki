@@ -1,17 +1,19 @@
-
 .secondHeadingContainer{
-    height: calc(var(--second-heading-height));
+    width: 100%;
+    height: max(11vw, 6rem);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
+    margin: 0.5rem;
 }
 
 .secondHeadingContainer h1 {
     position: relative;
     z-index: 10;
     margin: 0;
-    font-size: clamp(1.5rem, 2vw, 3.5rem); /*Tracks the heading image height (10vw) but stays readable on phones*/
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: bold;
 }
 

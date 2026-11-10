@@ -1,6 +1,7 @@
 import content from "./description-content.json"
 import PageLayout from "/src/Components/PageLayout.jsx"
 import MainHeading from "/src/Components/MainHeading.jsx"
+import SecondHeading from "/src/Components/SecondHeading";
 import ViewportSection from "/src/Components/ViewportSection.jsx"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 import FigureArea from "/src/Components/FigureArea.jsx"
@@ -47,32 +48,42 @@ export default function Description() {
                 <ViewportSection center>
                     <Heading caption = "SOLUTION" />
                     <Paragraphs paragraphs = {content.solution} />
-                    <h2 className = {styles.subheading}>Aptamers</h2>
+                    <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Aptamers" className={styles.aptamersHeading}></SecondHeading>
                     <Paragraphs paragraphs = {content.aptamers} />
                     <FigureArea 
                         number = {1} 
                         children = 
                         {<img
-                            src = "./images/project-description-figure-1.png"
+                            src = "./images/description1.jpg"
                             alt = "Aptamer-MB construct"
                             className = {styles.figureImage}
                         ></img>} 
                         caption = "Rendering of the simplified aptamer construct in the presence and absence of a generic biomarker. Without the biomarker, the aptamer is straightened and methylene blue is oxidized. Upon binding of the biomarker, this causes a conformational change in the aptamer, moving methylene blue and reducing it, causing current in the electrode. Not to scale and excludes other components (TMSD, dendrimer). " />
-                    <h2 className = {styles.subheading}>TMSD</h2>
+                    <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "TMSD" className={styles.tmsdHeading}></SecondHeading>
                     <Paragraphs paragraphs = {content.tmsd} />
-                    <h2 className = {styles.subheading}>Dendrimers</h2>
+                    <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Dendrimers" className={styles.dendrimersHeading}></SecondHeading>
                     <Paragraphs paragraphs = {content.dendrimers}/>
-                    <h2 className = {styles.subheading}>Novelty</h2>
+                    <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Novelty" className={styles.noveltyHeading}></SecondHeading>
                     <Paragraphs paragraphs = {content.novelty}/>
                     <FigureArea 
                         number = {2} 
                         children = 
                         {<img
-                            src = "./images/project-description-figure-2.png"
+                            src = "./images/description2.jpg"
                             alt = "Full system construct"
                             className = {styles.figureImage}
                         ></img>} 
                         caption = "Rendering of the full system configuration for our solution including the biomarker, methylene blue, the aptamer, the dendrimer scaffold, and the hybridized TMSD segment. Blue boxes indicate the high-level purpose of each component. System was visualized in UCSF Chimera. "
+                    />
+                    <FigureArea 
+                        number = {3} 
+                        children = 
+                        {<img
+                            src = "./images/description3.jpg"
+                            alt = "Linkages between components"
+                            className = {styles.figureImage}
+                        ></img>} 
+                        caption = "NEED CAPTION. "
                     />
                 </ViewportSection>
             )
@@ -121,6 +132,6 @@ export default function Description() {
         }
     ]
     return (
-        <PageLayout sections = {sections} bannerImgs = {["/images/dna-ladder.png"]} bannerHeight = "40svh" caption = "DESCRIPTION"/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "DESCRIPTION"></PageLayout>
     )
 }
