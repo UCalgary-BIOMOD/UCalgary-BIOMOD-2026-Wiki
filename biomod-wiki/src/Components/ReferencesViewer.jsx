@@ -7,6 +7,8 @@ import {useState} from "react"
  * @param caption The dropdown header text
  * @param id The element id of the card
  */
+
+
 export default function ReferencesViewer({
     references,
     caption = "References",

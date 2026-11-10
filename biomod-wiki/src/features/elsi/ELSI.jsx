@@ -114,7 +114,7 @@ export default function ELSI() {
                         <h2 className={styles.safetySubtitle}>{material.subtitle}</h2>
                         <p className={styles.safetyText}>{material.text}</p>
                     </div> */}
-                    <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. XXXX S = Severity, P = Probability"/>
+                    <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. Hazard analysis of the Aptonix biosensor, including pre- and post-mitigation risk assessments. Severity (S), probability of harm (P), and risk levels were evaluated using criteria adapted from [12]."/>
                 </>
             )
         },

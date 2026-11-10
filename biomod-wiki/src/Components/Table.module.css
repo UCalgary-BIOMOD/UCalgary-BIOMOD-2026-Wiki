@@ -37,7 +37,9 @@
 .table th {
     background-color: var(--light-bg);
     color: var(--text-h);
-    font-weight: 600;
+    /* font-weight: 600; */
+    font-weight: bold;
+
 }
 
 .table tbody tr:nth-child(even) {

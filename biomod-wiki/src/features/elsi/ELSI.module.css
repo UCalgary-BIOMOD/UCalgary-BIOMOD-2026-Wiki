@@ -12,6 +12,7 @@
     color: var(--text-h);
     font-size: clamp(1.5rem, 3vw, 3rem);
     margin-bottom: var(--space-md);
+    text-align: left;
 }
 
 .elsiGrid {
