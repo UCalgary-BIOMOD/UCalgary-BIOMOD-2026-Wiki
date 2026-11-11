@@ -102,14 +102,14 @@ export default function Home() {
             render: () => (
                 <>
                     <ViewportSection>
-                        <h1 className = {styles.aboveBanner}>Imagine forgetting the faces of the people you love...</h1>
+                        <h2 className={`${styles.aboveBanner} ${styles.storySecondary}`}>Imagine forgetting the faces of the people you love...</h2>
                     </ViewportSection>
                     <ViewportSection center>
                         <motion.img ref = {familyRef} className = {styles.familyImage} src = "./images/family-collage.png" style = {{filter: blur}} alt = "Family"/>
                     </ViewportSection>
                     <SplitSection>
                         <SplitHalf text = "left">
-                            <h1>As the most common form of dementia, Alzheimer’s disease accounts for <span className = {styles.accent}>60-80%</span> of all cases [1].</h1>
+                            <h1 className={styles.storyPrimary}>As the most common form of dementia, Alzheimer’s disease accounts for <span className = {styles.accent}>60-80%</span> of all cases [1].</h1>
                         </SplitHalf>
                         <SplitHalf className = {styles.visualSection}>
                             <BrainAnimation />
@@ -130,19 +130,19 @@ export default function Home() {
                             ))}
                         </SplitHalf>
                         <SplitHalf text = "right">
-                            <h1>In Canada, 2022 saw approximately <span className = {styles.accent}>600,000</span> individuals with dementia, with it possibly growing to an estimated <span className = {styles.accent}>1.7 million</span> of all cases by 2050 [2].</h1>
+                            <h1 className={styles.storyPrimary}>In Canada, 2022 saw approximately <span className = {styles.accent}>600,000</span> individuals with dementia, with it possibly growing to an estimated <span className = {styles.accent}>1.7 million</span> of all cases by 2050 [2].</h1>
                         </SplitHalf>
                     </SplitSection>
                     <ViewportSection>
-                        <h1 >Without an established cure, the primary goal in the fight against Alzheimer’s is to <span className = {styles.accent}>delay its onset.</span> Studies simulating different scenarios in Canada show that even <span className = {styles.accent}>1 year</span> of delayed onset could translate into <span className = {styles.accent}>500,000</span> fewer cases of Alzheimer’s by 2050 [2].</h1>
+                        <h1 className={styles.storyPrimary}>Without an established cure, the primary goal in the fight against Alzheimer’s is to <span className = {styles.accent}>delay its onset.</span> Studies simulating different scenarios in Canada show that even <span className = {styles.accent}>1 year</span> of delayed onset could translate into <span className = {styles.accent}>500,000</span> fewer cases of Alzheimer’s by 2050 [2].</h1>
                     </ViewportSection>
                     <ViewportSection>
-                        <h1 >To have been made <span className = {styles.accent}>AWARE</span> is to be <span className = {styles.accent}>PREPARED.</span></h1>
-                        <p> Despite age being the largest risk factor, research has linked the incidence of Alzheimer’s disease with many risk factors such as genetics, lifestyle, and related health concerns.</p>
+                        <h2 className={styles.storySecondary}>To have been made <span className = {styles.accent}>AWARE</span> is to be <span className = {styles.accent}>PREPARED.</span></h2>
+                        <p className={styles.storyBody}> Despite age being the largest risk factor, research has linked the incidence of Alzheimer’s disease with many risk factors such as genetics, lifestyle, and related health concerns.</p>
                     </ViewportSection>
                     <ViewportSection>
                         <div >
-                            <h3 className = {styles.riskFactorTitle}>Risk factors that:</h3>
+                            <h3 className={`${styles.riskFactorTitle} ${styles.storySubheading}`}>Risk factors that:</h3>
                             <div className = {styles.riskFactorGraphics}>
                                 <div className = {styles.riskFactorGraphic}>
                                     <img src = "./images/can-not-be-changed.png" alt = "Risk Factors"></img>
