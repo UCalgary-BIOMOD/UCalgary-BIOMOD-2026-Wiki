@@ -56,29 +56,33 @@ function groupByDay(experiments) {
 }
 
 /**
- * The list of weeks (each as its Sunday) the timeline can show: from the week of the earliest entry
- * to the later of the latest entry's week and the current week.
+ * The weeks the timeline shows: only weeks that have at least one entry (or a hand-written summary), oldest first.
+ * Each week keeps its real number counted from the week of the earliest entry (week 1), so a gap in the work
+ * shows up as a jump in numbering (e.g. Week 2 then Week 7) rather than an empty week.
  * @param entriesByDay The result of groupByDay
+ * @param summaries The hand-written weekly summaries
+ * @returns Array of {start: the week's Sunday, number: its week number}
  */
-function listWeeks(entriesByDay) {
-    const days = Object.keys(entriesByDay).sort()
-    const thisWeek = startOfWeek(DateTime.utc())
-    if (days.length === 0) return [thisWeek]
-    const lastEntryWeek = startOfWeek(DateTime.fromISO(days[days.length - 1], UTC))
-    const last = lastEntryWeek > thisWeek ? lastEntryWeek : thisWeek
-    const weeks = []
-    for (let week = startOfWeek(DateTime.fromISO(days[0], UTC)); week <= last; week = week.plus({weeks: 1})) {
-        weeks.push(week)
-    }
-    return weeks
+function listWeeks(entriesByDay, summaries) {
+    const starts = [
+        ...Object.keys(entriesByDay).map((day) => startOfWeek(DateTime.fromISO(day, UTC))),
+        ...summaries.map((summary) => startOfWeek(DateTime.fromJSDate(summary.week, UTC)))
+    ]
+    if (starts.length === 0) return [{start: startOfWeek(DateTime.utc()), number: 1}]
+    const unique = [...new Set(starts.map((start) => start.toISODate()))].sort()
+    const first = DateTime.fromISO(unique[0], UTC)
+    return unique.map((iso) => {
+        const start = DateTime.fromISO(iso, UTC)
+        return {start, number: Math.round(start.diff(first, "weeks").weeks) + 1}
+    })
 }
 
 /**
  * The notebook's weekly timeline: seven day columns (Sunday to Saturday) for one week at a time, with arrows and a menu
  * to change week, and a button that shows a summary of everything done that week.
  *
- * The weeks come from the entries themselves: from the week of the earliest entry to the later of the latest entry's week
- * and the current week, so the timeline grows on its own as new entries are added. Entries with no dates are not shown here
+ * The weeks come from the entries themselves: only weeks with at least one entry are listed, numbered from the week of the
+ * earliest entry (week 1), and the timeline opens on week 1. It grows on its own as new entries are added. Entries with no dates are not shown here
  * (they still appear in the Experiments dropdowns). Colors, dots and the category list match the old calendar.
  *
  * @param experiments The notebook entries from Notebook.jsx (front-matter fields plus `content`)
@@ -88,19 +92,13 @@ function listWeeks(entriesByDay) {
  */
 export default function NotebookTimeline({experiments, summaries = [], setActiveExperimentId}) {
     const entriesByDay = useMemo(() => groupByDay(experiments), [experiments])
-    const weeks = useMemo(() => listWeeks(entriesByDay), [entriesByDay])
+    const weeks = useMemo(() => listWeeks(entriesByDay, summaries), [entriesByDay, summaries])
 
-    /*Open on the most recent week that has entries*/
-    const [weekIndex, setWeekIndex] = useState(() => {
-        for (let index = weeks.length - 1; index >= 0; index--) {
-            const hasEntries = [...Array(7).keys()].some((offset) => entriesByDay[weeks[index].plus({days: offset}).toISODate()])
-            if (hasEntries) return index
-        }
-        return 0
-    })
+    /*Open on the first week of the notebook*/
+    const [weekIndex, setWeekIndex] = useState(0)
     const [showSummary, setShowSummary] = useState(false)
 
-    const weekStart = weeks[weekIndex]
+    const {start: weekStart, number: weekNumber} = weeks[weekIndex]
     const todayISO = DateTime.utc().toISODate()
     const days = [...Array(7).keys()].map((offset) => {
         const date = weekStart.plus({days: offset})
@@ -139,8 +137,8 @@ export default function NotebookTimeline({experiments, summaries = [], setActive
                         aria-label = "Choose a week"
                     >
                         {weeks.map((week, index) => (
-                            <option key = {week.toISODate()} value = {index}>
-                                Week {index + 1}: {weekRange(week)}
+                            <option key = {week.start.toISODate()} value = {index}>
+                                Week {week.number}: {weekRange(week.start)}
                             </option>
                         ))}
                     </select>
@@ -197,7 +195,7 @@ export default function NotebookTimeline({experiments, summaries = [], setActive
 
             {showSummary && (
                 <div className = {styles.summary} aria-live = "polite">
-                    <h3 className = {styles.summaryTitle}>Week {weekIndex + 1} summary ({weekRange(weekStart)})</h3>
+                    <h3 className = {styles.summaryTitle}>Week {weekNumber} summary ({weekRange(weekStart)})</h3>
                     {handWritten && (
                         <div className = {styles.summaryText}>
                             <ReactMarkdown>{handWritten.content}</ReactMarkdown>
