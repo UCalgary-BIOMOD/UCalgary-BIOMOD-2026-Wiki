@@ -1,6 +1,6 @@
 .figure {
     width: min(100%, 50rem);
-    margin: var(--space-md) auto;
+    margin: 3rem auto;
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
@@ -32,4 +32,27 @@
     padding: var(--space-sm) var(--space-md);
     font-size: var(--fs-small);
     text-align: center;
+}
+
+.tableWindow {
+    aspect-ratio: auto;
+    min-height: 0;
+    overflow: visible;
+}
+
+.tableWindow > img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+}
+
+.naturalWindow {
+    aspect-ratio: auto;
+    min-height: 0;
+}
+
+.naturalWindow > img {
+    width: 100%;
+    height: auto;
+    max-height: none;
 }

@@ -2,8 +2,9 @@
     margin: var(--space-lg) 0 var(--space-md);
 }
 
-/*Project description figures: shown a little narrower than the text column so they do not touch its edges*/
 .figureImage {
-    width: 90%;
+    display: block;
+    width: 100%;
     height: auto;
+    object-fit: contain;
 }

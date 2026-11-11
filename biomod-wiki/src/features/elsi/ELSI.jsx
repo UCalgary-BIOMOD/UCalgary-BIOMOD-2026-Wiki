@@ -5,6 +5,7 @@ import SecondHeading from "../../Components/SecondHeading";
 import styles from "./ELSI.module.css"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 import Table from "/src/Components/Table.jsx"
+import FigureArea from "/src/Components/FigureArea.jsx"
 
 
 
@@ -126,10 +127,22 @@ export default function ELSI() {
                 <>
                     <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "10vw" caption = "SUPPLEMENTARY INFORMATION" className={styles.supplementaryHeading}></MainHeading>
                     {content.supplementaryInformation.map((material, index) => (
-                        <div key={index}>
-                            <p className={styles.supplementaryInformationText}>{material.supplementaryInformationText}</p>
-                            <img src={material.supplementaryInformationImage} className={styles.supplementaryInformationImage} alt=""/>
-                        </div>
+                        <FigureArea
+                            key={index}
+                            type={index < 2 ? "Table" : "Figure"}
+                            number={index < 2 ? `S${material.number}` : "S1"}
+                            caption={material.supplementaryInformationText.replace(
+                                /^(Table|Figure)\s+S\d+\.\s*/,
+                                ""
+                            )}
+                            naturalHeight={true}
+                        >
+                            <img
+                                src={material.supplementaryInformationImage}
+                                alt={`Supplementary ${index < 2 ? "table" : "figure"} ${index < 2 ? `S${material.number}` : "S1"}`}
+                                className={styles.supplementaryInformationImage}
+                            />
+                        </FigureArea>
                     ))}
                 </>
             )

@@ -60,10 +60,11 @@
 
 .supplementaryInformationImage {
     display: block;
-    width: 70%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 48rem;
     height: auto;
-    margin: 1rem auto 4rem;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 @media (max-width: 768px) {

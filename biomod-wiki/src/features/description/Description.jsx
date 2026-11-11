@@ -51,6 +51,7 @@ export default function Description() {
                     <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Aptamers" className={styles.aptamersHeading}></SecondHeading>
                     <Paragraphs paragraphs = {content.aptamers} />
                     <FigureArea 
+                        naturalHeight={true}
                         number = {1} 
                         children = 
                         {<img
@@ -66,6 +67,7 @@ export default function Description() {
                     <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Novelty" className={styles.noveltyHeading}></SecondHeading>
                     <Paragraphs paragraphs = {content.novelty}/>
                     <FigureArea 
+                        naturalHeight={true}
                         number = {2} 
                         children = 
                         {<img
@@ -76,6 +78,7 @@ export default function Description() {
                         caption = "Rendering of the full system configuration for our solution including the biomarker, methylene blue, the aptamer, the dendrimer scaffold, and the hybridized TMSD segment. Blue boxes indicate the high-level purpose of each component. System was visualized in UCSF Chimera. "
                     />
                     <FigureArea 
+                        naturalHeight={true}
                         number = {3} 
                         children = 
                         {<img

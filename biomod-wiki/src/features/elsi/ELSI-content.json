@@ -222,15 +222,18 @@
   },
     "supplementaryInformation": [
     {
-      "supplementaryInformationText": "Table S1. Descriptions of severity ratings in risk analysis is presented in [12, Tab. 6].",
+      "number": "1",
+      "supplementaryInformationText": "Table S1. Descriptions of severity ratings in risk analysis is presented in [12, Table. 6].",
       "supplementaryInformationImage": "/images/supplementary1.jpg"
     },
     {
-      "supplementaryInformationText": "Table S2. Descriptions of probability ratings in risk analysis is presented in [12, Tab. 4].",
+      "number": "2",
+      "supplementaryInformationText": "Table S2. Descriptions of probability ratings in risk analysis is presented in [12, Table. 4].",
       "supplementaryInformationImage": "/images/supplementary2.jpg"
     },
     {
-      "supplementaryInformationText": "Figure S1. Risk matrix of severity and probability ratings as illustrated in [12, Fig. 4].",
+      "number": "3",
+      "supplementaryInformationText": "Figure S1. Risk matrix of severity and probability ratings as illustrated in [12, Figure. 4].",
       "supplementaryInformationImage": "/images/supplementary3.jpg"
     }
   ],
