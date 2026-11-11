@@ -79,7 +79,7 @@ Use `##` headings, in this order, to match the lab-entry template: **Objective, 
 
 - **Quotes around dates break the entry.** Write `2026-06-02`, never `"2026-06-02"`.
 - **A missing or misspelled `tag` hides the entry.** It is not placed in any accordion, and its timeline dot turns plain white. If an entry is not showing, check the tag first.
-- **The timeline builds itself from the dates.** It runs from the week of the earliest entry to the latest entry's week or the current week (whichever is later), so there is no month range to edit. An entry with no dates (`dates: []`) still appears in its accordion but has no place on the timeline.
+- **The timeline builds itself from the dates.** It lists only weeks that have at least one entry, oldest first, and opens on Week 1 (the week of the earliest entry). Weeks keep their real number, so a gap with no work shows as a jump (e.g. Week 2, then Week 7). There is no month range to edit. An entry with no dates (`dates: []`) still appears in its accordion but has no place on the timeline.
 - Indent the YAML with spaces, not tabs.
 
 ### Colors
