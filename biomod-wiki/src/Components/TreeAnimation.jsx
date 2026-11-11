@@ -138,7 +138,8 @@ export default function TreeAnimation({children, onOutsideClick}) {
                         segment.style.strokeDashoffset =
                             length * (1 - groupProgress);
                     }
-                    if (segment.tagName.toLowerCase() === "circle") {segment.style.visibility = groupProgress <= 0 ? "hidden" : "visible";}
+                    // if (segment.tagName.toLowerCase() === "circle") {segment.style.visibility = groupProgress <= 0 ? "hidden" : "visible";}
+                    segment.style.visibility = groupProgress <= 0 ? "hidden" : "visible";
                 });
             });
             members[7].style.opacity = progress >= 3 / groupCount ? 1 : 0; // Neeor
