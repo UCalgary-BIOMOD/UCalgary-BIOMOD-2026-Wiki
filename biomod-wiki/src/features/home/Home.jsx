@@ -81,9 +81,9 @@ export default function Home() {
 
     /*The "can be changed" risk-factor buttons. The clicked one stays highlighted (styles.selected) until another is picked.*/
     const lifeStages = [
-        {id: "early", label: "Early Life"},
-        {id: "mid", label: "Midlife"},
-        {id: "late", label: "Later Life"},
+        {id: "early", label: "➤ Early Life"},
+        {id: "mid", label: "➤ Midlife"},
+        {id: "late", label: "➤ Later Life"},
     ]
     const [selectedLifestage, setSelectedLifestage] = useState("select")
     const [selectedComponent, setSelectedComponent] = useState(null)
