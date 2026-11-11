@@ -287,11 +287,14 @@ export default function Home() {
                 <>
                     <ViewportSection center>
                         <LinkGrid
+                            columns = {5}
+                            tileMax = "13.5rem"
                             items = {[
-                                {to: "/project", img: "./images/project-button.png", label: "Project"},
-                                {to: "/notebook", img: "./images/notebook-button.png", label: "Notebook"},
+                                {to: "/description", img: "./images/description-button.png", alt: "Description", label: "Project Description"},
+                                {to: "/modelling", img: "./images/modelling-button.png", label: "Modelling"},
+                                {to: "/experiments", img: "./images/project-button.png", label: "Experiments"},
                                 {to: "/results", img: "./images/results-button.png", label: "Results"},
-                                {to: "/elsi", img: "./images/elsi-button.png", label: "ELSI"},
+                                {to: "/notebook", img: "./images/notebook-button.png", label: "Notebook"},
                             ]}
                         />
                     </ViewportSection>

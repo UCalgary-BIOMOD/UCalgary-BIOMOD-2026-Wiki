@@ -32,7 +32,7 @@ export default function Project() {
                 <>
                     <ViewportSection center>
                         <LinkGrid
-                            columns = {3}
+                            columns = {5}
                             tileMax = "13.5rem"
                             items = {[
                                 {to: "/description", img: "./images/description-button.png", alt: "Description", label: "Project Description"},
@@ -43,7 +43,6 @@ export default function Project() {
                             ]}
                         />
                     </ViewportSection>
-                    
                 </>
             )
         }

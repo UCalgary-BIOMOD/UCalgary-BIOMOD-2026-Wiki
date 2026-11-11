@@ -123,7 +123,6 @@ export default function Description() {
             title: "References",
             render: () => (
                 <ViewportSection center>
-                    <Heading caption = "REFERENCES" />
                     <ReferencesViewer
                         references={content.references}
                     />
