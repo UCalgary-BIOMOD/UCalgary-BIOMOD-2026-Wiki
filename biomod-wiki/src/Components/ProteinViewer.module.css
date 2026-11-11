@@ -36,6 +36,13 @@
 
 }
 
+@media (min-width: 769px) {
+    .frame {
+        width: min(100%, 50rem, 80svh);
+        margin-inline: auto;
+    }
+}
+
 .closeButton {
     position: absolute;
     top: 0.65rem;
