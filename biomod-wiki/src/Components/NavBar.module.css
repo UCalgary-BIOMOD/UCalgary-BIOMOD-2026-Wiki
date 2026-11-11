@@ -42,7 +42,7 @@
     font-size: clamp(1.2rem, 0.6rem + 3vw, 3.75rem);
     font-weight: 700;
     line-height: 1.05;
-    text-align: left;
+    text-align: center;
     overflow-wrap: anywhere;
 }
 
@@ -226,6 +226,7 @@
     .h2 { /* reduce header title space on small screens */
         font-size: clamp(1rem, 5vw, 1.4rem);
         margin: 0 0.25rem;
+        text-align: center;
     }
 
     /* Make nested dropdowns flow in mobile stacked menu */
