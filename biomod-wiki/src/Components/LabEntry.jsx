@@ -26,7 +26,7 @@ export default function LabEntry({entry = {}}) {
     return (
         <div className = {styles.entry}>
             {INLINE_FIELDS.filter(([key]) => key !== "partners" || entry.partners).map(([key, label]) => (
-                <p key = {key} className = {styles.field}>
+                <p key = {key} className = {styles.field2}>
                     <strong>{label}:</strong> {entry[key]}
                 </p>
             ))}
