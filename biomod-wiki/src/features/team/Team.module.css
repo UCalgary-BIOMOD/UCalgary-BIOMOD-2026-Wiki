@@ -10,17 +10,18 @@
 .supportSection {
     position: relative;
     margin-bottom: var(--space-xl);
+    overflow: hidden;
 }
 
 /*Decorative arcs, anchored bottom-left behind the grid. 1440x1024 is the artwork's own ratio.*/
 .supportBackground {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    aspect-ratio: 1440 / 1024;
+    height: 100%;
     background-image: url("/images/support-background.svg");
-    background-size: 100% 100%;
+    background-size: auto 100%;
+    background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
 }
@@ -30,11 +31,12 @@
     --support-card is the card width: ~9rem at 1920, shrinks with the window.
 */
 .supportGrid {
-    --support-card: clamp(6.5rem, 4rem + 4.5vw, 12rem);
+    --support-card: clamp(7rem, 4.5rem + 5vw, 13rem);
     display: grid;
     grid-template-columns: repeat(3, minmax(0, var(--support-card)));
     justify-content: center;
-    gap: var(--space-md);
+    column-gap: clamp(1.5rem, 3vw, 4rem);
+    row-gap: var(--space-lg);
     padding: var(--space-lg);
 }
 
@@ -56,7 +58,7 @@
     font-size: max(0.8rem, 13.3cqw);
     font-weight: bold;
     color: var(--text-h);
-    margin: 0.6em;
+    margin: 0.5em;
     text-align: center;
 }
 .supportName a:hover {
@@ -64,17 +66,17 @@
 }
 
 .supportRole {
-    font-size: max(0.65rem, 7.8cqw);
+    font-size: max(0.65rem, 10cqw);
     font-style: italic;
     color: var(--text-primary);
-    margin: 0.6em;
+    margin: 0.5em;
     line-height: 1.2;
 }
 
 .supportDepartment {
-    font-size: max(0.6rem, 6.7cqw);
+    font-size: max(0.6rem, 8cqw);
     color: var(--text-primary);
-    margin: 0.6em;
+    margin: 0.5em;
     line-height: 1.2;
 }
 

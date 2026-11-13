@@ -8,6 +8,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 .defs {
@@ -18,8 +19,16 @@
 /*Two stacked, increasingly dark copies of the brain, each revealed only below its own wave. The mask (set in the component) trims each copy to the brain outline*/
 .backWave,
 .frontWave {
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
+    object-fit: contain;
+
+    mask-size: contain;
+    -webkit-mask-size: contain;
+
+    mask-position: center;
+    -webkit-mask-position: center;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
 }
 
 .backWave {

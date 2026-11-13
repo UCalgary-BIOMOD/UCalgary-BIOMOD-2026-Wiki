@@ -1,0 +1,196 @@
+.resultsPage {
+    width: min(100%, 56rem);
+    margin: 0 auto;
+    padding: var(--space-md) 0 var(--space-xl);
+}
+
+.tabList {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin: 0 auto var(--space-lg);
+    border-bottom: 1px solid var(--text-h);
+}
+
+.tab {
+    flex: 1;
+    max-width: 20rem;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--text-h);
+    border-bottom: 0;
+    border-radius: 0.6rem 0.6rem 0 0;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: 3px;
+}
+
+.activeTab {
+    background: var(--text-h);
+    color: var(--bg);
+}
+
+.tabPanel {
+    outline: none;
+}
+
+.groupHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: min(100%, 34rem);
+    margin: 0 auto var(--space-xl);
+    padding: var(--space-sm) var(--space-md);
+    border: 2px solid var(--text-h);
+    border-radius: 0.5rem;
+    text-align: left;
+}
+
+.groupIcon {
+    color: var(--brand-blue);
+    font-size: 2.7rem;
+    line-height: 1;
+}
+
+.groupHeader h2 {
+    margin: 0;
+    color: var(--text-h);
+    font-size: var(--fs-h3);
+}
+
+.groupHeader p {
+    margin: 0.2rem 0 0;
+    font-size: var(--fs-small);
+    line-height: 1.2;
+}
+
+.figures {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.figure {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-sm);
+}
+
+.figureHeading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: min(100%, 42rem);
+    text-align: left;
+}
+
+.figureNumber {
+    display: grid;
+    flex: 0 0 2.7rem;
+    width: 2.7rem;
+    height: 2.7rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--panel);
+    color: var(--text);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.figureHeading h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: var(--fs-h3);
+}
+
+.figureHeading time {
+    color: var(--brand-blue);
+    font-size: var(--fs-small);
+    font-weight: 600;
+}
+
+.figureImageWrap {
+    position: relative;
+    width: min(100%, 34rem);
+}
+
+.figureImage {
+    display: block;
+    width: 100%;
+    max-height: 30rem;
+    border-radius: 0.35rem;
+    object-fit: contain;
+    background: var(--panel);
+}
+
+.laneLabels {
+    position: absolute;
+    top: 5%;
+    left: 16%;
+    right: 16%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: var(--fs-small);
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 1px 3px #000, 1px 0 3px #000, -1px 0 3px #000;
+    pointer-events: none;
+}
+
+.caption {
+    width: min(100%, 42rem);
+    margin: 0;
+    padding: var(--space-md);
+    border-radius: 0.35rem;
+    background: var(--text-h);
+    color: var(--bg);
+    font-size: var(--fs-small);
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: left;
+}
+
+.lanes {
+    width: min(100%, 42rem);
+    color: var(--text);
+    font-size: var(--fs-small);
+    text-align: left;
+}
+
+.lanes summary {
+    width: fit-content;
+    color: var(--text-h);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lanes ul {
+    margin: var(--space-xs) 0 0;
+    padding-left: 1.3rem;
+    line-height: 1.35;
+}
+
+.analysis {
+    width: min(100%, 42rem);
+    margin: 0;
+    font-size: var(--fs-small);
+    line-height: 1.4;
+    text-align: left;
+}
+
+@media (max-width: 480px) {
+    .tabList {
+        gap: 0.35rem;
+    }
+
+    .tab {
+        padding: var(--space-sm) 0.4rem;
+        font-size: var(--fs-small);
+    }
+}

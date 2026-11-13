@@ -56,7 +56,11 @@ export default function BrainAnimation({src = "./images/brain.png", silhouette =
                     </clipPath>
                 </defs>
             </svg>
-            <img src = {src} alt = {alt} />
+            <img
+                src={src}
+                alt={alt}
+                style={{ objectFit: "contain" }}
+            />
             <img className = {styles.backWave} style = {{clipPath: `url(#${id}-back)`, maskImage: mask, WebkitMaskImage: mask}} src = {src} alt = "" aria-hidden = "true" />
             <img className = {styles.frontWave} style = {{clipPath: `url(#${id}-front)`, maskImage: mask, WebkitMaskImage: mask}} src = {src} alt = "" aria-hidden = "true" />
         </div>

@@ -18,6 +18,6 @@ export default function Experiments() {
         )
     }))
     return (
-        <PageLayout sections = {sections} bannerImgs = {["/images/dna-ladder.png"]} bannerHeight = "40svh" caption = "EXPERIMENTS"/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "EXPERIMENTS"></PageLayout>
     )
 }

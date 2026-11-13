@@ -14,10 +14,12 @@
 
 .caption {
     caption-side: top;
-    padding-bottom: var(--space-sm);
-    color: var(--text-h);
-    font-weight: 600;
-    font-size: var(--fs-h3);
+    padding-bottom: 1rem;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.5;
 }
 
 .table th,
@@ -37,7 +39,9 @@
 .table th {
     background-color: var(--light-bg);
     color: var(--text-h);
-    font-weight: 600;
+    /* font-weight: 600; */
+    font-weight: bold;
+
 }
 
 .table tbody tr:nth-child(even) {

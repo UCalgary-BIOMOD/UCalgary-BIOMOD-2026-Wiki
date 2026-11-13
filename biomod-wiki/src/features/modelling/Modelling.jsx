@@ -21,6 +21,6 @@ export default function Modelling() {
         }
     ]
     return (
-        <PageLayout sections = {sections} bannerImgs = {[]}/>
+        <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "MODELLING"></PageLayout>
     )
 }

@@ -12,6 +12,7 @@
     color: var(--text-h);
     font-size: clamp(1.5rem, 3vw, 3rem);
     margin-bottom: var(--space-md);
+    text-align: left;
 }
 
 .elsiGrid {
@@ -39,6 +40,31 @@
     margin: 0;
     text-align: left;
     font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem); 
+}
+
+.safetyText {
+    font-size: clamp(1.05rem, 0.8rem + 0.7vw, 1.5rem);
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.supplementaryInformationText {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 3rem auto 1rem;
+}
+
+.supplementaryInformationImage {
+    display: block;
+    width: 100%;
+    max-width: 48rem;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 @media (max-width: 768px) {

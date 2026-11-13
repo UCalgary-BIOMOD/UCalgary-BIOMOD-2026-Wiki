@@ -5,6 +5,7 @@ import SecondHeading from "../../Components/SecondHeading";
 import styles from "./ELSI.module.css"
 import ReferencesViewer from "/src/Components/ReferencesViewer.jsx"
 import Table from "/src/Components/Table.jsx"
+import FigureArea from "/src/Components/FigureArea.jsx"
 
 
 
@@ -110,11 +111,39 @@ export default function ELSI() {
                 <>
                     <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "10vw" caption = "SAFETY" className={styles.safetyHeading}></MainHeading>
                     <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Hazard Analysis" className={styles.introductionHeading}></SecondHeading>
-                    {/* <div className={styles.safetyMaterial} key={material.subtitle}>
-                        <h2 className={styles.safetySubtitle}>{material.subtitle}</h2>
-                        <p className={styles.safetyText}>{material.text}</p>
-                    </div> */}
-                    <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. XXXX S = Severity, P = Probability"/>
+                    {content.safety.introduction.map((material, index) => (
+                        <div className={styles.safetyMaterial} key={index}>
+                            <p className={styles.safetyText}>{material.text}</p>
+                        </div>
+                    ))}
+                    <Table columns={hazardColumns} headerGroups={hazardHeaderGroups} rows={content.safety.hazardRows} caption="Table 1. Hazard analysis of the Aptonix biosensor, including pre- and post-mitigation risk assessments. Severity (S), probability of harm (P), and risk levels were evaluated using criteria adapted from [12]."/>
+                </>
+            )
+        },
+        {
+            id: "supplementaryInformation",
+            title: "Supplementary Information",
+            render: () => (
+                <>
+                    <MainHeading mainHeadingImgs = {["./images/main-heading.png"]} mainHeadingHeight = "10vw" caption = "SUPPLEMENTARY INFORMATION" className={styles.supplementaryHeading}></MainHeading>
+                    {content.supplementaryInformation.map((material, index) => (
+                        <FigureArea
+                            key={index}
+                            type={index < 2 ? "Table" : "Figure"}
+                            number={index < 2 ? `S${material.number}` : "S1"}
+                            caption={material.supplementaryInformationText.replace(
+                                /^(Table|Figure)\s+S\d+\.\s*/,
+                                ""
+                            )}
+                            naturalHeight={true}
+                        >
+                            <img
+                                src={material.supplementaryInformationImage}
+                                alt={`Supplementary ${index < 2 ? "table" : "figure"} ${index < 2 ? `S${material.number}` : "S1"}`}
+                                className={styles.supplementaryInformationImage}
+                            />
+                        </FigureArea>
+                    ))}
                 </>
             )
         },
@@ -129,7 +158,7 @@ export default function ELSI() {
                 </>
             )
         }
-        ]
+    ]
     return (
         <PageLayout sections = {sections} bannerImgs = {["./images/basic-banner.png"]} bannerHeight = "50svh" caption = "ELSI"></PageLayout>
     )

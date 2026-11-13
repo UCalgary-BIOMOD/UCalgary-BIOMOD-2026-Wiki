@@ -272,7 +272,10 @@ export default function PageLayout({sections, bannerImgs, bannerHeight, caption 
         <div className = {styles.pageLayout} ref = {pageRef}>
             <div> 
                 <div className = {styles.topLine}/>
-                <div className = {styles.bannerContainer} style = {{"--banner-height":bannerHeight}}>
+                <div
+                    className={`${styles.bannerContainer} ${bannerHeight === "100svh" ? styles.homeBanner : ""}`}
+                    style={{"--banner-height": bannerHeight}}
+                >
                     {bannerImgs.map((image, index) => (
                         <img
                             key = {image}
