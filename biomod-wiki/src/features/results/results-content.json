@@ -1,0 +1,181 @@
+{
+  "tabs": [
+    {
+      "id": "tmsd",
+      "title": "TMSD Results",
+      "count": "13 Gel Analyses",
+      "figures": [
+        {
+          "number": 1,
+          "date": "June 8, 2026",
+          "image": "/images/notebook/2026-06-08-figure-1.jpg",
+          "caption": "Native PAGE with 15% acrylamide in 1x TBE. A 10 uM DNA sample was mixed with 6x loading dye and run at 120 V for 40 minutes. The gel was imaged before SYBR Safe staining; no fluorescent bands were visible.",
+          "analysis": "DNA is naturally transparent, so the unstained gel did not show visible DNA bands under the imaging conditions."
+        },
+        {
+          "number": 2,
+          "date": "June 8, 2026",
+          "image": "/images/notebook/2026-06-08-figure-2.jpg",
+          "caption": "The same 15% native PAGE gel conditions as Figure 1, followed by SYBR Safe staining. Faint green fluorescence was visible, but lane separation and band resolution were limited.",
+          "lanes": [
+            "Lane 1: TMSDY + TMSDS with TMSDX, incubated 10 minutes.",
+            "Lane 2: TMSDY + TMSDS with TMSDX, incubated 5 minutes.",
+            "Lane 3: TMSDY + TMSDS with TMSDX, incubated 0 minutes.",
+            "Lane 4: TMSDY + TMSDS only."
+          ],
+          "analysis": "About four fluorescent bands were observed. Lanes 1-3 migrated similar distances, while lane 4 migrated farther. This pattern was interpreted as consistent with TMSDX displacing TMSDS and binding TMSDY, though the low resolution limited detailed comparison."
+        },
+        {
+          "number": 3,
+          "date": "July 14, 2026",
+          "image": "/images/notebook/2026-07-14-figure-3.jpg",
+          "caption": "Unstained 15% native PAGE in 1x TBE. Samples at 10 uM were run at 120 V for 40 minutes; no fluorescent bands were visible before staining.",
+          "lanes": [
+            "Lanes 1-3: TMSDY + TMSDS with TMSDX, incubated for 10, 5, and 0 minutes, respectively.",
+            "Lane 4: TMSDY + TMSDS only.",
+            "Lane 5: TMSDX; lane 6: TMSDS; lane 7: TMSDY."
+          ],
+          "analysis": "As with Figure 1, no visible bands were expected before adding a fluorescent DNA stain."
+        },
+        {
+          "number": 4,
+          "date": "July 15, 2026",
+          "image": "/images/notebook/2026-07-15-figure-4.jpg",
+          "caption": "15% native PAGE in 1x TBE, stained with SYBR Safe. The gel had been stored overnight in TBE buffer before staining; no fluorescent green bands were observed.",
+          "analysis": "The report notes that staining the gel immediately after electrophoresis worked better for visualizing DNA than staining it the following day."
+        },
+        {
+          "number": 5,
+          "date": "July 16, 2026",
+          "image": "/images/notebook/2026-07-16-figure-5.jpg",
+          "caption": "15% native PAGE in 1x TBE with SYBR Safe staining. Strong bands were observed in most lanes; lanes 5 and 7 had no visible bands. Band resolution remained relatively low.",
+          "lanes": [
+            "Lanes 1-3: TMSDY + TMSDS with TMSDX, incubated for 10, 5, and 0 minutes, respectively.",
+            "Lane 4: TMSDY + TMSDS only; lane 5: TMSDX; lane 6: TMSDS; lane 7: TMSDY."
+          ],
+          "analysis": "Lanes 1-3 migrated similarly, while lanes 4 and 6 migrated farther. The report interpreted the pattern as consistent with TMSDX replacing TMSDS in the reaction lanes. The TMSDX and TMSDY control lanes (5 and 7) were not visible."
+        },
+        {
+          "number": 6,
+          "date": "July 20, 2026",
+          "image": "/images/notebook/2026-07-20-figure-6.jpg",
+          "caption": "15% native PAGE in 1x PBS with SYBR Safe. Samples were run at 120 V for 40 minutes. Bands were observed except in lanes 4, 6, 8, and 10; the bands were smeared and low-resolution.",
+          "lanes": [
+            "Lanes 1-3: TMSDY + TMSDS with TMSDX, incubated for 10, 5, and 0 minutes.",
+            "Lanes 4-6: replicate reactions at 10, 5, and 0 minutes.",
+            "Lane 7: TMSDY + TMSDS only; lane 8: TMSDX; lane 9: TMSDS; lane 10: TMSDY."
+          ],
+          "analysis": "The report suggests the high ion concentration of PBS may have contributed to high current and less distinct bands. Replicate lanes 1 and 3 showed bands where lanes 4 and 6 did not, so loading or reaction differences were possible. The TMSDX and TMSDY controls were again not visible; the TMSDS control in lane 9 was visible."
+        },
+        {
+          "number": 7,
+          "date": "July 21, 2026",
+          "image": "/images/notebook/2026-07-21-figure-7.jpg",
+          "caption": "15% native PAGE in 1x PBS with SYBR Safe. Strong bands were observed except in lanes 8 and 10; band resolution was low.",
+          "lanes": [
+            "Lanes 1-3: thiol-TMSDY + TMSDS with TMSDX, incubated for 10, 5, and 0 minutes.",
+            "Lanes 4-6: replicate reactions at 10, 5, and 0 minutes.",
+            "Lane 7: thiol-TMSDY + TMSDS only; lane 8: TMSDX; lane 9: TMSDS; lane 10: thiol-TMSDY."
+          ],
+          "analysis": "Lanes 1-6 migrated higher than lane 7, consistent with TMSDX replacing TMSDS in the complexes. The report cautions that the missing TMSDX and thiol-TMSDY control bands, and low resolution, limit confidence in this interpretation."
+        },
+        {
+          "number": 8,
+          "date": "July 23, 2026",
+          "image": "/images/notebook/2026-07-23-figure-8.jpg",
+          "caption": "15% native PAGE in 1x PBS with SYBR Safe. Strong bands were observed except in lanes 8 and 10; bands were smeared.",
+          "lanes": [
+            "Lanes 1-3: non-specific thiol-TMSDY + TMSDS with TMSDX, incubated for 10, 5, and 0 minutes.",
+            "Lanes 4-6: replicate reactions at 10, 5, and 0 minutes.",
+            "Lane 7: non-specific thiol-TMSDY + TMSDS only; lane 8: TMSDX; lane 9: TMSDS; lane 10: non-specific thiol-TMSDY."
+          ],
+          "analysis": "Lanes 1-6 migrated higher than lane 7, which the report interpreted as consistent with TMSDX replacing TMSDS. However, the TMSDX and non-specific thiol-TMSDY control lanes were absent, so the result was not conclusive."
+        },
+        {
+          "number": 9,
+          "date": "July 28, 2026",
+          "image": "/images/notebook/2026-07-28-figure-9.jpg",
+          "caption": "15% native PAGE in 1x PBS with SYBR Safe, using 1 uM DNA samples. No fluorescent bands were visible after staining.",
+          "lanes": [
+            "Lanes 1-3: TMSDY + AB42AptTS with TMSDX, incubated for 10, 5, and 0 minutes.",
+            "Lanes 4-6: TMSDY + TMSDS with TMSDX, incubated for 10, 5, and 0 minutes.",
+            "Lane 7: TMSDY + AB42AptTS only; lane 8: TMSDX; lane 9: TMSDS; lane 10: TMSDY."
+          ],
+          "analysis": "Reducing the DNA concentration from 10 uM to 1 uM did not produce visible bands under these staining and imaging conditions."
+        },
+        {
+          "number": 10,
+          "date": "July 29, 2026",
+          "image": "/images/notebook/2026-07-29-figure-10.jpg",
+          "caption": "15% native PAGE in 1x PBS with SYBR Safe, using 10 uM samples. Bands were sharper than in earlier gels and were observed in lanes 4-10, but not lanes 1-3.",
+          "lanes": [
+            "Lanes 1-3: TMSDY, TMSDS, and TMSDX controls, respectively.",
+            "Lane 4: TMSDY + AB42AptTS only.",
+            "Lanes 5-7: TMSDY + AB42AptTS with TMSDX, incubated for 0, 5, and 10 minutes.",
+            "Lanes 8-10: TMSDY + TMSDS with TMSDX, incubated for 0, 5, and 10 minutes."
+          ],
+          "analysis": "The reaction lanes (5-10) migrated higher than the bound-strand control in lane 4. The report found no significant difference between the AB42AptTS and TMSDS reaction sets, consistent with the mechanism operating in both sets. The missing TMSDS control band in lane 2 is noted as an unexpected limitation."
+        },
+        {
+          "number": 11,
+          "date": "July 30, 2026",
+          "image": "/images/notebook/2026-07-30-figure-11.jpg",
+          "caption": "15% native PAGE in 1x PBS with SYBR Safe. Bands were relatively sharp; lanes 8 and 10 had no visible bands.",
+          "lanes": [
+            "Lanes 1-3: thiol-TMSDY + AB42AptTS with TMSDX, incubated for 10, 5, and 0 minutes.",
+            "Lanes 4-6: thiol-TMSDY + TMSDS with TMSDX, incubated for 10, 5, and 0 minutes.",
+            "Lane 7: thiol-TMSDY + AB42AptTS only; lane 8: TMSDX; lane 9: AB42AptTS; lane 10: thiol-TMSDY."
+          ],
+          "analysis": "Lanes 1-6 migrated higher than lane 7, consistent with TMSDX replacing the bound aptamer strand. The report notes that the absent TMSDX and thiol-TMSDY controls prevent a definitive conclusion."
+        },
+        {
+          "number": 12,
+          "date": "July 31, 2026",
+          "image": "/images/notebook/2026-07-31-figure-12.jpg",
+          "caption": "15% native PAGE in 1x PBS with SYBR Safe, run to check the individual control strands. A strong band was observed in lane 2 and a faint band in lane 4.",
+          "lanes": [
+            "Lane 1: thiol-TMSDY; lane 2: AB42AptTS; lane 3: TMSDX; lane 4: TMSDS; lane 5: TMSDY."
+          ],
+          "analysis": "No bands were visible in lanes 1, 3, or 5. The report suggests these shorter strands may have run off the gel; increasing gel percentage or run time was proposed. The AB42AptTS band was sharp, while the TMSDS band was faint."
+        },
+        {
+          "number": 13,
+          "date": "October 23, 2026",
+          "image": "/images/results/figure-13.jpg",
+          "laneLabels": ["9", "8", "7", "6", "5", "4", "3", "2", "1"],
+          "caption": "20% native PAGE in 1x PBS with SYBR Safe, run at 120 V for 45 minutes. Strong bands were reported in lanes 1-4 and a faint band in lane 8.",
+          "lanes": [
+            "Lane 1: non-specific C6AB42AptTS; lane 2: AB42Apt; lane 3: C6AB42AptTS; lane 4: AB42AptTS.",
+            "Lane 5: thiol-TMSDY; lane 6: non-specific thiol-TMSDY; lane 7: TMSDX; lane 8: TMSDS; lane 9: TMSDY."
+          ],
+          "analysis": "The gel was run to check control strands at a higher acrylamide percentage. Aptamer-containing controls in lanes 1-4 were visible, while TMSD controls in lanes 5-7 and 9 were not. The report suggests the shorter TMSD strands may still have run off the 20% gel; lane 8 (TMSDS) was faint."
+        }
+      ]
+    },
+    {
+      "id": "aptamer",
+      "title": "Aptamer Results",
+      "count": "2 Gel Analyses",
+      "figures": [
+        {
+          "number": 14,
+          "date": "November 3, 2026",
+          "image": "/images/results/figure-14.jpg",
+          "caption": "20% native PAGE in 1x TBE with SYBR Safe. Aptamer samples at 10 uM were incubated with hemoglobin or amyloid-beta 42 protein, mixed with 2x native sample buffer, and run at 100 V for 60 minutes. Strong bands were reported in lanes 5 and 7, and faint bands in lanes 3, 4, and 6.",
+          "analysis": "The source document leaves the identities of lanes 1-8 blank, so this figure cannot be interpreted further from the recorded results."
+        },
+        {
+          "number": 15,
+          "date": "November 5, 2026",
+          "image": "/images/results/figure-15.jpg",
+          "caption": "20% native PAGE in 1x TBE with SYBR Safe. Aptamer samples at 10 uM were incubated with hemoglobin or amyloid-beta 42 protein, mixed with 2x native sample buffer, and run at 100 V for 60 minutes. Strong fluorescent bands were reported in lanes 3, 5, and 8.",
+          "lanes": [
+            "Lane 1: diluted non-target protein; lane 2: diluted Aβ42; lane 3: diluted non-specific aptamer; lane 4: diluted aptamer-MB conjugate.",
+            "Lane 5: non-specific aptamer + Aβ42; lane 6: aptamer-MB + non-target protein; lane 7: aptamer-MB + Aβ42; lane 8: DNA ladder."
+          ],
+          "analysis": "Lane numbers follow the displayed image from left to right and reverse the loading order in the procedure. The documented strong bands in lanes 3 and 5 correspond to the non-specific aptamer control and non-specific aptamer + Aβ42; lane 8 is the ladder. These observations do not establish specific aptamer-Aβ42 binding. A mobility shift in lane 7 relative to the aptamer-MB-only control in lane 4, compared with lane 6, would be needed to support complex formation; no such shift is established by the documented observations."
+        }
+      ]
+    }
+  ]
+}
