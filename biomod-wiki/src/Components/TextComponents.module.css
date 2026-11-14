@@ -1,0 +1,6 @@
+/*Body text of a TextBlock: keeps the \n line breaks written in the content JSON and indents the first line of each paragraph*/
+.text {
+    white-space: pre-line;
+    text-align: start;
+    text-indent: 3em;
+}

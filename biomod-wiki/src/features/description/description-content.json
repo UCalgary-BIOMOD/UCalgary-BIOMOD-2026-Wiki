@@ -1,0 +1,184 @@
+{
+    "background": [
+        "Early detection of many diseases is significant as it allows physicians to develop timely treatment plans. This includes the neurodegenerative disease, Alzheimer's disease, where cognitive decline is attributed to a build up of proteins in the brain. Preclinical Alzheimer’s disease is the stage where there is evidence of a biomarker, amyloid-beta (Aβ) or tau, present [1]. Because cognitive function appears normal, this stage can go on for many years unnoticed. Identifying these biomarkers before symptoms arise could provide an important opportunity for earlier intervention and disease monitoring.",
+        "Traditional methods of diagnosis for neurodegenerative diseases include neuroimaging, specifically magnetic resonance imaging (MRI), positron emission tomography (PET), computerized tomography (CT), and more [2]. However, these methods usually only flag disease after significant progression has already occurred. For example, MRI produces detailed 3D images of the brain, but diagnosis depends on visible structural changes, such as brain atrophy, which may be too late for early intervention [3]",
+        "On top of these neuroimaging techniques, spinal taps and neurophysical tests come with negatives for the goals of early detection too. Spinal taps are invasive procedures and difficult to administer on a population-wide level. Tests measuring cognitive impairment can be useful for differentiating between normal aging and early Alzheimer’s, but these tests depend on untimely late stage pathologies [4]",
+        "Biosensors offer a promising alternative by enabling biomarker detection using smaller sample volumes and potentially more accessible testing platforms. However, many existing biosensors are designed for single use or the detection of only one specific biomarker. Their clinical utility may also be limited by insufficient sensitivity or selectivity, particularly when target biomarkers are present at very low concentrations. Therefore, there is a need for sensitive, selective, and potentially reusable biosensing systems capable of supporting earlier detection and continued monitoring of Alzheimer’s disease."
+    ],
+    "motivation": [
+        "Although there is currently no cure for Alzheimer’s disease or most neurodegenerative diseases, earlier detection allows individuals to adjust their lifestyle, manage emerging symptoms, and make important decisions while their cognitive abilities remain largely intact [5]. Our team is motivated to address the issue of the lack of early diagnosis in neurodegenerative diseases. We aim to do this by developing a biosensing approach that could make early biomarker detection more practical and accessible."
+    ],
+    "solution": [
+        "Our solution for the early detection of Alzheimer’s disease is an electrochemical biosensor designed to detect amyloid-beta 42 (Aβ42). The biosensor comprises 3 major components: an aptamer, toehold-mediated strand displacement (TMSD), and a polyamidoamine (PAMAM) dendrimer."
+    ],
+    "aptamers": [
+        "Aptamers are single stranded DNA (ssDNA). Their tertiary structures are capable of binding specific targets. We chose the Aβ7-92-1H1 aptamer for its ability to bind to Aβ42, an Alzheimer’s disease biomarker. The aptamer is labelled with methylene blue, a redox active synthetic dye that transfers electrons to and from the electrode. When Aβ42 binds to the aptamer, the aptamer undergoes a conformational change that brings the attached methylene blue closer to the electrode. This results in a movement of electrons which therefore, leads to a current and an electrochemical method of detecting the presence of Aβ42. If Aβ42 is absent, the aptamers will remain in their original state and methylene blue will be too far from the electrode to produce any significant current. This proposed detection mechanism is illustrated in Figure 1, which compares the position of methylene blue relative to the electrode in the presence and absence of the target biomarker."
+    ],
+    "tmsd": [
+        "Toehold-mediated strand displacement (TMSD) is a mechanism that also involves ssDNA with varying binding affinity. In our biosensor, two opposing TMSD strands are attached to both the aptamer and dendrimer. Since the TMSD strands are complementary, this connects the aptamer and dedrimer together. A third TMSD strand is then able to “invade” and displace one of the connected TMSD strands, disconnecting these components freely. Effectively, this introduces modularity to our biosensor as we can easily replace the aptamers attached to the dendrimer, and therefore, swap the biomarker we are capable of detecting. This also increases the lifespan of our biosensor as old degraded aptamers can be swapped out for newer ones."
+    ],
+    "dendrimers": [
+        "PAMAM dendrimers are a tree-like macromolecule containing numerous terminal amine groups. These groups provide multiple attachment sites for aptamers, allowing a greater number of Aβ42 to be immobilized within a limited electrode area. PAMAM dendrimers also minimize background noise by preventing the binding of unwanted molecules by their functional group selectivity. The ferrocene at its core is redox active, facilitating enhanced electron transfer kinetics at the electrodes interface."
+    ],
+    "novelty": [
+        "This project proposes a modular electrochemical biosensing platform that integrates aptamer-based molecular recognition, toehold-mediated strand displacement, dendrimer-based immobilization, and redox-active signal transduction. While each of these components has been studied independently, their integration into a single, reconfigurable sensing platform represents a departure from existing biosensor designs. Electrochemical aptamer-based sensors typically rely on recognition elements that are permanently immobilized on the electrode surface, meaning each sensor is fabricated for a single target and discarded after use. DNA strand displacement has been widely applied in solution-phase molecular logic circuits and reaction networks, yet its use as a deliberate mechanism for refreshing or exchanging surface-bound sensing elements remains limited.",
+        "Our project leverages strand displacement as a functional interface between molecular recognition and hardware, enabling target-specific aptamer modules to be removed and replaced without rebuilding the electrode or readout system. The addition of redox-active DNA tags such as methylene blue allows binding events to be directly translated into measurable electrical signals, eliminating the need for bulky optical instrumentation and supporting low-cost, portable detection. This combination introduces a new workflow in which molecular computation principles are used not only for information processing, but also for physical reconfiguration of a sensing surface. As a result, the platform enables reuse, adaptability, and multi-target detection within a single device architecture, a capability that is not achieved by conventional electrochemical biosensors, DNA origami devices, or protein-based sensing systems. The novelty of this work lies not in the invention of a new molecular component, but in the functional integration of established tools to create a programmable and reusable biosensing platform [6, 7, 8]. The proposed integration of these components is visualized in Figure 2, highlighting the roles of the aptamer in biomarker recognition, methylene blue in signal conversion, TMSD in reusability, and the dendrimer as a molecular scaffold."
+    ],
+    "novelty2": [
+        "The molecular arrangement of the proposed biosensor is further detailed in Figure 3. The schematic illustrates how the aptamer is connected to the PAMAM dendrimer through complementary TMSD strands, while the dendrimer is anchored to the gold electrode through chemical linkages. An additional invading strand is designed to displace the aptamer-bearing strand, allowing the recognition component to be exchanged without replacing the entire sensing platform."
+    ],
+    "feasability": [
+        "The feasibility of completing our project within the summer was validated using numerous factors.",
+        "The Aβ7-92-1H1 aptamer chosen to bind to Aβ42 was previously discovered by Zheng et al. using in vitro screening with magnetic beads [9]. The study reported a dissociation constant (K<sub>d</sub>) of 63.4 nM for binding to Aβ42 monomers, a highly promising affinity. For example, a common multiclonal antibody for binding Aβ42 plaques, lecanemab, has a K<sub>d</sub> of 2300 ± 910 nM [10]. Because the aptamer had already been selected and characterized, our team could focus on adapting it for electrochemical detection rather than performing a complete aptamer-selection process during the competition.",
+        "Before ordering the DNA oligomers, we computationally evaluated the combined aptamer and TMSD S-strand sequence using OligoCalc [11]. The analysis did not identify problematic 3′ complementarity or likely self-annealing sites under the tested conditions. This reduced the likelihood that unintended secondary structures would interfere with strand displacement or target recognition. However, the behaviour of the complete construct still required experimental validation.",
+        "Additionally, extensive computational modeling for structure and docking validation has been completed. In-silico SELEX uses computational methods to identify and optimize aptamers for a specific target. We developed an in-silico SELEX program that generates randomized DNA sequences, predicts their 2D and 3D structures, performs docking simulations with the target biomarker, and ranks candidates based on their predicted binding scores. Promising sequences can then be mutated and re-evaluated to optimize their predicted interactions with the target. While our biosensor currently uses the experimentally characterized Aβ7-92-1H1 aptamer, this program provides a method for identifying alternative aptamers for Aβ42 or other biomarkers in future applications. By computationally screening candidates before experimental testing, the program can reduce the number of sequences that need to be synthesized and experimentally validated.",
+        "Computational modelling was used to help evaluate if the biosensor components could realistically function together before fully assembling them experimentally. Molecular docking was used to investigate the recognition of AB42 by our selected aptamer and its favourability when compared with AB40 and other similar peptides as controls. AutoDock Vina simulations were also run to analyze methylene blue interactions with the aptamer. We then assembled models using all of the major components, the aptamer, TMSD, and dendrimer, to check the attachment geometry, spacing, and potential steric hindrance. Energy minimization simulations in NAMD were used to test whether the system we assembled could relax without deformation and how the total potential energy differed when different numbers of aptamers were attached to a single dendrimer. NAMD was also used to run dynamic simulations of the full construct and analyze how the structure moves under thermal energy.",
+        "All the principal elements of the biosensor (aptamer, TMSD, PAMAM dendrimer) are commercially available by reputable suppliers such as Integrated DNA Technologies. Purchasing characterized materials reduces the time and variability associated with synthesizing each component independently. These components can then be assembled in our laboratory using established conjugation, hybridization, and electrochemical characterization techniques.",
+        "Our modular design further improves feasibility because each component can be evaluated independently before full integration. Aptamer-Aβ42 binding, TMSD efficiency, dendrimer functionalization, and electrochemical signal generation can each be tested separately. If one component does not perform as expected, it can be modified without requiring the entire platform to be redesigned. Work is also divided between wet laboratory and dry laboratory subteams, allowing experimental assembly and computational analysis to proceed in parallel. This supports strong execution potential, even if not all long-term applications are fully realized within the competition timeline."
+    ],
+
+    "impact": [
+        "In Canada alone, 2022 saw approximately 600,000 individuals with dementia, with an estimated 1.7 million cases by 2050 [12]. As Canada’s population ages, this increase will place growing pressure on patients, families, caregivers, and healthcare systems. Alzheimer’s disease, the most common cause of dementia, can begin producing biological changes years before noticeable cognitive symptoms emerge. This creates a critical opportunity to detect disease-associated biomarkers before substantial neurological damage and loss of independence occur.",
+        "There is currently no fully effective intervention for Alzheimer’s disease. However, earlier detection could allow individuals to consider available treatments, make lifestyle changes, participate in clinical trials, and access support services before the disease progresses further. It could also give patients and their families more time to make important decisions about healthcare, finances, living arrangements, and long-term care.",
+        "Current methods used to detect Alzheimer’s-associated changes can involve specialized imaging equipment, radioactive tracers, or invasive cerebrospinal fluid collection. These methods may not be easily available in rural, remote, or under-resourced communities. Our long-term goal is to develop a minimally invasive electrochemical test that requires only a small blood sample and compact equipment. This could make preliminary Alzheimer’s biomarker screening more accessible in hospitals, community clinics, and other settings without advanced diagnostic infrastructure. Our biosensor would not replace established diagnostic methods, but could potentially be integrated into yearly routine medical check ups to help identify individuals who should receive further clinical testing.",
+        "This potential impact aligns with the United Nations Sustainable Development Goal 3: Good Health and Well-Being. In particular, Target 3.8 focuses on universal health coverage and access to affordable and high-quality healthcare services [12]. By reducing the need for specialized equipment and supporting a potentially lower-cost method of screening, our biosensor could contribute to more equal access to early assessment.",
+        "The modularity of our biosensor could also provide environmental and financial advantages. Instead of replacing the entire biosensor, TMSD could allow only the aptamers to be removed and replaced between screening sessions. If this reusability is successfully demonstrated, it could reduce material waste and extend the lifespan of the sensor. The same hardware could also be adapted to detect different biomarkers by replacing the aptamer module, rather than designing and building a new sensor from the beginning.",
+        "Aptamers may also support more scalable manufacturing. Unlike antibodies, DNA aptamers can be chemically synthesized and do not require animal-based production. These properties could make the biosensor easier to manufacture consistently on a larger scale."
+    ],
+
+
+    "goals": [
+        {
+            "name": "Wet Lab",
+            "tone": "gold",
+            "categories": [
+                {
+                    "title": "Aptamer Experiments",
+                    "items": [
+                        {"text": "Prepare all experimental buffers", "done": true},
+                        {"text": "Resuspend and refold commercially made aptamers", "done": true},
+                        {"text": "Validate aptamer binding to Aβ42 using native PAGE", "done": true},
+                        "Covalently attach methylene blue (MB) to aptamer",
+                        "Purify aptamer-MB conjugate mixture",
+                        {"text": "Validate aptamer-MB conjugate binding to Aβ42 using native PAGE", "done": true},
+                        {"text": "MB functionality test with and without aptamer", "done": true}
+                    ]
+                },
+                {
+                    "title": "TMSD Experiments",
+                    "items": [
+                        {"text": "Validate TMSD X, Y, and S strands with non-SDS native PAGE", "done": true},
+                        {"text": "Validate thiol-modified TMSD Y with non-SDS native PAGE", "done": true},
+                        {"text": "Anneal TMSD Y strand and aptamer strand", "done": true},
+                        {"text": "Validate TMSD Y-aptamer conjugate with non-SDS native PAGE", "done": true},
+                        {"text": "Stain and image non-SDS native PAGE gels", "done": true}
+                    ]
+                },
+                {
+                    "title": "Dendrimer Experiments",
+                    "items": [
+                        "Attach dendrimer to gold electrode",
+                        "Validate immobilization of dendrimer with cyclic voltammetry (CV) and electrochemical impedance spectroscopy (EIS)",
+                        "Attach TMSD Y to dendrimer",
+                        "Validate TMSD Y-dendrimer conjugate with non-SDS native PAGE"
+                    ]
+                },
+                {
+                    "title": "General",
+                    "items": [
+                        "Demonstrate specificity and sensitivity of the biosensor to its target biomarker in vitro, validating through electrochemical readout",
+                        "Deliver a theoretical or working proof-of-concept, supported by both computational modeling and wet lab experiments."
+
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Dry Lab",
+            "tone": "blue",
+            "categories": [
+                {
+                    "title": "Aptamer Modelling",
+                    "items": [
+                        {"text": "Structural Model of Literature Aptamer", "done": true},
+                        {"text": "Docking Simulations for Literature Aptamer", "done": true}
+                    ]
+                },
+                
+                {
+                    "title": "TMSD Modelling",
+                    "items": [
+                        {"text": "Structural Model of Literature TMSD", "done": true}
+                    ]
+                },
+                {
+                    "title": "System Modelling",
+                    "items": [
+                        {"text": "Structural Model of Literature Aptamer + TMSD", "done": true},
+                        {"text": "Aptamer + TMSD Substrate/Enzyme Model", "done": true},
+                        {"text": "Structural Model of TMSD & Aptamer + HRP + TMB", "done": true},
+                        {"text": "Docking Simulation of Full Model", "done": true}
+                    ]
+                }
+            ]
+        }
+    ],
+
+    "references": [
+        {
+        "text": "L. H. B. Vidotto, D. Wachholz Jr., and L. T. Kubota. “A simple and low-cost portable potentiostat with real-time data sharing for wireless electrochemical analyses.” *J. Elecchem*, vol. 937, May. 2023. doi: ",
+        "url": "https://doi.org/10.1016/j.jelechem.2023.117414"
+        },
+        {
+        "text": "P. Jiang, N. Gao, G. Chang, and Y. Wu. “Biosensors for Early Detection of Parkinson’s Disease: Principles, Applications, and Future Prospects.” *Biosensors*, vol. 15, no. 5, pp. 280, Apr. 2025. doi: ",
+        "url": "https://doi.org/10.3390/bios15050280"
+        },
+        {
+        "text": "R. M. Chapman et al., “Diagnosis of Alzheimer’s disease using neuropsychological testing improved by multivariate analyses,” *Journal of Clinical and Experimental Neuropsychology* vol. 32, no. 8, pp. 793–808, Mar. 2010, doi: ",
+        "url": "https://doi.org/10.1080/13803390903540315"
+        },
+        {
+        "text": "E. Zamrini, S. De Santi, and M. Tolar, “Imaging Is Superior to Cognitive Testing for Early Diagnosis of Alzheimer’s Disease,” *Challenging Views of Alzheimer’s Disease - Round II*, vol. 25, no. 5, pp. 685–691, May 2004, doi: ",
+        "url": "https://doi.org/10.1016/j.neurobiolaging.2004.02.009"
+        },
+        {
+        "text": "D. Wallon and A. Garnier-Crussard. “The challenging concept of preclinical Alzheimer's disease.” *Revue Neurologique*, vol. 181, no. 9, pp. 881-892, Nov. 2025. doi: ",
+        "url": "https://doi.org/10.1016/j.neurol.2025.07.016"
+        },
+        {
+        "text": "J. Liu, Y. Cao, and Y. Lu, “Functional nucleic acid sensors,” *Chemical Reviews*, vol. 109, no. 5, pp. 1948–1998, May 2009, doi: ",
+        "url": "https://doi.org/10.1021/cr030183i"
+        },
+        {
+        "text": "K. W. Plaxco and H. T. Soh, “Switch-based biosensors: a new approach towards real-time, in vivo molecular detection,” *Trends in Biotechnology*, vol. 29, no. 1, pp. 1–5, Jan. 2011, doi: ",
+        "url": "https://doi.org/10.1016/j.tibtech.2010.10.005"
+        },
+        {
+        "text": "A. A. Lubin and K. W. Plaxco, “Folding-based electrochemical biosensors: the case for responsive nucleic acid architectures,” *Accounts of Chemical Research*, vol. 43, no. 4, pp. 496–505, Apr. 2010, doi: ",
+        "url": "https://doi.org/10.1021/ar900165x"
+        },
+        {
+        "text": "Y. Zheng et al., “Advances in aptamers against Aβ and applications in Aβ detection and regulation for Alzheimer’s disease,” *Theranostics*, vol. 12, no. 5, pp. 2095–2114, Jan. 2022, doi: ",
+        "url": "https://doi.org/10.7150/thno.69465"
+        },
+        {
+        "text": "L. Söderberg et al., “Lecanemab, Aducanumab, and Gantenerumab - Binding Profiles to Different Forms of Amyloid-Beta Might Explain Efficacy and Side Effects in Clinical Trials for Alzheimer’s Disease,” Neurotherapeutics: *The Journal of the American Society for Experimental NeuroTherapeutics*, vol. 20, no. 1, Oct. 2022, doi: ",
+        "url": "https://doi.org/10.1007/s13311-022-01308-6"
+        },
+        {
+        "text": "“Oligonucleotide Properties Calculator,” *Oligocalc.eu*, 2026. Avaiable: ",
+        "url": "https://oligocalc.eu/",
+        "extra": ""
+        },
+        {
+        "text": "“Navigating the Path Forward for Dementia in Canada: The Landmark Study Report #1.” [Online]. Available: ",
+        "url": "https://alzheimer.ca/en/research/reports-dementia/navigating-path-forward-landmark-report-1",
+        "extra": ""
+        },
+        {
+        "text": "United Nations, “Goal 3: Ensure healthy lives and promote well-being for all at all ages,” *United Nations Sustainable Development*. [Online]. Available: ",
+        "url": "https://www.un.org/sustainabledevelopment/health/",
+        "extra": ""
+        }
+    ]
+}

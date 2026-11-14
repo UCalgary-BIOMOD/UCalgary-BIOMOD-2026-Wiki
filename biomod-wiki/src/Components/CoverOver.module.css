@@ -1,0 +1,98 @@
+.card {
+    --tone: var(--text-h);
+    width: 100%;
+    min-height: 14rem;
+    padding: var(--space-md);
+    background-color: var(--panel);
+    border: 3px solid var(--tone);
+    border-radius: 0.75rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: coverOverIn 0.25s ease;
+}
+
+.gold {
+    --tone: var(--text-h);
+}
+
+.blue {
+    --tone: var(--brand-blue);
+}
+
+.title {
+    color: var(--tone);
+    text-align: center;
+    margin: 0 0 var(--space-sm);
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none; /*The checkbox replaces the bullet*/
+    font-size: var(--fs-small);
+    font-weight: 500;
+}
+
+.goal {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6em;
+    margin-bottom: 0.35em;
+}
+
+/*A read-only checkbox: filled with the card's tone and ticked when the goal is done*/
+.checkbox {
+    flex: 0 0 auto;
+    width: 1.1em;
+    height: 1.1em;
+    margin-top: 0.1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--tone);
+    border-radius: 0.25em;
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.done .checkbox {
+    background-color: var(--tone);
+    color: var(--bg);
+}
+
+/*Text for screen readers only (the checkbox itself is decorative)*/
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.placeholder {
+    margin: 0;
+    text-align: center;
+    font-size: var(--fs-h3);
+    line-height: 1.2;
+}
+
+@keyframes coverOverIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        animation: none;
+    }
+}

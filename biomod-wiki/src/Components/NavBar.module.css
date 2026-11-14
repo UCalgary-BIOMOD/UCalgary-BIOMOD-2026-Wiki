@@ -1,0 +1,285 @@
+/*This controls all of the stylings for the navigation bar*/
+.nav{
+    display: flex;
+    justify-content: space-between; /*Push objects (header and links) to the ends*/
+    align-items: center; /*Align both vertical and horizontal*/
+    padding: 0.5rem var(--gutter); /*Padding for the objects within*/
+    gap: var(--space-md);
+    position: sticky; /*Make it stick and move through*/
+    top: 0; /*All stick things need a top value*/
+    border: 0px solid green; 
+    box-sizing: border-box; /*The size given by height will incude both padding and the actual size of the content*/
+    height: var(--top-nav-height); 
+    background-color: var(--header-bg);
+    z-index: 1000; /*Make sure everything is UNDER the navigation bar*/
+    
+}
+/*Styles for the list of links*/
+.ul{
+    display: flex;
+    align-items: center;
+    list-style: none; /* this removes the bulleted list */
+    gap: clamp(0.6rem, 0.3rem + 0.8vw, 1.1rem);
+    margin: 0;
+    padding: 0; /* so this doesn't mess up the padding from .nav */
+}
+
+.logo {
+    display: block;
+    width: clamp(3.25rem, 2rem + 2.2vw, 4.8rem); /*Black disc behind the brain, as in the header mockup*/
+    aspect-ratio: 1;
+    padding: 5%;
+    border-radius: 50%;
+    background-color: #000;
+    object-fit: contain;
+}
+
+.h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: "League Spartan", system-ui, sans-serif; /*Geometric face from the header mockup (system-ui comes first in --sans)*/
+    font-size: clamp(1rem, 0.6rem + 1.5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.0;
+    text-align: left;
+    overflow-wrap: anywhere;
+    margin: 0;
+    padding: 0;
+}
+
+.h3{
+    margin: 0; /*remove the default margin and padding from index.css*/
+    padding: 0;
+    
+}
+
+
+.ul a, .dropdownTrigger{
+    text-decoration: none; /*remove default underline*/
+    position: relative; /* for the pseudo element that makes the underline, this sets the parent to be the link NOT the page*/
+    transition: color 0.2s ease; /*From white, changes color to text color*/
+    
+    cursor:pointer; /*Makes it so hovering on the dropdown trigger shows clickable*/
+    background-color: var(--bg-light);
+    text-decoration: none; 
+    color: var(--text);
+    background: none;
+    border: none;
+    font: inherit; /*Inherit from the navigation bar*/
+    font-family: "League Spartan", system-ui, sans-serif;
+    font-weight: 600;
+    padding: 0;
+    /*Underline indicator thing so it also works for the items in the drop down menu*/
+    &:global.active {
+        transform: scaleX(1)
+    } 
+
+    &:global.active::after{
+        transform: scaleX(1)
+    }
+    
+}
+
+/* Make top-level triggers match link sizing by default.
+   rem-based so it follows the fluid root size (16px at 1920, a little smaller on narrow windows). */
+.ul a, .dropdownTrigger {
+    font-size: clamp(1rem, 0.7rem + 0.6vw, 1.5rem);
+    line-height: 1.4;
+}
+
+.ul a::after{
+    content: ""; /*empty textbox!*/
+    position: absolute; /*sets positioning of the underline to the parent (the link)*/
+    right:0;
+    bottom: -0.1rem;
+    width:100%;
+    height: 0.1rem;
+    background-color: var(--text-h);
+    transform: scaleX(0); /*along x-axis for the underline decoration, default at 0 scale*/
+    transform-origin: center; /*the underline decoration expands from the middle*/
+    transition: transform 0.2s ease-in-out; /*set timing and bezier curve for the transition here*/
+}
+
+
+
+.ul a:hover::after{
+    
+    transform: scaleX(1)
+}
+
+.dropdown{
+    position:relative; /*Allow dropdown menu to be absolute*/
+}
+
+.dropdownMenu{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 150px;
+    text-align: center;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    
+    padding: 0rem 0; /*Remove default padding as to not psuh the text*/
+    
+    background-color: var(--bg);
+    border-radius: 0.25rem; /*Rounds the corner of the box*/
+    
+    list-style: none; /*Remove bullet list*/
+
+    /*Set transition properties to default*/
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -10px);
+
+    /*Set the transition*/
+    transition: all 0.2s ease;
+    transition-property: opacity, transform, visibility; /*All properties listed in transition-property can be grouped in all*/
+}
+
+.dropdownMenu a{
+    padding: 0.75rem 1rem; /*Add padding because fitting to the text looks really bad*/
+    text-decoration: none; /*Remove the bullet point*/
+    color: var(--text);
+    display: block; /*Allows stacking of the links vertically*/
+}
+
+.showMenu {
+    /*Visible version of menu*/
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* Project dropdown hover effect */
+.dropdownTrigger {
+    display: inline-block;
+    transform-origin: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dropdownTrigger:hover,
+.dropdownTrigger:focus-visible,
+.dropdown:has(.showMenu) .dropdownTrigger {
+    color: var(--text-h);
+    transform: scale(1.08);
+}
+
+/* Mobile navigation: hide standard list and show hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* When mobile, hide the normal ul and use a stacked menu */
+@media (max-width: 768px) {
+    .ul {
+        display: none;
+        position: absolute; /* small dropdown anchored to hamburger */
+        right: 1rem;
+        top: calc(var(--top-nav-height) + 0.5rem);
+        background: var(--light-bg);
+        border-radius: 0.5rem;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        padding: 0.25rem 0;
+        width: min(13.75rem, 90vw);
+        z-index: 1100;
+        align-items: flex-start;
+        text-align: left;
+        transform-origin: top right;
+    }
+
+    .ul.showMobile {
+        display: flex;
+    }
+
+    .ul li {
+        padding: 0.35rem 0.9rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ul li + .ul li {
+        margin-top: 0.25rem;
+    }
+
+    .ul a {
+        display: block;
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.4rem 0;
+    }
+
+    .hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .h2 { /* reduce header title space on small screens */
+        font-size: clamp(1rem, 5vw, 1.4rem);
+        margin: 0 0.25rem;
+        text-align: left;
+    }
+
+    /* Make nested dropdowns flow in mobile stacked menu */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdownTrigger {
+    width: 100%;
+    text-align: left;
+    padding: 0; /* use the li padding so top-level items align */
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    }
+
+    /* Always show nested items inside mobile menu (no extra click needed) */
+    .dropdownMenu {
+        display: flex;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
+        padding-left: 1.4rem; /* indent nested items */
+        border-radius: 0;
+        margin-top: 0.1rem;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .dropdownMenu li {
+        padding: 0.25rem 0;
+        margin: 0;
+    }
+
+    .dropdownMenu a {
+        padding: 0;
+        font-size: 0.95rem;
+    }
+
+    .dropdownMenu.showMenu {
+        /* kept for compatibility but has no effect on mobile */
+    .ul a,
+    .dropdownMenu a {
+        line-height: 1.7;
+    }
+    }
+
+    .ul a, .dropdownMenu a {
+        line-height: 1.7;
+    }
+}

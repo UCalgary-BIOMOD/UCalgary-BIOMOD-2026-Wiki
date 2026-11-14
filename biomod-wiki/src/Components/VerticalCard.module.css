@@ -1,0 +1,80 @@
+.verticalCard{
+    min-width:100%;
+    scroll-margin-top: var(--top-nav-height)
+}
+
+.cardHeader{
+    min-width: 100%;
+    height: 3rem;
+    background-color: var(--light-bg);
+    color: var(--text-h);
+    font-weight: bold;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    text-align: left;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: none;
+}
+
+/*Optional variant (the `centered` prop): chevron and caption sit in the middle of the header*/
+.cardHeader.centered{
+    justify-content: center;
+}
+
+.chevron{
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.caption{
+    min-width: 0;
+    overflow-wrap: anywhere;
+    display: inline-flex; /*Lines an inline color dot (see CategoryDot) up with the caption text*/
+    align-items: center;
+    gap: 0.4em;
+}
+
+.chevron.open{
+    transform: rotate(-180deg);
+}
+
+/*
+    Open/close by animating the grid row from 0fr to 1fr. Unlike a fixed max-height this
+    always fits the content, however tall it gets on narrow screens.
+*/
+.card{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+    
+    background-color: var(--bg);
+    min-width:100%;
+}
+
+.card.open{
+    grid-template-rows: 1fr;
+}
+
+.cardInner{
+    overflow: hidden;
+    min-height: 0;
+}
+
+@media (max-width: 768px) {
+    .cardHeader {
+        height: auto;
+        min-height: 3rem;
+        padding: 0.65rem 1rem;
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .chevron {
+        flex: 0 0 auto;
+    }
+}

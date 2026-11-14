@@ -1,0 +1,58 @@
+.figure {
+    width: min(100%, 50rem);
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.window {
+    /* background-color: var(--panel); */
+    border-radius: 0.5rem;
+    aspect-ratio: 16 / 5;
+    min-height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.window > img,
+.window > svg,
+.window > canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.caption {
+    background-color: var(--text-h);
+    color: var(--bg);
+    border-radius: 0.5rem;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--fs-small);
+    text-align: center;
+}
+
+.tableWindow {
+    aspect-ratio: auto;
+    min-height: 0;
+    overflow: visible;
+}
+
+.tableWindow > img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+}
+
+.naturalWindow {
+    aspect-ratio: auto;
+    min-height: 0;
+}
+
+.naturalWindow > img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+}

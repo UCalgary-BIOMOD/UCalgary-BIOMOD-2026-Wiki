@@ -1,0 +1,35 @@
+/*Hidden on desktop: the category dropdowns under Experiments already show each color. Shown on phones (media query below), where those headers are further down the page*/
+.legend {
+    display: none;
+    list-style: none;
+    margin: var(--space-md) auto;
+    padding: var(--space-md) var(--space-lg);
+    width: fit-content;
+    border: 3px solid var(--text-h);
+    border-radius: 0.75rem;
+    text-align: left;
+    flex-direction: column;
+    gap: var(--space-xs);
+    font-size: var(--fs-h3);
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.dot {
+    flex: 0 0 auto;
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    border-radius: 50%;
+}
+
+/*Phones: show the color key under the timeline (same 768px breakpoint as NotebookTimeline.module.css)*/
+@media (max-width: 768px) {
+    .legend {
+        display: flex;
+    }
+}

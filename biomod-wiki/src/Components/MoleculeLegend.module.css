@@ -1,0 +1,100 @@
+.legend {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.item.active {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.item.faded {
+    opacity: 0.28;
+}
+
+.dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.label {
+    font-weight: 700;
+    font-size: var(--font-size-md, 1rem);
+    white-space: nowrap;
+}
+
+.descriptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.description {
+    flex: 1 1 9rem;
+    max-width: 11rem;
+    font-weight: 600;
+    font-size: var(--font-size-sm, 0.9rem);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 0.5rem;
+    }
+
+    .column,
+    .item,
+    .description {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .label {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .description {
+        flex-basis: auto;
+    }
+}

@@ -1,0 +1,47 @@
+/*
+    LinkGrid: image-button tiles that scale with the window.
+    --columns / --columns-small are set by LinkGrid.jsx. Each tile's width is
+    (row width - gaps) / columns, so images are always proportional to the row, never a fixed px size.
+*/
+
+.linkGrid {
+    --gap: 2rem;
+    --cols: var(--columns, 4);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-md) var(--gap);
+    width: min(
+        100%,
+        calc(var(--cols) * var(--tile-max, 13.5rem) + (var(--cols) - 1) * 2rem)
+    );
+    margin-inline: auto;
+}
+
+.item {
+    flex: 0 0 min(
+        calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols)),
+        var(--tile-max, 100%)
+    );
+    min-width: 0;
+}
+
+.item a {
+    display: block;
+    width: 100%;
+}
+
+.item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .linkGrid {
+        --cols: var(--columns-small, 2);
+        --gap: 1rem;
+    }
+}

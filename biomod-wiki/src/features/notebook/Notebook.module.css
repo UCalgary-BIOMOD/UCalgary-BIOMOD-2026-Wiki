@@ -1,0 +1,11 @@
+.emptyCategory {
+    margin: 0;
+    padding: var(--space-md);
+    font-size: var(--fs-small);
+}
+
+/*Entries inside a category are indented and edged in the category color so they read as children of its header*/
+.entries {
+    margin-left: var(--space-sm);
+    border-left: 4px solid var(--category-color);
+}

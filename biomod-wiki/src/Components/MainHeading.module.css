@@ -1,0 +1,42 @@
+.mainHeadingContainer{
+    width: 100%;
+    height: max(9vw, 5rem);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    flex-shrink: 0;
+}
+
+.mainHeadingContainer h1 {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    font-size: clamp(2rem, 3.5vw, 4rem);
+    font-weight: bold;
+}
+
+.mainHeadingImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Contained image */
+.mainHeadingImage:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Oversized image, let's it flow off the banner container stylistically */
+.mainHeadingImage:nth-child(2) {
+  height: 120%; 
+}
+
+.topLine{
+    background-color: var(--border);
+    height: 0.20rem;
+}

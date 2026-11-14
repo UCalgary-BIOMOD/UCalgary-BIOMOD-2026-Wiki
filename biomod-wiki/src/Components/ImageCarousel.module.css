@@ -1,0 +1,102 @@
+
+
+
+.image-carousel{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0 auto; /*Auto means that you center the content inside of the carousel equally horizontally*/
+    overflow: hidden; /*Crops content beyond the bounds of the carousel*/
+    background-color: var(--bg);
+    border-radius: 1rem; /*Round the corners of the carousel*/
+    
+    width: 100%; /*Make the carousel take up the full width of its parent container*/
+    aspect-ratio: 4 / 3; /*Make the carousel height proportional to its width*/
+}
+
+.image-carousel img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  border-radius: 0.75rem; /*Rounds the corners of the actual image*/
+  object-fit: contain; /*Fill container without losing aspect ratio, crops if too big*/
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+img.hidden {
+  display: none; /*Completely removes from the document flow and removes its visibility*/
+}
+
+img.block {
+  display: block; /*Just to make display not none*/
+  animation: fadeIn 0.6s ease; /*Run the animation based on the keyframes*/
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.nav-button {
+  position: absolute; /*Allows overlay of the buttons*/
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--social-bg);
+  color: var(--text);
+  border: none;
+  border-radius: 50%; /*Makes this a circle*/
+  font-size: 1.5rem;
+  font-weight: normal;
+  cursor: pointer; /*Change cursor to show that it is clickable*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  line-height: 1;
+  z-index: 1; /*On top of the carousel*/
+}
+
+.left {
+  left: 1rem;
+}
+
+.right {
+  right: 1rem;
+}
+
+.nav-button:hover { /*On hover, make the button washed out with white*/
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.dots{
+  text-align: center;
+}
+
+.dot{
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: aliceblue;
+  opacity: 50%;
+  margin: 0 0.25rem;
+  cursor: pointer;
+  
+}
+
+.dot.active{
+  opacity: 75%;
+}

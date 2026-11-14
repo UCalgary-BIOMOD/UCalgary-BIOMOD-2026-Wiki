@@ -1,0 +1,226 @@
+/** 
+ * Popup card styling adapted from W3Schools via 
+ * https://www.w3schools.com/howto/howto_js_popup.asp (Accessed: Aug 23, 2026)
+ */
+
+/* INCLUDE REFERENCE IN GIT HUB READ ME */
+
+/* Popup card container (team member photo + popup card) */
+.teamMember {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Team member names above pictures  */
+.popUpName a {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-h);
+    font-size: max(0.6rem, 2cqw); /*1.7% of the tree's width; the tree is the size container (see TreeAnimation.module.css)*/
+    margin: 0;
+}
+
+.popUpName a:hover {
+    text-decoration: underline;
+}
+
+/* Team member roles above pictures  */
+.teamMemberRole {
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    text-align: center;
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: max(0.5rem, 1.7cqw);
+    margin: 0;
+
+}
+
+/* Clickable team member headshot photo*/
+.headShot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Highlight and enlarge team member headshot photo on hover */
+.headShot:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+/* Popup card */
+.teamMember .popUpCard {
+    visibility: hidden;
+    width: clamp(20rem, 30vw, 32rem); 
+    max-width: 85vw;
+    max-height: calc(100svh - var(--top-nav-height) - 2rem); 
+    overflow-y: auto; /* Add vertical scroll if content exceeds max height */
+    background-color: #181433;
+    outline: 0.45rem solid var(--brand-blue);
+    color: var(--text-primary);
+    text-align: center;
+    border-radius: 1.1rem;
+    padding: 0.6rem;
+    z-index: 1001; /* Layer popup card above other content */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + var(--shift-x, 0px)), calc(-50% + var(--shift-y, 0px))); /*Centered on the headshot, plus the nudge set in PopUpCard.jsx that keeps it on screen*/
+    font-size: clamp(0.75rem, 0.55rem + 0.25vw, 0.8rem);
+}
+
+/* Ensure Meagan's popup card is positioned below the menu */
+.meaganPopup {
+    top: 100% !important;
+}
+
+/* Ensure Neeor's popup card is positioned above the view port */
+.neeorPopup {
+    top: 0% !important;
+}
+
+/* Ensure Shahzaib's popup card is positioned above the view port */
+.shahzaibPopup {
+    top: 0% !important;
+}
+
+/* Fade in animation when team member photo clicked */
+.teamMember .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Define fade in animation */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/* 2x2 grid inside popup card */
+.popUpCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Fractional units, 2 columns of equal width*/
+    grid-template-rows: auto auto; /*2 rows, height adjusts based on content*/
+    row-gap: 0.3rem; /*Gap between rows*/
+    column-gap: 0.6rem; /*Gap between columns*/
+}
+
+/* Position team member name */
+.teamMemberName {
+    grid-column: 1 / span 2; /* Name spans across both columns */
+    grid-row: 1;
+    text-align: center;
+}
+
+.teamMemberName a {
+    font-weight: bold;
+    text-align: center;
+    margin: 0.06rem;
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    color: var(--text-h);
+    text-decoration: none;
+}
+
+.teamMemberName a:hover{
+    text-decoration: underline;
+}
+
+/* Position image carousel */
+.popUpCard .imageCarousel {
+    grid-column: 1; /* Left column */
+    grid-row: 2;
+    align-self: center; /* Center the image carousel vertically in the left column */
+}
+
+/* Position team member information */
+.popUpCard .teamMemberInfo {
+    grid-column: 2; /* Right column */
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: inherit; /*Follows the popup card's fluid size*/
+    line-height: 1.25;
+}
+
+/* Left-align team member info text */
+.teamMember .popUpCard .teamMemberInfo p {
+    text-align: left;
+    margin: 0;
+    font-size: inherit;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background-color: transparent;
+    border: none;
+    color: var(--brand-blue);
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cardGameURL a {
+    color: #C9C7D3;
+    text-decoration: underline;
+}
+
+.cardGameURL a:hover{
+    color: var(--brand-blue);
+    text-decoration: underline;
+}
+
+
+/* Narrow screens: single-column popup */
+@media (max-width: 900px) {
+    .popUpCard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .teamMemberName {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .popUpCard .imageCarousel {
+        grid-column: 1;
+        grid-row: 2;
+        width: 70%;
+        justify-self: center;
+    }
+
+    .popUpCard .teamMemberInfo {
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+    }
+
+    .teamMember .popUpCard {
+        width: min(24rem, 90vw);
+    }
+}

@@ -1,0 +1,63 @@
+/*
+    SplitSection: a two-column row that stacks on narrow screens.
+    Columns are equal width (flex: 1 1 0) and never force the row wider than its parent (min-width: 0).
+*/
+
+.split {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: var(--block-max-width); /*Same cap as ViewportSection*/
+    margin-inline: auto;
+    padding-block: var(--section-pad); /*Same value as ViewportSection, so the gap between any two blocks is always the same*/
+    gap: var(--space-lg);
+}
+
+.half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.half img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.stack {
+    flex-direction: column;
+}
+
+/* Text columns */
+.text {
+    padding: var(--split-text-pad, var(--space-sm)); /*Override per page with --split-text-pad*/
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.textRight {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .split {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-sm);
+    }
+
+    .half {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .textLeft,
+    .textRight {
+        text-align: center;
+    }
+}

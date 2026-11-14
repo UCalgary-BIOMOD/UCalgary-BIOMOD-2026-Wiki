@@ -1,0 +1,6 @@
+{
+    "Abstract": {
+        "heading": "",
+        "text": "Alzheimer’s disease is the leading cause of dementia, and early detection of its biomarkers, such as amyloid-beta or tau protein, is a potential key to delaying onset. Our aim was to develop an aptamer-based electrochemical biosensor for detection of amyloid beta 42 (Aβ42), in which an aptamer detects the target through conformational change. We concluded that using a PAMAM dendrimer as a structural backbone would aid in noise reduction in our square wave voltammetry (SWV) signal, consistent with previous work using dendrimers as signal amplifiers. We further implemented toehold-mediated strand displacement (TMSD) to allow for replacement or exchange of the aptamers. Signal transduction relies on a methylene blue redox reporter at the distal end of the aptamer and the binding of the target biomarker, Aβ42, at the receptor site. By demonstrating the use of this reprogrammable biosensor, early detection of Alzheimer’s may be scaled up to population-wide testing and help delay onset by informing risk-targeted interventions for improving brain fitness."
+    }
+}

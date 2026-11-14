@@ -1,0 +1,110 @@
+/*
+    Team page styles.
+    Background art is sized from its own section (%, aspect-ratio) instead of vw, so it can never push the page wider than the window.
+*/
+
+.teamSection {
+    margin-bottom: var(--space-xl);
+}
+
+.supportSection {
+    position: relative;
+    margin-bottom: var(--space-xl);
+    overflow: hidden;
+}
+
+/*Decorative arcs, anchored bottom-left behind the grid. 1440x1024 is the artwork's own ratio.*/
+.supportBackground {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/support-background.svg");
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/*
+    Three cards per row, each card is a size container (see .supportMember) so photo outline, radius and text scale with it.
+    --support-card is the card width: ~9rem at 1920, shrinks with the window.
+*/
+.supportGrid {
+    --support-card: clamp(7rem, 4.5rem + 5vw, 13rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, var(--support-card)));
+    justify-content: center;
+    column-gap: clamp(1.5rem, 7vw, 4rem);
+    row-gap: var(--space-lg);
+    padding: var(--space-lg);
+}
+
+.supportMember {
+    container-type: inline-size;
+    min-width: 0;
+}
+
+.supportImage {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 18.5cqw;
+    outline: 4.3cqw solid var(--brand-blue);
+}
+
+/*Text sizes are a share of the card width with a readable floor on small screens*/
+
+
+.supportName a {
+    display: block;
+    font-size: max(1rem, 13.3cqw);
+    font-weight: bold;
+    color: var(--text-h);
+    margin: 0.5em;
+    text-align: center;
+}
+.supportName a:hover {
+    text-decoration: underline;
+}
+
+.supportRole {
+    font-size: max(0.7rem, 10cqw);
+    font-style: italic;
+    color: var(--text-primary);
+    margin: 0.5em;
+    line-height: 1.2;
+}
+
+.supportDepartment {
+    font-size: max(0.7rem, 9cqw);
+    color: var(--text-primary);
+    margin: 0.5em;
+    line-height: 1.2;
+}
+
+/*The gallery art keeps its own 1836x1125 ratio, so the section is as tall as the art is*/
+.photoGallerySection {
+    position: relative;
+    aspect-ratio: 1836 / 1125;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoGalleryBackground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1836 / 1125;
+    background-image: url("/images/photo-gallery-background.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.imageCarouselContainer {
+    width: min(70%, 55rem);
+    overflow: hidden;
+}

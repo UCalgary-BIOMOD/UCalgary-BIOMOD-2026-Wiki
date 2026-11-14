@@ -1,0 +1,230 @@
+/*
+    Home page styles.
+    Layout rows are built with <SplitSection>/<SplitHalf> (Components/SplitSection) and the link tiles with <LinkGrid>,
+    so this file only holds what is unique to the home page. Sizes are relative (%, rem, cqw) so the page scales with the window.
+*/
+
+.accent{
+    color: var(--accent)
+}
+
+.storyPrimary {
+    font-size: clamp(1.6rem, 2.8vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text-h);
+}
+
+.storySecondary {
+    font-size: clamp(1.4rem, 2.1vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text-h);
+}
+
+.storySubheading {
+    font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--text-h);
+}
+
+.storyBody {
+    font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+/*Lets the first heading sit above the oversized banner image*/
+.aboveBanner{
+    z-index: 5;
+}
+
+.familyImage{
+    width: 80%;
+    height: auto;
+}
+
+/*
+    A square frame whose children are layered on top of each other (map + dots, brain + overlay, ...).
+    Overlay positions inside it are percentages (see canadaDots / biomarkers in Home.jsx), so they follow the frame at any size.
+    It is also a size container: children can use cqw (1cqw = 1% of the frame width) for sizes that must scale with it.
+*/
+.visualSection {
+    position: relative;
+    width: 100%;
+    max-width: 34rem;
+    aspect-ratio: 1;
+    align-self: center;
+    container-type: inline-size;
+}
+
+.visualSection > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*The yellow glow is 70% of the frame and centered in it (15% margin each side); the green biomarkers are placed over its middle (see biomarkers in Home.jsx)*/
+.visualSection > .biomarkerBg {
+    inset: 15%;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.biomarkerText {
+    --split-text-pad: 5%;
+}
+
+/*Risk factor circles*/
+.riskFactorTitle {
+    text-align: left;
+    padding-left: 5%;
+}
+
+.riskFactorGraphics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(0.4rem, 2vw, 1.5rem);
+    width: min(100%, 50rem);
+    margin-inline: auto;
+}
+
+/*Each circle is a size container so its button text scales with the circle (see .lifeStageButton)*/
+.riskFactorGraphic {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1;
+    container-type: inline-size;
+}
+
+.riskFactorGraphic > img,
+.riskFactorGraphic > div,
+.riskFactorGraphic > div > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.riskFactorGraphic > div > button {
+    position: relative;
+    z-index: 1;
+}
+
+.lifeStageButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.lifeStageButton {
+    position: relative;
+    padding: 0.25rem 0;
+
+    background: none;
+    border: none;
+    color: var(--black);
+
+    font: inherit;
+    font-weight: bold;
+    font-size: clamp(0.6rem, 8.4cqw, 1.4rem); /*8.4% of the circle's width*/
+    line-height: 1.4;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Animated underline */
+.lifeStageButton::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 0.1rem;
+
+    background-color: var(--text-h);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover */
+.lifeStageButton:hover {
+    color: var(--text-h);
+}
+
+.lifeStageButton:hover::after {
+    transform: scaleX(1);
+}
+
+/* Selected option */
+.lifeStageButton.selected {
+    color: var(--accent);
+}
+
+.lifeStageButton.selected::after {
+    background-color: var(--accent);
+    transform: scaleX(1);
+}
+
+/*"The path forward" logo block*/
+.aptonixText {
+    width: 60%;
+    height: auto;
+    padding-top: 1rem;
+}
+
+.aptonixLogo {
+    width: 70%;
+    height: auto;
+}
+
+/*Potentiostat photo + proposal text, side by side*/
+.cardRow {
+    align-items: stretch;
+    gap: var(--space-lg);
+}
+
+/*A fixed radius (not %) so the corners are the same circle on both cards, whatever their width/height.
+  overflow: hidden clips the photo to the same rounded shape.*/
+.cardGold,
+.cardBlue {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    padding: var(--space-md);
+}
+
+.cardGold img {
+    border-radius: 0.75rem;
+}
+
+.cardGold {
+    background-color: var(--text-h);
+}
+
+.cardBlue {
+    background-color: var(--accent);
+}
+
+.cardBlue p {
+    padding: 0 5%;
+}
+
+/*Protein viewer + legend*/
+.viewerSection {
+    align-items: center;
+}

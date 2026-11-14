@@ -1,0 +1,48 @@
+.experimentCard{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    margin: var(--space-sm) var(--space-md);
+    border: 3px solid var(--text-h);
+    border-radius: 1rem;
+    
+    position: relative;
+}
+
+.experimentImages{
+    flex: 0 0 40%; /*Make the images take up only 40% of the space*/
+    min-width: 0;
+}
+
+.experimentText{
+    flex: 1 1 0; /*Text takes the rest (about 60%)*/
+    min-width: 0;
+    text-align:left;
+}
+
+/*Entry sections (Objective, Materials, ...) read as the compact lab template, not as page headings*/
+.experimentText h2{
+    font-size: var(--fs-h3);
+    margin: var(--space-sm) 0 var(--space-xs);
+    color: var(--text);
+}
+
+.experimentText p,
+.experimentText li{
+    font-size: var(--fs-small);
+    line-height: 1.35;
+    margin: 0 0 var(--space-xs);
+}
+
+/*Stack the text above the images on narrow screens*/
+@media (max-width: 768px) {
+    .experimentCard{
+        flex-direction: column;
+    }
+
+    .experimentImages{
+        flex: 0 0 auto;
+    }
+}
