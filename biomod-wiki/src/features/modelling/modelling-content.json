@@ -132,7 +132,7 @@
         "We also created three aptamer visualizations. These models showed possible arrangements, but did not establish experimentally validated structures."
     ],
     "md1": [
-        "DNA, linkers, and dendrimer branches are flexible. Their movement can affect the spacing and accessibility of the sensing modules, which a static model cannot fully show. We used NAMD to run the simulations and VMD to prepare the structures, visualize them, and analyse their movement.",
+        "DNA, linkers, and dendrimer branches are flexible. Their movement can affect the spacing and accessibility of the sensing modules, which a static model cannot fully show. We used NAMD [10] to run the simulations and VMD [11] to prepare the structures, visualize them, and analyse their movement.",
         "We investigated two main questions:",
         "- Could the assembled models relax to lower-energy structures under the assigned force field?",
         "- Did the models show obvious deformation, collapse, or crowding during the simulations?"
