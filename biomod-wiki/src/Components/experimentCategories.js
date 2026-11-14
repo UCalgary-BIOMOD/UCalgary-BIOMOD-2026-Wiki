@@ -1,10 +1,9 @@
-/*The five experiment categories. `key` matches the `tag:` in an experiment's markdown front-matter; colors are defined in index.css*/
+/*The experiment categories the team worked on (Dendrimer, Electrode and Full System were removed because no entries used them).
+  To bring one back, add its line here again (see src/content/README.md, "Adding a new notebook category").
+  `key` matches the `tag:` in an experiment's markdown front-matter; colors are defined in index.css*/
 export const CATEGORIES = [
-    {key: "Dendrimer", label: "Dendrimer", groupLabel: "Dendrimer Experiments", color: "var(--dendrimer)"},
     {key: "TMSD", label: "TMSD", groupLabel: "TMSD Experiments", color: "var(--tmsd)"},
     {key: "Aptamer", label: "Aptamer", groupLabel: "Aptamer Experiments", color: "var(--aptamer)"},
-    {key: "Electrode", label: "Electrode", groupLabel: "Electrode Experiments", color: "var(--electrode)"},
-    {key: "Full System", label: "Full System", groupLabel: "Full System Confirmation", color: "var(--full-system)"},
 ]
 
 /**

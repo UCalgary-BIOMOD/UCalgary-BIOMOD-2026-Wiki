@@ -67,7 +67,7 @@ One or two sentences on why we ran this.
 | `caption` | A short label (about 20 characters) shown on the weekly timeline. Long captions wrap onto extra lines, so keep it short. |
 | `dates` | Every day the work happened, as `YYYY-MM-DD` with **no quotes**. An entry with several dates appears on each one. |
 | `researchers` | One name per line. |
-| `tag` | **Exactly one** of: `Dendrimer`, `TMSD`, `Aptamer`, `Electrode`, `Full System`. It sets the dot color and which accordion the entry sits in. Spelling and capitals must match. |
+| `tag` | A list that includes `TMSD` or `Aptamer` (other tags like `Native PAGE` are fine alongside it). It sets the dot color and which accordion the entry sits in. Spelling and capitals must match. |
 | `images` (optional) | A list of image paths under `public/`, e.g. `- /images/gel-1.png`. They show as a gallery next to the text. |
 | `description` (optional) | One or two sentences. Not currently shown anywhere (it belonged to the old phone calendar); safe to leave out. |
 
@@ -86,11 +86,8 @@ Use `##` headings, in this order, to match the lab-entry template: **Objective, 
 
 | Tag | Color |
 | --- | --- |
-| Dendrimer | tan |
 | TMSD | red |
 | Aptamer | yellow |
-| Electrode | blue |
-| Full System | green |
 
 The legend on the page is built from the same list, so a new color only has to be defined once (see "Adding a new category" below).
 
@@ -168,7 +165,7 @@ Copy a whole group block, give it a new unique lowercase `id` (no spaces) and a 
 
 ## 3. Adding a new notebook category (rare)
 
-1. Add a color in `src/index.css`, next to `--electrode` / `--full-system`.
+1. Add a color in `src/index.css`, next to `--tmsd` / `--aptamer`.
 2. Add a line to `CATEGORIES` in `src/Components/experimentCategories.js`: `key` (the exact `tag` text), `label` (legend), `groupLabel` (accordion header), and `color`.
 
 The timeline dots, legend and accordions all update from that one list.

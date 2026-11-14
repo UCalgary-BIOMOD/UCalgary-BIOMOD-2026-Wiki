@@ -96,10 +96,12 @@ export default function NotebookTimeline({experiments, summaries = [], setActive
 
     /*Open on the first week of the notebook*/
     const [weekIndex, setWeekIndex] = useState(0)
-    const [showSummary, setShowSummary] = useState(false)
+    /*The weekly summary starts open; the button below can hide it*/
+    const [showSummary, setShowSummary] = useState(true)
 
     const {start: weekStart, number: weekNumber} = weeks[weekIndex]
-    const todayISO = DateTime.utc().toISODate()
+    /*Today in the viewer's own time zone (entry dates are UTC, but "today" should not jump ahead in the evening in Calgary)*/
+    const todayISO = DateTime.local().toISODate()
     const days = [...Array(7).keys()].map((offset) => {
         const date = weekStart.plus({days: offset})
         return {date, iso: date.toISODate(), entries: entriesByDay[date.toISODate()] ?? []}
@@ -138,7 +140,8 @@ export default function NotebookTimeline({experiments, summaries = [], setActive
                     >
                         {weeks.map((week, index) => (
                             <option key = {week.start.toISODate()} value = {index}>
-                                Week {week.number}: {weekRange(week.start)}
+                                {/*No year here (the title above shows it) so the menu fits between the arrows on a 320px phone*/}
+                                Week {week.number}: {week.start.toFormat("LLL d")} - {week.start.plus({days: 6}).toFormat("LLL d")}
                             </option>
                         ))}
                     </select>
@@ -174,7 +177,8 @@ export default function NotebookTimeline({experiments, summaries = [], setActive
                                     onClick = {() => openEntry(experiment.id)}
                                 >
                                     <CategoryDot color = {categoryOf(experiment)?.color ?? "var(--text)"} />
-                                    <span>{experiment.caption}</span>
+                                    {/*A zero-width space after each "/" lets narrow columns wrap "Stain/Image" at the slash instead of mid-word*/}
+                                    <span>{experiment.caption.replaceAll("/", "/\u200B")}</span>
                                 </button>
                             ))}
                         </div>
