@@ -55,13 +55,13 @@
                 {
                     "title": "Aptamer Experiments",
                     "items": [
-                        "Prepare all experimental buffers",
-                        "Resuspend and refold commercially made aptamers",
-                        "Validate aptamer binding to Aβ42 using native PAGE",
+                        {"text": "Prepare all experimental buffers", "done": true},
+                        {"text": "Resuspend and refold commercially made aptamers", "done": true},
+                        {"text": "Validate aptamer binding to Aβ42 using native PAGE", "done": true},
                         "Covalently attach methylene blue (MB) to aptamer",
                         "Purify aptamer-MB conjugate mixture",
-                        "Validate aptamer-MB conjugate binding to Aβ42 using native PAGE",
-                        "MB functionality test with and without aptamer"
+                        {"text": "Validate aptamer-MB conjugate binding to Aβ42 using native PAGE", "done": true},
+                        {"text": "MB functionality test with and without aptamer", "done": true}
                     ]
                 },
                 {
