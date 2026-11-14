@@ -57,7 +57,7 @@ export default function Modelling() {
                             columns = {[{key: "structure", label: "Predicted Structure"}, {key: "freeEnergy", label: "Folding Free Energy (kcal/mol)"}]}
                             rows = {[{structure: "Structure 1", freeEnergy: -1.51},{structure: "Structure 2", freeEnergy: -1.00},{structure: "Structure 3", freeEnergy: -1.00},{structure: "Structure 4", freeEnergy: -0.52},]}
                             className = {styles.table}
-                            caption = "**Table 1.** NEED CAPTION"
+                            caption = "**Table 1.** Predicted secondary structures of the AB7-92-1H1 aptamer and their corresponding folding free energies."
                         ></Table>
                         <Paragraphs paragraphs = {content.aptamer3}/>
                         <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Three dimensional model generation"></SecondHeading>
@@ -94,7 +94,7 @@ export default function Modelling() {
                             columns = {[{key: "config", label: "Aptamer configuration"}, {key: "vina", label: "Best recorded Vina score (kcal/mol)"}]}
                             rows = {[{config: "Structure 1", vina: -6.123}, {config: "Structure 2", vina: "Approximately -6.45"}]}
                             className = {styles.table}
-                            caption = "**Table 2.** NEED CAPTION"
+                            caption = "**Table 2.** AutoDock Vina docking scores for methylene blue interactions with AB7-92-1H1 aptamer Structures 1 and 2."
                         ></Table>
                         <Paragraphs paragraphs = {content.mb3}/>
                         <FigureArea 
@@ -129,7 +129,7 @@ export default function Modelling() {
                             columns = {[{key: "target", label: "Molecular Target"}, {key: "pdb", label: "PDB Model"}, {key: "score", label: "Best HDOCK Score"}, {key: "mean", label: "Mean of Top 10 Scores"}]}
                             rows = {[{target: "AB42", pdb: "6SZF", score: -233.94, mean:-228.00}, {target: "AB40", pdb: "1BA4", score: -266.92, mean:-224.43}, {target: "Human Serum Albumin", pdb: "1AO6", score: -297.44, mean: -252.41},]}
                             className = {styles.table}
-                            caption = "**Table 3.** NEED CAPTION"
+                            caption = "**Table 3.** HDOCK scores for the AB7-92-1H1 aptamer docked against AB42, AB40, and human serum albumin."
                         ></Table>
                         <Paragraphs paragraphs = {content.recognition4}/>
                         <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Human serum albumin control"></SecondHeading>
@@ -140,7 +140,7 @@ export default function Modelling() {
                             columns = {[{key: "peptide", label: "Peptide"}, {key: "score", label: "Best HDOCK Score"}, {key: "mean", label: "Mean of Top 10 Scores"}]}
                             rows = {[{peptide: "AB42 sequence - model control", score: -246.81, mean: -216.20}, {peptide: "Scrambled AB42 - 1", score: -222.41, mean: -200.74}, {peptide: "Scrambled AB42 - 2", score: -240.91, mean: -217.69}, {peptide: "Scrambled AB42 - 3", score: -235.97, mean: -218.75},]}
                             className = {styles.table}
-                            caption = "**Table 4.** NEED CAPTION"
+                            caption = "**Table 4.** HDOCK scores for the AB7-92-1H1 aptamer docked against AB42 and three scrambled AB42 peptide controls."
                         ></Table>
                         <Paragraphs paragraphs = {content.recognition7}/>
                         <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Interpretation and implications for biosensor development"></SecondHeading>
@@ -200,7 +200,7 @@ export default function Modelling() {
                             columns = {[{key: "receptor", label: "Receptor Model"}, {key: "score", label: "Best HDOCK Score"}, {key: "mean", label: "Mean of Top 10 Scores"}]}
                             rows = {[{receptor: "Aptamer - TMSD without MB", score: -295.58, mean: -254.20}, {receptor: "Aptamer - TMSD with MB", score: -270.84, mean: -245.4}]}
                             className = {styles.table}
-                            caption = "**Table 5.** NEED CAPTION"
+                            caption = "**Table 5.** HDOCK scores for AB42 docked against the aptamer-TMSD receptor models with and without the methylene blue-related terminal modification."
                         ></Table>
                         <Paragraphs paragraphs = {content.tmsdmb5} />
                     </ViewportSection>
@@ -267,7 +267,7 @@ export default function Modelling() {
                             columns = {[{key: "stage", label: "Minimization Stage"}, {key: "energy", label: "Potential Energy (kcal/mol)"}]}
                             rows = {[{stage: "Initial Structure", energy: "141,306,563.9537"}, {stage: "After 5,000 steps", energy: "-11,395.5587"}, {stage: "Final after 20,000 steps", energy: "-11,599.0855"},]}
                             className = {styles.table}
-                            caption = "**Table 6.** NEED CAPTION"
+                            caption = "**Table 6.** Potential energy of the single-aptamer Aptonix model before and after the two-stage energy minimization process."
                         ></Table>
                         <Paragraphs paragraphs = {content.md4} />
                         <SecondHeading secondHeadingImgs = {["./images/second-heading.png"]} secondHeadingHeight = "10vw" caption = "Energy minimization of the two aptamer system"></SecondHeading>
@@ -276,14 +276,14 @@ export default function Modelling() {
                             columns = {[{key: "stage", label: "Minimization Stage"}, {key: "energy", label: "Potential Energy (kcal/mol)"}]}
                             rows = {[{stage: "Initial Structure", energy: "281,221,294.1867"}, {stage: "After 5,000 steps", energy: "-22,106.3890"}, {stage: "Final after 20,000 steps", energy: "-22,519.9640"},]}
                             className = {styles.table}
-                            caption = "**Table 7.** NEED CAPTION"
+                            caption = "**Table 7.** Potential energy of the two-aptamer Aptonix model before and after the two-stage energy minimization process."
                         ></Table>
                         <Paragraphs paragraphs = {content.md6} />
                         <Table
                             columns = {[{key: "model", label: "Model"}, {key: "atoms", label: "Number of Atoms"}, {key: "energy", label: "Final Potential Energy (kcal/mol)"}, {key: "epm", label: "Potential Energy Per Atom (kcal/mol)"}]}
                             rows = {[{model: "One Aptamer", atoms: "2,772", energy: "-11,599.0855", epm: "-4.1844"}, {model: "Two Aptamers", atoms: "5,390", energy: "-22,519.9640", epm: "-4.1781"}]}
                             className = {styles.table}
-                            caption = "**Table 8.** NEED CAPTION"
+                            caption = "**Table 8.** Final potential energies and atom-normalized energies of the minimized single- and two-aptamer Aptonix models."
                         ></Table>
                         <Paragraphs paragraphs = {content.md7} />
                         <FigureArea 
@@ -343,7 +343,7 @@ export default function Modelling() {
                             }
                         ]}
                         className={styles.table}
-                        caption="**Table 8.** Initial and final interatomic distances between aptamers and the dendrimer."
+                        caption="**Table 9.** Initial and final intercomponent distances in the two-aptamer Aptonix model during the approximately 1 ns molecular dynamics simulation."
                         ></Table>
                         <Paragraphs paragraphs = {content.md9} />
                         <FigureArea 
