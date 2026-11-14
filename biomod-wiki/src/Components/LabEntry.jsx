@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown"
+import remarkGfm from 'remark-gfm'
 import styles from "./LabEntry.module.css"
 
 const INLINE_FIELDS = [
@@ -26,7 +27,7 @@ export default function LabEntry({entry = {}}) {
     return (
         <div className = {styles.entry}>
             {INLINE_FIELDS.filter(([key]) => key !== "partners" || entry.partners).map(([key, label]) => (
-                <p key = {key} className = {styles.field}>
+                <p key = {key} className = {styles.field2}>
                     <strong>{label}:</strong> {entry[key]}
                 </p>
             ))}
@@ -35,7 +36,7 @@ export default function LabEntry({entry = {}}) {
                     <strong>{label}:</strong>
                     {entry[key] && (
                         <div className = {styles.markdown}>
-                            <ReactMarkdown>{entry[key]}</ReactMarkdown>
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{entry[key]}</ReactMarkdown>
                         </div>
                     )}
                 </div>
