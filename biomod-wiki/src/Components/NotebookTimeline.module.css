@@ -20,6 +20,7 @@
 }
 
 .headerCenter {
+    flex: 1 1 auto; /*Takes all the space between the arrows so the week menu isn't cut off on narrow phones*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -240,8 +241,8 @@
     font-size: var(--fs-small);
 }
 
-/*Phones: the days stack as rows instead of seven cramped columns*/
-@media (max-width: 768px) {
+/*Phones and tablets: the days stack as rows instead of seven cramped columns. Below 1000px a column is too narrow for words like "Resuspend" or "TMSDY", so they would break mid-word*/
+@media (max-width: 1000px) {
     .days {
         grid-template-columns: minmax(0, 1fr);
         min-height: 0;
