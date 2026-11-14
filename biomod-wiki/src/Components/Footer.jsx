@@ -91,7 +91,7 @@ export default function Footer() {
 
                         {/* GitHub: the repository this website is built from */}
                         <a
-                            href="https://github.com/meagan-davies/UCalgary-BIOMOD-2026-Wiki"
+                            href="https://github.com/UCalgary-BIOMOD/UCalgary-BIOMOD-2026-Wiki"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.socialLink}
