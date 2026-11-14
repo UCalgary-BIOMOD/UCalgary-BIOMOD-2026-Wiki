@@ -37,6 +37,8 @@
 }
 
 .tabPanel {
+    width: 100%;
+    min-width: 0;
     outline: none;
 }
 
@@ -72,11 +74,15 @@
 
 .figures {
     display: grid;
+    width: 100%;
+    min-width: 0;
     gap: var(--space-xl);
 }
 
 .figure {
     display: grid;
+    width: 100%;
+    min-width: 0;
     justify-items: center;
     gap: var(--space-sm);
 }
@@ -117,11 +123,13 @@
 .figureImageWrap {
     position: relative;
     width: min(100%, 34rem);
+    min-width: 0;
 }
 
 .figureImage {
     display: block;
     width: 100%;
+    height: auto;
     max-height: 30rem;
     border-radius: 0.35rem;
     object-fit: contain;
@@ -185,6 +193,11 @@
 }
 
 @media (max-width: 480px) {
+    .resultsPage {
+        width: 100%;
+        min-width: 0;
+    }
+
     .tabList {
         gap: 0.35rem;
     }
@@ -192,5 +205,13 @@
     .tab {
         padding: var(--space-sm) 0.4rem;
         font-size: var(--fs-small);
+    }
+
+    .figureImageWrap {
+        width: 100%;
+    }
+
+    .figureImage {
+        max-height: none;
     }
 }

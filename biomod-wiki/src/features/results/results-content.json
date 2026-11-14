@@ -160,20 +160,40 @@
         {
           "number": 14,
           "date": "November 3, 2026",
-          "image": "/images/results/figure-14.jpg",
-          "caption": "20% native PAGE in 1x TBE with SYBR Safe. Aptamer samples at 10 uM were incubated with hemoglobin or amyloid-beta 42 protein, mixed with 2x native sample buffer, and run at 100 V for 60 minutes. Strong bands were reported in lanes 5 and 7, and faint bands in lanes 3, 4, and 6.",
-          "analysis": "The source document leaves the identities of lanes 1-8 blank, so this figure cannot be interpreted further from the recorded results."
+          "image": "/images/results/figure-14.png",
+          "imageAlt": "Aptamer gel electrophoresis result with lanes numbered 1 through 10 from left to right.",
+          "caption": "20% native PAGE in 1x TBE with SYBR Safe. Aptamer samples at 10 uM were incubated with hemoglobin or amyloid-beta 42 protein, mixed with 2x native sample buffer, and run at 100 V for 60 minutes using the Bento Lab system. Strong fluorescent bands were observed in lanes 5 and 7, with faint bands in lanes 3, 4, and 6.",
+          "lanes": [
+            "Lane 1: empty.",
+            "Lane 2: DNA ladder.",
+            "Lane 3: aptamer-MB + Aβ42.",
+            "Lane 4: aptamer-MB + hemoglobin (specificity control).",
+            "Lane 5: non-specific aptamer + Aβ42 (negative control).",
+            "Lane 6: aptamer-MB only.",
+            "Lane 7: non-specific aptamer only.",
+            "Lane 8: Aβ42 only.",
+            "Lane 9: hemoglobin only.",
+            "Lane 10: empty."
+          ],
+          "analysis": "The fluorescent signals in lanes 5 and 7 correspond to the non-specific aptamer + Aβ42 mixture and the non-specific aptamer-only control. Because SYBR Safe predominantly stains nucleic acids, the protein-only controls in lanes 8 and 9 were not expected to produce strong fluorescence. The fluorescence in the non-specific aptamer samples does not establish specific binding to Aβ42. A distinct mobility shift in lane 3 relative to lane 6, with lane 4 as the hemoglobin specificity control, would support complex formation; no clear shift could be established from the observed fluorescence patterns."
         },
         {
           "number": 15,
           "date": "November 5, 2026",
-          "image": "/images/results/figure-15.jpg",
-          "caption": "20% native PAGE in 1x TBE with SYBR Safe. Aptamer samples at 10 uM were incubated with hemoglobin or amyloid-beta 42 protein, mixed with 2x native sample buffer, and run at 100 V for 60 minutes. Strong fluorescent bands were reported in lanes 3, 5, and 8.",
+          "image": "/images/results/figure-15.png",
+          "imageAlt": "Aptamer gel electrophoresis result with lanes numbered 1 through 8 from left to right.",
+          "caption": "20% native PAGE in 1x TBE with SYBR Safe. Aptamer samples at 10 uM were incubated with hemoglobin or amyloid-beta 42 protein, mixed with 2x native sample buffer, and run at 100 V for 60 minutes using the Bento Lab system. Strong fluorescent bands were observed in lanes 3, 5, and 8.",
           "lanes": [
-            "Lane 1: diluted non-target protein; lane 2: diluted Aβ42; lane 3: diluted non-specific aptamer; lane 4: diluted aptamer-MB conjugate.",
-            "Lane 5: non-specific aptamer + Aβ42; lane 6: aptamer-MB + non-target protein; lane 7: aptamer-MB + Aβ42; lane 8: DNA ladder."
+            "Lane 1: diluted non-target protein (control; 20 uL).",
+            "Lane 2: diluted Aβ42 (control; 20 uL).",
+            "Lane 3: diluted non-specific aptamer (control; 20 uL).",
+            "Lane 4: diluted aptamer-MB conjugate (control; 20 uL).",
+            "Lane 5: non-specific aptamer + Aβ42 (negative control; 20 uL).",
+            "Lane 6: aptamer-MB + non-target protein (specificity control; 20 uL).",
+            "Lane 7: aptamer-MB + Aβ42 (target-binding sample; 20 uL).",
+            "Lane 8: DNA ladder (4 uL, approximately 1 ug)."
           ],
-          "analysis": "Lane numbers follow the displayed image from left to right and reverse the loading order in the procedure. The documented strong bands in lanes 3 and 5 correspond to the non-specific aptamer control and non-specific aptamer + Aβ42; lane 8 is the ladder. These observations do not establish specific aptamer-Aβ42 binding. A mobility shift in lane 7 relative to the aptamer-MB-only control in lane 4, compared with lane 6, would be needed to support complex formation; no such shift is established by the documented observations."
+          "analysis": "Lane numbers in the image run from left to right and reverse the loading order recorded in the procedure. The strong fluorescent bands in lanes 3 and 5 correspond to the non-specific aptamer control and the non-specific aptamer + Aβ42 sample; lane 8 is the DNA ladder. Since SYBR Safe predominantly stains nucleic acids, the protein-only controls in lanes 1 and 2 are not expected to produce strong DNA-fluorescence signals. These observations do not establish specific aptamer-Aβ42 binding. A distinct mobility shift in lane 7 relative to the aptamer-MB-only control in lane 4, with lane 6 as the non-target-protein comparison, would be needed to support complex formation; no such shift is established by the documented observations."
         }
       ]
     }

@@ -85,8 +85,8 @@ export default function Results() {
                                             <img
                                                 className={styles.figureImage}
                                                 src={figure.image}
-                                                alt={`Gel image for Figure ${figure.number}${figure.laneLabels ? "; lanes numbered from right to left" : ""}`}
-                                                loading="lazy"
+                                                alt={figure.imageAlt || `Gel image for Figure ${figure.number}${figure.laneLabels ? "; lanes numbered from right to left" : ""}`}
+                                                loading={activeGroup.id === "aptamer" ? "eager" : "lazy"}
                                             />
                                             {figure.laneLabels && (
                                                 <div className={styles.laneLabels} aria-hidden="true">
