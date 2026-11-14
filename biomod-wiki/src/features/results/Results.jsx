@@ -81,23 +81,14 @@ export default function Results() {
                                                 <time>{figure.date}</time>
                                             </div>
                                         </header>
-                                        {figure.image && (
-                                            <div className={styles.figureImageWrap}>
-                                                <img
-                                                    className={styles.figureImage}
-                                                    src={figure.image}
-                                                    alt={figure.imageAlt || `Experimental image for Figure ${figure.number}`}
-                                                    loading="lazy"
-                                                />
-                                                {figure.laneLabels && (
-                                                    <div className={styles.laneLabels} aria-hidden="true">
-                                                        {figure.laneLabels.map((label) => (
-                                                            <span key={label}>{label}</span>
-                                                        ))}
-                                                    </div>
-                                                )}
-                                            </div>
+                                                                                {figure.table && figure.caption && (
+                                            <p className={styles.caption}>
+                                                <strong>Table {figure.tableNumber || figure.number}.</strong>{" "}
+                                                {figure.caption}
+                                            </p>
                                         )}
+
+                                        {/* Table */}
                                         {figure.table && (
                                             <div className={styles.tableWrap}>
                                                 <table className={styles.resultsTable}>
@@ -120,9 +111,30 @@ export default function Results() {
                                                 </table>
                                             </div>
                                         )}
-                                        {figure.caption && (
+
+                                        {/* Experimental image */}
+                                        {figure.image && (
+                                            <div className={styles.figureImageWrap}>
+                                                <img
+                                                    className={styles.figureImage}
+                                                    src={figure.image}
+                                                    alt={figure.imageAlt || `Experimental image for Figure ${figure.number}`}
+                                                    loading="lazy"
+                                                />
+                                                {figure.laneLabels && (
+                                                    <div className={styles.laneLabels} aria-hidden="true">
+                                                        {figure.laneLabels.map((label) => (
+                                                            <span key={label}>{label}</span>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+
+                                        {/* Figure caption BELOW the image */}
+                                        {figure.image && figure.caption && (
                                             <p className={styles.caption}>
-                                                <strong>{figure.title ? "Experiment:" : `Figure ${figure.number}.`}</strong>{" "}
+                                                <strong>Figure {figure.number}.</strong>{" "}
                                                 {figure.caption}
                                             </p>
                                         )}

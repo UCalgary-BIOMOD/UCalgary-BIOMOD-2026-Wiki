@@ -187,7 +187,7 @@
 .analysis {
     width: min(100%, 42rem);
     margin: 0;
-    font-size: var(--fs-small);
+    font-size: var(--fs-h3);
     line-height: 1.4;
     text-align: left;
 }

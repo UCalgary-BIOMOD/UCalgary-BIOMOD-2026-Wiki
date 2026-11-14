@@ -38,7 +38,7 @@
     flex: 1 1 auto;
     min-width: 0;
     font-family: "League Spartan", system-ui, sans-serif; /*Geometric face from the header mockup (system-ui comes first in --sans)*/
-    font-size: clamp(1rem, 0.6rem + 2vw, 3rem);
+    font-size: clamp(1rem, 0.6rem + 1.5vw, 3rem);
     font-weight: 600;
     line-height: 1.0;
     text-align: left;
@@ -227,7 +227,7 @@
     .h2 { /* reduce header title space on small screens */
         font-size: clamp(1rem, 5vw, 1.4rem);
         margin: 0 0.25rem;
-        text-align: center;
+        text-align: left;
     }
 
     /* Make nested dropdowns flow in mobile stacked menu */

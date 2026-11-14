@@ -159,6 +159,7 @@
       "figures": [
         {
           "number": 14,
+          "title": "Validation of Aptamer-MB Conjugate Binding to Amyloid Beta-42 (Aβ42) Using Native PAGE",
           "date": "November 3, 2026",
           "image": "/images/results/figure-14.png",
           "imageAlt": "Aptamer gel electrophoresis result with lanes numbered 1 through 10 from left to right.",
@@ -179,6 +180,7 @@
         },
         {
           "number": 15,
+          "title": "Validation of Aptamer-MB Conjugate Binding to Amyloid Beta-42 (Aβ42) Using Native PAGE",
           "date": "November 5, 2026",
           "image": "/images/results/figure-15.png",
           "imageAlt": "Aptamer gel electrophoresis result with lanes numbered 1 through 8 from left to right.",
@@ -204,7 +206,7 @@
     "figures": [
       {
         "number": 16,
-        "title": "Methylene Blue Redox Activity",
+        "title": "Methylene Blue Functionality Test With Aptamer",
         "date": "October 30, 2026",
         "table": {
           "headers": [

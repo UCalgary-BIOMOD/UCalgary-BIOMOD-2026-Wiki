@@ -145,7 +145,7 @@ h3 {
 p {
   margin: 0 0 var(--space-md); /*Bottom margin only; pages can override per-component.*/
   font-size: var(--fs-body);
-  line-height: 100%;
+  line-height: 110%;
   font-weight: 200;
 }
 

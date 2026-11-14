@@ -35,7 +35,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, var(--support-card)));
     justify-content: center;
-    column-gap: clamp(1.5rem, 3vw, 4rem);
+    column-gap: clamp(1.5rem, 7vw, 4rem);
     row-gap: var(--space-lg);
     padding: var(--space-lg);
 }
@@ -58,7 +58,7 @@
 
 .supportName a {
     display: block;
-    font-size: max(0.8rem, 13.3cqw);
+    font-size: max(1rem, 13.3cqw);
     font-weight: bold;
     color: var(--text-h);
     margin: 0.5em;
@@ -69,7 +69,7 @@
 }
 
 .supportRole {
-    font-size: max(0.65rem, 10cqw);
+    font-size: max(0.7rem, 10cqw);
     font-style: italic;
     color: var(--text-primary);
     margin: 0.5em;
@@ -77,7 +77,7 @@
 }
 
 .supportDepartment {
-    font-size: max(0.6rem, 8cqw);
+    font-size: max(0.7rem, 9cqw);
     color: var(--text-primary);
     margin: 0.5em;
     line-height: 1.2;
