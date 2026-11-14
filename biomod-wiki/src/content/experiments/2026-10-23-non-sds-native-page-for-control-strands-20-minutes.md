@@ -2,10 +2,11 @@
 id: 33
 title: Non-SDS Native PAGE For Control Strands (20 Minutes)
 caption: Control PAGE (20 min)
-# Date not given in Lab Notebook 2026.docx - needs confirming. An empty list keeps the entry out of the calendar.
-dates: []
-# Partner(s) not given in Lab Notebook 2026.docx - needs confirming.
-researchers: []
+dates:
+  - 2026-10-23
+researchers:
+  - Neeor
+  - Hannah
 tag:
   - TMSD
   - Native PAGE
@@ -55,7 +56,7 @@ To confirm that TMSDY, TMSDS, TMSDX, Aptamer, and Thiol TMSDY strands show up as
 2. Prepared 5x TBE by adding 2 mL of deionized water and 2 mL 10x TBE in a 15 mL conical tube.
 3. Gel preparation inside a 50 mL conical tube (one gel).
 
-    1. Prepare 15% acrylamide gel solution according to Table 1
+    1. Prepare 20% acrylamide gel solution according to Table 1
     2. Added 1.2 uL SYBRSafe for 12mL of gel preparation.
     3. Inverted the tube to mix thoroughly.
     4. Added 10 µL TEMED in the fume hood and quickly inverted the tube to mix.
@@ -65,7 +66,7 @@ To confirm that TMSDY, TMSDS, TMSDX, Aptamer, and Thiol TMSDY strands show up as
 
 4. TMSD experiment setup.
 
-    1. Prepared samples according to Table 3 in the labelled 1.5 mL microcentrifuge tubes.
+    1. Prepared samples according to Table 3 in the labelled 1.5 mL microcentrifuge tubes. (we are using 10um)
     2. Incubated all samples at 25 °C for 30 minutes.
     3. Added 2 µL of 6× DNA loading dye to each sample before loading and mix gently by pipetting up and down and tapping the tube on the table to get the samples to the bottom.
 
@@ -85,10 +86,7 @@ To confirm that TMSDY, TMSDS, TMSDX, Aptamer, and Thiol TMSDY strands show up as
 
 **Table 1.** PAGE% preparation for 12mL. [[DNA Polyacrylamide Gel Electrophoresis, n.d.](https://www.researchgate.net/profile/Onuh-Peter/post/What_is_a_good_protocol_for_making_125_poly_acrylamide_gel_for_DNA/attachment/5b77f67ecfe4a7f7ca5b24da/AS%3A660926403444736%401534588542417/download/DNA_PAGE.pdf)]
 
-- 10% gel: 4.0 mL 30% acrylamide/bisacrylamide (29:1), 5.4 mL H₂O (Milli-Q), 2.4 mL 5X TBE, 200 µL 10% APS
-- 14% gel: 5.6 mL 30% acrylamide/bisacrylamide (29:1), 3.8 mL H₂O (Milli-Q), 2.4 mL 5X TBE, 200 µL 10% APS
-- **15% gel: 6.0 mL 30% acrylamide/bisacrylamide (29:1), 3.4 mL H₂O (Milli-Q), 2.4 mL 5X TBE, 200 µL 10% APS**
-- 16% gel: 6.4 mL 30% acrylamide/bisacrylamide (29:1), 3 mL H₂O (Milli-Q), 2.4 mL 5X TBE, 200 µL 10% APS
+- 20% gel: 8.0 mL 30% acrylamide/bisacrylamide (29:1), 1.4 mL H₂O (Milli-Q), 2.4 mL 5X TBE, 200 µL 10% APS
 
 **Table 3.** Control Experiment
 

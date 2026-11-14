@@ -76,7 +76,7 @@
 .days {
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr)); /*minmax(0, ...) lets the columns shrink with the window instead of overflowing it*/
-    min-height: clamp(16rem, 28vw, 24rem);
+    min-height: 10rem; /*Fits the busiest day (4 entries); a day with more simply grows taller*/
 }
 
 .day {
