@@ -96,7 +96,8 @@ export default function NotebookTimeline({experiments, summaries = [], setActive
 
     /*Open on the first week of the notebook*/
     const [weekIndex, setWeekIndex] = useState(0)
-    const [showSummary, setShowSummary] = useState(false)
+    /*The weekly summary starts open; the button below can hide it*/
+    const [showSummary, setShowSummary] = useState(true)
 
     const {start: weekStart, number: weekNumber} = weeks[weekIndex]
     /*Today in the viewer's own time zone (entry dates are UTC, but "today" should not jump ahead in the evening in Calgary)*/
