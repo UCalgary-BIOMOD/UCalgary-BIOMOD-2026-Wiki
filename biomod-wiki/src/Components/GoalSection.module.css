@@ -9,12 +9,15 @@
 }
 
 .column {
+    height: 100%;
     --tone: var(--text-h);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     gap: var(--space-sm);
     min-width: 0;
+    
 }
 
 .gold {

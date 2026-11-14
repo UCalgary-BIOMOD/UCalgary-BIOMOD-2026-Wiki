@@ -100,33 +100,24 @@
                 {
                     "title": "Aptamer Modelling",
                     "items": [
-                        "Structural Model of Literature Aptamer",
-                        "Docking Simulations for Literature Aptamer"
+                        {"text": "Structural Model of Literature Aptamer", "done": true},
+                        {"text": "Docking Simulations for Literature Aptamer", "done": true}
                     ]
                 },
-                {
-                    "title": "In-Silico SELEX",
-                    "items": [
-                        "Aptamer Sequence Generation",
-                        "Secondary Structure Generation",
-                        "PDB File Generation",
-                        "Docking Simulation Integration",
-                        "Sequence Optimization Mutation"
-                    ]
-                },
+                
                 {
                     "title": "TMSD Modelling",
                     "items": [
-                        "Structural Model of Literature TMSD"
+                        {"text": "Structural Model of Literature TMSD", "done": true}
                     ]
                 },
                 {
                     "title": "System Modelling",
                     "items": [
-                        "Structural Model of Literature Aptamer + TMSD",
-                        "Aptamer + TMSD Substrate/Enzyme Model",
-                        "Structural Model of TMSD & Aptamer + HRP + TMB",
-                        "Docking Simulation of Full Model"
+                        {"text": "Structural Model of Literature Aptamer + TMSD", "done": true},
+                        {"text": "Aptamer + TMSD Substrate/Enzyme Model", "done": true},
+                        {"text": "Structural Model of TMSD & Aptamer + HRP + TMB", "done": true},
+                        {"text": "Docking Simulation of Full Model", "done": true}
                     ]
                 }
             ]
