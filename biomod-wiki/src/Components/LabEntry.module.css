@@ -9,6 +9,14 @@
     margin: 0;
     font-size: var(--fs-small);
     line-height: 1.35;
+    
+}
+
+.field2 {
+    margin: 0;
+    font-size: var(--fs-small);
+    line-height: 1.35;
+    white-space: pre-line;
 }
 
 .field strong {
@@ -33,4 +41,18 @@
 .markdown h3 {
     font-size: 1em;
     color: var(--text-h);
+}
+
+/*Markdown css for tables*/
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
 }
