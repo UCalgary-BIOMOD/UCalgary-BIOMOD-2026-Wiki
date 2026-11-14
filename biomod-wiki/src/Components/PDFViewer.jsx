@@ -1,4 +1,3 @@
-
 import styles from "./PDFViewer.module.css"
 import {useState} from "react"
 import VerticalCard from "./VerticalCard"
