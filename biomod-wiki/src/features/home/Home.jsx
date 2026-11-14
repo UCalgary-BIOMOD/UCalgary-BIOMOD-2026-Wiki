@@ -275,7 +275,7 @@ export default function Home() {
                 <>
                     <ViewportSection >
                         <p> Come explore our prototype for a point-of-care biosensor for the early detection of Alzheimer’s.</p>
-                        <YouTubeEmbed src="o_v9MY_FMcw"/>
+                        <YouTubeEmbed src="4ROPLni5mJg"/>
                     </ViewportSection>
                 </>
             )

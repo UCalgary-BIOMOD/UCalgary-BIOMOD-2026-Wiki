@@ -1,0 +1,222 @@
+{
+    "introduction": [
+        "The molecular components have to be chosen and arranged in a way that they retain their intended functions when combined into a larger system. For Aptonix, the aptamer must recognize amyloid beta 42, methylene blue must function as a redox reporter, TMSD must enable aptamer exchange, and the PAMAM dendrimer must support multiple attachments without significant steric interference occurring.",
+        "To evaluate these interactions before experimental assembly, we used computational modelling to check molecular structure and binding interactions. Our workflow included secondary and tertiary structure prediction, molecular docking, full system assembly, energy minimization, and molecular dynamics simulations. These methods helped assess the structural feasibility of Aptonix, identify potential limitations, and guide experimental development."
+    ],
+    "objectives": [
+        "Our investigations focused on four objectives:",
+        "- Evaluate biomarker recognition",
+        "- Investigate methylene blue and TMSD compatibility",
+        "- Construct the complete molecular assembly",
+        "- Assess structural relaxation and dynamics"
+    ],
+    "aptamer": [
+        "DNA aptamers are single stranded nucleic acids which are capable of folding into secondary and tertiary structures. Aptamers are able to form loops, stems, bulges, and other structural features that influence their interactions because they are not a double helix.",
+        "These structures are important for two reasons. The folding influences the accessibility of the molecular regions which are involved in target recognition. The spatial position and mobility of the attached redox reporter may affect electron transfer to the electrode.",
+        "Due to this, we could not select an aptamer only based on its nucleotide sequence or lowest predicted folding energy. We needed to understand the configurations and how these configurations might accommodate the other biosensor components."
+    ],
+    "aptamer2": [
+        "Our biosensor utilizes the AB7-92-1H1 DNA aptamer, which was noted in literature for its interactions with amyloid beta. Research reports a dissociation constant of approximately 63.4 nM for its interaction with monomeric AB42 under the reported experimental conditions [1]. So, the aptamer was selected from research rather than generated through computational work.",
+        "The aptamer sequence we used for modelling was:",
+        "5′-CCGGTGGGGGACCAGTACAAAAGTGGGTAGGGCGGGTTGGAAAA-3′",
+        "Four secondary structures were then identified (Table 1):"
+    ],
+    "aptamer3": [
+        "Structure 1 had the most favourable predicted folding free energy. Folding energy alone was not used to determine which model should be carried forward as other configurations might have more favourable molecular accessibility and interactions with methylene blue."
+    ],
+    "aptamer4": [
+        "To visualize the aptamer structures, the secondary structure data was converted and processed using RNAComposer. The resulting structures were modified in UCSF Chimera to represent DNA by converting uracil to thymine and adjusting hydrogens.",
+        "These models were then used for structural comparisons and molecular docking while serving as approximate representations rather than experimentally validated conformations."
+    ],
+    "aptamer5": [
+        "The configurations were superimposed and inspected to compare their arrangements near the 5′ terminus. This region was relevant because our biosensor design incorporates a methylene blue reporter at this end of the aptamer.",
+        "Structures 1 and 2 were identified as promising because they were less crowded. Molecular docking was then used to investigate whether this affected methylene blue interactions."
+    ],
+    "mb1": [
+        "Our proposed mechanism depends on target induced changes in the aptamer that affect the electron transfer between methylene blue (MB). Previous research has also described noncovalent interactions between methylene blue and nucleic acids [2].",
+        "We investigated how methylene blue interacted with the predicted aptamer structures. Our final design uses a chemically attached redox reporter, but these docking experiments were done for initial information about favourable regions of contact."
+    ],
+    "mb2": [
+        "AutoDock Vina was used to model interactions between methylene blue and the different aptamer structures. The aptamer models acted as receptors while methylene blue was treated as the molecular ligand. Docking calculations explored different possible binding configurations and ranked them using the Vina scoring function.",
+        "Broad searches and more localized docking investigations were done. The resulting poses were inspected in Chimera to determine where methylene blue was positioned.",
+        "In addition to just docking scores, we examined if the favoured poses were also repeatedly in similar regions of the aptamer (Table 2)."
+    ],
+    "mb3": [
+        "Structure 2 produced a slightly more favourable docking score, its predicted methylene blue locations were more dispersed across the structure.",
+        "Structure 1 had a very similar score and showed more consistency in the location of its predicted methylene blue interactions. All 20 of the poses for all replicates run were concentrated near the 5’ region.",
+        "For our application, we believe consistency and location is more relevant because MB is intended to serve as a reporter that needs to be attached to the terminus end of the aptamer every time. The small difference between the best recorded Vina scores was not considered sufficient to establish a meaningful difference in experimental binding affinity.",
+        "These results supported Structure 1 as our practical starting geometry for subsequent modelling."
+    ],
+    "recognition1": [
+        "A major requirement of our biosensor is the ability to distinguish its intended biomarker from other molecules that may be present in a biological sample. The selected aptamer has previously been characterized experimentally, but putting it into a larger assembly could affect its interactions, requiring us to do more tests. We used molecular docking to investigate how the aptamer interacted with AB42 and different control molecules."
+    ],
+    "recognition2": [
+        "HDOCK was used to investigate the interactions between the aptamer and AB42 (6SZF), along with negative controls including AB40, human serum albumin, and different scrambled peptides. The predicted complexes were evaluated based on their docking scores and binding configurations. More negative scores do not directly represent experimental binding affinities because of differences like molecular size and surface area, but serve a good baseline."
+    ],
+    "recognition3": [
+        "AB40 differs from AB42 by the absence of the final two amino acid residues. We used it as a control to test whether our model could distinguish between closely related peptides.",
+        "In Table 3, the initial HDOCK results were:"
+    ],
+    "recognition4": [
+        "AB42 had a slightly more favourable mean score across the top ten poses, while AB40 had the best individual score. The AB42 scores were also more closely grouped. These results did not show clear selectivity for AB42 and showed why we needed to consider the full score distribution.",
+        "This does not mean that the aptamer lacks specificity experimentally. It means that our model and docking procedure could not reliably reproduce the recognition reported in literature."
+    ],
+    "recognition5": [
+        "We used human serum albumin (HSA) as another control because it is abundant in blood and could interact nonspecifically with the aptamer. HSA produced a best HDOCK score of -297.44, but it is much larger than AB42 and offers more surface area for possible contacts.",
+        "Because of this, we could not use its more favourable scores to conclude that the aptamer binds HSA more strongly. The results helped us investigate possible nonspecific interactions, but did not establish any experimental reactivity."
+    ],
+    "recognition6": [
+        "To reduce the effect of molecular size, we tested scrambled AB42 sequences. These controls retained the approximate length and amino acid composition of AB42 but changed the residue order. This allowed us to check whether favourable docking depended on the original sequence."
+    ],
+    "recognition7": [
+        "The first scrambled sequence had less favourable scores than AB42. The second and third had mean scores that were similar or slightly more favourable. The docking procedure also predicted favourable interactions with peptides that did not have the native AB42 sequence.",
+        "The scrambled peptides retained similar overall hydrophobic properties. Their scores could therefore reflect nonspecific hydrophobic contacts or available surface area. These results do not identify hydrophobicity as the main binding mechanism. Testing that would require controls that vary hydrophobicity while accounting for structure and other molecular differences."
+    ],
+    "recognition8": [
+        "Overall, our docking results did not reliably distinguish AB42 from all the controls. Favourable scores were also obtained for other peptides and larger proteins. We would need to consider other factors alongside the scores.",
+        "The aptamer’s reported affinity for AB42 still supports its selection, but our models do not independently confirm its selectivity. Native PAGE and controlled binding tests are needed to evaluate the actual specificity of it after assembly."
+    ],
+    "tmsdmb1": [
+        "Aptonix uses toehold mediated strand displacement to exchange recognition units without replacing the entire sensor. This requires adding DNA sequences to the aptamer assembly, which could change its folding and accessibility. We used docking to investigate whether the TMSD extension affected the predicted methylene blue interactions."
+    ],
+    "tmsdmb2": [
+        "We added the TMSD substrate sequence to the AB7-92-1H1 aptamer to form an extended DNA construct.",
+        "The extended sequence used for structural modelling was:",
+        "5′-CCGGTGGGGGACCAGTACAAAAGTGGGTAGGGCGGGTTGGAAAAATGGAGATGAGGG-3′",
+        "The terminal TMSD region was designed to hybridize with the complementary region of the incumbent strand.",
+        "The six nucleotide recognition domain is:",
+        "B*: 5′-TGAGGG-3′",
+        "The complementary incumbent-strand segment is:",
+        "B: 3′-ACTCCC-5′",
+        "We modelled the extended DNA in three dimensions to examine how the added sequence affected aptamer geometry and possible methylene blue contacts."
+    ],
+    "tmsdmb3": [
+        "We used AutoDock Vina to compare methylene blue docking with the original and extended aptamers, examining the twenty highest ranked poses from each initial run. The boxplot showed more closely grouped scores for the extended construct and greater variation in the controls. This suggested that the TMSD sequence could affect the predicted interactions.",
+        "The comparison had several limitations. Differences in the predicted DNA structures could affect docking, and poses from the same run were not independent replicates. Also, noncovalent docking does not directly predict the behaviour of the chemically attached reporter.",
+        "These results suggest that the extension can affect interaction geometry, but do not confirm that it preserves or improves electrochemical performance."
+    ],
+    "tmsdmb4": [
+        "We then investigated AB42 docking with a receptor containing Aptamer 3 Structure 1, the TMSD duplex, and a methylene blue related terminal modification. The corresponding model without the reporter was used for comparison.",
+        "HDOCK searches gave the following results:"
+    ],
+    "tmsdmb5": [
+        "The model without the methylene blue had more favourable scores. However, AB42 was often positioned near the exposed TMSD region rather than the original aptamer recognition region. This suggested possible nonspecific contacts with the added DNA and prevented us from isolating the MB’s effect on AB42 recognition."
+    ],
+    "complete1": [
+        "We built three dimensional models of Aptonix to examine how the aptamer, methylene blue, TMSD, and PAMAM dendrimer could fit together. The components needed to connect correctly without significant steric interference.",
+        "These models helped us visualize their positions and spacing, and provided starting structures for energy minimization and molecular dynamics."
+    ],
+    "complete2": [
+        "The TMSD module uses DNA strands designed for hybridization and displacement. We modelled the incumbent strand, TMSD Y, using the following sequence:",
+        "5′-CCACATACATCATATTCCCTCA-3′",
+        "We aligned its complementary six nucleotide domain with the B* region of the aptamer associated strand in a B form DNA duplex. Placing the structures together visually was not enough because we had to ensure bonds were properly formed. Molecular editing tools were used to connect this region to the rest of the construct and check backbone continuity and strand alignment."
+    ],
+    "complete3": [
+        "PAMAM dendrimers are branched molecules with repeating amine containing units. Their terminal groups provide multiple sites for attaching sensing modules. We modelled the generation 1 PAMAM dendrimer we would be using in the lab from models already present online.",
+        "The dendrimer required parameters beyond those used for standard DNA. We used CHARMM compatible parameters, with additional terms developed or adapted through CGenFF. We first tested the dendrimer on its own to separate problems with its structure and parameters from those introduced by DNA attachment."
+    ],
+    "complete4": [
+        "Connecting the PAMAM dendrimer to the TMSD incumbent strand was a major modelling challenge. We considered several attachment chemistries during development, and the later models used a thiol modified DNA with a SMCC linker.",
+        "SMCC has an NHS ester group that can react with a primary amine on PAMAM to form an amide bond. Its maleimide group can then react with the thiol modified DNA to form a thioether containing linkage.",
+        "We prepared the DNA, linker, and dendrimer, positioned their reactive groups, and built the combined structure. The main difficulty was generating topology and parameter files for molecular dynamics. Standard DNA force fields did not include all the atom types and bonded terms needed for the custom DNA - SMCC - PAMAM junction.",
+        "The linkage parameters were simplified and adapted from chemically similar structures, allowing us to construct a stable representation of the final attachment chemistry within our computational model."
+    ],
+    "complete5": [
+        "We then assembled models with multiple DNA sensing modules attached to one dendrimer.",
+        "The two aptamer system included:",
+        "- One generation 1 PAMAM dendrimer",
+        "- Two aptamer constructs",
+        "- Two TMSD Y strands",
+        "- Two reacted SMCC linker representations",
+        "We placed the DNA modules at different attachment sites to examine their spacing and check for obvious overlap.",
+        "We also created three aptamer visualizations. These models showed possible arrangements, but did not establish experimentally validated structures."
+    ],
+    "md1": [
+        "DNA, linkers, and dendrimer branches are flexible. Their movement can affect the spacing and accessibility of the sensing modules, which a static model cannot fully show. We used NAMD to run the simulations and VMD to prepare the structures, visualize them, and analyse their movement.",
+        "We investigated two main questions:",
+        "- Could the assembled models relax to lower-energy structures under the assigned force field?",
+        "- Did the models show obvious deformation, collapse, or crowding during the simulations?"
+    ],
+    "md2": [
+        "We used CHARMM family force fields and CGenFF derived parameters for DNA, PAMAM, and the custom linkers. Preparation involved generating coordinate and PSF files, defining connectivity, and checking bond, angle, dihedral, and nonbonded parameters. Some bonded terms at the custom junctions needed additional definitions.",
+        "We used generalized Born implicit solvent to represent the surrounding water. The full system minimization used an ionic concentration of 0.15 M.",
+        "Minimization was done in two stages:",
+        "- Approximately 5,000 restrained steps to reduce local clashes while limiting large movements",
+        "- Approximately 15,000 unrestrained steps to allow further relaxation.",
+        "This reduced the initial strain before allowing larger rearrangements. The resulting energies depend on the custom force field parameters and simplified junctions used in our models."
+    ],
+    "md3": [
+        "The single aptamer model contained 2,772 atoms. Its initial potential energy was very large and positive, consistent with substantial strain in the assembled structure. Minimization greatly reduced this energy:"
+    ],
+    "md4": [
+        "The decrease in energy showed that the initial structure could relax under the selected force field. This energy included bond, angle, dihedral, electrostatic, and van der Waals contributions. It does not measure experimental binding energy or confirm that the biosensor is thermodynamically stable or would assemble spontaneously."
+    ],
+    "md5": [
+        "The two aptamer model contained approximately 5,390 atoms and underwent a comparable minimization:"
+    ],
+    "md6": [
+        "The two aptamer model also showed a large decrease in potential energy. Its final energy was more negative than the single aptamer model, as expected for a larger system with more interactions. To make a limited comparison, we divided each final energy by its atom count:"
+    ],
+    "md7": [
+        "The average energies per atom were similar, so adding a second aptamer did not produce an obvious increase after minimization. This comparison does not account for entropy, solvent free energy, differences in composition, or alternative structures. We therefore used it as an initial check rather than evidence that the two systems were equally stable."
+    ],
+    "md8": [
+        "After minimization, we ran pilot simulations to examine the movement of the DNA - dendrimer assemblies. We also tested PAMAM and TMSD Y separately to check their topologies and parameters before combining them.",
+        "The completed two aptamer simulation ran for approximately 1 ns. We examined the arrangement of the components and changes in the distances between them."
+    ],
+    "md9": [
+        "The selected distances changed only slightly during the simulation, with no major collapse or deformation observed. The aptamers started far apart, which reduced the chance of direct steric collisions in this configuration.",
+        "These results depend on the initial arrangement. Widely separated aptamers cannot show how many modules could be packed onto a dendrimer or electrode. Also, a 1 ns simulation is too short to establish long term stability or sustained sensor function.",
+        "The model did not fully represent the electrode or its interactions with the reporter, target, and solution. We therefore used the simulation as an initial check of structural behaviour and steric compatibility."
+    ],
+    "challenges1": [
+        "Modelling Aptonix required us to address several structural and computational challenges."
+    ],
+    "challenges2": [
+        "The predicted aptamer structures gave different geometries and docking results. Structure 2 had the best individual methylene blue score, but Structure 1 had more consistent contact locations. We selected Structure 1 after considering both the scores and where methylene blue was positioned."
+    ],
+    "challenges3": [
+        "AB40, albumin, and scrambled peptides also produced favourable scores. We expanded the controls and considered factors such as peptide composition and surface area. This helped us identify the limits of the docking results and the need for experimental specificity tests."
+    ],
+    "challenges4": [
+        "Building a model with the correct connectivity was more difficult than creating a three dimensional visualization. We prepared the DNA, TMSD duplex, dendrimer, and linker separately, checked their connections, and added the topology and parameter definitions needed for the combined system after."
+    ],
+    "challenges5": [
+        "Standard DNA force fields did not fully describe the dendrimer - DNA junction. We added CHARMM compatible parameters and used simplified representations to run the initial minimization and dynamics."
+    ],
+    "challenges6":[
+        "The models helped us examine molecular arrangements and identify obvious clashes. Experimental tests are still needed to confirm target recognition, strand displacement, electron transfer, and sensor regeneration."
+    ],
+    "future1": [
+        "Further docking could compare peptides with different hydrophobicities but similar sizes and structural properties. This would help test whether hydrophobic contacts contribute to the favourable scores. Grouping similar poses, examining how often particular contacts occur, and measuring binding experimentally would help us interpret the results."
+    ],
+    "future2": [
+        "To check reproducibility, we could repeat docking with the same receptor structures, search regions, and settings while changing the random seed. Statistical comparisons should use results from independent runs, since poses from a single run are not independent observations."
+    ],
+    "future3": [
+        "We could extend the one and two aptamer simulations to three or four modules to examine linker geometry and target accessibility / crowding. A systematic loading study would need multiple starting orientations and longer simulations."
+    ],
+    "future4": [
+        "Longer simulations with independent replicates would help us examine DNA flexibility, dendrimer movement, and changes in spacing. Better parameters for the custom linkages and explicit solvent would also reduce some of the current approximations."
+    ],
+    "future5": [
+        "Our separate in silico SELEX project aims to generate DNA sequences, predict their structures, and use docking results to guide optimization. This could help identify alternative aptamers for AB42 or other biomarkers."
+    ],
+    "conclusion": [
+        "We used computational modelling to investigate the design of Aptonix before and alongside experimental work. Comparing aptamer structures and methylene blue docking helped us select Structure 1 for further modelling.",
+        "The biomarker controls showed that favourable docking scores were not specific to AB42. This limited what we could conclude about recognition and highlighted the need to test our modified construct experimentally.",
+        "We also examined how TMSD and methylene blue affected predicted interactions, then assembled models of the DNA modules attached to PAMAM. Minimization and short molecular dynamics simulations helped us assess structural relaxation, spacing, and possible steric interference.",
+        "These models helped us identify possible arrangements, resolve initial problems, and decide what to test next. Experimental work is still needed to determine whether the assembled biosensor retains its intended recognition, TMSD strand exchange, and electrochemical functions we have planned."
+    ],
+    "references": [
+        {
+        "text": "Y. Zheng et al., “Advances in aptamers against Aβ and applications in Aβ detection and regulation for Alzheimer's disease,” *Theranostics*, 12(5), 2095-2114, 2022. ",
+        "url": "https://doi.org/10.7150/thno.69465"
+        },
+        {
+        "text": "L. Fu, C.-T. Lin, and K.-M. Hassan, “Methylene blue in electrochemical (bio)sensing: Historical evolution, mechanistic insights, and emerging applications-A review,” *Analytica Chimica Acta*, 1377, 344468, 2025. ",
+        "url": "https://doi.org/10.1016/j.aca.2025.344468"
+        }
+    ]
+    
+}

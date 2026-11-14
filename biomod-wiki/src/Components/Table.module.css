@@ -2,25 +2,20 @@
     width: 100%;
     overflow-x: auto;
     margin: var(--space-md) 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .table {
-    width: 100%;
-    min-width: 1200px;
+    
+    min-width: 80%;
     table-layout: fixed;
     border-collapse: collapse;
     font-size: var(--fs-small);
 }
 
-.caption {
-    caption-side: top;
-    padding-bottom: 1rem;
-    color: var(--text);
-    font-weight: 400;
-    font-size: 1.3rem;
-    text-align: center;
-    line-height: 1.5;
-}
+
 
 .table th,
 .table td {

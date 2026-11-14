@@ -1,5 +1,5 @@
 import styles from "./Table.module.css"
-
+import ReactMarkdown from "react-markdown"
 /**
  * A simple themed data table. Scrolls sideways on narrow screens instead of overflowing the page.
  * @param columns The column definitions: [{key: "name", label: "Name"}]
@@ -11,13 +11,18 @@ import styles from "./Table.module.css"
 export default function Table({columns, rows = [], caption, className = "", headerGroups = []}) {
     return (
         <div className = {`${styles.wrapper} ${className}`}>
+            {caption && (
+                <ReactMarkdown>
+                    {caption}
+                </ReactMarkdown>
+            )}
             <table className = {styles.table}>
                 <colgroup>
                     {columns.map((column) => (
                         <col key={column.key} style={{ width: column.width}}/>
                     ))}
                 </colgroup>
-                {caption && <caption className = {styles.caption}>{caption}</caption>}
+                
                 <thead>
                     {headerGroups.length > 0 && (
                         <tr>
