@@ -37,13 +37,14 @@
 .h2 {
     flex: 1 1 auto;
     min-width: 0;
-    margin: 0 0 0 var(--space-sm);
     font-family: "League Spartan", system-ui, sans-serif; /*Geometric face from the header mockup (system-ui comes first in --sans)*/
-    font-size: clamp(1.2rem, 0.6rem + 3vw, 3.75rem);
-    font-weight: 700;
-    line-height: 1.05;
-    text-align: center;
+    font-size: clamp(1rem, 0.6rem + 2vw, 3rem);
+    font-weight: 600;
+    line-height: 1.0;
+    text-align: left;
     overflow-wrap: anywhere;
+    margin: 0;
+    padding: 0;
 }
 
 .h3{
@@ -66,7 +67,7 @@
     border: none;
     font: inherit; /*Inherit from the navigation bar*/
     font-family: "League Spartan", system-ui, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0;
     /*Underline indicator thing so it also works for the items in the drop down menu*/
     &:global.active {

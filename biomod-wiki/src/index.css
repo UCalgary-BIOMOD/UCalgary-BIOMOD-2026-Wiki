@@ -1,3 +1,5 @@
+@import "@fontsource/league-spartan/300.css";
+@import "@fontsource/league-spartan/200.css";
 @import "@fontsource/league-spartan/400.css";
 @import "@fontsource/league-spartan/500.css";
 @import "@fontsource/league-spartan/600.css";
@@ -80,7 +82,7 @@
 
 @media (min-width: 769px) {
   :root {
-    --top-nav-height: 112px; /*Taller header on desktop, per the NewHeader1.0 mockup*/
+    --top-nav-height: 90px; /*Taller header on desktop, per the NewHeader1.0 mockup*/
   }
 }
 
@@ -116,7 +118,7 @@ h2,
 h3,
 h4 {
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text-h);
 }
 
@@ -144,7 +146,7 @@ p {
   margin: 0 0 var(--space-md); /*Bottom margin only; pages can override per-component.*/
   font-size: var(--fs-body);
   line-height: 100%;
-  font-weight: 500;
+  font-weight: 200;
 }
 
 a{
