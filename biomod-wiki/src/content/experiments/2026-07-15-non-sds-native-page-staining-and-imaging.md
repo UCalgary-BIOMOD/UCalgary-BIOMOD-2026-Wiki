@@ -46,6 +46,4 @@ To stain the TMSD native PAGE gel and image the gel.
 
 **Figure 4.** Native polyacrylamide gel electrophoresis using 15% acrylamide gel solution in 1x TBE buffer and visualized by SYBR Safe staining. DNA samples with a concentration of 10 um were prepared to be loaded into the polyacrylamide gel by mixing 10 μL of the samples with 2 μL of 6x gel loading dye. The gel was run at 120 V for 40 minutes and imaged using the Bento Lab system. No visible fluorescent bands were observed under blue-light illumination.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

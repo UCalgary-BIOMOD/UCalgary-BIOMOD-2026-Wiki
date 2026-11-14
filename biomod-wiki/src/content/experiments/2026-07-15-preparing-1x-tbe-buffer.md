@@ -50,6 +50,4 @@ Make 1x TBE buffer for TMSD native PAGE experiment.
 
 - We weighed out 2032.9 mg of magnesium chloride hexahydrate.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

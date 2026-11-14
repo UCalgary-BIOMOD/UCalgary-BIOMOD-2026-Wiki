@@ -123,6 +123,4 @@ Confirm binding between the aptamer and Aβ42 using native PAGE electrophoresis 
 
 - Agarose Native PAGE Gel % = (2.67 mL * 30% Acrylamide Bis Solution 29:1) / 10 mL total volume = 8%
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

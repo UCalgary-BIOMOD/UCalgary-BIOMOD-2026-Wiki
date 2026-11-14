@@ -34,6 +34,3 @@ To stain the control native PAGE gel and image the gel.
 6. Removed the gel from the staining solution and transferred it to the Bento Lab imaging system.
 7. Captured fluorescence images of the stained gel.
 
-## Supplementary Information
-
-- References:  [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

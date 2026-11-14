@@ -94,6 +94,4 @@ Confirm binding between the aptamer-MB conjugate and Aβ42 using native PAGE ele
 - Water bath not found, used heat block instead.
 - Allowed gradual cooling.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

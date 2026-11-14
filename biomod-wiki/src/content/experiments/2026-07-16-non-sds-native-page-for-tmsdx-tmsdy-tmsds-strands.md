@@ -112,6 +112,4 @@ To prepare and run a native PAGE for the TMSD strands (no modifications) to ensu
 
     - This was resolved by resetting the supply to 120 V and ensuring a current was running again.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

@@ -41,6 +41,4 @@ To stain the control native PAGE gel and image the gel.
 
 **Figure 14.** Native polyacrylamide gel electrophoresis using 20% acrylamide gel solution in 1x TBE buffer and visualized by SYBR Safe staining. DNA aptamer samples with a concentration of 10 um incubated with hemoglobin or amyloid-beta 42 proteins were prepared to be loaded into the polyacrylamide gel by mixing the samples with 2x native sample buffer. The gel was run at 100 V for 60 minutes and imaged using the Bento Lab system. A strong fluorescent band was observed in lanes 5 and 7, and a faint fluorescent band was observed in lanes 3, 4, and 6. Lane 1: Empty; Lane 2: DNA ladder; Lane 3: aptamer-MB + Aβ42; Lane 4: aptamer-MB + hemoglobin (specificity control); Lane 5: nonspecific aptamer + Aβ42 (negative control); Lane 6: aptamer-MB only; Lane 7: nonspecific aptamer only; Lane 8: Aβ42 only; Lane 9: hemoglobin only; Lane 10: Empty.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

@@ -44,6 +44,4 @@ To resuspend TMSD and aptamer strands from IDT in TE buffer and have a 100 um st
 - The film was at the bottom of each tube.
 - After vortexing/resuspending the film dissolved.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

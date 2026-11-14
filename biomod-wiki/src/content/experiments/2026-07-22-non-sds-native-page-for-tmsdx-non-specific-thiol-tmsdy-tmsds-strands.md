@@ -58,6 +58,4 @@ To prepare and run a native PAGE for the TMSD strands, using a non-specific TMSD
 - **15% gel: 6.0 mL 30% acrylamide/bisacrylamide (29:1), 3.4 mL H₂O (Milli-Q), 2.4 mL 5X TBE, 200 µL 10% APS**
 - 16% gel: 6.4 mL 30% acrylamide/bisacrylamide (29:1), 3 mL H₂O (Milli-Q), 2.4 mL 5X TBE, 200 µL 10% APS
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

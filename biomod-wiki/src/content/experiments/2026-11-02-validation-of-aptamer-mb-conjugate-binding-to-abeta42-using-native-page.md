@@ -69,6 +69,4 @@ Confirm binding between the aptamer-MB conjugate and Aβ42 using native PAGE ele
     4. 30 µL non target protein + 30 µL 2X native sample buffer
 2. Prepared Aβ42 solution by resuspending in DMSO.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

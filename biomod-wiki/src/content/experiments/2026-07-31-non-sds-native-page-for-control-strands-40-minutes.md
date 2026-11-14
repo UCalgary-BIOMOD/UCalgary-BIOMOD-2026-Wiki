@@ -96,6 +96,3 @@ To confirm that TMSDY, TMSDS, TMSDX, Aptamer, and Thiol TMSDY strands show up as
 - Tube 4: AB42AptTS (10 µL). Single-strand control
 - Tube 5: Thiol TMSDY (10 µL). Single-strand control
 
-## Supplementary Information
-
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)
