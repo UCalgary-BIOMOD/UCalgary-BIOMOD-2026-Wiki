@@ -77,6 +77,7 @@ export default function Description() {
                         ></img>} 
                         caption = "Rendering of the full system configuration for our solution including the biomarker, methylene blue, the aptamer, the dendrimer scaffold, and the hybridized TMSD segment. Blue boxes indicate the high-level purpose of each component. System was visualized in UCSF Chimera. "
                     />
+                    <Paragraphs paragraphs = {content.novelty2}/>
                     <FigureArea 
                         naturalHeight={true}
                         number = {3} 
