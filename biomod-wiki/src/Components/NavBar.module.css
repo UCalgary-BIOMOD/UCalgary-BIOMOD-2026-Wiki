@@ -26,7 +26,7 @@
 
 .logo {
     display: block;
-    width: clamp(3.25rem, 2rem + 3.4vw, 5.5rem); /*Black disc behind the brain, as in the header mockup*/
+    width: clamp(3.25rem, 2rem + 2.2vw, 4.8rem); /*Black disc behind the brain, as in the header mockup*/
     aspect-ratio: 1;
     padding: 5%;
     border-radius: 50%;

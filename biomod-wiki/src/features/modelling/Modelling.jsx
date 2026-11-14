@@ -69,7 +69,7 @@ export default function Modelling() {
                             number = {1} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig1.png"
                                 alt = "AB7-92-1H1"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -102,7 +102,7 @@ export default function Modelling() {
                             number = {2} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig2.png"
                                 alt = "AutoDock Vina for Aptamer 3, Structure 1 and 2"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -150,7 +150,7 @@ export default function Modelling() {
                             number = {3} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig3.png"
                                 alt = "HDOCK Predictions for AB42 and control molecules"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -161,7 +161,7 @@ export default function Modelling() {
                             number = {4} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig4.png"
                                 alt = "HDOCK Predictions for AB42 and scrambled peptide controls"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -189,7 +189,7 @@ export default function Modelling() {
                             number = {5} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig5.png"
                                 alt = "MB docking scores for aptamer vs. extended construct"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -229,7 +229,7 @@ export default function Modelling() {
                             number = {6} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig6.png"
                                 alt = "One Aptamer Model"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -240,7 +240,7 @@ export default function Modelling() {
                             number = {7} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig7.png"
                                 alt = "One, Two and Three Aptamer models"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -291,7 +291,7 @@ export default function Modelling() {
                             number = {8} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig8.png"
                                 alt = "Potential Energy of NAMD minimization stages"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -351,7 +351,7 @@ export default function Modelling() {
                             number = {9} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig9.png"
                                 alt = "Intial vs. final configurations of the two apatamer model"
                                 className = {styles.figureImage}
                             ></img>} 
@@ -362,7 +362,7 @@ export default function Modelling() {
                             number = {10} 
                             children = 
                             {<img
-                                src = ""
+                                src = "./images/modelling/modelling-fig10.png"
                                 alt = "Distances between aptamer modules"
                                 className = {styles.figureImage}
                             ></img>} 
