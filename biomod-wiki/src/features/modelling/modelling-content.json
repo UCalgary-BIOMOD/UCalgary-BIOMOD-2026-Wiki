@@ -216,7 +216,44 @@
         {
         "text": "L. Fu, C.-T. Lin, and K.-M. Hassan, “Methylene blue in electrochemical (bio)sensing: Historical evolution, mechanistic insights, and emerging applications-A review,” *Analytica Chimica Acta*, 1377, 344468, 2025. ",
         "url": "https://doi.org/10.1016/j.aca.2025.344468"
+        },
+        {
+        "text": "M. Zuker, “Mfold web server for nucleic acid folding and hybridization prediction,” *Nucleic Acids Research*, 31(13), 3406-3415, 2003. ",
+        "url": "https://doi.org/10.1093/nar/gkg595"
+        },
+        {
+        "text": "M. Popenda et al., “Automated 3D structure composition for large RNAs,” *Nucleic Acids Research*, 40(14), e112, 2012. ",
+        "url": "https://doi.org/10.1093/nar/gks339"
+        },
+        {
+        "text": "E. F. Pettersen et al., “UCSF Chimera—A visualization system for exploratory research and analysis,” *Journal of Computational Chemistry*, 25(13), 1605-1612, 2004. ",
+        "url": "https://doi.org/10.1002/jcc.20084"
+        },
+        {
+        "text": "J. Eberhardt et al., “AutoDock Vina 1.2.0: New docking methods, expanded force field, and Python bindings,” *Journal of Chemical Information and Modeling*, 61(8), 3891-3898, 2021. ",
+        "url": "https://doi.org/10.1021/acs.jcim.1c00203"
+        },
+        {
+        "text": "Y. Yan et al., “HDOCK: A web server for protein-protein and protein-DNA/RNA docking based on a hybrid strategy,” *Nucleic Acids Research*, 45(W1), W365-W373, 2017. ",
+        "url": "https://doi.org/10.1093/nar/gkx407"
+        },
+        {
+        "text": "K. Hart et al., “Optimization of the CHARMM additive force field for DNA: Improved treatment of the BI/BII conformational equilibrium,” *Journal of Chemical Theory and Computation*, 8(1), 348-362, 2012. ",
+        "url": "https://doi.org/10.1021/ct200723y"
+        },
+        {
+        "text": "K. Vanommeslaeghe et al., “CHARMM general force field: A force field for drug-like molecules compatible with the CHARMM all-atom additive biological force fields,” *Journal of Computational Chemistry*, 31(4), 671-690, 2010. ",
+        "url": "https://doi.org/10.1002/jcc.21367"
+        },
+        {
+        "text": "J. C. Phillips et al., “Scalable molecular dynamics on CPU and GPU architectures with NAMD,” *Journal of Chemical Physics*, 153(4), 044130, 2020. ",
+        "url": "https://doi.org/10.1063/5.0014475"
+        },
+        {
+        "text": "W. Humphrey, A. Dalke, and K. Schulten, “VMD: Visual molecular dynamics,” *Journal of Molecular Graphics*, 14(1), 33-38, 1996. ",
+        "url": "https://doi.org/10.1016/0263-7855(96)00018-5"
         }
+
     ]
     
 }
