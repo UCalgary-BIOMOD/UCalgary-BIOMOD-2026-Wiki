@@ -19,13 +19,13 @@
         "Our biosensor utilizes the AB7-92-1H1 DNA aptamer, which was noted in literature for its interactions with amyloid beta. Research reports a dissociation constant of approximately 63.4 nM for its interaction with monomeric AB42 under the reported experimental conditions [1]. So, the aptamer was selected from research rather than generated through computational work.",
         "The aptamer sequence we used for modelling was:",
         "5′-CCGGTGGGGGACCAGTACAAAAGTGGGTAGGGCGGGTTGGAAAA-3′",
-        "Four secondary structures were then identified (Table 1):"
+        "Four secondary structures were then identified using Mfold [2] (Table 1):"
     ],
     "aptamer3": [
         "Structure 1 had the most favourable predicted folding free energy. Folding energy alone was not used to determine which model should be carried forward as other configurations might have more favourable molecular accessibility and interactions with methylene blue."
     ],
     "aptamer4": [
-        "To visualize the aptamer structures, the secondary structure data was converted and processed using RNAComposer. The resulting structures were modified in UCSF Chimera to represent DNA by converting uracil to thymine and adjusting hydrogens.",
+        "To visualize the aptamer structures, the secondary structure data was converted and processed using RNAComposer [3]. The resulting structures were modified in UCSF Chimera [4] to represent DNA by converting uracil to thymine and adjusting hydrogens.",
         "These models were then used for structural comparisons and molecular docking while serving as approximate representations rather than experimentally validated conformations."
     ],
     "aptamer5": [
@@ -33,11 +33,11 @@
         "Structures 1 and 2 were identified as promising because they were less crowded. Molecular docking was then used to investigate whether this affected methylene blue interactions."
     ],
     "mb1": [
-        "Our proposed mechanism depends on target induced changes in the aptamer that affect the electron transfer between methylene blue (MB). Previous research has also described noncovalent interactions between methylene blue and nucleic acids [2].",
+        "Our proposed mechanism depends on target induced changes in the aptamer that affect the electron transfer between methylene blue (MB). Previous research has also described noncovalent interactions between methylene blue and nucleic acids [5].",
         "We investigated how methylene blue interacted with the predicted aptamer structures. Our final design uses a chemically attached redox reporter, but these docking experiments were done for initial information about favourable regions of contact."
     ],
     "mb2": [
-        "AutoDock Vina was used to model interactions between methylene blue and the different aptamer structures. The aptamer models acted as receptors while methylene blue was treated as the molecular ligand. Docking calculations explored different possible binding configurations and ranked them using the Vina scoring function.",
+        "AutoDock Vina [6] was used to model interactions between methylene blue and the different aptamer structures. The aptamer models acted as receptors while methylene blue was treated as the molecular ligand. Docking calculations explored different possible binding configurations and ranked them using the Vina scoring function.",
         "Broad searches and more localized docking investigations were done. The resulting poses were inspected in Chimera to determine where methylene blue was positioned.",
         "In addition to just docking scores, we examined if the favoured poses were also repeatedly in similar regions of the aptamer (Table 2)."
     ],
@@ -51,7 +51,7 @@
         "A major requirement of our biosensor is the ability to distinguish its intended biomarker from other molecules that may be present in a biological sample. The selected aptamer has previously been characterized experimentally, but putting it into a larger assembly could affect its interactions, requiring us to do more tests. We used molecular docking to investigate how the aptamer interacted with AB42 and different control molecules."
     ],
     "recognition2": [
-        "HDOCK was used to investigate the interactions between the aptamer and AB42 (6SZF), along with negative controls including AB40, human serum albumin, and different scrambled peptides. The predicted complexes were evaluated based on their docking scores and binding configurations. More negative scores do not directly represent experimental binding affinities because of differences like molecular size and surface area, but serve a good baseline."
+        "HDOCK [7] was used to investigate the interactions between the aptamer and AB42 (6SZF), along with negative controls including AB40, human serum albumin, and different scrambled peptides. The predicted complexes were evaluated based on their docking scores and binding configurations. More negative scores do not directly represent experimental binding affinities because of differences like molecular size and surface area, but serve a good baseline."
     ],
     "recognition3": [
         "AB40 differs from AB42 by the absence of the final two amino acid residues. We used it as a control to test whether our model could distinguish between closely related peptides.",
@@ -113,7 +113,7 @@
     ],
     "complete3": [
         "PAMAM dendrimers are branched molecules with repeating amine containing units. Their terminal groups provide multiple sites for attaching sensing modules. We modelled the generation 1 PAMAM dendrimer we would be using in the lab from models already present online.",
-        "The dendrimer required parameters beyond those used for standard DNA. We used CHARMM compatible parameters, with additional terms developed or adapted through CGenFF. We first tested the dendrimer on its own to separate problems with its structure and parameters from those introduced by DNA attachment."
+        "The dendrimer required parameters beyond those used for standard DNA. We used CHARMM compatible parameters [8], with additional terms developed or adapted through CGenFF [9]. We first tested the dendrimer on its own to separate problems with its structure and parameters from those introduced by DNA attachment."
     ],
     "complete4": [
         "Connecting the PAMAM dendrimer to the TMSD incumbent strand was a major modelling challenge. We considered several attachment chemistries during development, and the later models used a thiol modified DNA with a SMCC linker.",
@@ -132,7 +132,7 @@
         "We also created three aptamer visualizations. These models showed possible arrangements, but did not establish experimentally validated structures."
     ],
     "md1": [
-        "DNA, linkers, and dendrimer branches are flexible. Their movement can affect the spacing and accessibility of the sensing modules, which a static model cannot fully show. We used NAMD to run the simulations and VMD to prepare the structures, visualize them, and analyse their movement.",
+        "DNA, linkers, and dendrimer branches are flexible. Their movement can affect the spacing and accessibility of the sensing modules, which a static model cannot fully show. We used NAMD [10] to run the simulations and VMD [11] to prepare the structures, visualize them, and analyse their movement.",
         "We investigated two main questions:",
         "- Could the assembled models relax to lower-energy structures under the assigned force field?",
         "- Did the models show obvious deformation, collapse, or crowding during the simulations?"
@@ -214,9 +214,47 @@
         "url": "https://doi.org/10.7150/thno.69465"
         },
         {
+        "text": "M. Zuker, “Mfold web server for nucleic acid folding and hybridization prediction,” *Nucleic Acids Research*, 31(13), 3406-3415, 2003. ",
+        "url": "https://doi.org/10.1093/nar/gkg595"
+        },
+        {
+        "text": "M. Popenda et al., “Automated 3D structure composition for large RNAs,” *Nucleic Acids Research*, 40(14), e112, 2012. ",
+        "url": "https://doi.org/10.1093/nar/gks339"
+        },
+        {
+        "text": "E. F. Pettersen et al., “UCSF Chimera—A visualization system for exploratory research and analysis,” *Journal of Computational Chemistry*, 25(13), 1605-1612, 2004. ",
+        "url": "https://doi.org/10.1002/jcc.20084"
+        },
+        {
         "text": "L. Fu, C.-T. Lin, and K.-M. Hassan, “Methylene blue in electrochemical (bio)sensing: Historical evolution, mechanistic insights, and emerging applications-A review,” *Analytica Chimica Acta*, 1377, 344468, 2025. ",
         "url": "https://doi.org/10.1016/j.aca.2025.344468"
+        },
+        
+        {
+        "text": "J. Eberhardt et al., “AutoDock Vina 1.2.0: New docking methods, expanded force field, and Python bindings,” *Journal of Chemical Information and Modeling*, 61(8), 3891-3898, 2021. ",
+        "url": "https://doi.org/10.1021/acs.jcim.1c00203"
+        },
+        {
+        "text": "Y. Yan et al., “HDOCK: A web server for protein-protein and protein-DNA/RNA docking based on a hybrid strategy,” *Nucleic Acids Research*, 45(W1), W365-W373, 2017. ",
+        "url": "https://doi.org/10.1093/nar/gkx407"
+        },
+        {
+        "text": "K. Hart et al., “Optimization of the CHARMM additive force field for DNA: Improved treatment of the BI/BII conformational equilibrium,” *Journal of Chemical Theory and Computation*, 8(1), 348-362, 2012. ",
+        "url": "https://doi.org/10.1021/ct200723y"
+        },
+        {
+        "text": "K. Vanommeslaeghe et al., “CHARMM general force field: A force field for drug-like molecules compatible with the CHARMM all-atom additive biological force fields,” *Journal of Computational Chemistry*, 31(4), 671-690, 2010. ",
+        "url": "https://doi.org/10.1002/jcc.21367"
+        },
+        {
+        "text": "J. C. Phillips et al., “Scalable molecular dynamics on CPU and GPU architectures with NAMD,” *Journal of Chemical Physics*, 153(4), 044130, 2020. ",
+        "url": "https://doi.org/10.1063/5.0014475"
+        },
+        {
+        "text": "W. Humphrey, A. Dalke, and K. Schulten, “VMD: Visual molecular dynamics,” *Journal of Molecular Graphics*, 14(1), 33-38, 1996. ",
+        "url": "https://doi.org/10.1016/0263-7855(96)00018-5"
         }
+
     ]
     
 }
