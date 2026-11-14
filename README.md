@@ -1,7 +1,6 @@
 # UCalgary-BIOMOD-2026-Wiki
 
-Authors:
-Allan Vu
+Authors: UCalgary BIOMOD 2026 Team
 
 How to work on this respository:
 
