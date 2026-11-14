@@ -74,6 +74,3 @@ To prepare and run a native PAGE for the TMSD strands, using a non-specific TMSD
 - Tube 9: Non-specific Thiol TMSDY + TMSDS + TMSDX (3.33, 3.33, 3.33 µL). T=5: Wait 5 mins after TMSDX addition to load (after 30 min incubation of S/Y)
 - Tube 10: Non-specific Thiol TMSDY + TMSDS + TMSDX (3.33, 3.33, 3.33 µL). T=10: Wait 10 mins after TMSDX addition to load (after 30 min incubation of S/Y)
 
-## Supplementary Information
-
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

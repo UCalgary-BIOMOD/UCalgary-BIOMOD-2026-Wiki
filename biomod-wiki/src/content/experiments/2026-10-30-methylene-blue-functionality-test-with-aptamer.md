@@ -56,6 +56,4 @@ Qualitatively confirm that methylene blue retains redox activity after covalent 
 
 These observations indicate that the aptamer-MB conjugate functions as expected as it can switch between blue and colourless, or oxidized and reduced.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

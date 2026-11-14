@@ -109,6 +109,4 @@ To prepare and run a native PAGE for the TMSD strands (no modifications) to ensu
 - The gel was run for 40 minutes and the buffer in the inner chamber appeared to be cloudy.
 - The current was 0.6-0.8 A; PBS buffer appeared to conduct better/faster.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

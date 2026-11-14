@@ -103,6 +103,4 @@ To prepare and run a native PAGE for the TMSD strands (no modifications) to ensu
 - The first two wells were not used, they did not polymerize properly.
 - We did not microcentrifuge the tubes because the timing was weird, so the senior lab member said that it was okay to pipette the samples up and down and tap the tube.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

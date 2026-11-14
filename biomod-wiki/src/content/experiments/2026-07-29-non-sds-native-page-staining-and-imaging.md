@@ -41,6 +41,3 @@ To stain the TMSD native PAGE gel and image the gel.
 
 **Figure 10.** Native polyacrylamide gel electrophoresis using 15% acrylamide gel solution in 1x PBS buffer and visualized by SYBR Safe staining. DNA samples with a concentration of 1.0 um were prepared to be loaded into the polyacrylamide gel by mixing 10 μL of the samples with 2 μL of 6x gel loading dye. The gel was run at 120 V for 40 minutes and imaged using the Bento Lab system. Strong fluorescent bands observed for all lanes excluding 1, 2, and 3.  Lane 1 contains the TMSDY strand. Lane 2 contains the TMSDS strand. Lane 3 contains the TMSDX strand. Lane 4 contains only TMSDY + AB42AptTS strands. Lane 5 contains a reaction of TMSDY + AB42AptTS strands with TMSDX incubated for 0 minutes. Lane 6 contains a reaction of TMSDY + AB42AptTS strands with TMSDX incubated for 5 minutes. Lane 7 contains a reaction of TMSDY + AB42AptTS strands with TMSDX incubated for 10 minutes. Lane 8 contains a reaction of TMSDY + TMSDS strands with TMSDX incubated for 0 minutes. Lane 9 contains a reaction of TMSDY + TMSDS strands with TMSDX incubated for 5 minutes. Lane 10 contains a reaction of TMSDY + TMSDS strands with TMSDX incubated for 10 minutes.
 
-## Supplementary Information
-
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

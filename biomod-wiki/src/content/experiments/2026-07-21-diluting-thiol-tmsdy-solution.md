@@ -33,6 +33,4 @@ To make a 10 um dilution of Thiol TMSDY from the 100 um stock solution.
 4. Pipetted 10 uL of the thiol TMSDY solution into the eppendorf tube containing the TE buffer.
 5. Vortexed the solution briefly and stored in the -20°C freezer.
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

@@ -45,6 +45,3 @@ Make 1x PBS buffer for TMSD native PAGE experiment.
 
 - pH was around 7-7.5.
 
-## Supplementary Information
-
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)

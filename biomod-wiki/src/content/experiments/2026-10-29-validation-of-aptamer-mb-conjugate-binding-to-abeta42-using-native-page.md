@@ -106,6 +106,4 @@ Confirm binding between the aptamer-MB conjugate and Aβ42 using native PAGE ele
 - Dilution of 10X Native Running Buffer to 1X: C1V1 = C2V2 → (10X)(V1) = (1X)(100 mL) → V = 10 mL
 - SYBR Safe Solution dilution factor = Vf / Vi = 75,000 uL / 7.5 uL = 10,000
 
-## Supplementary Information
 
-- References: [Protocols 2026](https://docs.google.com/document/u/1/d/1HuLVfeKoXXxEcEz75nTbEAGiH4r_xytd86p_Wq29fM4/edit)
