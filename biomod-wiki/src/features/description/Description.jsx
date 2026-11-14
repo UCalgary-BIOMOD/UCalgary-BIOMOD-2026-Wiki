@@ -86,7 +86,7 @@ export default function Description() {
                             alt = "Linkages between components"
                             className = {styles.figureImage}
                         ></img>} 
-                        caption = "NEED CAPTION. "
+                        caption = "A drawn schematic of the overall mechanism showing the aptamer, TMSD strands, dendrimer, electrode, and all chemical linkages. Note, two TMSD structures involved with aptamer attachment and detachment. Schematic is not to scale."
                     />
                 </ViewportSection>
             )

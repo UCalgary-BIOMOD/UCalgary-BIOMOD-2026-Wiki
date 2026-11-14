@@ -231,7 +231,6 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
                     className={styles.canvasArea}
                     style={{ pointerEvents: active ? "auto" : "none" }}
                 />
-
                 {loadError && <div className={styles.error}>Protein viewer error: {loadError}</div>}
 
                 {!active && <div className={styles.hint}>Tap to interact</div>}

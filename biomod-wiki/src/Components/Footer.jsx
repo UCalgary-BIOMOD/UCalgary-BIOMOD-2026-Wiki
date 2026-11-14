@@ -156,13 +156,13 @@ export default function Footer() {
                     <p className={styles.disclaimerText}>
                         <FontAwesomeIcon icon={faGithub} className={styles.titleIcon} />
                         The repository used to create this website is available on{" "}
-                        <a href="https://github.com/meagan-davies/UCalgary-BIOMOD-2026-Wiki" className={styles.navLink} target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/UCalgary-BIOMOD/UCalgary-BIOMOD-2026-Wiki" className={styles.navLink} target="_blank" rel="noopener noreferrer">
                             GitHub
                         </a>
                     </p>
                 </div>
 
             </div>
-        </footer>
+        </footer> 
     )
 }

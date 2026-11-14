@@ -54,7 +54,10 @@
 }
 
 /*Text sizes are a share of the card width with a readable floor on small screens*/
+
+
 .supportName a {
+    display: block;
     font-size: max(0.8rem, 13.3cqw);
     font-weight: bold;
     color: var(--text-h);
