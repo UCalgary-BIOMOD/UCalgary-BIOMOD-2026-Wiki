@@ -42,3 +42,17 @@
     font-size: 1em;
     color: var(--text-h);
 }
+
+/*Markdown css for tables*/
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
