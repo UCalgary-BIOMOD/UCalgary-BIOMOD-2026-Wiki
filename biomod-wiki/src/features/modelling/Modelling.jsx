@@ -380,15 +380,15 @@ export default function Modelling() {
                     <ViewportSection center>
                         <Heading caption = "Computational Challenges and Design Improvements" />
                         <Paragraphs paragraphs = {content.challenges1} />
-                        <h2>Selecting a representative aptamer structure</h2>
+                        <h3>Selecting a representative aptamer structure</h3>
                         <Paragraphs paragraphs = {content.challenges2} />
-                        <h2>Distinguishing specific recognition from nonspecific interactions</h2>
+                        <h3>Distinguishing specific recognition from nonspecific interactions</h3>
                         <Paragraphs paragraphs = {content.challenges3} />
-                        <h2>Building chemically connected models</h2>
+                        <h3>Building chemically connected models</h3>
                         <Paragraphs paragraphs = {content.challenges4} />
-                        <h2>Parameterizing nonstandard chemical linkages</h2>
+                        <h3>Parameterizing nonstandard chemical linkages</h3>
                         <Paragraphs paragraphs = {content.challenges5} />
-                        <h2>Distinguishing visualization from functional validatio</h2>
+                        <h3>Distinguishing visualization from functional validation</h3>
                         <Paragraphs paragraphs = {content.challenges6} />
                     </ViewportSection>
                 </>
@@ -401,15 +401,15 @@ export default function Modelling() {
                 <>
                     <ViewportSection center>
                         <Heading caption = "Future Computational Development" />
-                        <h2>Expanded biomarker specificity analysis</h2>
+                        <h3>Expanded biomarker specificity analysis</h3>
                         <Paragraphs paragraphs = {content.future1} />
-                        <h2>Independent docking replicates</h2>
+                        <h3>Independent docking replicates</h3>
                         <Paragraphs paragraphs = {content.future2} />
-                        <h2>Increased aptamer loading</h2>
+                        <h3>Increased aptamer loading</h3>
                         <Paragraphs paragraphs = {content.future3} />
-                        <h2>Longer molecular dynamics simulations</h2>
+                        <h3>Longer molecular dynamics simulations</h3>
                         <Paragraphs paragraphs = {content.future4} />
-                        <h2>In silico aptamer development</h2>
+                        <h3>In silico aptamer development</h3>
                         <Paragraphs paragraphs = {content.future5} />
                     </ViewportSection>
                 </>
