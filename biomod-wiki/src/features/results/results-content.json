@@ -196,6 +196,40 @@
           "analysis": "Lane numbers in the image run from left to right and reverse the loading order recorded in the procedure. The strong fluorescent bands in lanes 3 and 5 correspond to the non-specific aptamer control and the non-specific aptamer + Aβ42 sample; lane 8 is the DNA ladder. Since SYBR Safe predominantly stains nucleic acids, the protein-only controls in lanes 1 and 2 are not expected to produce strong DNA-fluorescence signals. These observations do not establish specific aptamer-Aβ42 binding. A distinct mobility shift in lane 7 relative to the aptamer-MB-only control in lane 4, with lane 6 as the non-target-protein comparison, would be needed to support complex formation; no such shift is established by the documented observations."
         }
       ]
-    }
+    },
+    {
+    "id": "methylene-blue",
+    "title": "Methylene Blue Results",
+    "count": "12 Redox Trials",
+    "figures": [
+      {
+        "number": 16,
+        "title": "Methylene Blue Redox Activity",
+        "date": "October 30, 2026",
+        "table": {
+          "headers": [
+            "Cycle Trial",
+            "Time to Become Colourless"
+          ],
+          "rows": [
+            ["1", "30 s"],
+            ["2", "44 s"],
+            ["3", "1 min 44 s"],
+            ["4", "2 min 9 s"],
+            ["5", "40 s"],
+            ["6", "1 min 2 s"],
+            ["7", "1 min 22 s"],
+            ["8", "2 min 12 s"],
+            ["9", "3 min 18 s"],
+            ["10", "4 min 14 s"],
+            ["11", "3 min 38 s"],
+            ["12", "3 min 53 s"]
+          ]
+        },
+        "caption": "Redox cycling of methylene blue, measured by the time required for the blue oxidized solution to become colourless in the reduced state following exposure to oxygen through shaking.",
+        "analysis": "Both free methylene blue and the aptamer-MB conjugate retained redox activity, as indicated by reversible colour changes between blue (oxidized) and colourless (reduced) states. Upon shaking, exposure to oxygen caused the solution to become blue, followed by gradual fading to colourless while resting. These observations qualitatively demonstrate that covalent conjugation to the aptamer does not prevent methylene blue from undergoing redox cycling, supporting its suitability as a redox reporter for the biosensor. The 12 trials showed decolourization times ranging from 30 seconds to 4 minutes 14 seconds, indicating variability in the observed reduction times."
+      }
+    ]
+  }
   ]
 }

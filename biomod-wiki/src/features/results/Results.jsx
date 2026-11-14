@@ -77,26 +77,55 @@ export default function Results() {
                                         <header className={styles.figureHeading}>
                                             <span className={styles.figureNumber}>{figure.number}</span>
                                             <div>
-                                                <h3>Figure {figure.number} Analysis</h3>
+                                                <h3>{figure.title || `Figure ${figure.number} Analysis`}</h3>
                                                 <time>{figure.date}</time>
                                             </div>
                                         </header>
-                                        <div className={styles.figureImageWrap}>
-                                            <img
-                                                className={styles.figureImage}
-                                                src={figure.image}
-                                                alt={figure.imageAlt || `Gel image for Figure ${figure.number}${figure.laneLabels ? "; lanes numbered from right to left" : ""}`}
-                                                loading={activeGroup.id === "aptamer" ? "eager" : "lazy"}
-                                            />
-                                            {figure.laneLabels && (
-                                                <div className={styles.laneLabels} aria-hidden="true">
-                                                    {figure.laneLabels.map((label) => <span key={label}>{label}</span>)}
-                                                </div>
-                                            )}
-                                        </div>
-                                        <p className={styles.caption}>
-                                            <strong>Figure {figure.number}.</strong> {figure.caption}
-                                        </p>
+                                        {figure.image && (
+                                            <div className={styles.figureImageWrap}>
+                                                <img
+                                                    className={styles.figureImage}
+                                                    src={figure.image}
+                                                    alt={figure.imageAlt || `Experimental image for Figure ${figure.number}`}
+                                                    loading="lazy"
+                                                />
+                                                {figure.laneLabels && (
+                                                    <div className={styles.laneLabels} aria-hidden="true">
+                                                        {figure.laneLabels.map((label) => (
+                                                            <span key={label}>{label}</span>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                        {figure.table && (
+                                            <div className={styles.tableWrap}>
+                                                <table className={styles.resultsTable}>
+                                                    <thead>
+                                                        <tr>
+                                                            {figure.table.headers.map((header) => (
+                                                                <th key={header}>{header}</th>
+                                                            ))}
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {figure.table.rows.map((row, index) => (
+                                                            <tr key={index}>
+                                                                {row.map((cell, cellIndex) => (
+                                                                    <td key={cellIndex}>{cell}</td>
+                                                                ))}
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        )}
+                                        {figure.caption && (
+                                            <p className={styles.caption}>
+                                                <strong>{figure.title ? "Experiment:" : `Figure ${figure.number}.`}</strong>{" "}
+                                                {figure.caption}
+                                            </p>
+                                        )}
                                         {figure.lanes && (
                                             <details className={styles.lanes}>
                                                 <summary>Lane contents</summary>
