@@ -234,16 +234,17 @@ export default function ProteinViewer({ pdbUrl, externalActiveId = null, onCompo
 
                 {loadError && <div className={styles.error}>Protein viewer error: {loadError}</div>}
 
-                {active && (
-                    <button
-                        type="button"
-                        className={styles.closeButton}
-                        aria-label="Stop interacting with viewer"
-                        onClick={() => setActive(false)}
-                    >
-                        ×
-                    </button>
-                )}
+                {!active && <div className={styles.hint}>Tap to interact</div>}
+
+                <button
+                    type="button"
+                    className={styles.closeButton}
+                    aria-label={active ? "Stop interacting with viewer" : "Viewer is not active"}
+                    disabled={!active}
+                    onClick={() => setActive(false)}
+                >
+                    ×
+                </button>
 
                 <button
                     type="button"

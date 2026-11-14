@@ -20,6 +20,23 @@
     height: 100%;
 }
 
+.hint {
+    position: absolute;
+    top: 0.75rem;
+    left: 50%;
+    z-index: 2;
+    max-width: calc(100% - 6rem);
+    padding: 0.3rem 0.8rem;
+    transform: translateX(-50%);
+    border: 2px solid var(--text-h);
+    border-radius: var(--radius-pill);
+    background: var(--bg);
+    color: var(--text-h);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
 .frame {
     isolation: isolate; /*Keeps the buttons' z-index inside the viewer so they never rise above the nav bar*/
     display: block;
@@ -75,6 +92,17 @@
     color: var(--bg);
     transform: scale(1.05);
 }
+
+.closeButton:disabled {
+    cursor: default;
+}
+
+.closeButton:disabled:hover {
+    transform: none;
+    background: var(--bg);
+    color: var(--text-h);
+}
+
 .infoButton {
     position: absolute;
     top: 0.75rem;
